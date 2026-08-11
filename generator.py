@@ -78,19 +78,47 @@ print("\nSum counts by identity signature:")
 for signature, sums in SUMS_BY_SIGNATURE.items():
     print(signature, len(sums))
 
-LITERAL_EQUATIONS = []
+ALL_LITERAL_EQUATIONS = []
 
 for signature, sums in SUMS_BY_SIGNATURE.items():
     for left in sums:
         for right in sums:
-            LITERAL_EQUATIONS.append({
+            ALL_LITERAL_EQUATIONS.append({
                 "left": left,
                 "right": right,
             })
 
+def variables_in_term(term):
+    variables = set()
+
+    if "x" in term:
+        variables.add("x")
+
+    if "y" in term:
+        variables.add("y")
+
+    return variables
+
+
+def contains_both_variables(equation):
+    variables = set()
+
+    for term in equation["left"] + equation["right"]:
+        variables.update(variables_in_term(term))
+
+    return variables == {"x", "y"}
+
+
+LITERAL_EQUATIONS = [
+    equation
+    for equation in ALL_LITERAL_EQUATIONS
+    if contains_both_variables(equation)
+]
+
 assert len(SUMS) == 105
 assert len(SUMS_BY_SIGNATURE) == 15
-assert len(LITERAL_EQUATIONS) == 847
+assert len(ALL_LITERAL_EQUATIONS) == 847
+assert len(LITERAL_EQUATIONS) == 685
 
 def equation_key(equation):
     return (
@@ -107,8 +135,8 @@ EQUATION_KEYS = [
 
 UNIQUE_EQUATION_KEYS = set(EQUATION_KEYS)
 
-assert len(EQUATION_KEYS) == 847
-assert len(UNIQUE_EQUATION_KEYS) == 847
+assert len(EQUATION_KEYS) == 685
+assert len(UNIQUE_EQUATION_KEYS) == 685
 
 def display_sum(pair):
     return pair[0] + " + " + pair[1]
@@ -198,11 +226,11 @@ double_groups = sum(
 )
 
 
-assert number_of_groups == 438
+assert number_of_groups == 357
 assert single_groups == 29
-assert double_groups == 409
+assert double_groups == 328
 
-assert single_groups + 2 * double_groups == 847
+assert single_groups + 2 * double_groups == 685
 
 SORTED_GROUPS = sorted(
     FE_GROUPS.items(),
@@ -236,9 +264,9 @@ for index, (representative_key, group) in enumerate(SORTED_GROUPS, start=1):
         "equations": equations,
     })
 
-assert len(FE_RECORDS) == 438
+assert len(FE_RECORDS) == 357
 assert FE_RECORDS[0]["id"] == "FE-0001"
-assert FE_RECORDS[-1]["id"] == "FE-0438"
+assert FE_RECORDS[-1]["id"] == "FE-0357"
 
 import json
 import os
@@ -255,7 +283,7 @@ with open("data/fe_database.json", "w", encoding="utf-8") as file:
 
 print("Exported database to data/fe_database.json")
 
-assert len({fe["id"] for fe in FE_RECORDS}) == 438
+assert len({fe["id"] for fe in FE_RECORDS}) == 357
 
 literal_count = sum(
     len(fe["equations"])
@@ -272,9 +300,9 @@ paired_count = sum(
     for fe in FE_RECORDS
 )
 
-assert literal_count == 847
+assert literal_count == 685
 assert self_symmetric_count == 29
-assert paired_count == 409
+assert paired_count == 328
 
 with open("data/fe_index.txt", "w", encoding="utf-8") as file:
     for fe in FE_RECORDS:
@@ -327,6 +355,6 @@ for fe in FE_RECORDS:
 
         all_keys_in_groups.append(equation_key(equation))
 
-assert len(all_keys_in_groups) == 847
-assert len(set(all_keys_in_groups)) == 847
+assert len(all_keys_in_groups) == 685
+assert len(set(all_keys_in_groups)) == 685
 assert set(all_keys_in_groups) == set(EQUATION_KEYS)

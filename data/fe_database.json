@@ -1,174 +1,6 @@
 [
   {
     "id": "FE-0001",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "x"
-        ],
-        "right": [
-          "x",
-          "x"
-        ],
-        "display": "f(x + x) = x + x"
-      },
-      {
-        "left": [
-          "y",
-          "y"
-        ],
-        "right": [
-          "y",
-          "y"
-        ],
-        "display": "f(y + y) = y + y"
-      }
-    ]
-  },
-  {
-    "id": "FE-0002",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "x"
-        ],
-        "right": [
-          "x",
-          "f(x)"
-        ],
-        "display": "f(x + x) = x + f(x)"
-      },
-      {
-        "left": [
-          "y",
-          "y"
-        ],
-        "right": [
-          "y",
-          "f(y)"
-        ],
-        "display": "f(y + y) = y + f(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0003",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "x"
-        ],
-        "right": [
-          "f(x)",
-          "f(x)"
-        ],
-        "display": "f(x + x) = f(x) + f(x)"
-      },
-      {
-        "left": [
-          "y",
-          "y"
-        ],
-        "right": [
-          "f(y)",
-          "f(y)"
-        ],
-        "display": "f(y + y) = f(y) + f(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0004",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "f(x)"
-        ],
-        "right": [
-          "x",
-          "x"
-        ],
-        "display": "f(x + f(x)) = x + x"
-      },
-      {
-        "left": [
-          "y",
-          "f(y)"
-        ],
-        "right": [
-          "y",
-          "y"
-        ],
-        "display": "f(y + f(y)) = y + y"
-      }
-    ]
-  },
-  {
-    "id": "FE-0005",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "f(x)"
-        ],
-        "right": [
-          "x",
-          "f(x)"
-        ],
-        "display": "f(x + f(x)) = x + f(x)"
-      },
-      {
-        "left": [
-          "y",
-          "f(y)"
-        ],
-        "right": [
-          "y",
-          "f(y)"
-        ],
-        "display": "f(y + f(y)) = y + f(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0006",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "f(x)"
-        ],
-        "right": [
-          "f(x)",
-          "f(x)"
-        ],
-        "display": "f(x + f(x)) = f(x) + f(x)"
-      },
-      {
-        "left": [
-          "y",
-          "f(y)"
-        ],
-        "right": [
-          "f(y)",
-          "f(y)"
-        ],
-        "display": "f(y + f(y)) = f(y) + f(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0007",
     "self_symmetric": true,
     "equations": [
       {
@@ -185,7 +17,7 @@
     ]
   },
   {
-    "id": "FE-0008",
+    "id": "FE-0002",
     "self_symmetric": false,
     "equations": [
       {
@@ -213,7 +45,7 @@
     ]
   },
   {
-    "id": "FE-0009",
+    "id": "FE-0003",
     "self_symmetric": true,
     "equations": [
       {
@@ -230,7 +62,7 @@
     ]
   },
   {
-    "id": "FE-0010",
+    "id": "FE-0004",
     "self_symmetric": false,
     "equations": [
       {
@@ -258,7 +90,7 @@
     ]
   },
   {
-    "id": "FE-0011",
+    "id": "FE-0005",
     "self_symmetric": false,
     "equations": [
       {
@@ -286,7 +118,7 @@
     ]
   },
   {
-    "id": "FE-0012",
+    "id": "FE-0006",
     "self_symmetric": false,
     "equations": [
       {
@@ -314,7 +146,7 @@
     ]
   },
   {
-    "id": "FE-0013",
+    "id": "FE-0007",
     "self_symmetric": false,
     "equations": [
       {
@@ -342,511 +174,7 @@
     ]
   },
   {
-    "id": "FE-0014",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "x^2"
-        ],
-        "right": [
-          "x",
-          "x^2"
-        ],
-        "display": "f(x + x^2) = x + x^2"
-      },
-      {
-        "left": [
-          "y",
-          "y^2"
-        ],
-        "right": [
-          "y",
-          "y^2"
-        ],
-        "display": "f(y + y^2) = y + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0015",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "x^2"
-        ],
-        "right": [
-          "x",
-          "xf(x)"
-        ],
-        "display": "f(x + x^2) = x + xf(x)"
-      },
-      {
-        "left": [
-          "y",
-          "y^2"
-        ],
-        "right": [
-          "y",
-          "yf(y)"
-        ],
-        "display": "f(y + y^2) = y + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0016",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "x^2"
-        ],
-        "right": [
-          "x",
-          "f(x^2)"
-        ],
-        "display": "f(x + x^2) = x + f(x^2)"
-      },
-      {
-        "left": [
-          "y",
-          "y^2"
-        ],
-        "right": [
-          "y",
-          "f(y^2)"
-        ],
-        "display": "f(y + y^2) = y + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0017",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "x^2"
-        ],
-        "right": [
-          "f(x)",
-          "x^2"
-        ],
-        "display": "f(x + x^2) = f(x) + x^2"
-      },
-      {
-        "left": [
-          "y",
-          "y^2"
-        ],
-        "right": [
-          "f(y)",
-          "y^2"
-        ],
-        "display": "f(y + y^2) = f(y) + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0018",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "x^2"
-        ],
-        "right": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "display": "f(x + x^2) = f(x) + xf(x)"
-      },
-      {
-        "left": [
-          "y",
-          "y^2"
-        ],
-        "right": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "display": "f(y + y^2) = f(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0019",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "x^2"
-        ],
-        "right": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "display": "f(x + x^2) = f(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "y",
-          "y^2"
-        ],
-        "right": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "display": "f(y + y^2) = f(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0020",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "xf(x)"
-        ],
-        "right": [
-          "x",
-          "x^2"
-        ],
-        "display": "f(x + xf(x)) = x + x^2"
-      },
-      {
-        "left": [
-          "y",
-          "yf(y)"
-        ],
-        "right": [
-          "y",
-          "y^2"
-        ],
-        "display": "f(y + yf(y)) = y + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0021",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "xf(x)"
-        ],
-        "right": [
-          "x",
-          "xf(x)"
-        ],
-        "display": "f(x + xf(x)) = x + xf(x)"
-      },
-      {
-        "left": [
-          "y",
-          "yf(y)"
-        ],
-        "right": [
-          "y",
-          "yf(y)"
-        ],
-        "display": "f(y + yf(y)) = y + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0022",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "xf(x)"
-        ],
-        "right": [
-          "x",
-          "f(x^2)"
-        ],
-        "display": "f(x + xf(x)) = x + f(x^2)"
-      },
-      {
-        "left": [
-          "y",
-          "yf(y)"
-        ],
-        "right": [
-          "y",
-          "f(y^2)"
-        ],
-        "display": "f(y + yf(y)) = y + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0023",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "xf(x)"
-        ],
-        "right": [
-          "f(x)",
-          "x^2"
-        ],
-        "display": "f(x + xf(x)) = f(x) + x^2"
-      },
-      {
-        "left": [
-          "y",
-          "yf(y)"
-        ],
-        "right": [
-          "f(y)",
-          "y^2"
-        ],
-        "display": "f(y + yf(y)) = f(y) + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0024",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "xf(x)"
-        ],
-        "right": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "display": "f(x + xf(x)) = f(x) + xf(x)"
-      },
-      {
-        "left": [
-          "y",
-          "yf(y)"
-        ],
-        "right": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "display": "f(y + yf(y)) = f(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0025",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "xf(x)"
-        ],
-        "right": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "display": "f(x + xf(x)) = f(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "y",
-          "yf(y)"
-        ],
-        "right": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "display": "f(y + yf(y)) = f(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0026",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "f(x^2)"
-        ],
-        "right": [
-          "x",
-          "x^2"
-        ],
-        "display": "f(x + f(x^2)) = x + x^2"
-      },
-      {
-        "left": [
-          "y",
-          "f(y^2)"
-        ],
-        "right": [
-          "y",
-          "y^2"
-        ],
-        "display": "f(y + f(y^2)) = y + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0027",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "f(x^2)"
-        ],
-        "right": [
-          "x",
-          "xf(x)"
-        ],
-        "display": "f(x + f(x^2)) = x + xf(x)"
-      },
-      {
-        "left": [
-          "y",
-          "f(y^2)"
-        ],
-        "right": [
-          "y",
-          "yf(y)"
-        ],
-        "display": "f(y + f(y^2)) = y + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0028",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "f(x^2)"
-        ],
-        "right": [
-          "x",
-          "f(x^2)"
-        ],
-        "display": "f(x + f(x^2)) = x + f(x^2)"
-      },
-      {
-        "left": [
-          "y",
-          "f(y^2)"
-        ],
-        "right": [
-          "y",
-          "f(y^2)"
-        ],
-        "display": "f(y + f(y^2)) = y + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0029",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "f(x^2)"
-        ],
-        "right": [
-          "f(x)",
-          "x^2"
-        ],
-        "display": "f(x + f(x^2)) = f(x) + x^2"
-      },
-      {
-        "left": [
-          "y",
-          "f(y^2)"
-        ],
-        "right": [
-          "f(y)",
-          "y^2"
-        ],
-        "display": "f(y + f(y^2)) = f(y) + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0030",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "f(x^2)"
-        ],
-        "right": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "display": "f(x + f(x^2)) = f(x) + xf(x)"
-      },
-      {
-        "left": [
-          "y",
-          "f(y^2)"
-        ],
-        "right": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "display": "f(y + f(y^2)) = f(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0031",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x",
-          "f(x^2)"
-        ],
-        "right": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "display": "f(x + f(x^2)) = f(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "y",
-          "f(y^2)"
-        ],
-        "right": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "display": "f(y + f(y^2)) = f(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0032",
+    "id": "FE-0008",
     "self_symmetric": false,
     "equations": [
       {
@@ -874,7 +202,7 @@
     ]
   },
   {
-    "id": "FE-0033",
+    "id": "FE-0009",
     "self_symmetric": false,
     "equations": [
       {
@@ -902,7 +230,7 @@
     ]
   },
   {
-    "id": "FE-0034",
+    "id": "FE-0010",
     "self_symmetric": false,
     "equations": [
       {
@@ -930,7 +258,7 @@
     ]
   },
   {
-    "id": "FE-0035",
+    "id": "FE-0011",
     "self_symmetric": false,
     "equations": [
       {
@@ -958,7 +286,7 @@
     ]
   },
   {
-    "id": "FE-0036",
+    "id": "FE-0012",
     "self_symmetric": false,
     "equations": [
       {
@@ -986,7 +314,7 @@
     ]
   },
   {
-    "id": "FE-0037",
+    "id": "FE-0013",
     "self_symmetric": false,
     "equations": [
       {
@@ -1014,7 +342,7 @@
     ]
   },
   {
-    "id": "FE-0038",
+    "id": "FE-0014",
     "self_symmetric": false,
     "equations": [
       {
@@ -1042,7 +370,7 @@
     ]
   },
   {
-    "id": "FE-0039",
+    "id": "FE-0015",
     "self_symmetric": false,
     "equations": [
       {
@@ -1070,7 +398,7 @@
     ]
   },
   {
-    "id": "FE-0040",
+    "id": "FE-0016",
     "self_symmetric": false,
     "equations": [
       {
@@ -1098,7 +426,7 @@
     ]
   },
   {
-    "id": "FE-0041",
+    "id": "FE-0017",
     "self_symmetric": false,
     "equations": [
       {
@@ -1126,7 +454,7 @@
     ]
   },
   {
-    "id": "FE-0042",
+    "id": "FE-0018",
     "self_symmetric": false,
     "equations": [
       {
@@ -1154,7 +482,7 @@
     ]
   },
   {
-    "id": "FE-0043",
+    "id": "FE-0019",
     "self_symmetric": false,
     "equations": [
       {
@@ -1182,7 +510,7 @@
     ]
   },
   {
-    "id": "FE-0044",
+    "id": "FE-0020",
     "self_symmetric": false,
     "equations": [
       {
@@ -1210,7 +538,7 @@
     ]
   },
   {
-    "id": "FE-0045",
+    "id": "FE-0021",
     "self_symmetric": false,
     "equations": [
       {
@@ -1238,7 +566,7 @@
     ]
   },
   {
-    "id": "FE-0046",
+    "id": "FE-0022",
     "self_symmetric": false,
     "equations": [
       {
@@ -1266,7 +594,7 @@
     ]
   },
   {
-    "id": "FE-0047",
+    "id": "FE-0023",
     "self_symmetric": false,
     "equations": [
       {
@@ -1294,7 +622,7 @@
     ]
   },
   {
-    "id": "FE-0048",
+    "id": "FE-0024",
     "self_symmetric": false,
     "equations": [
       {
@@ -1322,7 +650,7 @@
     ]
   },
   {
-    "id": "FE-0049",
+    "id": "FE-0025",
     "self_symmetric": false,
     "equations": [
       {
@@ -1350,7 +678,7 @@
     ]
   },
   {
-    "id": "FE-0050",
+    "id": "FE-0026",
     "self_symmetric": false,
     "equations": [
       {
@@ -1378,7 +706,7 @@
     ]
   },
   {
-    "id": "FE-0051",
+    "id": "FE-0027",
     "self_symmetric": false,
     "equations": [
       {
@@ -1406,7 +734,7 @@
     ]
   },
   {
-    "id": "FE-0052",
+    "id": "FE-0028",
     "self_symmetric": false,
     "equations": [
       {
@@ -1434,7 +762,7 @@
     ]
   },
   {
-    "id": "FE-0053",
+    "id": "FE-0029",
     "self_symmetric": false,
     "equations": [
       {
@@ -1462,7 +790,7 @@
     ]
   },
   {
-    "id": "FE-0054",
+    "id": "FE-0030",
     "self_symmetric": false,
     "equations": [
       {
@@ -1490,7 +818,7 @@
     ]
   },
   {
-    "id": "FE-0055",
+    "id": "FE-0031",
     "self_symmetric": false,
     "equations": [
       {
@@ -1518,7 +846,7 @@
     ]
   },
   {
-    "id": "FE-0056",
+    "id": "FE-0032",
     "self_symmetric": false,
     "equations": [
       {
@@ -1546,7 +874,7 @@
     ]
   },
   {
-    "id": "FE-0057",
+    "id": "FE-0033",
     "self_symmetric": false,
     "equations": [
       {
@@ -1574,7 +902,7 @@
     ]
   },
   {
-    "id": "FE-0058",
+    "id": "FE-0034",
     "self_symmetric": false,
     "equations": [
       {
@@ -1602,7 +930,7 @@
     ]
   },
   {
-    "id": "FE-0059",
+    "id": "FE-0035",
     "self_symmetric": false,
     "equations": [
       {
@@ -1630,7 +958,7 @@
     ]
   },
   {
-    "id": "FE-0060",
+    "id": "FE-0036",
     "self_symmetric": false,
     "equations": [
       {
@@ -1658,7 +986,7 @@
     ]
   },
   {
-    "id": "FE-0061",
+    "id": "FE-0037",
     "self_symmetric": false,
     "equations": [
       {
@@ -1686,7 +1014,7 @@
     ]
   },
   {
-    "id": "FE-0062",
+    "id": "FE-0038",
     "self_symmetric": false,
     "equations": [
       {
@@ -1714,7 +1042,7 @@
     ]
   },
   {
-    "id": "FE-0063",
+    "id": "FE-0039",
     "self_symmetric": false,
     "equations": [
       {
@@ -1742,7 +1070,7 @@
     ]
   },
   {
-    "id": "FE-0064",
+    "id": "FE-0040",
     "self_symmetric": false,
     "equations": [
       {
@@ -1770,7 +1098,7 @@
     ]
   },
   {
-    "id": "FE-0065",
+    "id": "FE-0041",
     "self_symmetric": false,
     "equations": [
       {
@@ -1798,7 +1126,7 @@
     ]
   },
   {
-    "id": "FE-0066",
+    "id": "FE-0042",
     "self_symmetric": false,
     "equations": [
       {
@@ -1826,7 +1154,7 @@
     ]
   },
   {
-    "id": "FE-0067",
+    "id": "FE-0043",
     "self_symmetric": false,
     "equations": [
       {
@@ -1854,7 +1182,7 @@
     ]
   },
   {
-    "id": "FE-0068",
+    "id": "FE-0044",
     "self_symmetric": false,
     "equations": [
       {
@@ -1882,7 +1210,7 @@
     ]
   },
   {
-    "id": "FE-0069",
+    "id": "FE-0045",
     "self_symmetric": false,
     "equations": [
       {
@@ -1910,7 +1238,7 @@
     ]
   },
   {
-    "id": "FE-0070",
+    "id": "FE-0046",
     "self_symmetric": false,
     "equations": [
       {
@@ -1938,7 +1266,7 @@
     ]
   },
   {
-    "id": "FE-0071",
+    "id": "FE-0047",
     "self_symmetric": false,
     "equations": [
       {
@@ -1966,7 +1294,7 @@
     ]
   },
   {
-    "id": "FE-0072",
+    "id": "FE-0048",
     "self_symmetric": false,
     "equations": [
       {
@@ -1994,7 +1322,7 @@
     ]
   },
   {
-    "id": "FE-0073",
+    "id": "FE-0049",
     "self_symmetric": false,
     "equations": [
       {
@@ -2022,7 +1350,7 @@
     ]
   },
   {
-    "id": "FE-0074",
+    "id": "FE-0050",
     "self_symmetric": false,
     "equations": [
       {
@@ -2050,7 +1378,7 @@
     ]
   },
   {
-    "id": "FE-0075",
+    "id": "FE-0051",
     "self_symmetric": false,
     "equations": [
       {
@@ -2078,7 +1406,7 @@
     ]
   },
   {
-    "id": "FE-0076",
+    "id": "FE-0052",
     "self_symmetric": false,
     "equations": [
       {
@@ -2106,7 +1434,7 @@
     ]
   },
   {
-    "id": "FE-0077",
+    "id": "FE-0053",
     "self_symmetric": false,
     "equations": [
       {
@@ -2134,7 +1462,7 @@
     ]
   },
   {
-    "id": "FE-0078",
+    "id": "FE-0054",
     "self_symmetric": false,
     "equations": [
       {
@@ -2162,7 +1490,7 @@
     ]
   },
   {
-    "id": "FE-0079",
+    "id": "FE-0055",
     "self_symmetric": false,
     "equations": [
       {
@@ -2190,7 +1518,7 @@
     ]
   },
   {
-    "id": "FE-0080",
+    "id": "FE-0056",
     "self_symmetric": false,
     "equations": [
       {
@@ -2218,7 +1546,7 @@
     ]
   },
   {
-    "id": "FE-0081",
+    "id": "FE-0057",
     "self_symmetric": false,
     "equations": [
       {
@@ -2246,91 +1574,7 @@
     ]
   },
   {
-    "id": "FE-0082",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "f(x)"
-        ],
-        "right": [
-          "x",
-          "x"
-        ],
-        "display": "f(f(x) + f(x)) = x + x"
-      },
-      {
-        "left": [
-          "f(y)",
-          "f(y)"
-        ],
-        "right": [
-          "y",
-          "y"
-        ],
-        "display": "f(f(y) + f(y)) = y + y"
-      }
-    ]
-  },
-  {
-    "id": "FE-0083",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "f(x)"
-        ],
-        "right": [
-          "x",
-          "f(x)"
-        ],
-        "display": "f(f(x) + f(x)) = x + f(x)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "f(y)"
-        ],
-        "right": [
-          "y",
-          "f(y)"
-        ],
-        "display": "f(f(y) + f(y)) = y + f(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0084",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "f(x)"
-        ],
-        "right": [
-          "f(x)",
-          "f(x)"
-        ],
-        "display": "f(f(x) + f(x)) = f(x) + f(x)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "f(y)"
-        ],
-        "right": [
-          "f(y)",
-          "f(y)"
-        ],
-        "display": "f(f(y) + f(y)) = f(y) + f(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0085",
+    "id": "FE-0058",
     "self_symmetric": true,
     "equations": [
       {
@@ -2347,7 +1591,7 @@
     ]
   },
   {
-    "id": "FE-0086",
+    "id": "FE-0059",
     "self_symmetric": false,
     "equations": [
       {
@@ -2375,7 +1619,7 @@
     ]
   },
   {
-    "id": "FE-0087",
+    "id": "FE-0060",
     "self_symmetric": true,
     "equations": [
       {
@@ -2392,511 +1636,7 @@
     ]
   },
   {
-    "id": "FE-0088",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "x^2"
-        ],
-        "right": [
-          "x",
-          "x^2"
-        ],
-        "display": "f(f(x) + x^2) = x + x^2"
-      },
-      {
-        "left": [
-          "f(y)",
-          "y^2"
-        ],
-        "right": [
-          "y",
-          "y^2"
-        ],
-        "display": "f(f(y) + y^2) = y + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0089",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "x^2"
-        ],
-        "right": [
-          "x",
-          "xf(x)"
-        ],
-        "display": "f(f(x) + x^2) = x + xf(x)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "y^2"
-        ],
-        "right": [
-          "y",
-          "yf(y)"
-        ],
-        "display": "f(f(y) + y^2) = y + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0090",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "x^2"
-        ],
-        "right": [
-          "x",
-          "f(x^2)"
-        ],
-        "display": "f(f(x) + x^2) = x + f(x^2)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "y^2"
-        ],
-        "right": [
-          "y",
-          "f(y^2)"
-        ],
-        "display": "f(f(y) + y^2) = y + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0091",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "x^2"
-        ],
-        "right": [
-          "f(x)",
-          "x^2"
-        ],
-        "display": "f(f(x) + x^2) = f(x) + x^2"
-      },
-      {
-        "left": [
-          "f(y)",
-          "y^2"
-        ],
-        "right": [
-          "f(y)",
-          "y^2"
-        ],
-        "display": "f(f(y) + y^2) = f(y) + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0092",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "x^2"
-        ],
-        "right": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "display": "f(f(x) + x^2) = f(x) + xf(x)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "y^2"
-        ],
-        "right": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "display": "f(f(y) + y^2) = f(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0093",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "x^2"
-        ],
-        "right": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "display": "f(f(x) + x^2) = f(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "y^2"
-        ],
-        "right": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "display": "f(f(y) + y^2) = f(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0094",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "x",
-          "x^2"
-        ],
-        "display": "f(f(x) + xf(x)) = x + x^2"
-      },
-      {
-        "left": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "y",
-          "y^2"
-        ],
-        "display": "f(f(y) + yf(y)) = y + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0095",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "x",
-          "xf(x)"
-        ],
-        "display": "f(f(x) + xf(x)) = x + xf(x)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "y",
-          "yf(y)"
-        ],
-        "display": "f(f(y) + yf(y)) = y + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0096",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "x",
-          "f(x^2)"
-        ],
-        "display": "f(f(x) + xf(x)) = x + f(x^2)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "y",
-          "f(y^2)"
-        ],
-        "display": "f(f(y) + yf(y)) = y + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0097",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "f(x)",
-          "x^2"
-        ],
-        "display": "f(f(x) + xf(x)) = f(x) + x^2"
-      },
-      {
-        "left": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "f(y)",
-          "y^2"
-        ],
-        "display": "f(f(y) + yf(y)) = f(y) + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0098",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "display": "f(f(x) + xf(x)) = f(x) + xf(x)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "display": "f(f(y) + yf(y)) = f(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0099",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "display": "f(f(x) + xf(x)) = f(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "display": "f(f(y) + yf(y)) = f(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0100",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "x",
-          "x^2"
-        ],
-        "display": "f(f(x) + f(x^2)) = x + x^2"
-      },
-      {
-        "left": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "y",
-          "y^2"
-        ],
-        "display": "f(f(y) + f(y^2)) = y + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0101",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "x",
-          "xf(x)"
-        ],
-        "display": "f(f(x) + f(x^2)) = x + xf(x)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "y",
-          "yf(y)"
-        ],
-        "display": "f(f(y) + f(y^2)) = y + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0102",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "x",
-          "f(x^2)"
-        ],
-        "display": "f(f(x) + f(x^2)) = x + f(x^2)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "y",
-          "f(y^2)"
-        ],
-        "display": "f(f(y) + f(y^2)) = y + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0103",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "f(x)",
-          "x^2"
-        ],
-        "display": "f(f(x) + f(x^2)) = f(x) + x^2"
-      },
-      {
-        "left": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "f(y)",
-          "y^2"
-        ],
-        "display": "f(f(y) + f(y^2)) = f(y) + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0104",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "f(x)",
-          "xf(x)"
-        ],
-        "display": "f(f(x) + f(x^2)) = f(x) + xf(x)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "f(y)",
-          "yf(y)"
-        ],
-        "display": "f(f(y) + f(y^2)) = f(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0105",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "f(x)",
-          "f(x^2)"
-        ],
-        "display": "f(f(x) + f(x^2)) = f(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "f(y)",
-          "f(y^2)"
-        ],
-        "display": "f(f(y) + f(y^2)) = f(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0106",
+    "id": "FE-0061",
     "self_symmetric": false,
     "equations": [
       {
@@ -2924,7 +1664,7 @@
     ]
   },
   {
-    "id": "FE-0107",
+    "id": "FE-0062",
     "self_symmetric": false,
     "equations": [
       {
@@ -2952,7 +1692,7 @@
     ]
   },
   {
-    "id": "FE-0108",
+    "id": "FE-0063",
     "self_symmetric": false,
     "equations": [
       {
@@ -2980,7 +1720,7 @@
     ]
   },
   {
-    "id": "FE-0109",
+    "id": "FE-0064",
     "self_symmetric": false,
     "equations": [
       {
@@ -3008,7 +1748,7 @@
     ]
   },
   {
-    "id": "FE-0110",
+    "id": "FE-0065",
     "self_symmetric": false,
     "equations": [
       {
@@ -3036,7 +1776,7 @@
     ]
   },
   {
-    "id": "FE-0111",
+    "id": "FE-0066",
     "self_symmetric": false,
     "equations": [
       {
@@ -3064,7 +1804,7 @@
     ]
   },
   {
-    "id": "FE-0112",
+    "id": "FE-0067",
     "self_symmetric": false,
     "equations": [
       {
@@ -3092,7 +1832,7 @@
     ]
   },
   {
-    "id": "FE-0113",
+    "id": "FE-0068",
     "self_symmetric": false,
     "equations": [
       {
@@ -3120,7 +1860,7 @@
     ]
   },
   {
-    "id": "FE-0114",
+    "id": "FE-0069",
     "self_symmetric": false,
     "equations": [
       {
@@ -3148,7 +1888,7 @@
     ]
   },
   {
-    "id": "FE-0115",
+    "id": "FE-0070",
     "self_symmetric": false,
     "equations": [
       {
@@ -3176,7 +1916,7 @@
     ]
   },
   {
-    "id": "FE-0116",
+    "id": "FE-0071",
     "self_symmetric": false,
     "equations": [
       {
@@ -3204,7 +1944,7 @@
     ]
   },
   {
-    "id": "FE-0117",
+    "id": "FE-0072",
     "self_symmetric": false,
     "equations": [
       {
@@ -3232,7 +1972,7 @@
     ]
   },
   {
-    "id": "FE-0118",
+    "id": "FE-0073",
     "self_symmetric": false,
     "equations": [
       {
@@ -3260,7 +2000,7 @@
     ]
   },
   {
-    "id": "FE-0119",
+    "id": "FE-0074",
     "self_symmetric": false,
     "equations": [
       {
@@ -3288,7 +2028,7 @@
     ]
   },
   {
-    "id": "FE-0120",
+    "id": "FE-0075",
     "self_symmetric": false,
     "equations": [
       {
@@ -3316,7 +2056,7 @@
     ]
   },
   {
-    "id": "FE-0121",
+    "id": "FE-0076",
     "self_symmetric": false,
     "equations": [
       {
@@ -3344,7 +2084,7 @@
     ]
   },
   {
-    "id": "FE-0122",
+    "id": "FE-0077",
     "self_symmetric": false,
     "equations": [
       {
@@ -3372,7 +2112,7 @@
     ]
   },
   {
-    "id": "FE-0123",
+    "id": "FE-0078",
     "self_symmetric": false,
     "equations": [
       {
@@ -3400,7 +2140,7 @@
     ]
   },
   {
-    "id": "FE-0124",
+    "id": "FE-0079",
     "self_symmetric": false,
     "equations": [
       {
@@ -3428,7 +2168,7 @@
     ]
   },
   {
-    "id": "FE-0125",
+    "id": "FE-0080",
     "self_symmetric": false,
     "equations": [
       {
@@ -3456,7 +2196,7 @@
     ]
   },
   {
-    "id": "FE-0126",
+    "id": "FE-0081",
     "self_symmetric": false,
     "equations": [
       {
@@ -3484,7 +2224,7 @@
     ]
   },
   {
-    "id": "FE-0127",
+    "id": "FE-0082",
     "self_symmetric": false,
     "equations": [
       {
@@ -3512,7 +2252,7 @@
     ]
   },
   {
-    "id": "FE-0128",
+    "id": "FE-0083",
     "self_symmetric": false,
     "equations": [
       {
@@ -3540,7 +2280,7 @@
     ]
   },
   {
-    "id": "FE-0129",
+    "id": "FE-0084",
     "self_symmetric": false,
     "equations": [
       {
@@ -3568,7 +2308,7 @@
     ]
   },
   {
-    "id": "FE-0130",
+    "id": "FE-0085",
     "self_symmetric": false,
     "equations": [
       {
@@ -3596,7 +2336,7 @@
     ]
   },
   {
-    "id": "FE-0131",
+    "id": "FE-0086",
     "self_symmetric": false,
     "equations": [
       {
@@ -3624,7 +2364,7 @@
     ]
   },
   {
-    "id": "FE-0132",
+    "id": "FE-0087",
     "self_symmetric": false,
     "equations": [
       {
@@ -3652,7 +2392,7 @@
     ]
   },
   {
-    "id": "FE-0133",
+    "id": "FE-0088",
     "self_symmetric": false,
     "equations": [
       {
@@ -3680,7 +2420,7 @@
     ]
   },
   {
-    "id": "FE-0134",
+    "id": "FE-0089",
     "self_symmetric": false,
     "equations": [
       {
@@ -3708,7 +2448,7 @@
     ]
   },
   {
-    "id": "FE-0135",
+    "id": "FE-0090",
     "self_symmetric": false,
     "equations": [
       {
@@ -3736,7 +2476,7 @@
     ]
   },
   {
-    "id": "FE-0136",
+    "id": "FE-0091",
     "self_symmetric": false,
     "equations": [
       {
@@ -3764,7 +2504,7 @@
     ]
   },
   {
-    "id": "FE-0137",
+    "id": "FE-0092",
     "self_symmetric": false,
     "equations": [
       {
@@ -3792,7 +2532,7 @@
     ]
   },
   {
-    "id": "FE-0138",
+    "id": "FE-0093",
     "self_symmetric": false,
     "equations": [
       {
@@ -3820,7 +2560,7 @@
     ]
   },
   {
-    "id": "FE-0139",
+    "id": "FE-0094",
     "self_symmetric": false,
     "equations": [
       {
@@ -3848,7 +2588,7 @@
     ]
   },
   {
-    "id": "FE-0140",
+    "id": "FE-0095",
     "self_symmetric": false,
     "equations": [
       {
@@ -3876,7 +2616,7 @@
     ]
   },
   {
-    "id": "FE-0141",
+    "id": "FE-0096",
     "self_symmetric": false,
     "equations": [
       {
@@ -3904,7 +2644,7 @@
     ]
   },
   {
-    "id": "FE-0142",
+    "id": "FE-0097",
     "self_symmetric": false,
     "equations": [
       {
@@ -3932,7 +2672,7 @@
     ]
   },
   {
-    "id": "FE-0143",
+    "id": "FE-0098",
     "self_symmetric": false,
     "equations": [
       {
@@ -3960,7 +2700,7 @@
     ]
   },
   {
-    "id": "FE-0144",
+    "id": "FE-0099",
     "self_symmetric": false,
     "equations": [
       {
@@ -3988,7 +2728,7 @@
     ]
   },
   {
-    "id": "FE-0145",
+    "id": "FE-0100",
     "self_symmetric": false,
     "equations": [
       {
@@ -4016,7 +2756,7 @@
     ]
   },
   {
-    "id": "FE-0146",
+    "id": "FE-0101",
     "self_symmetric": false,
     "equations": [
       {
@@ -4044,7 +2784,7 @@
     ]
   },
   {
-    "id": "FE-0147",
+    "id": "FE-0102",
     "self_symmetric": false,
     "equations": [
       {
@@ -4072,7 +2812,7 @@
     ]
   },
   {
-    "id": "FE-0148",
+    "id": "FE-0103",
     "self_symmetric": false,
     "equations": [
       {
@@ -4100,7 +2840,7 @@
     ]
   },
   {
-    "id": "FE-0149",
+    "id": "FE-0104",
     "self_symmetric": false,
     "equations": [
       {
@@ -4128,7 +2868,7 @@
     ]
   },
   {
-    "id": "FE-0150",
+    "id": "FE-0105",
     "self_symmetric": false,
     "equations": [
       {
@@ -4156,7 +2896,7 @@
     ]
   },
   {
-    "id": "FE-0151",
+    "id": "FE-0106",
     "self_symmetric": false,
     "equations": [
       {
@@ -4184,7 +2924,7 @@
     ]
   },
   {
-    "id": "FE-0152",
+    "id": "FE-0107",
     "self_symmetric": false,
     "equations": [
       {
@@ -4212,7 +2952,7 @@
     ]
   },
   {
-    "id": "FE-0153",
+    "id": "FE-0108",
     "self_symmetric": false,
     "equations": [
       {
@@ -4240,7 +2980,7 @@
     ]
   },
   {
-    "id": "FE-0154",
+    "id": "FE-0109",
     "self_symmetric": false,
     "equations": [
       {
@@ -4268,7 +3008,7 @@
     ]
   },
   {
-    "id": "FE-0155",
+    "id": "FE-0110",
     "self_symmetric": false,
     "equations": [
       {
@@ -4296,511 +3036,7 @@
     ]
   },
   {
-    "id": "FE-0156",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "x^2"
-        ],
-        "right": [
-          "x^2",
-          "x^2"
-        ],
-        "display": "f(x^2 + x^2) = x^2 + x^2"
-      },
-      {
-        "left": [
-          "y^2",
-          "y^2"
-        ],
-        "right": [
-          "y^2",
-          "y^2"
-        ],
-        "display": "f(y^2 + y^2) = y^2 + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0157",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "x^2"
-        ],
-        "right": [
-          "x^2",
-          "xf(x)"
-        ],
-        "display": "f(x^2 + x^2) = x^2 + xf(x)"
-      },
-      {
-        "left": [
-          "y^2",
-          "y^2"
-        ],
-        "right": [
-          "y^2",
-          "yf(y)"
-        ],
-        "display": "f(y^2 + y^2) = y^2 + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0158",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "x^2"
-        ],
-        "right": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "display": "f(x^2 + x^2) = x^2 + f(x^2)"
-      },
-      {
-        "left": [
-          "y^2",
-          "y^2"
-        ],
-        "right": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "display": "f(y^2 + y^2) = y^2 + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0159",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "x^2"
-        ],
-        "right": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "display": "f(x^2 + x^2) = xf(x) + xf(x)"
-      },
-      {
-        "left": [
-          "y^2",
-          "y^2"
-        ],
-        "right": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "display": "f(y^2 + y^2) = yf(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0160",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "x^2"
-        ],
-        "right": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "display": "f(x^2 + x^2) = xf(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "y^2",
-          "y^2"
-        ],
-        "right": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "display": "f(y^2 + y^2) = yf(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0161",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "x^2"
-        ],
-        "right": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "display": "f(x^2 + x^2) = f(x^2) + f(x^2)"
-      },
-      {
-        "left": [
-          "y^2",
-          "y^2"
-        ],
-        "right": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "display": "f(y^2 + y^2) = f(y^2) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0162",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "xf(x)"
-        ],
-        "right": [
-          "x^2",
-          "x^2"
-        ],
-        "display": "f(x^2 + xf(x)) = x^2 + x^2"
-      },
-      {
-        "left": [
-          "y^2",
-          "yf(y)"
-        ],
-        "right": [
-          "y^2",
-          "y^2"
-        ],
-        "display": "f(y^2 + yf(y)) = y^2 + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0163",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "xf(x)"
-        ],
-        "right": [
-          "x^2",
-          "xf(x)"
-        ],
-        "display": "f(x^2 + xf(x)) = x^2 + xf(x)"
-      },
-      {
-        "left": [
-          "y^2",
-          "yf(y)"
-        ],
-        "right": [
-          "y^2",
-          "yf(y)"
-        ],
-        "display": "f(y^2 + yf(y)) = y^2 + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0164",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "xf(x)"
-        ],
-        "right": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "display": "f(x^2 + xf(x)) = x^2 + f(x^2)"
-      },
-      {
-        "left": [
-          "y^2",
-          "yf(y)"
-        ],
-        "right": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "display": "f(y^2 + yf(y)) = y^2 + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0165",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "xf(x)"
-        ],
-        "right": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "display": "f(x^2 + xf(x)) = xf(x) + xf(x)"
-      },
-      {
-        "left": [
-          "y^2",
-          "yf(y)"
-        ],
-        "right": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "display": "f(y^2 + yf(y)) = yf(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0166",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "xf(x)"
-        ],
-        "right": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "display": "f(x^2 + xf(x)) = xf(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "y^2",
-          "yf(y)"
-        ],
-        "right": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "display": "f(y^2 + yf(y)) = yf(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0167",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "xf(x)"
-        ],
-        "right": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "display": "f(x^2 + xf(x)) = f(x^2) + f(x^2)"
-      },
-      {
-        "left": [
-          "y^2",
-          "yf(y)"
-        ],
-        "right": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "display": "f(y^2 + yf(y)) = f(y^2) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0168",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "right": [
-          "x^2",
-          "x^2"
-        ],
-        "display": "f(x^2 + f(x^2)) = x^2 + x^2"
-      },
-      {
-        "left": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "right": [
-          "y^2",
-          "y^2"
-        ],
-        "display": "f(y^2 + f(y^2)) = y^2 + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0169",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "right": [
-          "x^2",
-          "xf(x)"
-        ],
-        "display": "f(x^2 + f(x^2)) = x^2 + xf(x)"
-      },
-      {
-        "left": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "right": [
-          "y^2",
-          "yf(y)"
-        ],
-        "display": "f(y^2 + f(y^2)) = y^2 + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0170",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "right": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "display": "f(x^2 + f(x^2)) = x^2 + f(x^2)"
-      },
-      {
-        "left": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "right": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "display": "f(y^2 + f(y^2)) = y^2 + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0171",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "right": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "display": "f(x^2 + f(x^2)) = xf(x) + xf(x)"
-      },
-      {
-        "left": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "right": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "display": "f(y^2 + f(y^2)) = yf(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0172",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "right": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "display": "f(x^2 + f(x^2)) = xf(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "right": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "display": "f(y^2 + f(y^2)) = yf(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0173",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "right": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "display": "f(x^2 + f(x^2)) = f(x^2) + f(x^2)"
-      },
-      {
-        "left": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "right": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "display": "f(y^2 + f(y^2)) = f(y^2) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0174",
+    "id": "FE-0111",
     "self_symmetric": true,
     "equations": [
       {
@@ -4817,7 +3053,7 @@
     ]
   },
   {
-    "id": "FE-0175",
+    "id": "FE-0112",
     "self_symmetric": false,
     "equations": [
       {
@@ -4845,7 +3081,7 @@
     ]
   },
   {
-    "id": "FE-0176",
+    "id": "FE-0113",
     "self_symmetric": false,
     "equations": [
       {
@@ -4873,7 +3109,7 @@
     ]
   },
   {
-    "id": "FE-0177",
+    "id": "FE-0114",
     "self_symmetric": true,
     "equations": [
       {
@@ -4890,7 +3126,7 @@
     ]
   },
   {
-    "id": "FE-0178",
+    "id": "FE-0115",
     "self_symmetric": false,
     "equations": [
       {
@@ -4918,7 +3154,7 @@
     ]
   },
   {
-    "id": "FE-0179",
+    "id": "FE-0116",
     "self_symmetric": true,
     "equations": [
       {
@@ -4935,7 +3171,7 @@
     ]
   },
   {
-    "id": "FE-0180",
+    "id": "FE-0117",
     "self_symmetric": false,
     "equations": [
       {
@@ -4963,7 +3199,7 @@
     ]
   },
   {
-    "id": "FE-0181",
+    "id": "FE-0118",
     "self_symmetric": false,
     "equations": [
       {
@@ -4991,7 +3227,7 @@
     ]
   },
   {
-    "id": "FE-0182",
+    "id": "FE-0119",
     "self_symmetric": false,
     "equations": [
       {
@@ -5019,7 +3255,7 @@
     ]
   },
   {
-    "id": "FE-0183",
+    "id": "FE-0120",
     "self_symmetric": false,
     "equations": [
       {
@@ -5047,7 +3283,7 @@
     ]
   },
   {
-    "id": "FE-0184",
+    "id": "FE-0121",
     "self_symmetric": false,
     "equations": [
       {
@@ -5075,7 +3311,7 @@
     ]
   },
   {
-    "id": "FE-0185",
+    "id": "FE-0122",
     "self_symmetric": false,
     "equations": [
       {
@@ -5103,7 +3339,7 @@
     ]
   },
   {
-    "id": "FE-0186",
+    "id": "FE-0123",
     "self_symmetric": false,
     "equations": [
       {
@@ -5131,7 +3367,7 @@
     ]
   },
   {
-    "id": "FE-0187",
+    "id": "FE-0124",
     "self_symmetric": false,
     "equations": [
       {
@@ -5159,7 +3395,7 @@
     ]
   },
   {
-    "id": "FE-0188",
+    "id": "FE-0125",
     "self_symmetric": false,
     "equations": [
       {
@@ -5187,7 +3423,7 @@
     ]
   },
   {
-    "id": "FE-0189",
+    "id": "FE-0126",
     "self_symmetric": false,
     "equations": [
       {
@@ -5215,7 +3451,7 @@
     ]
   },
   {
-    "id": "FE-0190",
+    "id": "FE-0127",
     "self_symmetric": false,
     "equations": [
       {
@@ -5243,7 +3479,7 @@
     ]
   },
   {
-    "id": "FE-0191",
+    "id": "FE-0128",
     "self_symmetric": false,
     "equations": [
       {
@@ -5271,7 +3507,7 @@
     ]
   },
   {
-    "id": "FE-0192",
+    "id": "FE-0129",
     "self_symmetric": false,
     "equations": [
       {
@@ -5299,7 +3535,7 @@
     ]
   },
   {
-    "id": "FE-0193",
+    "id": "FE-0130",
     "self_symmetric": false,
     "equations": [
       {
@@ -5327,7 +3563,7 @@
     ]
   },
   {
-    "id": "FE-0194",
+    "id": "FE-0131",
     "self_symmetric": false,
     "equations": [
       {
@@ -5355,7 +3591,7 @@
     ]
   },
   {
-    "id": "FE-0195",
+    "id": "FE-0132",
     "self_symmetric": false,
     "equations": [
       {
@@ -5383,7 +3619,7 @@
     ]
   },
   {
-    "id": "FE-0196",
+    "id": "FE-0133",
     "self_symmetric": false,
     "equations": [
       {
@@ -5411,7 +3647,7 @@
     ]
   },
   {
-    "id": "FE-0197",
+    "id": "FE-0134",
     "self_symmetric": false,
     "equations": [
       {
@@ -5439,7 +3675,7 @@
     ]
   },
   {
-    "id": "FE-0198",
+    "id": "FE-0135",
     "self_symmetric": false,
     "equations": [
       {
@@ -5467,7 +3703,7 @@
     ]
   },
   {
-    "id": "FE-0199",
+    "id": "FE-0136",
     "self_symmetric": false,
     "equations": [
       {
@@ -5495,7 +3731,7 @@
     ]
   },
   {
-    "id": "FE-0200",
+    "id": "FE-0137",
     "self_symmetric": false,
     "equations": [
       {
@@ -5523,7 +3759,7 @@
     ]
   },
   {
-    "id": "FE-0201",
+    "id": "FE-0138",
     "self_symmetric": false,
     "equations": [
       {
@@ -5551,7 +3787,7 @@
     ]
   },
   {
-    "id": "FE-0202",
+    "id": "FE-0139",
     "self_symmetric": false,
     "equations": [
       {
@@ -5579,7 +3815,7 @@
     ]
   },
   {
-    "id": "FE-0203",
+    "id": "FE-0140",
     "self_symmetric": false,
     "equations": [
       {
@@ -5607,7 +3843,7 @@
     ]
   },
   {
-    "id": "FE-0204",
+    "id": "FE-0141",
     "self_symmetric": false,
     "equations": [
       {
@@ -5635,7 +3871,7 @@
     ]
   },
   {
-    "id": "FE-0205",
+    "id": "FE-0142",
     "self_symmetric": false,
     "equations": [
       {
@@ -5663,7 +3899,7 @@
     ]
   },
   {
-    "id": "FE-0206",
+    "id": "FE-0143",
     "self_symmetric": false,
     "equations": [
       {
@@ -5691,7 +3927,7 @@
     ]
   },
   {
-    "id": "FE-0207",
+    "id": "FE-0144",
     "self_symmetric": false,
     "equations": [
       {
@@ -5719,7 +3955,7 @@
     ]
   },
   {
-    "id": "FE-0208",
+    "id": "FE-0145",
     "self_symmetric": false,
     "equations": [
       {
@@ -5747,7 +3983,7 @@
     ]
   },
   {
-    "id": "FE-0209",
+    "id": "FE-0146",
     "self_symmetric": false,
     "equations": [
       {
@@ -5775,7 +4011,7 @@
     ]
   },
   {
-    "id": "FE-0210",
+    "id": "FE-0147",
     "self_symmetric": false,
     "equations": [
       {
@@ -5803,7 +4039,7 @@
     ]
   },
   {
-    "id": "FE-0211",
+    "id": "FE-0148",
     "self_symmetric": false,
     "equations": [
       {
@@ -5831,7 +4067,7 @@
     ]
   },
   {
-    "id": "FE-0212",
+    "id": "FE-0149",
     "self_symmetric": false,
     "equations": [
       {
@@ -5859,7 +4095,7 @@
     ]
   },
   {
-    "id": "FE-0213",
+    "id": "FE-0150",
     "self_symmetric": false,
     "equations": [
       {
@@ -5887,7 +4123,7 @@
     ]
   },
   {
-    "id": "FE-0214",
+    "id": "FE-0151",
     "self_symmetric": false,
     "equations": [
       {
@@ -5915,7 +4151,7 @@
     ]
   },
   {
-    "id": "FE-0215",
+    "id": "FE-0152",
     "self_symmetric": false,
     "equations": [
       {
@@ -5943,7 +4179,7 @@
     ]
   },
   {
-    "id": "FE-0216",
+    "id": "FE-0153",
     "self_symmetric": false,
     "equations": [
       {
@@ -5971,7 +4207,7 @@
     ]
   },
   {
-    "id": "FE-0217",
+    "id": "FE-0154",
     "self_symmetric": false,
     "equations": [
       {
@@ -5999,7 +4235,7 @@
     ]
   },
   {
-    "id": "FE-0218",
+    "id": "FE-0155",
     "self_symmetric": false,
     "equations": [
       {
@@ -6027,7 +4263,7 @@
     ]
   },
   {
-    "id": "FE-0219",
+    "id": "FE-0156",
     "self_symmetric": false,
     "equations": [
       {
@@ -6055,7 +4291,7 @@
     ]
   },
   {
-    "id": "FE-0220",
+    "id": "FE-0157",
     "self_symmetric": false,
     "equations": [
       {
@@ -6083,7 +4319,7 @@
     ]
   },
   {
-    "id": "FE-0221",
+    "id": "FE-0158",
     "self_symmetric": false,
     "equations": [
       {
@@ -6111,7 +4347,7 @@
     ]
   },
   {
-    "id": "FE-0222",
+    "id": "FE-0159",
     "self_symmetric": false,
     "equations": [
       {
@@ -6139,7 +4375,7 @@
     ]
   },
   {
-    "id": "FE-0223",
+    "id": "FE-0160",
     "self_symmetric": false,
     "equations": [
       {
@@ -6167,7 +4403,7 @@
     ]
   },
   {
-    "id": "FE-0224",
+    "id": "FE-0161",
     "self_symmetric": false,
     "equations": [
       {
@@ -6195,7 +4431,7 @@
     ]
   },
   {
-    "id": "FE-0225",
+    "id": "FE-0162",
     "self_symmetric": false,
     "equations": [
       {
@@ -6223,7 +4459,7 @@
     ]
   },
   {
-    "id": "FE-0226",
+    "id": "FE-0163",
     "self_symmetric": false,
     "equations": [
       {
@@ -6251,7 +4487,7 @@
     ]
   },
   {
-    "id": "FE-0227",
+    "id": "FE-0164",
     "self_symmetric": false,
     "equations": [
       {
@@ -6279,7 +4515,7 @@
     ]
   },
   {
-    "id": "FE-0228",
+    "id": "FE-0165",
     "self_symmetric": false,
     "equations": [
       {
@@ -6307,7 +4543,7 @@
     ]
   },
   {
-    "id": "FE-0229",
+    "id": "FE-0166",
     "self_symmetric": false,
     "equations": [
       {
@@ -6335,7 +4571,7 @@
     ]
   },
   {
-    "id": "FE-0230",
+    "id": "FE-0167",
     "self_symmetric": false,
     "equations": [
       {
@@ -6363,7 +4599,7 @@
     ]
   },
   {
-    "id": "FE-0231",
+    "id": "FE-0168",
     "self_symmetric": false,
     "equations": [
       {
@@ -6391,7 +4627,7 @@
     ]
   },
   {
-    "id": "FE-0232",
+    "id": "FE-0169",
     "self_symmetric": false,
     "equations": [
       {
@@ -6419,7 +4655,7 @@
     ]
   },
   {
-    "id": "FE-0233",
+    "id": "FE-0170",
     "self_symmetric": false,
     "equations": [
       {
@@ -6447,7 +4683,7 @@
     ]
   },
   {
-    "id": "FE-0234",
+    "id": "FE-0171",
     "self_symmetric": false,
     "equations": [
       {
@@ -6475,7 +4711,7 @@
     ]
   },
   {
-    "id": "FE-0235",
+    "id": "FE-0172",
     "self_symmetric": false,
     "equations": [
       {
@@ -6503,7 +4739,7 @@
     ]
   },
   {
-    "id": "FE-0236",
+    "id": "FE-0173",
     "self_symmetric": false,
     "equations": [
       {
@@ -6531,7 +4767,7 @@
     ]
   },
   {
-    "id": "FE-0237",
+    "id": "FE-0174",
     "self_symmetric": false,
     "equations": [
       {
@@ -6559,7 +4795,7 @@
     ]
   },
   {
-    "id": "FE-0238",
+    "id": "FE-0175",
     "self_symmetric": false,
     "equations": [
       {
@@ -6587,7 +4823,7 @@
     ]
   },
   {
-    "id": "FE-0239",
+    "id": "FE-0176",
     "self_symmetric": false,
     "equations": [
       {
@@ -6615,7 +4851,7 @@
     ]
   },
   {
-    "id": "FE-0240",
+    "id": "FE-0177",
     "self_symmetric": false,
     "equations": [
       {
@@ -6643,7 +4879,7 @@
     ]
   },
   {
-    "id": "FE-0241",
+    "id": "FE-0178",
     "self_symmetric": false,
     "equations": [
       {
@@ -6671,7 +4907,7 @@
     ]
   },
   {
-    "id": "FE-0242",
+    "id": "FE-0179",
     "self_symmetric": false,
     "equations": [
       {
@@ -6699,7 +4935,7 @@
     ]
   },
   {
-    "id": "FE-0243",
+    "id": "FE-0180",
     "self_symmetric": false,
     "equations": [
       {
@@ -6727,7 +4963,7 @@
     ]
   },
   {
-    "id": "FE-0244",
+    "id": "FE-0181",
     "self_symmetric": false,
     "equations": [
       {
@@ -6755,7 +4991,7 @@
     ]
   },
   {
-    "id": "FE-0245",
+    "id": "FE-0182",
     "self_symmetric": false,
     "equations": [
       {
@@ -6783,343 +5019,7 @@
     ]
   },
   {
-    "id": "FE-0246",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "x^2",
-          "x^2"
-        ],
-        "display": "f(xf(x) + xf(x)) = x^2 + x^2"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "y^2",
-          "y^2"
-        ],
-        "display": "f(yf(y) + yf(y)) = y^2 + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0247",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "x^2",
-          "xf(x)"
-        ],
-        "display": "f(xf(x) + xf(x)) = x^2 + xf(x)"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "y^2",
-          "yf(y)"
-        ],
-        "display": "f(yf(y) + yf(y)) = y^2 + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0248",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "display": "f(xf(x) + xf(x)) = x^2 + f(x^2)"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "display": "f(yf(y) + yf(y)) = y^2 + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0249",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "display": "f(xf(x) + xf(x)) = xf(x) + xf(x)"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "display": "f(yf(y) + yf(y)) = yf(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0250",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "display": "f(xf(x) + xf(x)) = xf(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "display": "f(yf(y) + yf(y)) = yf(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0251",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "right": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "display": "f(xf(x) + xf(x)) = f(x^2) + f(x^2)"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "right": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "display": "f(yf(y) + yf(y)) = f(y^2) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0252",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "x^2",
-          "x^2"
-        ],
-        "display": "f(xf(x) + f(x^2)) = x^2 + x^2"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "y^2",
-          "y^2"
-        ],
-        "display": "f(yf(y) + f(y^2)) = y^2 + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0253",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "x^2",
-          "xf(x)"
-        ],
-        "display": "f(xf(x) + f(x^2)) = x^2 + xf(x)"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "y^2",
-          "yf(y)"
-        ],
-        "display": "f(yf(y) + f(y^2)) = y^2 + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0254",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "display": "f(xf(x) + f(x^2)) = x^2 + f(x^2)"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "display": "f(yf(y) + f(y^2)) = y^2 + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0255",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "display": "f(xf(x) + f(x^2)) = xf(x) + xf(x)"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "display": "f(yf(y) + f(y^2)) = yf(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0256",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "display": "f(xf(x) + f(x^2)) = xf(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "display": "f(yf(y) + f(y^2)) = yf(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0257",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "right": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "display": "f(xf(x) + f(x^2)) = f(x^2) + f(x^2)"
-      },
-      {
-        "left": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "right": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "display": "f(yf(y) + f(y^2)) = f(y^2) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0258",
+    "id": "FE-0183",
     "self_symmetric": true,
     "equations": [
       {
@@ -7136,7 +5036,7 @@
     ]
   },
   {
-    "id": "FE-0259",
+    "id": "FE-0184",
     "self_symmetric": false,
     "equations": [
       {
@@ -7164,7 +5064,7 @@
     ]
   },
   {
-    "id": "FE-0260",
+    "id": "FE-0185",
     "self_symmetric": false,
     "equations": [
       {
@@ -7192,7 +5092,7 @@
     ]
   },
   {
-    "id": "FE-0261",
+    "id": "FE-0186",
     "self_symmetric": true,
     "equations": [
       {
@@ -7209,7 +5109,7 @@
     ]
   },
   {
-    "id": "FE-0262",
+    "id": "FE-0187",
     "self_symmetric": false,
     "equations": [
       {
@@ -7237,7 +5137,7 @@
     ]
   },
   {
-    "id": "FE-0263",
+    "id": "FE-0188",
     "self_symmetric": true,
     "equations": [
       {
@@ -7254,7 +5154,7 @@
     ]
   },
   {
-    "id": "FE-0264",
+    "id": "FE-0189",
     "self_symmetric": false,
     "equations": [
       {
@@ -7282,7 +5182,7 @@
     ]
   },
   {
-    "id": "FE-0265",
+    "id": "FE-0190",
     "self_symmetric": false,
     "equations": [
       {
@@ -7310,7 +5210,7 @@
     ]
   },
   {
-    "id": "FE-0266",
+    "id": "FE-0191",
     "self_symmetric": false,
     "equations": [
       {
@@ -7338,7 +5238,7 @@
     ]
   },
   {
-    "id": "FE-0267",
+    "id": "FE-0192",
     "self_symmetric": false,
     "equations": [
       {
@@ -7366,7 +5266,7 @@
     ]
   },
   {
-    "id": "FE-0268",
+    "id": "FE-0193",
     "self_symmetric": false,
     "equations": [
       {
@@ -7394,7 +5294,7 @@
     ]
   },
   {
-    "id": "FE-0269",
+    "id": "FE-0194",
     "self_symmetric": false,
     "equations": [
       {
@@ -7422,7 +5322,7 @@
     ]
   },
   {
-    "id": "FE-0270",
+    "id": "FE-0195",
     "self_symmetric": false,
     "equations": [
       {
@@ -7450,7 +5350,7 @@
     ]
   },
   {
-    "id": "FE-0271",
+    "id": "FE-0196",
     "self_symmetric": false,
     "equations": [
       {
@@ -7478,7 +5378,7 @@
     ]
   },
   {
-    "id": "FE-0272",
+    "id": "FE-0197",
     "self_symmetric": false,
     "equations": [
       {
@@ -7506,7 +5406,7 @@
     ]
   },
   {
-    "id": "FE-0273",
+    "id": "FE-0198",
     "self_symmetric": false,
     "equations": [
       {
@@ -7534,7 +5434,7 @@
     ]
   },
   {
-    "id": "FE-0274",
+    "id": "FE-0199",
     "self_symmetric": false,
     "equations": [
       {
@@ -7562,7 +5462,7 @@
     ]
   },
   {
-    "id": "FE-0275",
+    "id": "FE-0200",
     "self_symmetric": false,
     "equations": [
       {
@@ -7590,7 +5490,7 @@
     ]
   },
   {
-    "id": "FE-0276",
+    "id": "FE-0201",
     "self_symmetric": false,
     "equations": [
       {
@@ -7618,7 +5518,7 @@
     ]
   },
   {
-    "id": "FE-0277",
+    "id": "FE-0202",
     "self_symmetric": false,
     "equations": [
       {
@@ -7646,7 +5546,7 @@
     ]
   },
   {
-    "id": "FE-0278",
+    "id": "FE-0203",
     "self_symmetric": false,
     "equations": [
       {
@@ -7674,7 +5574,7 @@
     ]
   },
   {
-    "id": "FE-0279",
+    "id": "FE-0204",
     "self_symmetric": false,
     "equations": [
       {
@@ -7702,7 +5602,7 @@
     ]
   },
   {
-    "id": "FE-0280",
+    "id": "FE-0205",
     "self_symmetric": false,
     "equations": [
       {
@@ -7730,7 +5630,7 @@
     ]
   },
   {
-    "id": "FE-0281",
+    "id": "FE-0206",
     "self_symmetric": false,
     "equations": [
       {
@@ -7758,7 +5658,7 @@
     ]
   },
   {
-    "id": "FE-0282",
+    "id": "FE-0207",
     "self_symmetric": false,
     "equations": [
       {
@@ -7786,7 +5686,7 @@
     ]
   },
   {
-    "id": "FE-0283",
+    "id": "FE-0208",
     "self_symmetric": false,
     "equations": [
       {
@@ -7814,7 +5714,7 @@
     ]
   },
   {
-    "id": "FE-0284",
+    "id": "FE-0209",
     "self_symmetric": false,
     "equations": [
       {
@@ -7842,7 +5742,7 @@
     ]
   },
   {
-    "id": "FE-0285",
+    "id": "FE-0210",
     "self_symmetric": false,
     "equations": [
       {
@@ -7870,7 +5770,7 @@
     ]
   },
   {
-    "id": "FE-0286",
+    "id": "FE-0211",
     "self_symmetric": false,
     "equations": [
       {
@@ -7898,7 +5798,7 @@
     ]
   },
   {
-    "id": "FE-0287",
+    "id": "FE-0212",
     "self_symmetric": false,
     "equations": [
       {
@@ -7926,7 +5826,7 @@
     ]
   },
   {
-    "id": "FE-0288",
+    "id": "FE-0213",
     "self_symmetric": false,
     "equations": [
       {
@@ -7954,7 +5854,7 @@
     ]
   },
   {
-    "id": "FE-0289",
+    "id": "FE-0214",
     "self_symmetric": false,
     "equations": [
       {
@@ -7982,7 +5882,7 @@
     ]
   },
   {
-    "id": "FE-0290",
+    "id": "FE-0215",
     "self_symmetric": false,
     "equations": [
       {
@@ -8010,7 +5910,7 @@
     ]
   },
   {
-    "id": "FE-0291",
+    "id": "FE-0216",
     "self_symmetric": false,
     "equations": [
       {
@@ -8038,7 +5938,7 @@
     ]
   },
   {
-    "id": "FE-0292",
+    "id": "FE-0217",
     "self_symmetric": false,
     "equations": [
       {
@@ -8066,7 +5966,7 @@
     ]
   },
   {
-    "id": "FE-0293",
+    "id": "FE-0218",
     "self_symmetric": false,
     "equations": [
       {
@@ -8094,7 +5994,7 @@
     ]
   },
   {
-    "id": "FE-0294",
+    "id": "FE-0219",
     "self_symmetric": false,
     "equations": [
       {
@@ -8122,7 +6022,7 @@
     ]
   },
   {
-    "id": "FE-0295",
+    "id": "FE-0220",
     "self_symmetric": false,
     "equations": [
       {
@@ -8150,7 +6050,7 @@
     ]
   },
   {
-    "id": "FE-0296",
+    "id": "FE-0221",
     "self_symmetric": false,
     "equations": [
       {
@@ -8178,7 +6078,7 @@
     ]
   },
   {
-    "id": "FE-0297",
+    "id": "FE-0222",
     "self_symmetric": false,
     "equations": [
       {
@@ -8206,7 +6106,7 @@
     ]
   },
   {
-    "id": "FE-0298",
+    "id": "FE-0223",
     "self_symmetric": false,
     "equations": [
       {
@@ -8234,7 +6134,7 @@
     ]
   },
   {
-    "id": "FE-0299",
+    "id": "FE-0224",
     "self_symmetric": false,
     "equations": [
       {
@@ -8262,7 +6162,7 @@
     ]
   },
   {
-    "id": "FE-0300",
+    "id": "FE-0225",
     "self_symmetric": false,
     "equations": [
       {
@@ -8290,7 +6190,7 @@
     ]
   },
   {
-    "id": "FE-0301",
+    "id": "FE-0226",
     "self_symmetric": false,
     "equations": [
       {
@@ -8318,7 +6218,7 @@
     ]
   },
   {
-    "id": "FE-0302",
+    "id": "FE-0227",
     "self_symmetric": false,
     "equations": [
       {
@@ -8346,7 +6246,7 @@
     ]
   },
   {
-    "id": "FE-0303",
+    "id": "FE-0228",
     "self_symmetric": false,
     "equations": [
       {
@@ -8374,7 +6274,7 @@
     ]
   },
   {
-    "id": "FE-0304",
+    "id": "FE-0229",
     "self_symmetric": false,
     "equations": [
       {
@@ -8402,7 +6302,7 @@
     ]
   },
   {
-    "id": "FE-0305",
+    "id": "FE-0230",
     "self_symmetric": false,
     "equations": [
       {
@@ -8430,7 +6330,7 @@
     ]
   },
   {
-    "id": "FE-0306",
+    "id": "FE-0231",
     "self_symmetric": false,
     "equations": [
       {
@@ -8458,7 +6358,7 @@
     ]
   },
   {
-    "id": "FE-0307",
+    "id": "FE-0232",
     "self_symmetric": false,
     "equations": [
       {
@@ -8486,7 +6386,7 @@
     ]
   },
   {
-    "id": "FE-0308",
+    "id": "FE-0233",
     "self_symmetric": false,
     "equations": [
       {
@@ -8514,7 +6414,7 @@
     ]
   },
   {
-    "id": "FE-0309",
+    "id": "FE-0234",
     "self_symmetric": false,
     "equations": [
       {
@@ -8542,7 +6442,7 @@
     ]
   },
   {
-    "id": "FE-0310",
+    "id": "FE-0235",
     "self_symmetric": false,
     "equations": [
       {
@@ -8570,7 +6470,7 @@
     ]
   },
   {
-    "id": "FE-0311",
+    "id": "FE-0236",
     "self_symmetric": false,
     "equations": [
       {
@@ -8598,7 +6498,7 @@
     ]
   },
   {
-    "id": "FE-0312",
+    "id": "FE-0237",
     "self_symmetric": false,
     "equations": [
       {
@@ -8626,7 +6526,7 @@
     ]
   },
   {
-    "id": "FE-0313",
+    "id": "FE-0238",
     "self_symmetric": false,
     "equations": [
       {
@@ -8654,7 +6554,7 @@
     ]
   },
   {
-    "id": "FE-0314",
+    "id": "FE-0239",
     "self_symmetric": false,
     "equations": [
       {
@@ -8682,7 +6582,7 @@
     ]
   },
   {
-    "id": "FE-0315",
+    "id": "FE-0240",
     "self_symmetric": false,
     "equations": [
       {
@@ -8710,7 +6610,7 @@
     ]
   },
   {
-    "id": "FE-0316",
+    "id": "FE-0241",
     "self_symmetric": false,
     "equations": [
       {
@@ -8738,7 +6638,7 @@
     ]
   },
   {
-    "id": "FE-0317",
+    "id": "FE-0242",
     "self_symmetric": false,
     "equations": [
       {
@@ -8766,7 +6666,7 @@
     ]
   },
   {
-    "id": "FE-0318",
+    "id": "FE-0243",
     "self_symmetric": false,
     "equations": [
       {
@@ -8794,7 +6694,7 @@
     ]
   },
   {
-    "id": "FE-0319",
+    "id": "FE-0244",
     "self_symmetric": false,
     "equations": [
       {
@@ -8822,7 +6722,7 @@
     ]
   },
   {
-    "id": "FE-0320",
+    "id": "FE-0245",
     "self_symmetric": false,
     "equations": [
       {
@@ -8850,175 +6750,7 @@
     ]
   },
   {
-    "id": "FE-0321",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "right": [
-          "x^2",
-          "x^2"
-        ],
-        "display": "f(f(x^2) + f(x^2)) = x^2 + x^2"
-      },
-      {
-        "left": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "right": [
-          "y^2",
-          "y^2"
-        ],
-        "display": "f(f(y^2) + f(y^2)) = y^2 + y^2"
-      }
-    ]
-  },
-  {
-    "id": "FE-0322",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "right": [
-          "x^2",
-          "xf(x)"
-        ],
-        "display": "f(f(x^2) + f(x^2)) = x^2 + xf(x)"
-      },
-      {
-        "left": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "right": [
-          "y^2",
-          "yf(y)"
-        ],
-        "display": "f(f(y^2) + f(y^2)) = y^2 + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0323",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "right": [
-          "x^2",
-          "f(x^2)"
-        ],
-        "display": "f(f(x^2) + f(x^2)) = x^2 + f(x^2)"
-      },
-      {
-        "left": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "right": [
-          "y^2",
-          "f(y^2)"
-        ],
-        "display": "f(f(y^2) + f(y^2)) = y^2 + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0324",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "right": [
-          "xf(x)",
-          "xf(x)"
-        ],
-        "display": "f(f(x^2) + f(x^2)) = xf(x) + xf(x)"
-      },
-      {
-        "left": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "right": [
-          "yf(y)",
-          "yf(y)"
-        ],
-        "display": "f(f(y^2) + f(y^2)) = yf(y) + yf(y)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0325",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "right": [
-          "xf(x)",
-          "f(x^2)"
-        ],
-        "display": "f(f(x^2) + f(x^2)) = xf(x) + f(x^2)"
-      },
-      {
-        "left": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "right": [
-          "yf(y)",
-          "f(y^2)"
-        ],
-        "display": "f(f(y^2) + f(y^2)) = yf(y) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0326",
-    "self_symmetric": false,
-    "equations": [
-      {
-        "left": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "right": [
-          "f(x^2)",
-          "f(x^2)"
-        ],
-        "display": "f(f(x^2) + f(x^2)) = f(x^2) + f(x^2)"
-      },
-      {
-        "left": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "right": [
-          "f(y^2)",
-          "f(y^2)"
-        ],
-        "display": "f(f(y^2) + f(y^2)) = f(y^2) + f(y^2)"
-      }
-    ]
-  },
-  {
-    "id": "FE-0327",
+    "id": "FE-0246",
     "self_symmetric": true,
     "equations": [
       {
@@ -9035,7 +6767,7 @@
     ]
   },
   {
-    "id": "FE-0328",
+    "id": "FE-0247",
     "self_symmetric": false,
     "equations": [
       {
@@ -9063,7 +6795,7 @@
     ]
   },
   {
-    "id": "FE-0329",
+    "id": "FE-0248",
     "self_symmetric": false,
     "equations": [
       {
@@ -9091,7 +6823,7 @@
     ]
   },
   {
-    "id": "FE-0330",
+    "id": "FE-0249",
     "self_symmetric": true,
     "equations": [
       {
@@ -9108,7 +6840,7 @@
     ]
   },
   {
-    "id": "FE-0331",
+    "id": "FE-0250",
     "self_symmetric": false,
     "equations": [
       {
@@ -9136,7 +6868,7 @@
     ]
   },
   {
-    "id": "FE-0332",
+    "id": "FE-0251",
     "self_symmetric": true,
     "equations": [
       {
@@ -9153,7 +6885,7 @@
     ]
   },
   {
-    "id": "FE-0333",
+    "id": "FE-0252",
     "self_symmetric": false,
     "equations": [
       {
@@ -9181,7 +6913,7 @@
     ]
   },
   {
-    "id": "FE-0334",
+    "id": "FE-0253",
     "self_symmetric": false,
     "equations": [
       {
@@ -9209,7 +6941,7 @@
     ]
   },
   {
-    "id": "FE-0335",
+    "id": "FE-0254",
     "self_symmetric": false,
     "equations": [
       {
@@ -9237,7 +6969,7 @@
     ]
   },
   {
-    "id": "FE-0336",
+    "id": "FE-0255",
     "self_symmetric": false,
     "equations": [
       {
@@ -9265,7 +6997,7 @@
     ]
   },
   {
-    "id": "FE-0337",
+    "id": "FE-0256",
     "self_symmetric": false,
     "equations": [
       {
@@ -9293,7 +7025,7 @@
     ]
   },
   {
-    "id": "FE-0338",
+    "id": "FE-0257",
     "self_symmetric": false,
     "equations": [
       {
@@ -9321,7 +7053,7 @@
     ]
   },
   {
-    "id": "FE-0339",
+    "id": "FE-0258",
     "self_symmetric": false,
     "equations": [
       {
@@ -9349,7 +7081,7 @@
     ]
   },
   {
-    "id": "FE-0340",
+    "id": "FE-0259",
     "self_symmetric": false,
     "equations": [
       {
@@ -9377,7 +7109,7 @@
     ]
   },
   {
-    "id": "FE-0341",
+    "id": "FE-0260",
     "self_symmetric": false,
     "equations": [
       {
@@ -9405,7 +7137,7 @@
     ]
   },
   {
-    "id": "FE-0342",
+    "id": "FE-0261",
     "self_symmetric": false,
     "equations": [
       {
@@ -9433,7 +7165,7 @@
     ]
   },
   {
-    "id": "FE-0343",
+    "id": "FE-0262",
     "self_symmetric": false,
     "equations": [
       {
@@ -9461,7 +7193,7 @@
     ]
   },
   {
-    "id": "FE-0344",
+    "id": "FE-0263",
     "self_symmetric": false,
     "equations": [
       {
@@ -9489,7 +7221,7 @@
     ]
   },
   {
-    "id": "FE-0345",
+    "id": "FE-0264",
     "self_symmetric": false,
     "equations": [
       {
@@ -9517,7 +7249,7 @@
     ]
   },
   {
-    "id": "FE-0346",
+    "id": "FE-0265",
     "self_symmetric": false,
     "equations": [
       {
@@ -9545,7 +7277,7 @@
     ]
   },
   {
-    "id": "FE-0347",
+    "id": "FE-0266",
     "self_symmetric": false,
     "equations": [
       {
@@ -9573,7 +7305,7 @@
     ]
   },
   {
-    "id": "FE-0348",
+    "id": "FE-0267",
     "self_symmetric": false,
     "equations": [
       {
@@ -9601,7 +7333,7 @@
     ]
   },
   {
-    "id": "FE-0349",
+    "id": "FE-0268",
     "self_symmetric": false,
     "equations": [
       {
@@ -9629,7 +7361,7 @@
     ]
   },
   {
-    "id": "FE-0350",
+    "id": "FE-0269",
     "self_symmetric": false,
     "equations": [
       {
@@ -9657,7 +7389,7 @@
     ]
   },
   {
-    "id": "FE-0351",
+    "id": "FE-0270",
     "self_symmetric": false,
     "equations": [
       {
@@ -9685,7 +7417,7 @@
     ]
   },
   {
-    "id": "FE-0352",
+    "id": "FE-0271",
     "self_symmetric": false,
     "equations": [
       {
@@ -9713,7 +7445,7 @@
     ]
   },
   {
-    "id": "FE-0353",
+    "id": "FE-0272",
     "self_symmetric": false,
     "equations": [
       {
@@ -9741,7 +7473,7 @@
     ]
   },
   {
-    "id": "FE-0354",
+    "id": "FE-0273",
     "self_symmetric": false,
     "equations": [
       {
@@ -9769,7 +7501,7 @@
     ]
   },
   {
-    "id": "FE-0355",
+    "id": "FE-0274",
     "self_symmetric": false,
     "equations": [
       {
@@ -9797,7 +7529,7 @@
     ]
   },
   {
-    "id": "FE-0356",
+    "id": "FE-0275",
     "self_symmetric": false,
     "equations": [
       {
@@ -9825,7 +7557,7 @@
     ]
   },
   {
-    "id": "FE-0357",
+    "id": "FE-0276",
     "self_symmetric": false,
     "equations": [
       {
@@ -9853,7 +7585,7 @@
     ]
   },
   {
-    "id": "FE-0358",
+    "id": "FE-0277",
     "self_symmetric": false,
     "equations": [
       {
@@ -9881,7 +7613,7 @@
     ]
   },
   {
-    "id": "FE-0359",
+    "id": "FE-0278",
     "self_symmetric": false,
     "equations": [
       {
@@ -9909,7 +7641,7 @@
     ]
   },
   {
-    "id": "FE-0360",
+    "id": "FE-0279",
     "self_symmetric": false,
     "equations": [
       {
@@ -9937,7 +7669,7 @@
     ]
   },
   {
-    "id": "FE-0361",
+    "id": "FE-0280",
     "self_symmetric": false,
     "equations": [
       {
@@ -9965,7 +7697,7 @@
     ]
   },
   {
-    "id": "FE-0362",
+    "id": "FE-0281",
     "self_symmetric": false,
     "equations": [
       {
@@ -9993,7 +7725,7 @@
     ]
   },
   {
-    "id": "FE-0363",
+    "id": "FE-0282",
     "self_symmetric": false,
     "equations": [
       {
@@ -10021,7 +7753,7 @@
     ]
   },
   {
-    "id": "FE-0364",
+    "id": "FE-0283",
     "self_symmetric": false,
     "equations": [
       {
@@ -10049,7 +7781,7 @@
     ]
   },
   {
-    "id": "FE-0365",
+    "id": "FE-0284",
     "self_symmetric": false,
     "equations": [
       {
@@ -10077,7 +7809,7 @@
     ]
   },
   {
-    "id": "FE-0366",
+    "id": "FE-0285",
     "self_symmetric": false,
     "equations": [
       {
@@ -10105,7 +7837,7 @@
     ]
   },
   {
-    "id": "FE-0367",
+    "id": "FE-0286",
     "self_symmetric": false,
     "equations": [
       {
@@ -10133,7 +7865,7 @@
     ]
   },
   {
-    "id": "FE-0368",
+    "id": "FE-0287",
     "self_symmetric": false,
     "equations": [
       {
@@ -10161,7 +7893,7 @@
     ]
   },
   {
-    "id": "FE-0369",
+    "id": "FE-0288",
     "self_symmetric": false,
     "equations": [
       {
@@ -10189,7 +7921,7 @@
     ]
   },
   {
-    "id": "FE-0370",
+    "id": "FE-0289",
     "self_symmetric": false,
     "equations": [
       {
@@ -10217,7 +7949,7 @@
     ]
   },
   {
-    "id": "FE-0371",
+    "id": "FE-0290",
     "self_symmetric": false,
     "equations": [
       {
@@ -10245,7 +7977,7 @@
     ]
   },
   {
-    "id": "FE-0372",
+    "id": "FE-0291",
     "self_symmetric": false,
     "equations": [
       {
@@ -10273,7 +8005,7 @@
     ]
   },
   {
-    "id": "FE-0373",
+    "id": "FE-0292",
     "self_symmetric": false,
     "equations": [
       {
@@ -10301,7 +8033,7 @@
     ]
   },
   {
-    "id": "FE-0374",
+    "id": "FE-0293",
     "self_symmetric": false,
     "equations": [
       {
@@ -10329,7 +8061,7 @@
     ]
   },
   {
-    "id": "FE-0375",
+    "id": "FE-0294",
     "self_symmetric": false,
     "equations": [
       {
@@ -10357,7 +8089,7 @@
     ]
   },
   {
-    "id": "FE-0376",
+    "id": "FE-0295",
     "self_symmetric": false,
     "equations": [
       {
@@ -10385,7 +8117,7 @@
     ]
   },
   {
-    "id": "FE-0377",
+    "id": "FE-0296",
     "self_symmetric": false,
     "equations": [
       {
@@ -10413,7 +8145,7 @@
     ]
   },
   {
-    "id": "FE-0378",
+    "id": "FE-0297",
     "self_symmetric": false,
     "equations": [
       {
@@ -10441,7 +8173,7 @@
     ]
   },
   {
-    "id": "FE-0379",
+    "id": "FE-0298",
     "self_symmetric": false,
     "equations": [
       {
@@ -10469,7 +8201,7 @@
     ]
   },
   {
-    "id": "FE-0380",
+    "id": "FE-0299",
     "self_symmetric": false,
     "equations": [
       {
@@ -10497,7 +8229,7 @@
     ]
   },
   {
-    "id": "FE-0381",
+    "id": "FE-0300",
     "self_symmetric": false,
     "equations": [
       {
@@ -10525,7 +8257,7 @@
     ]
   },
   {
-    "id": "FE-0382",
+    "id": "FE-0301",
     "self_symmetric": false,
     "equations": [
       {
@@ -10553,7 +8285,7 @@
     ]
   },
   {
-    "id": "FE-0383",
+    "id": "FE-0302",
     "self_symmetric": false,
     "equations": [
       {
@@ -10581,7 +8313,7 @@
     ]
   },
   {
-    "id": "FE-0384",
+    "id": "FE-0303",
     "self_symmetric": false,
     "equations": [
       {
@@ -10609,7 +8341,7 @@
     ]
   },
   {
-    "id": "FE-0385",
+    "id": "FE-0304",
     "self_symmetric": false,
     "equations": [
       {
@@ -10637,7 +8369,7 @@
     ]
   },
   {
-    "id": "FE-0386",
+    "id": "FE-0305",
     "self_symmetric": false,
     "equations": [
       {
@@ -10665,7 +8397,7 @@
     ]
   },
   {
-    "id": "FE-0387",
+    "id": "FE-0306",
     "self_symmetric": false,
     "equations": [
       {
@@ -10693,7 +8425,7 @@
     ]
   },
   {
-    "id": "FE-0388",
+    "id": "FE-0307",
     "self_symmetric": false,
     "equations": [
       {
@@ -10721,7 +8453,7 @@
     ]
   },
   {
-    "id": "FE-0389",
+    "id": "FE-0308",
     "self_symmetric": false,
     "equations": [
       {
@@ -10749,7 +8481,7 @@
     ]
   },
   {
-    "id": "FE-0390",
+    "id": "FE-0309",
     "self_symmetric": false,
     "equations": [
       {
@@ -10777,7 +8509,7 @@
     ]
   },
   {
-    "id": "FE-0391",
+    "id": "FE-0310",
     "self_symmetric": false,
     "equations": [
       {
@@ -10805,7 +8537,7 @@
     ]
   },
   {
-    "id": "FE-0392",
+    "id": "FE-0311",
     "self_symmetric": true,
     "equations": [
       {
@@ -10822,7 +8554,7 @@
     ]
   },
   {
-    "id": "FE-0393",
+    "id": "FE-0312",
     "self_symmetric": false,
     "equations": [
       {
@@ -10850,7 +8582,7 @@
     ]
   },
   {
-    "id": "FE-0394",
+    "id": "FE-0313",
     "self_symmetric": false,
     "equations": [
       {
@@ -10878,7 +8610,7 @@
     ]
   },
   {
-    "id": "FE-0395",
+    "id": "FE-0314",
     "self_symmetric": true,
     "equations": [
       {
@@ -10895,7 +8627,7 @@
     ]
   },
   {
-    "id": "FE-0396",
+    "id": "FE-0315",
     "self_symmetric": true,
     "equations": [
       {
@@ -10912,7 +8644,7 @@
     ]
   },
   {
-    "id": "FE-0397",
+    "id": "FE-0316",
     "self_symmetric": true,
     "equations": [
       {
@@ -10929,7 +8661,7 @@
     ]
   },
   {
-    "id": "FE-0398",
+    "id": "FE-0317",
     "self_symmetric": false,
     "equations": [
       {
@@ -10957,7 +8689,7 @@
     ]
   },
   {
-    "id": "FE-0399",
+    "id": "FE-0318",
     "self_symmetric": false,
     "equations": [
       {
@@ -10985,7 +8717,7 @@
     ]
   },
   {
-    "id": "FE-0400",
+    "id": "FE-0319",
     "self_symmetric": false,
     "equations": [
       {
@@ -11013,7 +8745,7 @@
     ]
   },
   {
-    "id": "FE-0401",
+    "id": "FE-0320",
     "self_symmetric": false,
     "equations": [
       {
@@ -11041,7 +8773,7 @@
     ]
   },
   {
-    "id": "FE-0402",
+    "id": "FE-0321",
     "self_symmetric": false,
     "equations": [
       {
@@ -11069,7 +8801,7 @@
     ]
   },
   {
-    "id": "FE-0403",
+    "id": "FE-0322",
     "self_symmetric": false,
     "equations": [
       {
@@ -11097,7 +8829,7 @@
     ]
   },
   {
-    "id": "FE-0404",
+    "id": "FE-0323",
     "self_symmetric": false,
     "equations": [
       {
@@ -11125,7 +8857,7 @@
     ]
   },
   {
-    "id": "FE-0405",
+    "id": "FE-0324",
     "self_symmetric": false,
     "equations": [
       {
@@ -11153,7 +8885,7 @@
     ]
   },
   {
-    "id": "FE-0406",
+    "id": "FE-0325",
     "self_symmetric": false,
     "equations": [
       {
@@ -11181,7 +8913,7 @@
     ]
   },
   {
-    "id": "FE-0407",
+    "id": "FE-0326",
     "self_symmetric": false,
     "equations": [
       {
@@ -11209,7 +8941,7 @@
     ]
   },
   {
-    "id": "FE-0408",
+    "id": "FE-0327",
     "self_symmetric": false,
     "equations": [
       {
@@ -11237,7 +8969,7 @@
     ]
   },
   {
-    "id": "FE-0409",
+    "id": "FE-0328",
     "self_symmetric": false,
     "equations": [
       {
@@ -11265,7 +8997,7 @@
     ]
   },
   {
-    "id": "FE-0410",
+    "id": "FE-0329",
     "self_symmetric": false,
     "equations": [
       {
@@ -11293,7 +9025,7 @@
     ]
   },
   {
-    "id": "FE-0411",
+    "id": "FE-0330",
     "self_symmetric": false,
     "equations": [
       {
@@ -11321,7 +9053,7 @@
     ]
   },
   {
-    "id": "FE-0412",
+    "id": "FE-0331",
     "self_symmetric": false,
     "equations": [
       {
@@ -11349,7 +9081,7 @@
     ]
   },
   {
-    "id": "FE-0413",
+    "id": "FE-0332",
     "self_symmetric": false,
     "equations": [
       {
@@ -11377,7 +9109,7 @@
     ]
   },
   {
-    "id": "FE-0414",
+    "id": "FE-0333",
     "self_symmetric": false,
     "equations": [
       {
@@ -11405,7 +9137,7 @@
     ]
   },
   {
-    "id": "FE-0415",
+    "id": "FE-0334",
     "self_symmetric": false,
     "equations": [
       {
@@ -11433,7 +9165,7 @@
     ]
   },
   {
-    "id": "FE-0416",
+    "id": "FE-0335",
     "self_symmetric": false,
     "equations": [
       {
@@ -11461,7 +9193,7 @@
     ]
   },
   {
-    "id": "FE-0417",
+    "id": "FE-0336",
     "self_symmetric": false,
     "equations": [
       {
@@ -11489,7 +9221,7 @@
     ]
   },
   {
-    "id": "FE-0418",
+    "id": "FE-0337",
     "self_symmetric": false,
     "equations": [
       {
@@ -11517,7 +9249,7 @@
     ]
   },
   {
-    "id": "FE-0419",
+    "id": "FE-0338",
     "self_symmetric": true,
     "equations": [
       {
@@ -11534,7 +9266,7 @@
     ]
   },
   {
-    "id": "FE-0420",
+    "id": "FE-0339",
     "self_symmetric": false,
     "equations": [
       {
@@ -11562,7 +9294,7 @@
     ]
   },
   {
-    "id": "FE-0421",
+    "id": "FE-0340",
     "self_symmetric": false,
     "equations": [
       {
@@ -11590,7 +9322,7 @@
     ]
   },
   {
-    "id": "FE-0422",
+    "id": "FE-0341",
     "self_symmetric": true,
     "equations": [
       {
@@ -11607,7 +9339,7 @@
     ]
   },
   {
-    "id": "FE-0423",
+    "id": "FE-0342",
     "self_symmetric": true,
     "equations": [
       {
@@ -11624,7 +9356,7 @@
     ]
   },
   {
-    "id": "FE-0424",
+    "id": "FE-0343",
     "self_symmetric": true,
     "equations": [
       {
@@ -11641,7 +9373,7 @@
     ]
   },
   {
-    "id": "FE-0425",
+    "id": "FE-0344",
     "self_symmetric": false,
     "equations": [
       {
@@ -11669,7 +9401,7 @@
     ]
   },
   {
-    "id": "FE-0426",
+    "id": "FE-0345",
     "self_symmetric": true,
     "equations": [
       {
@@ -11686,7 +9418,7 @@
     ]
   },
   {
-    "id": "FE-0427",
+    "id": "FE-0346",
     "self_symmetric": false,
     "equations": [
       {
@@ -11714,7 +9446,7 @@
     ]
   },
   {
-    "id": "FE-0428",
+    "id": "FE-0347",
     "self_symmetric": false,
     "equations": [
       {
@@ -11742,7 +9474,7 @@
     ]
   },
   {
-    "id": "FE-0429",
+    "id": "FE-0348",
     "self_symmetric": true,
     "equations": [
       {
@@ -11759,7 +9491,7 @@
     ]
   },
   {
-    "id": "FE-0430",
+    "id": "FE-0349",
     "self_symmetric": true,
     "equations": [
       {
@@ -11776,7 +9508,7 @@
     ]
   },
   {
-    "id": "FE-0431",
+    "id": "FE-0350",
     "self_symmetric": true,
     "equations": [
       {
@@ -11793,7 +9525,7 @@
     ]
   },
   {
-    "id": "FE-0432",
+    "id": "FE-0351",
     "self_symmetric": false,
     "equations": [
       {
@@ -11821,7 +9553,7 @@
     ]
   },
   {
-    "id": "FE-0433",
+    "id": "FE-0352",
     "self_symmetric": true,
     "equations": [
       {
@@ -11838,7 +9570,7 @@
     ]
   },
   {
-    "id": "FE-0434",
+    "id": "FE-0353",
     "self_symmetric": false,
     "equations": [
       {
@@ -11866,7 +9598,7 @@
     ]
   },
   {
-    "id": "FE-0435",
+    "id": "FE-0354",
     "self_symmetric": false,
     "equations": [
       {
@@ -11894,7 +9626,7 @@
     ]
   },
   {
-    "id": "FE-0436",
+    "id": "FE-0355",
     "self_symmetric": true,
     "equations": [
       {
@@ -11911,7 +9643,7 @@
     ]
   },
   {
-    "id": "FE-0437",
+    "id": "FE-0356",
     "self_symmetric": true,
     "equations": [
       {
@@ -11928,7 +9660,7 @@
     ]
   },
   {
-    "id": "FE-0438",
+    "id": "FE-0357",
     "self_symmetric": true,
     "equations": [
       {

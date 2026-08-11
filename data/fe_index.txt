@@ -1,1723 +1,1399 @@
 FE-0001
-  f(x + x) = x + x
-  f(y + y) = y + y
-
-FE-0002
-  f(x + x) = x + f(x)
-  f(y + y) = y + f(y)
-
-FE-0003
-  f(x + x) = f(x) + f(x)
-  f(y + y) = f(y) + f(y)
-
-FE-0004
-  f(x + f(x)) = x + x
-  f(y + f(y)) = y + y
-
-FE-0005
-  f(x + f(x)) = x + f(x)
-  f(y + f(y)) = y + f(y)
-
-FE-0006
-  f(x + f(x)) = f(x) + f(x)
-  f(y + f(y)) = f(y) + f(y)
-
-FE-0007
   f(x + y) = x + y
 
-FE-0008
+FE-0002
   f(x + y) = x + f(y)
   f(x + y) = f(x) + y
 
-FE-0009
+FE-0003
   f(x + y) = f(x) + f(y)
 
-FE-0010
+FE-0004
   f(x + f(y)) = x + y
   f(f(x) + y) = x + y
 
-FE-0011
+FE-0005
   f(x + f(y)) = x + f(y)
   f(f(x) + y) = f(x) + y
 
-FE-0012
+FE-0006
   f(x + f(y)) = f(x) + y
   f(f(x) + y) = x + f(y)
 
-FE-0013
+FE-0007
   f(x + f(y)) = f(x) + f(y)
   f(f(x) + y) = f(x) + f(y)
 
-FE-0014
-  f(x + x^2) = x + x^2
-  f(y + y^2) = y + y^2
-
-FE-0015
-  f(x + x^2) = x + xf(x)
-  f(y + y^2) = y + yf(y)
-
-FE-0016
-  f(x + x^2) = x + f(x^2)
-  f(y + y^2) = y + f(y^2)
-
-FE-0017
-  f(x + x^2) = f(x) + x^2
-  f(y + y^2) = f(y) + y^2
-
-FE-0018
-  f(x + x^2) = f(x) + xf(x)
-  f(y + y^2) = f(y) + yf(y)
-
-FE-0019
-  f(x + x^2) = f(x) + f(x^2)
-  f(y + y^2) = f(y) + f(y^2)
-
-FE-0020
-  f(x + xf(x)) = x + x^2
-  f(y + yf(y)) = y + y^2
-
-FE-0021
-  f(x + xf(x)) = x + xf(x)
-  f(y + yf(y)) = y + yf(y)
-
-FE-0022
-  f(x + xf(x)) = x + f(x^2)
-  f(y + yf(y)) = y + f(y^2)
-
-FE-0023
-  f(x + xf(x)) = f(x) + x^2
-  f(y + yf(y)) = f(y) + y^2
-
-FE-0024
-  f(x + xf(x)) = f(x) + xf(x)
-  f(y + yf(y)) = f(y) + yf(y)
-
-FE-0025
-  f(x + xf(x)) = f(x) + f(x^2)
-  f(y + yf(y)) = f(y) + f(y^2)
-
-FE-0026
-  f(x + f(x^2)) = x + x^2
-  f(y + f(y^2)) = y + y^2
-
-FE-0027
-  f(x + f(x^2)) = x + xf(x)
-  f(y + f(y^2)) = y + yf(y)
-
-FE-0028
-  f(x + f(x^2)) = x + f(x^2)
-  f(y + f(y^2)) = y + f(y^2)
-
-FE-0029
-  f(x + f(x^2)) = f(x) + x^2
-  f(y + f(y^2)) = f(y) + y^2
-
-FE-0030
-  f(x + f(x^2)) = f(x) + xf(x)
-  f(y + f(y^2)) = f(y) + yf(y)
-
-FE-0031
-  f(x + f(x^2)) = f(x) + f(x^2)
-  f(y + f(y^2)) = f(y) + f(y^2)
-
-FE-0032
+FE-0008
   f(x + y^2) = x + y^2
   f(y + x^2) = y + x^2
 
-FE-0033
+FE-0009
   f(x + y^2) = x + yf(y)
   f(y + x^2) = y + xf(x)
 
-FE-0034
+FE-0010
   f(x + y^2) = x + f(y^2)
   f(y + x^2) = y + f(x^2)
 
-FE-0035
+FE-0011
   f(x + y^2) = f(x) + y^2
   f(y + x^2) = f(y) + x^2
 
-FE-0036
+FE-0012
   f(x + y^2) = f(x) + yf(y)
   f(y + x^2) = f(y) + xf(x)
 
-FE-0037
+FE-0013
   f(x + y^2) = f(x) + f(y^2)
   f(y + x^2) = f(y) + f(x^2)
 
-FE-0038
+FE-0014
   f(x + yf(y)) = x + y^2
   f(y + xf(x)) = y + x^2
 
-FE-0039
+FE-0015
   f(x + yf(y)) = x + yf(y)
   f(y + xf(x)) = y + xf(x)
 
-FE-0040
+FE-0016
   f(x + yf(y)) = x + f(y^2)
   f(y + xf(x)) = y + f(x^2)
 
-FE-0041
+FE-0017
   f(x + yf(y)) = f(x) + y^2
   f(y + xf(x)) = f(y) + x^2
 
-FE-0042
+FE-0018
   f(x + yf(y)) = f(x) + yf(y)
   f(y + xf(x)) = f(y) + xf(x)
 
-FE-0043
+FE-0019
   f(x + yf(y)) = f(x) + f(y^2)
   f(y + xf(x)) = f(y) + f(x^2)
 
-FE-0044
+FE-0020
   f(x + f(y^2)) = x + y^2
   f(y + f(x^2)) = y + x^2
 
-FE-0045
+FE-0021
   f(x + f(y^2)) = x + yf(y)
   f(y + f(x^2)) = y + xf(x)
 
-FE-0046
+FE-0022
   f(x + f(y^2)) = x + f(y^2)
   f(y + f(x^2)) = y + f(x^2)
 
-FE-0047
+FE-0023
   f(x + f(y^2)) = f(x) + y^2
   f(y + f(x^2)) = f(y) + x^2
 
-FE-0048
+FE-0024
   f(x + f(y^2)) = f(x) + yf(y)
   f(y + f(x^2)) = f(y) + xf(x)
 
-FE-0049
+FE-0025
   f(x + f(y^2)) = f(x) + f(y^2)
   f(y + f(x^2)) = f(y) + f(x^2)
 
-FE-0050
+FE-0026
   f(x + xf(y)) = x + xf(y)
   f(y + yf(x)) = y + yf(x)
 
-FE-0051
+FE-0027
   f(x + xf(y)) = x + yf(x)
   f(y + yf(x)) = y + xf(y)
 
-FE-0052
+FE-0028
   f(x + xf(y)) = x + f(x)f(y)
   f(y + yf(x)) = y + f(x)f(y)
 
-FE-0053
+FE-0029
   f(x + xf(y)) = x + xy
   f(y + yf(x)) = y + xy
 
-FE-0054
+FE-0030
   f(x + xf(y)) = f(x) + xf(y)
   f(y + yf(x)) = f(y) + yf(x)
 
-FE-0055
+FE-0031
   f(x + xf(y)) = f(x) + yf(x)
   f(y + yf(x)) = f(y) + xf(y)
 
-FE-0056
+FE-0032
   f(x + xf(y)) = f(x) + f(x)f(y)
   f(y + yf(x)) = f(y) + f(x)f(y)
 
-FE-0057
+FE-0033
   f(x + xf(y)) = f(x) + xy
   f(y + yf(x)) = f(y) + xy
 
-FE-0058
+FE-0034
   f(x + yf(x)) = x + xf(y)
   f(y + xf(y)) = y + yf(x)
 
-FE-0059
+FE-0035
   f(x + yf(x)) = x + yf(x)
   f(y + xf(y)) = y + xf(y)
 
-FE-0060
+FE-0036
   f(x + yf(x)) = x + f(x)f(y)
   f(y + xf(y)) = y + f(x)f(y)
 
-FE-0061
+FE-0037
   f(x + yf(x)) = x + xy
   f(y + xf(y)) = y + xy
 
-FE-0062
+FE-0038
   f(x + yf(x)) = f(x) + xf(y)
   f(y + xf(y)) = f(y) + yf(x)
 
-FE-0063
+FE-0039
   f(x + yf(x)) = f(x) + yf(x)
   f(y + xf(y)) = f(y) + xf(y)
 
-FE-0064
+FE-0040
   f(x + yf(x)) = f(x) + f(x)f(y)
   f(y + xf(y)) = f(y) + f(x)f(y)
 
-FE-0065
+FE-0041
   f(x + yf(x)) = f(x) + xy
   f(y + xf(y)) = f(y) + xy
 
-FE-0066
+FE-0042
   f(x + f(x)f(y)) = x + xf(y)
   f(y + f(x)f(y)) = y + yf(x)
 
-FE-0067
+FE-0043
   f(x + f(x)f(y)) = x + yf(x)
   f(y + f(x)f(y)) = y + xf(y)
 
-FE-0068
+FE-0044
   f(x + f(x)f(y)) = x + f(x)f(y)
   f(y + f(x)f(y)) = y + f(x)f(y)
 
-FE-0069
+FE-0045
   f(x + f(x)f(y)) = x + xy
   f(y + f(x)f(y)) = y + xy
 
-FE-0070
+FE-0046
   f(x + f(x)f(y)) = f(x) + xf(y)
   f(y + f(x)f(y)) = f(y) + yf(x)
 
-FE-0071
+FE-0047
   f(x + f(x)f(y)) = f(x) + yf(x)
   f(y + f(x)f(y)) = f(y) + xf(y)
 
-FE-0072
+FE-0048
   f(x + f(x)f(y)) = f(x) + f(x)f(y)
   f(y + f(x)f(y)) = f(y) + f(x)f(y)
 
-FE-0073
+FE-0049
   f(x + f(x)f(y)) = f(x) + xy
   f(y + f(x)f(y)) = f(y) + xy
 
-FE-0074
+FE-0050
   f(x + xy) = x + xf(y)
   f(y + xy) = y + yf(x)
 
-FE-0075
+FE-0051
   f(x + xy) = x + yf(x)
   f(y + xy) = y + xf(y)
 
-FE-0076
+FE-0052
   f(x + xy) = x + f(x)f(y)
   f(y + xy) = y + f(x)f(y)
 
-FE-0077
+FE-0053
   f(x + xy) = x + xy
   f(y + xy) = y + xy
 
-FE-0078
+FE-0054
   f(x + xy) = f(x) + xf(y)
   f(y + xy) = f(y) + yf(x)
 
-FE-0079
+FE-0055
   f(x + xy) = f(x) + yf(x)
   f(y + xy) = f(y) + xf(y)
 
-FE-0080
+FE-0056
   f(x + xy) = f(x) + f(x)f(y)
   f(y + xy) = f(y) + f(x)f(y)
 
-FE-0081
+FE-0057
   f(x + xy) = f(x) + xy
   f(y + xy) = f(y) + xy
 
-FE-0082
-  f(f(x) + f(x)) = x + x
-  f(f(y) + f(y)) = y + y
-
-FE-0083
-  f(f(x) + f(x)) = x + f(x)
-  f(f(y) + f(y)) = y + f(y)
-
-FE-0084
-  f(f(x) + f(x)) = f(x) + f(x)
-  f(f(y) + f(y)) = f(y) + f(y)
-
-FE-0085
+FE-0058
   f(f(x) + f(y)) = x + y
 
-FE-0086
+FE-0059
   f(f(x) + f(y)) = x + f(y)
   f(f(x) + f(y)) = f(x) + y
 
-FE-0087
+FE-0060
   f(f(x) + f(y)) = f(x) + f(y)
 
-FE-0088
-  f(f(x) + x^2) = x + x^2
-  f(f(y) + y^2) = y + y^2
-
-FE-0089
-  f(f(x) + x^2) = x + xf(x)
-  f(f(y) + y^2) = y + yf(y)
-
-FE-0090
-  f(f(x) + x^2) = x + f(x^2)
-  f(f(y) + y^2) = y + f(y^2)
-
-FE-0091
-  f(f(x) + x^2) = f(x) + x^2
-  f(f(y) + y^2) = f(y) + y^2
-
-FE-0092
-  f(f(x) + x^2) = f(x) + xf(x)
-  f(f(y) + y^2) = f(y) + yf(y)
-
-FE-0093
-  f(f(x) + x^2) = f(x) + f(x^2)
-  f(f(y) + y^2) = f(y) + f(y^2)
-
-FE-0094
-  f(f(x) + xf(x)) = x + x^2
-  f(f(y) + yf(y)) = y + y^2
-
-FE-0095
-  f(f(x) + xf(x)) = x + xf(x)
-  f(f(y) + yf(y)) = y + yf(y)
-
-FE-0096
-  f(f(x) + xf(x)) = x + f(x^2)
-  f(f(y) + yf(y)) = y + f(y^2)
-
-FE-0097
-  f(f(x) + xf(x)) = f(x) + x^2
-  f(f(y) + yf(y)) = f(y) + y^2
-
-FE-0098
-  f(f(x) + xf(x)) = f(x) + xf(x)
-  f(f(y) + yf(y)) = f(y) + yf(y)
-
-FE-0099
-  f(f(x) + xf(x)) = f(x) + f(x^2)
-  f(f(y) + yf(y)) = f(y) + f(y^2)
-
-FE-0100
-  f(f(x) + f(x^2)) = x + x^2
-  f(f(y) + f(y^2)) = y + y^2
-
-FE-0101
-  f(f(x) + f(x^2)) = x + xf(x)
-  f(f(y) + f(y^2)) = y + yf(y)
-
-FE-0102
-  f(f(x) + f(x^2)) = x + f(x^2)
-  f(f(y) + f(y^2)) = y + f(y^2)
-
-FE-0103
-  f(f(x) + f(x^2)) = f(x) + x^2
-  f(f(y) + f(y^2)) = f(y) + y^2
-
-FE-0104
-  f(f(x) + f(x^2)) = f(x) + xf(x)
-  f(f(y) + f(y^2)) = f(y) + yf(y)
-
-FE-0105
-  f(f(x) + f(x^2)) = f(x) + f(x^2)
-  f(f(y) + f(y^2)) = f(y) + f(y^2)
-
-FE-0106
+FE-0061
   f(f(x) + y^2) = x + y^2
   f(f(y) + x^2) = y + x^2
 
-FE-0107
+FE-0062
   f(f(x) + y^2) = x + yf(y)
   f(f(y) + x^2) = y + xf(x)
 
-FE-0108
+FE-0063
   f(f(x) + y^2) = x + f(y^2)
   f(f(y) + x^2) = y + f(x^2)
 
-FE-0109
+FE-0064
   f(f(x) + y^2) = f(x) + y^2
   f(f(y) + x^2) = f(y) + x^2
 
-FE-0110
+FE-0065
   f(f(x) + y^2) = f(x) + yf(y)
   f(f(y) + x^2) = f(y) + xf(x)
 
-FE-0111
+FE-0066
   f(f(x) + y^2) = f(x) + f(y^2)
   f(f(y) + x^2) = f(y) + f(x^2)
 
-FE-0112
+FE-0067
   f(f(x) + yf(y)) = x + y^2
   f(f(y) + xf(x)) = y + x^2
 
-FE-0113
+FE-0068
   f(f(x) + yf(y)) = x + yf(y)
   f(f(y) + xf(x)) = y + xf(x)
 
-FE-0114
+FE-0069
   f(f(x) + yf(y)) = x + f(y^2)
   f(f(y) + xf(x)) = y + f(x^2)
 
-FE-0115
+FE-0070
   f(f(x) + yf(y)) = f(x) + y^2
   f(f(y) + xf(x)) = f(y) + x^2
 
-FE-0116
+FE-0071
   f(f(x) + yf(y)) = f(x) + yf(y)
   f(f(y) + xf(x)) = f(y) + xf(x)
 
-FE-0117
+FE-0072
   f(f(x) + yf(y)) = f(x) + f(y^2)
   f(f(y) + xf(x)) = f(y) + f(x^2)
 
-FE-0118
+FE-0073
   f(f(x) + f(y^2)) = x + y^2
   f(f(y) + f(x^2)) = y + x^2
 
-FE-0119
+FE-0074
   f(f(x) + f(y^2)) = x + yf(y)
   f(f(y) + f(x^2)) = y + xf(x)
 
-FE-0120
+FE-0075
   f(f(x) + f(y^2)) = x + f(y^2)
   f(f(y) + f(x^2)) = y + f(x^2)
 
-FE-0121
+FE-0076
   f(f(x) + f(y^2)) = f(x) + y^2
   f(f(y) + f(x^2)) = f(y) + x^2
 
-FE-0122
+FE-0077
   f(f(x) + f(y^2)) = f(x) + yf(y)
   f(f(y) + f(x^2)) = f(y) + xf(x)
 
-FE-0123
+FE-0078
   f(f(x) + f(y^2)) = f(x) + f(y^2)
   f(f(y) + f(x^2)) = f(y) + f(x^2)
 
-FE-0124
+FE-0079
   f(f(x) + xf(y)) = x + xf(y)
   f(f(y) + yf(x)) = y + yf(x)
 
-FE-0125
+FE-0080
   f(f(x) + xf(y)) = x + yf(x)
   f(f(y) + yf(x)) = y + xf(y)
 
-FE-0126
+FE-0081
   f(f(x) + xf(y)) = x + f(x)f(y)
   f(f(y) + yf(x)) = y + f(x)f(y)
 
-FE-0127
+FE-0082
   f(f(x) + xf(y)) = x + xy
   f(f(y) + yf(x)) = y + xy
 
-FE-0128
+FE-0083
   f(f(x) + xf(y)) = f(x) + xf(y)
   f(f(y) + yf(x)) = f(y) + yf(x)
 
-FE-0129
+FE-0084
   f(f(x) + xf(y)) = f(x) + yf(x)
   f(f(y) + yf(x)) = f(y) + xf(y)
 
-FE-0130
+FE-0085
   f(f(x) + xf(y)) = f(x) + f(x)f(y)
   f(f(y) + yf(x)) = f(y) + f(x)f(y)
 
-FE-0131
+FE-0086
   f(f(x) + xf(y)) = f(x) + xy
   f(f(y) + yf(x)) = f(y) + xy
 
-FE-0132
+FE-0087
   f(f(x) + yf(x)) = x + xf(y)
   f(f(y) + xf(y)) = y + yf(x)
 
-FE-0133
+FE-0088
   f(f(x) + yf(x)) = x + yf(x)
   f(f(y) + xf(y)) = y + xf(y)
 
-FE-0134
+FE-0089
   f(f(x) + yf(x)) = x + f(x)f(y)
   f(f(y) + xf(y)) = y + f(x)f(y)
 
-FE-0135
+FE-0090
   f(f(x) + yf(x)) = x + xy
   f(f(y) + xf(y)) = y + xy
 
-FE-0136
+FE-0091
   f(f(x) + yf(x)) = f(x) + xf(y)
   f(f(y) + xf(y)) = f(y) + yf(x)
 
-FE-0137
+FE-0092
   f(f(x) + yf(x)) = f(x) + yf(x)
   f(f(y) + xf(y)) = f(y) + xf(y)
 
-FE-0138
+FE-0093
   f(f(x) + yf(x)) = f(x) + f(x)f(y)
   f(f(y) + xf(y)) = f(y) + f(x)f(y)
 
-FE-0139
+FE-0094
   f(f(x) + yf(x)) = f(x) + xy
   f(f(y) + xf(y)) = f(y) + xy
 
-FE-0140
+FE-0095
   f(f(x) + f(x)f(y)) = x + xf(y)
   f(f(y) + f(x)f(y)) = y + yf(x)
 
-FE-0141
+FE-0096
   f(f(x) + f(x)f(y)) = x + yf(x)
   f(f(y) + f(x)f(y)) = y + xf(y)
 
-FE-0142
+FE-0097
   f(f(x) + f(x)f(y)) = x + f(x)f(y)
   f(f(y) + f(x)f(y)) = y + f(x)f(y)
 
-FE-0143
+FE-0098
   f(f(x) + f(x)f(y)) = x + xy
   f(f(y) + f(x)f(y)) = y + xy
 
-FE-0144
+FE-0099
   f(f(x) + f(x)f(y)) = f(x) + xf(y)
   f(f(y) + f(x)f(y)) = f(y) + yf(x)
 
-FE-0145
+FE-0100
   f(f(x) + f(x)f(y)) = f(x) + yf(x)
   f(f(y) + f(x)f(y)) = f(y) + xf(y)
 
-FE-0146
+FE-0101
   f(f(x) + f(x)f(y)) = f(x) + f(x)f(y)
   f(f(y) + f(x)f(y)) = f(y) + f(x)f(y)
 
-FE-0147
+FE-0102
   f(f(x) + f(x)f(y)) = f(x) + xy
   f(f(y) + f(x)f(y)) = f(y) + xy
 
-FE-0148
+FE-0103
   f(f(x) + xy) = x + xf(y)
   f(f(y) + xy) = y + yf(x)
 
-FE-0149
+FE-0104
   f(f(x) + xy) = x + yf(x)
   f(f(y) + xy) = y + xf(y)
 
-FE-0150
+FE-0105
   f(f(x) + xy) = x + f(x)f(y)
   f(f(y) + xy) = y + f(x)f(y)
 
-FE-0151
+FE-0106
   f(f(x) + xy) = x + xy
   f(f(y) + xy) = y + xy
 
-FE-0152
+FE-0107
   f(f(x) + xy) = f(x) + xf(y)
   f(f(y) + xy) = f(y) + yf(x)
 
-FE-0153
+FE-0108
   f(f(x) + xy) = f(x) + yf(x)
   f(f(y) + xy) = f(y) + xf(y)
 
-FE-0154
+FE-0109
   f(f(x) + xy) = f(x) + f(x)f(y)
   f(f(y) + xy) = f(y) + f(x)f(y)
 
-FE-0155
+FE-0110
   f(f(x) + xy) = f(x) + xy
   f(f(y) + xy) = f(y) + xy
 
-FE-0156
-  f(x^2 + x^2) = x^2 + x^2
-  f(y^2 + y^2) = y^2 + y^2
-
-FE-0157
-  f(x^2 + x^2) = x^2 + xf(x)
-  f(y^2 + y^2) = y^2 + yf(y)
-
-FE-0158
-  f(x^2 + x^2) = x^2 + f(x^2)
-  f(y^2 + y^2) = y^2 + f(y^2)
-
-FE-0159
-  f(x^2 + x^2) = xf(x) + xf(x)
-  f(y^2 + y^2) = yf(y) + yf(y)
-
-FE-0160
-  f(x^2 + x^2) = xf(x) + f(x^2)
-  f(y^2 + y^2) = yf(y) + f(y^2)
-
-FE-0161
-  f(x^2 + x^2) = f(x^2) + f(x^2)
-  f(y^2 + y^2) = f(y^2) + f(y^2)
-
-FE-0162
-  f(x^2 + xf(x)) = x^2 + x^2
-  f(y^2 + yf(y)) = y^2 + y^2
-
-FE-0163
-  f(x^2 + xf(x)) = x^2 + xf(x)
-  f(y^2 + yf(y)) = y^2 + yf(y)
-
-FE-0164
-  f(x^2 + xf(x)) = x^2 + f(x^2)
-  f(y^2 + yf(y)) = y^2 + f(y^2)
-
-FE-0165
-  f(x^2 + xf(x)) = xf(x) + xf(x)
-  f(y^2 + yf(y)) = yf(y) + yf(y)
-
-FE-0166
-  f(x^2 + xf(x)) = xf(x) + f(x^2)
-  f(y^2 + yf(y)) = yf(y) + f(y^2)
-
-FE-0167
-  f(x^2 + xf(x)) = f(x^2) + f(x^2)
-  f(y^2 + yf(y)) = f(y^2) + f(y^2)
-
-FE-0168
-  f(x^2 + f(x^2)) = x^2 + x^2
-  f(y^2 + f(y^2)) = y^2 + y^2
-
-FE-0169
-  f(x^2 + f(x^2)) = x^2 + xf(x)
-  f(y^2 + f(y^2)) = y^2 + yf(y)
-
-FE-0170
-  f(x^2 + f(x^2)) = x^2 + f(x^2)
-  f(y^2 + f(y^2)) = y^2 + f(y^2)
-
-FE-0171
-  f(x^2 + f(x^2)) = xf(x) + xf(x)
-  f(y^2 + f(y^2)) = yf(y) + yf(y)
-
-FE-0172
-  f(x^2 + f(x^2)) = xf(x) + f(x^2)
-  f(y^2 + f(y^2)) = yf(y) + f(y^2)
-
-FE-0173
-  f(x^2 + f(x^2)) = f(x^2) + f(x^2)
-  f(y^2 + f(y^2)) = f(y^2) + f(y^2)
-
-FE-0174
+FE-0111
   f(x^2 + y^2) = x^2 + y^2
 
-FE-0175
+FE-0112
   f(x^2 + y^2) = x^2 + yf(y)
   f(x^2 + y^2) = xf(x) + y^2
 
-FE-0176
+FE-0113
   f(x^2 + y^2) = x^2 + f(y^2)
   f(x^2 + y^2) = f(x^2) + y^2
 
-FE-0177
+FE-0114
   f(x^2 + y^2) = xf(x) + yf(y)
 
-FE-0178
+FE-0115
   f(x^2 + y^2) = xf(x) + f(y^2)
   f(x^2 + y^2) = f(x^2) + yf(y)
 
-FE-0179
+FE-0116
   f(x^2 + y^2) = f(x^2) + f(y^2)
 
-FE-0180
+FE-0117
   f(x^2 + yf(y)) = x^2 + y^2
   f(xf(x) + y^2) = x^2 + y^2
 
-FE-0181
+FE-0118
   f(x^2 + yf(y)) = x^2 + yf(y)
   f(xf(x) + y^2) = xf(x) + y^2
 
-FE-0182
+FE-0119
   f(x^2 + yf(y)) = x^2 + f(y^2)
   f(xf(x) + y^2) = f(x^2) + y^2
 
-FE-0183
+FE-0120
   f(x^2 + yf(y)) = xf(x) + y^2
   f(xf(x) + y^2) = x^2 + yf(y)
 
-FE-0184
+FE-0121
   f(x^2 + yf(y)) = xf(x) + yf(y)
   f(xf(x) + y^2) = xf(x) + yf(y)
 
-FE-0185
+FE-0122
   f(x^2 + yf(y)) = xf(x) + f(y^2)
   f(xf(x) + y^2) = f(x^2) + yf(y)
 
-FE-0186
+FE-0123
   f(x^2 + yf(y)) = f(x^2) + y^2
   f(xf(x) + y^2) = x^2 + f(y^2)
 
-FE-0187
+FE-0124
   f(x^2 + yf(y)) = f(x^2) + yf(y)
   f(xf(x) + y^2) = xf(x) + f(y^2)
 
-FE-0188
+FE-0125
   f(x^2 + yf(y)) = f(x^2) + f(y^2)
   f(xf(x) + y^2) = f(x^2) + f(y^2)
 
-FE-0189
+FE-0126
   f(x^2 + f(y^2)) = x^2 + y^2
   f(f(x^2) + y^2) = x^2 + y^2
 
-FE-0190
+FE-0127
   f(x^2 + f(y^2)) = x^2 + yf(y)
   f(f(x^2) + y^2) = xf(x) + y^2
 
-FE-0191
+FE-0128
   f(x^2 + f(y^2)) = x^2 + f(y^2)
   f(f(x^2) + y^2) = f(x^2) + y^2
 
-FE-0192
+FE-0129
   f(x^2 + f(y^2)) = xf(x) + y^2
   f(f(x^2) + y^2) = x^2 + yf(y)
 
-FE-0193
+FE-0130
   f(x^2 + f(y^2)) = xf(x) + yf(y)
   f(f(x^2) + y^2) = xf(x) + yf(y)
 
-FE-0194
+FE-0131
   f(x^2 + f(y^2)) = xf(x) + f(y^2)
   f(f(x^2) + y^2) = f(x^2) + yf(y)
 
-FE-0195
+FE-0132
   f(x^2 + f(y^2)) = f(x^2) + y^2
   f(f(x^2) + y^2) = x^2 + f(y^2)
 
-FE-0196
+FE-0133
   f(x^2 + f(y^2)) = f(x^2) + yf(y)
   f(f(x^2) + y^2) = xf(x) + f(y^2)
 
-FE-0197
+FE-0134
   f(x^2 + f(y^2)) = f(x^2) + f(y^2)
   f(f(x^2) + y^2) = f(x^2) + f(y^2)
 
-FE-0198
+FE-0135
   f(x^2 + xf(y)) = x^2 + xf(y)
   f(y^2 + yf(x)) = y^2 + yf(x)
 
-FE-0199
+FE-0136
   f(x^2 + xf(y)) = x^2 + yf(x)
   f(y^2 + yf(x)) = y^2 + xf(y)
 
-FE-0200
+FE-0137
   f(x^2 + xf(y)) = x^2 + f(x)f(y)
   f(y^2 + yf(x)) = y^2 + f(x)f(y)
 
-FE-0201
+FE-0138
   f(x^2 + xf(y)) = x^2 + xy
   f(y^2 + yf(x)) = y^2 + xy
 
-FE-0202
+FE-0139
   f(x^2 + xf(y)) = xf(x) + xf(y)
   f(y^2 + yf(x)) = yf(y) + yf(x)
 
-FE-0203
+FE-0140
   f(x^2 + xf(y)) = xf(x) + yf(x)
   f(y^2 + yf(x)) = yf(y) + xf(y)
 
-FE-0204
+FE-0141
   f(x^2 + xf(y)) = xf(x) + f(x)f(y)
   f(y^2 + yf(x)) = yf(y) + f(x)f(y)
 
-FE-0205
+FE-0142
   f(x^2 + xf(y)) = xf(x) + xy
   f(y^2 + yf(x)) = yf(y) + xy
 
-FE-0206
+FE-0143
   f(x^2 + xf(y)) = f(x^2) + xf(y)
   f(y^2 + yf(x)) = f(y^2) + yf(x)
 
-FE-0207
+FE-0144
   f(x^2 + xf(y)) = f(x^2) + yf(x)
   f(y^2 + yf(x)) = f(y^2) + xf(y)
 
-FE-0208
+FE-0145
   f(x^2 + xf(y)) = f(x^2) + f(x)f(y)
   f(y^2 + yf(x)) = f(y^2) + f(x)f(y)
 
-FE-0209
+FE-0146
   f(x^2 + xf(y)) = f(x^2) + xy
   f(y^2 + yf(x)) = f(y^2) + xy
 
-FE-0210
+FE-0147
   f(x^2 + yf(x)) = x^2 + xf(y)
   f(y^2 + xf(y)) = y^2 + yf(x)
 
-FE-0211
+FE-0148
   f(x^2 + yf(x)) = x^2 + yf(x)
   f(y^2 + xf(y)) = y^2 + xf(y)
 
-FE-0212
+FE-0149
   f(x^2 + yf(x)) = x^2 + f(x)f(y)
   f(y^2 + xf(y)) = y^2 + f(x)f(y)
 
-FE-0213
+FE-0150
   f(x^2 + yf(x)) = x^2 + xy
   f(y^2 + xf(y)) = y^2 + xy
 
-FE-0214
+FE-0151
   f(x^2 + yf(x)) = xf(x) + xf(y)
   f(y^2 + xf(y)) = yf(y) + yf(x)
 
-FE-0215
+FE-0152
   f(x^2 + yf(x)) = xf(x) + yf(x)
   f(y^2 + xf(y)) = yf(y) + xf(y)
 
-FE-0216
+FE-0153
   f(x^2 + yf(x)) = xf(x) + f(x)f(y)
   f(y^2 + xf(y)) = yf(y) + f(x)f(y)
 
-FE-0217
+FE-0154
   f(x^2 + yf(x)) = xf(x) + xy
   f(y^2 + xf(y)) = yf(y) + xy
 
-FE-0218
+FE-0155
   f(x^2 + yf(x)) = f(x^2) + xf(y)
   f(y^2 + xf(y)) = f(y^2) + yf(x)
 
-FE-0219
+FE-0156
   f(x^2 + yf(x)) = f(x^2) + yf(x)
   f(y^2 + xf(y)) = f(y^2) + xf(y)
 
-FE-0220
+FE-0157
   f(x^2 + yf(x)) = f(x^2) + f(x)f(y)
   f(y^2 + xf(y)) = f(y^2) + f(x)f(y)
 
-FE-0221
+FE-0158
   f(x^2 + yf(x)) = f(x^2) + xy
   f(y^2 + xf(y)) = f(y^2) + xy
 
-FE-0222
+FE-0159
   f(x^2 + f(x)f(y)) = x^2 + xf(y)
   f(y^2 + f(x)f(y)) = y^2 + yf(x)
 
-FE-0223
+FE-0160
   f(x^2 + f(x)f(y)) = x^2 + yf(x)
   f(y^2 + f(x)f(y)) = y^2 + xf(y)
 
-FE-0224
+FE-0161
   f(x^2 + f(x)f(y)) = x^2 + f(x)f(y)
   f(y^2 + f(x)f(y)) = y^2 + f(x)f(y)
 
-FE-0225
+FE-0162
   f(x^2 + f(x)f(y)) = x^2 + xy
   f(y^2 + f(x)f(y)) = y^2 + xy
 
-FE-0226
+FE-0163
   f(x^2 + f(x)f(y)) = xf(x) + xf(y)
   f(y^2 + f(x)f(y)) = yf(y) + yf(x)
 
-FE-0227
+FE-0164
   f(x^2 + f(x)f(y)) = xf(x) + yf(x)
   f(y^2 + f(x)f(y)) = yf(y) + xf(y)
 
-FE-0228
+FE-0165
   f(x^2 + f(x)f(y)) = xf(x) + f(x)f(y)
   f(y^2 + f(x)f(y)) = yf(y) + f(x)f(y)
 
-FE-0229
+FE-0166
   f(x^2 + f(x)f(y)) = xf(x) + xy
   f(y^2 + f(x)f(y)) = yf(y) + xy
 
-FE-0230
+FE-0167
   f(x^2 + f(x)f(y)) = f(x^2) + xf(y)
   f(y^2 + f(x)f(y)) = f(y^2) + yf(x)
 
-FE-0231
+FE-0168
   f(x^2 + f(x)f(y)) = f(x^2) + yf(x)
   f(y^2 + f(x)f(y)) = f(y^2) + xf(y)
 
-FE-0232
+FE-0169
   f(x^2 + f(x)f(y)) = f(x^2) + f(x)f(y)
   f(y^2 + f(x)f(y)) = f(y^2) + f(x)f(y)
 
-FE-0233
+FE-0170
   f(x^2 + f(x)f(y)) = f(x^2) + xy
   f(y^2 + f(x)f(y)) = f(y^2) + xy
 
-FE-0234
+FE-0171
   f(x^2 + xy) = x^2 + xf(y)
   f(y^2 + xy) = y^2 + yf(x)
 
-FE-0235
+FE-0172
   f(x^2 + xy) = x^2 + yf(x)
   f(y^2 + xy) = y^2 + xf(y)
 
-FE-0236
+FE-0173
   f(x^2 + xy) = x^2 + f(x)f(y)
   f(y^2 + xy) = y^2 + f(x)f(y)
 
-FE-0237
+FE-0174
   f(x^2 + xy) = x^2 + xy
   f(y^2 + xy) = y^2 + xy
 
-FE-0238
+FE-0175
   f(x^2 + xy) = xf(x) + xf(y)
   f(y^2 + xy) = yf(y) + yf(x)
 
-FE-0239
+FE-0176
   f(x^2 + xy) = xf(x) + yf(x)
   f(y^2 + xy) = yf(y) + xf(y)
 
-FE-0240
+FE-0177
   f(x^2 + xy) = xf(x) + f(x)f(y)
   f(y^2 + xy) = yf(y) + f(x)f(y)
 
-FE-0241
+FE-0178
   f(x^2 + xy) = xf(x) + xy
   f(y^2 + xy) = yf(y) + xy
 
-FE-0242
+FE-0179
   f(x^2 + xy) = f(x^2) + xf(y)
   f(y^2 + xy) = f(y^2) + yf(x)
 
-FE-0243
+FE-0180
   f(x^2 + xy) = f(x^2) + yf(x)
   f(y^2 + xy) = f(y^2) + xf(y)
 
-FE-0244
+FE-0181
   f(x^2 + xy) = f(x^2) + f(x)f(y)
   f(y^2 + xy) = f(y^2) + f(x)f(y)
 
-FE-0245
+FE-0182
   f(x^2 + xy) = f(x^2) + xy
   f(y^2 + xy) = f(y^2) + xy
 
-FE-0246
-  f(xf(x) + xf(x)) = x^2 + x^2
-  f(yf(y) + yf(y)) = y^2 + y^2
-
-FE-0247
-  f(xf(x) + xf(x)) = x^2 + xf(x)
-  f(yf(y) + yf(y)) = y^2 + yf(y)
-
-FE-0248
-  f(xf(x) + xf(x)) = x^2 + f(x^2)
-  f(yf(y) + yf(y)) = y^2 + f(y^2)
-
-FE-0249
-  f(xf(x) + xf(x)) = xf(x) + xf(x)
-  f(yf(y) + yf(y)) = yf(y) + yf(y)
-
-FE-0250
-  f(xf(x) + xf(x)) = xf(x) + f(x^2)
-  f(yf(y) + yf(y)) = yf(y) + f(y^2)
-
-FE-0251
-  f(xf(x) + xf(x)) = f(x^2) + f(x^2)
-  f(yf(y) + yf(y)) = f(y^2) + f(y^2)
-
-FE-0252
-  f(xf(x) + f(x^2)) = x^2 + x^2
-  f(yf(y) + f(y^2)) = y^2 + y^2
-
-FE-0253
-  f(xf(x) + f(x^2)) = x^2 + xf(x)
-  f(yf(y) + f(y^2)) = y^2 + yf(y)
-
-FE-0254
-  f(xf(x) + f(x^2)) = x^2 + f(x^2)
-  f(yf(y) + f(y^2)) = y^2 + f(y^2)
-
-FE-0255
-  f(xf(x) + f(x^2)) = xf(x) + xf(x)
-  f(yf(y) + f(y^2)) = yf(y) + yf(y)
-
-FE-0256
-  f(xf(x) + f(x^2)) = xf(x) + f(x^2)
-  f(yf(y) + f(y^2)) = yf(y) + f(y^2)
-
-FE-0257
-  f(xf(x) + f(x^2)) = f(x^2) + f(x^2)
-  f(yf(y) + f(y^2)) = f(y^2) + f(y^2)
-
-FE-0258
+FE-0183
   f(xf(x) + yf(y)) = x^2 + y^2
 
-FE-0259
+FE-0184
   f(xf(x) + yf(y)) = x^2 + yf(y)
   f(xf(x) + yf(y)) = xf(x) + y^2
 
-FE-0260
+FE-0185
   f(xf(x) + yf(y)) = x^2 + f(y^2)
   f(xf(x) + yf(y)) = f(x^2) + y^2
 
-FE-0261
+FE-0186
   f(xf(x) + yf(y)) = xf(x) + yf(y)
 
-FE-0262
+FE-0187
   f(xf(x) + yf(y)) = xf(x) + f(y^2)
   f(xf(x) + yf(y)) = f(x^2) + yf(y)
 
-FE-0263
+FE-0188
   f(xf(x) + yf(y)) = f(x^2) + f(y^2)
 
-FE-0264
+FE-0189
   f(xf(x) + f(y^2)) = x^2 + y^2
   f(f(x^2) + yf(y)) = x^2 + y^2
 
-FE-0265
+FE-0190
   f(xf(x) + f(y^2)) = x^2 + yf(y)
   f(f(x^2) + yf(y)) = xf(x) + y^2
 
-FE-0266
+FE-0191
   f(xf(x) + f(y^2)) = x^2 + f(y^2)
   f(f(x^2) + yf(y)) = f(x^2) + y^2
 
-FE-0267
+FE-0192
   f(xf(x) + f(y^2)) = xf(x) + y^2
   f(f(x^2) + yf(y)) = x^2 + yf(y)
 
-FE-0268
+FE-0193
   f(xf(x) + f(y^2)) = xf(x) + yf(y)
   f(f(x^2) + yf(y)) = xf(x) + yf(y)
 
-FE-0269
+FE-0194
   f(xf(x) + f(y^2)) = xf(x) + f(y^2)
   f(f(x^2) + yf(y)) = f(x^2) + yf(y)
 
-FE-0270
+FE-0195
   f(xf(x) + f(y^2)) = f(x^2) + y^2
   f(f(x^2) + yf(y)) = x^2 + f(y^2)
 
-FE-0271
+FE-0196
   f(xf(x) + f(y^2)) = f(x^2) + yf(y)
   f(f(x^2) + yf(y)) = xf(x) + f(y^2)
 
-FE-0272
+FE-0197
   f(xf(x) + f(y^2)) = f(x^2) + f(y^2)
   f(f(x^2) + yf(y)) = f(x^2) + f(y^2)
 
-FE-0273
+FE-0198
   f(xf(x) + xf(y)) = x^2 + xf(y)
   f(yf(y) + yf(x)) = y^2 + yf(x)
 
-FE-0274
+FE-0199
   f(xf(x) + xf(y)) = x^2 + yf(x)
   f(yf(y) + yf(x)) = y^2 + xf(y)
 
-FE-0275
+FE-0200
   f(xf(x) + xf(y)) = x^2 + f(x)f(y)
   f(yf(y) + yf(x)) = y^2 + f(x)f(y)
 
-FE-0276
+FE-0201
   f(xf(x) + xf(y)) = x^2 + xy
   f(yf(y) + yf(x)) = y^2 + xy
 
-FE-0277
+FE-0202
   f(xf(x) + xf(y)) = xf(x) + xf(y)
   f(yf(y) + yf(x)) = yf(y) + yf(x)
 
-FE-0278
+FE-0203
   f(xf(x) + xf(y)) = xf(x) + yf(x)
   f(yf(y) + yf(x)) = yf(y) + xf(y)
 
-FE-0279
+FE-0204
   f(xf(x) + xf(y)) = xf(x) + f(x)f(y)
   f(yf(y) + yf(x)) = yf(y) + f(x)f(y)
 
-FE-0280
+FE-0205
   f(xf(x) + xf(y)) = xf(x) + xy
   f(yf(y) + yf(x)) = yf(y) + xy
 
-FE-0281
+FE-0206
   f(xf(x) + xf(y)) = f(x^2) + xf(y)
   f(yf(y) + yf(x)) = f(y^2) + yf(x)
 
-FE-0282
+FE-0207
   f(xf(x) + xf(y)) = f(x^2) + yf(x)
   f(yf(y) + yf(x)) = f(y^2) + xf(y)
 
-FE-0283
+FE-0208
   f(xf(x) + xf(y)) = f(x^2) + f(x)f(y)
   f(yf(y) + yf(x)) = f(y^2) + f(x)f(y)
 
-FE-0284
+FE-0209
   f(xf(x) + xf(y)) = f(x^2) + xy
   f(yf(y) + yf(x)) = f(y^2) + xy
 
-FE-0285
+FE-0210
   f(xf(x) + yf(x)) = x^2 + xf(y)
   f(yf(y) + xf(y)) = y^2 + yf(x)
 
-FE-0286
+FE-0211
   f(xf(x) + yf(x)) = x^2 + yf(x)
   f(yf(y) + xf(y)) = y^2 + xf(y)
 
-FE-0287
+FE-0212
   f(xf(x) + yf(x)) = x^2 + f(x)f(y)
   f(yf(y) + xf(y)) = y^2 + f(x)f(y)
 
-FE-0288
+FE-0213
   f(xf(x) + yf(x)) = x^2 + xy
   f(yf(y) + xf(y)) = y^2 + xy
 
-FE-0289
+FE-0214
   f(xf(x) + yf(x)) = xf(x) + xf(y)
   f(yf(y) + xf(y)) = yf(y) + yf(x)
 
-FE-0290
+FE-0215
   f(xf(x) + yf(x)) = xf(x) + yf(x)
   f(yf(y) + xf(y)) = yf(y) + xf(y)
 
-FE-0291
+FE-0216
   f(xf(x) + yf(x)) = xf(x) + f(x)f(y)
   f(yf(y) + xf(y)) = yf(y) + f(x)f(y)
 
-FE-0292
+FE-0217
   f(xf(x) + yf(x)) = xf(x) + xy
   f(yf(y) + xf(y)) = yf(y) + xy
 
-FE-0293
+FE-0218
   f(xf(x) + yf(x)) = f(x^2) + xf(y)
   f(yf(y) + xf(y)) = f(y^2) + yf(x)
 
-FE-0294
+FE-0219
   f(xf(x) + yf(x)) = f(x^2) + yf(x)
   f(yf(y) + xf(y)) = f(y^2) + xf(y)
 
-FE-0295
+FE-0220
   f(xf(x) + yf(x)) = f(x^2) + f(x)f(y)
   f(yf(y) + xf(y)) = f(y^2) + f(x)f(y)
 
-FE-0296
+FE-0221
   f(xf(x) + yf(x)) = f(x^2) + xy
   f(yf(y) + xf(y)) = f(y^2) + xy
 
-FE-0297
+FE-0222
   f(xf(x) + f(x)f(y)) = x^2 + xf(y)
   f(yf(y) + f(x)f(y)) = y^2 + yf(x)
 
-FE-0298
+FE-0223
   f(xf(x) + f(x)f(y)) = x^2 + yf(x)
   f(yf(y) + f(x)f(y)) = y^2 + xf(y)
 
-FE-0299
+FE-0224
   f(xf(x) + f(x)f(y)) = x^2 + f(x)f(y)
   f(yf(y) + f(x)f(y)) = y^2 + f(x)f(y)
 
-FE-0300
+FE-0225
   f(xf(x) + f(x)f(y)) = x^2 + xy
   f(yf(y) + f(x)f(y)) = y^2 + xy
 
-FE-0301
+FE-0226
   f(xf(x) + f(x)f(y)) = xf(x) + xf(y)
   f(yf(y) + f(x)f(y)) = yf(y) + yf(x)
 
-FE-0302
+FE-0227
   f(xf(x) + f(x)f(y)) = xf(x) + yf(x)
   f(yf(y) + f(x)f(y)) = yf(y) + xf(y)
 
-FE-0303
+FE-0228
   f(xf(x) + f(x)f(y)) = xf(x) + f(x)f(y)
   f(yf(y) + f(x)f(y)) = yf(y) + f(x)f(y)
 
-FE-0304
+FE-0229
   f(xf(x) + f(x)f(y)) = xf(x) + xy
   f(yf(y) + f(x)f(y)) = yf(y) + xy
 
-FE-0305
+FE-0230
   f(xf(x) + f(x)f(y)) = f(x^2) + xf(y)
   f(yf(y) + f(x)f(y)) = f(y^2) + yf(x)
 
-FE-0306
+FE-0231
   f(xf(x) + f(x)f(y)) = f(x^2) + yf(x)
   f(yf(y) + f(x)f(y)) = f(y^2) + xf(y)
 
-FE-0307
+FE-0232
   f(xf(x) + f(x)f(y)) = f(x^2) + f(x)f(y)
   f(yf(y) + f(x)f(y)) = f(y^2) + f(x)f(y)
 
-FE-0308
+FE-0233
   f(xf(x) + f(x)f(y)) = f(x^2) + xy
   f(yf(y) + f(x)f(y)) = f(y^2) + xy
 
-FE-0309
+FE-0234
   f(xf(x) + xy) = x^2 + xf(y)
   f(yf(y) + xy) = y^2 + yf(x)
 
-FE-0310
+FE-0235
   f(xf(x) + xy) = x^2 + yf(x)
   f(yf(y) + xy) = y^2 + xf(y)
 
-FE-0311
+FE-0236
   f(xf(x) + xy) = x^2 + f(x)f(y)
   f(yf(y) + xy) = y^2 + f(x)f(y)
 
-FE-0312
+FE-0237
   f(xf(x) + xy) = x^2 + xy
   f(yf(y) + xy) = y^2 + xy
 
-FE-0313
+FE-0238
   f(xf(x) + xy) = xf(x) + xf(y)
   f(yf(y) + xy) = yf(y) + yf(x)
 
-FE-0314
+FE-0239
   f(xf(x) + xy) = xf(x) + yf(x)
   f(yf(y) + xy) = yf(y) + xf(y)
 
-FE-0315
+FE-0240
   f(xf(x) + xy) = xf(x) + f(x)f(y)
   f(yf(y) + xy) = yf(y) + f(x)f(y)
 
-FE-0316
+FE-0241
   f(xf(x) + xy) = xf(x) + xy
   f(yf(y) + xy) = yf(y) + xy
 
-FE-0317
+FE-0242
   f(xf(x) + xy) = f(x^2) + xf(y)
   f(yf(y) + xy) = f(y^2) + yf(x)
 
-FE-0318
+FE-0243
   f(xf(x) + xy) = f(x^2) + yf(x)
   f(yf(y) + xy) = f(y^2) + xf(y)
 
-FE-0319
+FE-0244
   f(xf(x) + xy) = f(x^2) + f(x)f(y)
   f(yf(y) + xy) = f(y^2) + f(x)f(y)
 
-FE-0320
+FE-0245
   f(xf(x) + xy) = f(x^2) + xy
   f(yf(y) + xy) = f(y^2) + xy
 
-FE-0321
-  f(f(x^2) + f(x^2)) = x^2 + x^2
-  f(f(y^2) + f(y^2)) = y^2 + y^2
-
-FE-0322
-  f(f(x^2) + f(x^2)) = x^2 + xf(x)
-  f(f(y^2) + f(y^2)) = y^2 + yf(y)
-
-FE-0323
-  f(f(x^2) + f(x^2)) = x^2 + f(x^2)
-  f(f(y^2) + f(y^2)) = y^2 + f(y^2)
-
-FE-0324
-  f(f(x^2) + f(x^2)) = xf(x) + xf(x)
-  f(f(y^2) + f(y^2)) = yf(y) + yf(y)
-
-FE-0325
-  f(f(x^2) + f(x^2)) = xf(x) + f(x^2)
-  f(f(y^2) + f(y^2)) = yf(y) + f(y^2)
-
-FE-0326
-  f(f(x^2) + f(x^2)) = f(x^2) + f(x^2)
-  f(f(y^2) + f(y^2)) = f(y^2) + f(y^2)
-
-FE-0327
+FE-0246
   f(f(x^2) + f(y^2)) = x^2 + y^2
 
-FE-0328
+FE-0247
   f(f(x^2) + f(y^2)) = x^2 + yf(y)
   f(f(x^2) + f(y^2)) = xf(x) + y^2
 
-FE-0329
+FE-0248
   f(f(x^2) + f(y^2)) = x^2 + f(y^2)
   f(f(x^2) + f(y^2)) = f(x^2) + y^2
 
-FE-0330
+FE-0249
   f(f(x^2) + f(y^2)) = xf(x) + yf(y)
 
-FE-0331
+FE-0250
   f(f(x^2) + f(y^2)) = xf(x) + f(y^2)
   f(f(x^2) + f(y^2)) = f(x^2) + yf(y)
 
-FE-0332
+FE-0251
   f(f(x^2) + f(y^2)) = f(x^2) + f(y^2)
 
-FE-0333
+FE-0252
   f(f(x^2) + xf(y)) = x^2 + xf(y)
   f(f(y^2) + yf(x)) = y^2 + yf(x)
 
-FE-0334
+FE-0253
   f(f(x^2) + xf(y)) = x^2 + yf(x)
   f(f(y^2) + yf(x)) = y^2 + xf(y)
 
-FE-0335
+FE-0254
   f(f(x^2) + xf(y)) = x^2 + f(x)f(y)
   f(f(y^2) + yf(x)) = y^2 + f(x)f(y)
 
-FE-0336
+FE-0255
   f(f(x^2) + xf(y)) = x^2 + xy
   f(f(y^2) + yf(x)) = y^2 + xy
 
-FE-0337
+FE-0256
   f(f(x^2) + xf(y)) = xf(x) + xf(y)
   f(f(y^2) + yf(x)) = yf(y) + yf(x)
 
-FE-0338
+FE-0257
   f(f(x^2) + xf(y)) = xf(x) + yf(x)
   f(f(y^2) + yf(x)) = yf(y) + xf(y)
 
-FE-0339
+FE-0258
   f(f(x^2) + xf(y)) = xf(x) + f(x)f(y)
   f(f(y^2) + yf(x)) = yf(y) + f(x)f(y)
 
-FE-0340
+FE-0259
   f(f(x^2) + xf(y)) = xf(x) + xy
   f(f(y^2) + yf(x)) = yf(y) + xy
 
-FE-0341
+FE-0260
   f(f(x^2) + xf(y)) = f(x^2) + xf(y)
   f(f(y^2) + yf(x)) = f(y^2) + yf(x)
 
-FE-0342
+FE-0261
   f(f(x^2) + xf(y)) = f(x^2) + yf(x)
   f(f(y^2) + yf(x)) = f(y^2) + xf(y)
 
-FE-0343
+FE-0262
   f(f(x^2) + xf(y)) = f(x^2) + f(x)f(y)
   f(f(y^2) + yf(x)) = f(y^2) + f(x)f(y)
 
-FE-0344
+FE-0263
   f(f(x^2) + xf(y)) = f(x^2) + xy
   f(f(y^2) + yf(x)) = f(y^2) + xy
 
-FE-0345
+FE-0264
   f(f(x^2) + yf(x)) = x^2 + xf(y)
   f(f(y^2) + xf(y)) = y^2 + yf(x)
 
-FE-0346
+FE-0265
   f(f(x^2) + yf(x)) = x^2 + yf(x)
   f(f(y^2) + xf(y)) = y^2 + xf(y)
 
-FE-0347
+FE-0266
   f(f(x^2) + yf(x)) = x^2 + f(x)f(y)
   f(f(y^2) + xf(y)) = y^2 + f(x)f(y)
 
-FE-0348
+FE-0267
   f(f(x^2) + yf(x)) = x^2 + xy
   f(f(y^2) + xf(y)) = y^2 + xy
 
-FE-0349
+FE-0268
   f(f(x^2) + yf(x)) = xf(x) + xf(y)
   f(f(y^2) + xf(y)) = yf(y) + yf(x)
 
-FE-0350
+FE-0269
   f(f(x^2) + yf(x)) = xf(x) + yf(x)
   f(f(y^2) + xf(y)) = yf(y) + xf(y)
 
-FE-0351
+FE-0270
   f(f(x^2) + yf(x)) = xf(x) + f(x)f(y)
   f(f(y^2) + xf(y)) = yf(y) + f(x)f(y)
 
-FE-0352
+FE-0271
   f(f(x^2) + yf(x)) = xf(x) + xy
   f(f(y^2) + xf(y)) = yf(y) + xy
 
-FE-0353
+FE-0272
   f(f(x^2) + yf(x)) = f(x^2) + xf(y)
   f(f(y^2) + xf(y)) = f(y^2) + yf(x)
 
-FE-0354
+FE-0273
   f(f(x^2) + yf(x)) = f(x^2) + yf(x)
   f(f(y^2) + xf(y)) = f(y^2) + xf(y)
 
-FE-0355
+FE-0274
   f(f(x^2) + yf(x)) = f(x^2) + f(x)f(y)
   f(f(y^2) + xf(y)) = f(y^2) + f(x)f(y)
 
-FE-0356
+FE-0275
   f(f(x^2) + yf(x)) = f(x^2) + xy
   f(f(y^2) + xf(y)) = f(y^2) + xy
 
-FE-0357
+FE-0276
   f(f(x^2) + f(x)f(y)) = x^2 + xf(y)
   f(f(y^2) + f(x)f(y)) = y^2 + yf(x)
 
-FE-0358
+FE-0277
   f(f(x^2) + f(x)f(y)) = x^2 + yf(x)
   f(f(y^2) + f(x)f(y)) = y^2 + xf(y)
 
-FE-0359
+FE-0278
   f(f(x^2) + f(x)f(y)) = x^2 + f(x)f(y)
   f(f(y^2) + f(x)f(y)) = y^2 + f(x)f(y)
 
-FE-0360
+FE-0279
   f(f(x^2) + f(x)f(y)) = x^2 + xy
   f(f(y^2) + f(x)f(y)) = y^2 + xy
 
-FE-0361
+FE-0280
   f(f(x^2) + f(x)f(y)) = xf(x) + xf(y)
   f(f(y^2) + f(x)f(y)) = yf(y) + yf(x)
 
-FE-0362
+FE-0281
   f(f(x^2) + f(x)f(y)) = xf(x) + yf(x)
   f(f(y^2) + f(x)f(y)) = yf(y) + xf(y)
 
-FE-0363
+FE-0282
   f(f(x^2) + f(x)f(y)) = xf(x) + f(x)f(y)
   f(f(y^2) + f(x)f(y)) = yf(y) + f(x)f(y)
 
-FE-0364
+FE-0283
   f(f(x^2) + f(x)f(y)) = xf(x) + xy
   f(f(y^2) + f(x)f(y)) = yf(y) + xy
 
-FE-0365
+FE-0284
   f(f(x^2) + f(x)f(y)) = f(x^2) + xf(y)
   f(f(y^2) + f(x)f(y)) = f(y^2) + yf(x)
 
-FE-0366
+FE-0285
   f(f(x^2) + f(x)f(y)) = f(x^2) + yf(x)
   f(f(y^2) + f(x)f(y)) = f(y^2) + xf(y)
 
-FE-0367
+FE-0286
   f(f(x^2) + f(x)f(y)) = f(x^2) + f(x)f(y)
   f(f(y^2) + f(x)f(y)) = f(y^2) + f(x)f(y)
 
-FE-0368
+FE-0287
   f(f(x^2) + f(x)f(y)) = f(x^2) + xy
   f(f(y^2) + f(x)f(y)) = f(y^2) + xy
 
-FE-0369
+FE-0288
   f(f(x^2) + xy) = x^2 + xf(y)
   f(f(y^2) + xy) = y^2 + yf(x)
 
-FE-0370
+FE-0289
   f(f(x^2) + xy) = x^2 + yf(x)
   f(f(y^2) + xy) = y^2 + xf(y)
 
-FE-0371
+FE-0290
   f(f(x^2) + xy) = x^2 + f(x)f(y)
   f(f(y^2) + xy) = y^2 + f(x)f(y)
 
-FE-0372
+FE-0291
   f(f(x^2) + xy) = x^2 + xy
   f(f(y^2) + xy) = y^2 + xy
 
-FE-0373
+FE-0292
   f(f(x^2) + xy) = xf(x) + xf(y)
   f(f(y^2) + xy) = yf(y) + yf(x)
 
-FE-0374
+FE-0293
   f(f(x^2) + xy) = xf(x) + yf(x)
   f(f(y^2) + xy) = yf(y) + xf(y)
 
-FE-0375
+FE-0294
   f(f(x^2) + xy) = xf(x) + f(x)f(y)
   f(f(y^2) + xy) = yf(y) + f(x)f(y)
 
-FE-0376
+FE-0295
   f(f(x^2) + xy) = xf(x) + xy
   f(f(y^2) + xy) = yf(y) + xy
 
-FE-0377
+FE-0296
   f(f(x^2) + xy) = f(x^2) + xf(y)
   f(f(y^2) + xy) = f(y^2) + yf(x)
 
-FE-0378
+FE-0297
   f(f(x^2) + xy) = f(x^2) + yf(x)
   f(f(y^2) + xy) = f(y^2) + xf(y)
 
-FE-0379
+FE-0298
   f(f(x^2) + xy) = f(x^2) + f(x)f(y)
   f(f(y^2) + xy) = f(y^2) + f(x)f(y)
 
-FE-0380
+FE-0299
   f(f(x^2) + xy) = f(x^2) + xy
   f(f(y^2) + xy) = f(y^2) + xy
 
-FE-0381
+FE-0300
   f(xf(y) + xf(y)) = xf(y) + xf(y)
   f(yf(x) + yf(x)) = yf(x) + yf(x)
 
-FE-0382
+FE-0301
   f(xf(y) + xf(y)) = xf(y) + yf(x)
   f(yf(x) + yf(x)) = xf(y) + yf(x)
 
-FE-0383
+FE-0302
   f(xf(y) + xf(y)) = xf(y) + f(x)f(y)
   f(yf(x) + yf(x)) = yf(x) + f(x)f(y)
 
-FE-0384
+FE-0303
   f(xf(y) + xf(y)) = xf(y) + xy
   f(yf(x) + yf(x)) = yf(x) + xy
 
-FE-0385
+FE-0304
   f(xf(y) + xf(y)) = yf(x) + yf(x)
   f(yf(x) + yf(x)) = xf(y) + xf(y)
 
-FE-0386
+FE-0305
   f(xf(y) + xf(y)) = yf(x) + f(x)f(y)
   f(yf(x) + yf(x)) = xf(y) + f(x)f(y)
 
-FE-0387
+FE-0306
   f(xf(y) + xf(y)) = yf(x) + xy
   f(yf(x) + yf(x)) = xf(y) + xy
 
-FE-0388
+FE-0307
   f(xf(y) + xf(y)) = f(x)f(y) + f(x)f(y)
   f(yf(x) + yf(x)) = f(x)f(y) + f(x)f(y)
 
-FE-0389
+FE-0308
   f(xf(y) + xf(y)) = f(x)f(y) + xy
   f(yf(x) + yf(x)) = f(x)f(y) + xy
 
-FE-0390
+FE-0309
   f(xf(y) + xf(y)) = xy + xy
   f(yf(x) + yf(x)) = xy + xy
 
-FE-0391
+FE-0310
   f(xf(y) + yf(x)) = xf(y) + xf(y)
   f(xf(y) + yf(x)) = yf(x) + yf(x)
 
-FE-0392
+FE-0311
   f(xf(y) + yf(x)) = xf(y) + yf(x)
 
-FE-0393
+FE-0312
   f(xf(y) + yf(x)) = xf(y) + f(x)f(y)
   f(xf(y) + yf(x)) = yf(x) + f(x)f(y)
 
-FE-0394
+FE-0313
   f(xf(y) + yf(x)) = xf(y) + xy
   f(xf(y) + yf(x)) = yf(x) + xy
 
-FE-0395
+FE-0314
   f(xf(y) + yf(x)) = f(x)f(y) + f(x)f(y)
 
-FE-0396
+FE-0315
   f(xf(y) + yf(x)) = f(x)f(y) + xy
 
-FE-0397
+FE-0316
   f(xf(y) + yf(x)) = xy + xy
 
-FE-0398
+FE-0317
   f(xf(y) + f(x)f(y)) = xf(y) + xf(y)
   f(yf(x) + f(x)f(y)) = yf(x) + yf(x)
 
-FE-0399
+FE-0318
   f(xf(y) + f(x)f(y)) = xf(y) + yf(x)
   f(yf(x) + f(x)f(y)) = xf(y) + yf(x)
 
-FE-0400
+FE-0319
   f(xf(y) + f(x)f(y)) = xf(y) + f(x)f(y)
   f(yf(x) + f(x)f(y)) = yf(x) + f(x)f(y)
 
-FE-0401
+FE-0320
   f(xf(y) + f(x)f(y)) = xf(y) + xy
   f(yf(x) + f(x)f(y)) = yf(x) + xy
 
-FE-0402
+FE-0321
   f(xf(y) + f(x)f(y)) = yf(x) + yf(x)
   f(yf(x) + f(x)f(y)) = xf(y) + xf(y)
 
-FE-0403
+FE-0322
   f(xf(y) + f(x)f(y)) = yf(x) + f(x)f(y)
   f(yf(x) + f(x)f(y)) = xf(y) + f(x)f(y)
 
-FE-0404
+FE-0323
   f(xf(y) + f(x)f(y)) = yf(x) + xy
   f(yf(x) + f(x)f(y)) = xf(y) + xy
 
-FE-0405
+FE-0324
   f(xf(y) + f(x)f(y)) = f(x)f(y) + f(x)f(y)
   f(yf(x) + f(x)f(y)) = f(x)f(y) + f(x)f(y)
 
-FE-0406
+FE-0325
   f(xf(y) + f(x)f(y)) = f(x)f(y) + xy
   f(yf(x) + f(x)f(y)) = f(x)f(y) + xy
 
-FE-0407
+FE-0326
   f(xf(y) + f(x)f(y)) = xy + xy
   f(yf(x) + f(x)f(y)) = xy + xy
 
-FE-0408
+FE-0327
   f(xf(y) + xy) = xf(y) + xf(y)
   f(yf(x) + xy) = yf(x) + yf(x)
 
-FE-0409
+FE-0328
   f(xf(y) + xy) = xf(y) + yf(x)
   f(yf(x) + xy) = xf(y) + yf(x)
 
-FE-0410
+FE-0329
   f(xf(y) + xy) = xf(y) + f(x)f(y)
   f(yf(x) + xy) = yf(x) + f(x)f(y)
 
-FE-0411
+FE-0330
   f(xf(y) + xy) = xf(y) + xy
   f(yf(x) + xy) = yf(x) + xy
 
-FE-0412
+FE-0331
   f(xf(y) + xy) = yf(x) + yf(x)
   f(yf(x) + xy) = xf(y) + xf(y)
 
-FE-0413
+FE-0332
   f(xf(y) + xy) = yf(x) + f(x)f(y)
   f(yf(x) + xy) = xf(y) + f(x)f(y)
 
-FE-0414
+FE-0333
   f(xf(y) + xy) = yf(x) + xy
   f(yf(x) + xy) = xf(y) + xy
 
-FE-0415
+FE-0334
   f(xf(y) + xy) = f(x)f(y) + f(x)f(y)
   f(yf(x) + xy) = f(x)f(y) + f(x)f(y)
 
-FE-0416
+FE-0335
   f(xf(y) + xy) = f(x)f(y) + xy
   f(yf(x) + xy) = f(x)f(y) + xy
 
-FE-0417
+FE-0336
   f(xf(y) + xy) = xy + xy
   f(yf(x) + xy) = xy + xy
 
-FE-0418
+FE-0337
   f(f(x)f(y) + f(x)f(y)) = xf(y) + xf(y)
   f(f(x)f(y) + f(x)f(y)) = yf(x) + yf(x)
 
-FE-0419
+FE-0338
   f(f(x)f(y) + f(x)f(y)) = xf(y) + yf(x)
 
-FE-0420
+FE-0339
   f(f(x)f(y) + f(x)f(y)) = xf(y) + f(x)f(y)
   f(f(x)f(y) + f(x)f(y)) = yf(x) + f(x)f(y)
 
-FE-0421
+FE-0340
   f(f(x)f(y) + f(x)f(y)) = xf(y) + xy
   f(f(x)f(y) + f(x)f(y)) = yf(x) + xy
 
-FE-0422
+FE-0341
   f(f(x)f(y) + f(x)f(y)) = f(x)f(y) + f(x)f(y)
 
-FE-0423
+FE-0342
   f(f(x)f(y) + f(x)f(y)) = f(x)f(y) + xy
 
-FE-0424
+FE-0343
   f(f(x)f(y) + f(x)f(y)) = xy + xy
 
-FE-0425
+FE-0344
   f(f(x)f(y) + xy) = xf(y) + xf(y)
   f(f(x)f(y) + xy) = yf(x) + yf(x)
 
-FE-0426
+FE-0345
   f(f(x)f(y) + xy) = xf(y) + yf(x)
 
-FE-0427
+FE-0346
   f(f(x)f(y) + xy) = xf(y) + f(x)f(y)
   f(f(x)f(y) + xy) = yf(x) + f(x)f(y)
 
-FE-0428
+FE-0347
   f(f(x)f(y) + xy) = xf(y) + xy
   f(f(x)f(y) + xy) = yf(x) + xy
 
-FE-0429
+FE-0348
   f(f(x)f(y) + xy) = f(x)f(y) + f(x)f(y)
 
-FE-0430
+FE-0349
   f(f(x)f(y) + xy) = f(x)f(y) + xy
 
-FE-0431
+FE-0350
   f(f(x)f(y) + xy) = xy + xy
 
-FE-0432
+FE-0351
   f(xy + xy) = xf(y) + xf(y)
   f(xy + xy) = yf(x) + yf(x)
 
-FE-0433
+FE-0352
   f(xy + xy) = xf(y) + yf(x)
 
-FE-0434
+FE-0353
   f(xy + xy) = xf(y) + f(x)f(y)
   f(xy + xy) = yf(x) + f(x)f(y)
 
-FE-0435
+FE-0354
   f(xy + xy) = xf(y) + xy
   f(xy + xy) = yf(x) + xy
 
-FE-0436
+FE-0355
   f(xy + xy) = f(x)f(y) + f(x)f(y)
 
-FE-0437
+FE-0356
   f(xy + xy) = f(x)f(y) + xy
 
-FE-0438
+FE-0357
   f(xy + xy) = xy + xy
 
