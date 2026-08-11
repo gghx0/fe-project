@@ -1,17 +1,282 @@
 ---
+import { getCollection } from "astro:content";
+import "katex/dist/katex.min.css";
+import katex from "katex";
+import fes from "../../../data/fe_database.json";
 
+const base = import.meta.env.BASE_URL;
+
+function renderEquation(equation) {
+  return katex.renderToString(equation.display, {
+    throwOnError: false,
+    displayMode: true,
+  });
+}
+
+const solutionEntries = await getCollection("solutions");
+
+const statusById = new Map(
+  solutionEntries.map((entry) => [
+    entry.id,
+    entry.data.status,
+  ])
+);
+
+function getStatus(feId) {
+  return statusById.get(feId) ?? "open";
+}
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Functional Equation Database</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Functional Equation Database</h1>
+
+      <p>{fes.length} functional equations</p>
+
+      <div class="controls">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Search by FE ID or equation..."
+        />
+
+        <div class="filters">
+          <button class="filter active" data-status="all">All</button>
+          <button class="filter" data-status="open">Open</button>
+          <button class="filter" data-status="solved">Solved</button>
+          <button class="filter" data-status="pathological">Pathological</button>
+        </div>
+
+        <p id="result-count"></p>
+      </div>
+
+      <div class="fe-list">
+        {
+          fes.map((fe) => {
+            const status = getStatus(fe.id);
+
+            return (
+              <a
+                href={`${base}fe/${fe.id}`}
+                class={`fe-card ${status}`}
+                data-status={status}
+                data-search={`${fe.id} ${fe.equations
+                  .map((equation) => equation.display)
+                  .join(" ")}`.toLowerCase()}
+              >
+                <div class="card-header">
+                  <h2>{fe.id}</h2>
+
+                  <span class="status">
+                    {status}
+                  </span>
+                </div>
+
+                {
+                  fe.equations.map((equation) => (
+                    <div
+                      class="equation"
+                      set:html={renderEquation(equation)}
+                    />
+                  ))
+                }
+              </a>
+            );
+          })
+        }
+      </div>
+    </main>
+
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        background: #f5f5f5;
+        color: #111;
+      }
+
+      main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .controls {
+        margin: 24px 0;
+      }
+
+      #search-input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 14px;
+        font-size: 1rem;
+        border: 1px solid #bbb;
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+
+      .filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .filter {
+        padding: 8px 14px;
+        border: 1px solid #bbb;
+        border-radius: 8px;
+        background: white;
+        cursor: pointer;
+      }
+
+      .filter.active {
+        background: #222;
+        color: white;
+      }
+
+      #result-count {
+        color: #666;
+        margin-top: 12px;
+      }
+
+      .fe-list {
+        display: grid;
+        gap: 16px;
+      }
+
+      .fe-card {
+        display: block;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 6px solid;
+        background: white;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .fe-card:hover {
+        background: #fafafa;
+      }
+
+      .fe-card[hidden] {
+        display: none;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .card-header h2 {
+        margin: 0;
+      }
+
+      .status {
+        text-transform: capitalize;
+        font-weight: 600;
+      }
+
+      .equation {
+        font-size: 1.1rem;
+      }
+
+      .open {
+        border-left-color: #c62828;
+      }
+
+      .open .status {
+        color: #c62828;
+      }
+
+      .solved {
+        border-left-color: #2e7d32;
+      }
+
+      .solved .status {
+        color: #2e7d32;
+      }
+
+      .pathological {
+        border-left-color: #757575;
+      }
+
+      .pathological .status {
+        color: #616161;
+      }
+    </style>
+
+    <script>
+      const searchInput = document.querySelector("#search-input");
+      const filterButtons = document.querySelectorAll(".filter");
+      const cards = document.querySelectorAll(".fe-card");
+      const resultCount = document.querySelector("#result-count");
+
+      let selectedStatus = "all";
+
+      function updateResults() {
+        const search =
+          searchInput instanceof HTMLInputElement
+            ? searchInput.value.toLowerCase().trim()
+            : "";
+
+        let visible = 0;
+
+        cards.forEach((card) => {
+          if (!(card instanceof HTMLElement)) return;
+
+          const cardStatus = card.dataset.status ?? "";
+          const cardSearch = card.dataset.search ?? "";
+
+          const matchesSearch = cardSearch.includes(search);
+
+          const matchesStatus =
+            selectedStatus === "all" ||
+            cardStatus === selectedStatus;
+
+          const shouldShow =
+            matchesSearch && matchesStatus;
+
+          card.hidden = !shouldShow;
+
+          if (shouldShow) {
+            visible++;
+          }
+        });
+
+        if (resultCount) {
+          resultCount.textContent =
+            `${visible} functional equation${visible === 1 ? "" : "s"}`;
+        }
+      }
+
+      searchInput?.addEventListener("input", updateResults);
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          if (!(button instanceof HTMLElement)) return;
+
+          selectedStatus =
+            button.dataset.status ?? "all";
+
+          filterButtons.forEach((otherButton) => {
+            otherButton.classList.remove("active");
+          });
+
+          button.classList.add("active");
+
+          updateResults();
+        });
+      });
+
+      updateResults();
+    </script>
+  </body>
 </html>

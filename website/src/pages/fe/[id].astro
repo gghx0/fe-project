@@ -1,0 +1,160 @@
+---
+import { getCollection, render } from "astro:content";
+import "katex/dist/katex.min.css";
+import katex from "katex";
+
+import fes from "../../../../data/fe_database.json";
+
+export function getStaticPaths() {
+  return fes.map((fe) => ({
+    params: {
+      id: fe.id,
+    },
+    props: {
+      fe,
+    },
+  }));
+}
+
+const { fe } = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+
+function renderEquation(equation) {
+  return katex.renderToString(equation.display, {
+    throwOnError: false,
+    displayMode: true,
+  });
+}
+
+const solutionEntries = await getCollection("solutions");
+
+const solutionEntry = solutionEntries.find(
+  (entry) => entry.id === fe.id
+);
+
+const status = solutionEntry?.data.status ?? "open";
+
+let SolutionContent = null;
+
+if (solutionEntry) {
+  const rendered = await render(solutionEntry);
+  SolutionContent = rendered.Content;
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{fe.id} | Functional Equation Database</title>
+  </head>
+
+  <body>
+    <main>
+      <p>
+        <a href={base}>← Back to all FEs</a>
+      </p>
+
+      <h1>{fe.id}</h1>
+
+      <div class="equations">
+        {
+          fe.equations.map((equation) => (
+            <div
+              class="equation"
+              set:html={renderEquation(equation)}
+            />
+          ))
+        }
+      </div>
+
+      <p class={`status ${status}`}>
+        Status: <strong>{status}</strong>
+      </p>
+
+      <h2>Progress / Solution</h2>
+
+      {
+        SolutionContent
+          ? <SolutionContent />
+          : <p>No curated progress has been recorded yet.</p>
+      }
+
+      <h2>Discussion</h2>
+
+        <script src="https://giscus.app/client.js"
+                data-repo="gghx0/fe-project"
+                data-repo-id="R_kgDOT03LxA"
+                data-category="General"
+                data-category-id="DIC_kwDOT03LxM4DDH0b"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="0"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="light"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </main>
+
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        background: #f5f5f5;
+        color: #111;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      h1 {
+        margin-bottom: 24px;
+      }
+
+      .equations {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .equation {
+        font-size: 1.15rem;
+        overflow-x: auto;
+      }
+
+      .status {
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+
+      .status.open strong {
+        color: #c62828;
+      }
+
+      .status.solved strong {
+        color: #2e7d32;
+      }
+
+      .status.pathological strong {
+        color: #616161;
+      }
+
+      h2 {
+        margin-top: 36px;
+      }
+    </style>
+  </body>
+</html>
