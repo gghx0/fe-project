@@ -2,18 +2,95 @@
 import { getCollection } from "astro:content";
 import "katex/dist/katex.min.css";
 import katex from "katex";
-import fes from "../../../data/fe_database.json";
 
-const base = import.meta.env.BASE_URL;
+import fes from "../../../data/fe_database.json";
+import references from "../../../data/fe_references.json";
+
+import Nav from "../components/Nav.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+/*
+ * All 16 permitted expressions.
+ *
+ * Every search dropdown is generated from THIS list.
+ */
+const termOptions = [
+  "x",
+  "f(x)",
+  "y",
+  "f(y)",
+
+  "x^2",
+  "xf(x)",
+  "f(x)^2",
+  "f(x^2)",
+
+  "y^2",
+  "yf(y)",
+  "f(y)^2",
+  "f(y^2)",
+
+  "xf(y)",
+  "yf(x)",
+  "f(x)f(y)",
+  "xy",
+];
 
 function renderEquation(equation) {
-  return katex.renderToString(equation.display, {
-    throwOnError: false,
-    displayMode: true,
-  });
+  return katex.renderToString(
+    equation.display,
+    {
+      throwOnError: false,
+      displayMode: true,
+    }
+  );
 }
 
-const solutionEntries = await getCollection("solutions");
+function renderInlineMath(math) {
+  return katex.renderToString(
+    math,
+    {
+      throwOnError: false,
+      displayMode: false,
+    }
+  );
+}
+
+/*
+ * Human-readable labels for the native dropdowns.
+ *
+ * The VALUE stays exactly equal to the strings used by
+ * generator.py, while the label is made easier to read.
+ */
+function termLabel(term) {
+  const labels = {
+    "x": "x",
+    "f(x)": "f(x)",
+    "y": "y",
+    "f(y)": "f(y)",
+
+    "x^2": "x²",
+    "xf(x)": "xf(x)",
+    "f(x)^2": "f(x)²",
+    "f(x^2)": "f(x²)",
+
+    "y^2": "y²",
+    "yf(y)": "yf(y)",
+    "f(y)^2": "f(y)²",
+    "f(y^2)": "f(y²)",
+
+    "xf(y)": "xf(y)",
+    "yf(x)": "yf(x)",
+    "f(x)f(y)": "f(x)f(y)",
+    "xy": "xy",
+  };
+
+  return labels[term] ?? term;
+}
+
+const solutionEntries =
+  await getCollection("solutions");
 
 const statusById = new Map(
   solutionEntries.map((entry) => [
@@ -25,67 +102,304 @@ const statusById = new Map(
 function getStatus(feId) {
   return statusById.get(feId) ?? "open";
 }
+
+const solvedCount = fes.filter(
+  (fe) => getStatus(fe.id) === "solved"
+).length;
+
+const openCount = fes.filter(
+  (fe) => getStatus(fe.id) === "open"
+).length;
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Functional Equation Database</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+
+    <title>
+      Functional Equation Database
+    </title>
   </head>
 
   <body>
     <main>
-      <h1>Functional Equation Database</h1>
+      <Nav />
 
-      <p>{fes.length} functional equations</p>
+      <h1>
+        Functional Equation Database
+      </h1>
+
+      <!-- Statistics -->
+
+      <div class="stats">
+        <div class="stat">
+          <strong>{fes.length}</strong>
+          <span>Total</span>
+        </div>
+
+        <div class="stat solved-stat">
+          <strong>{solvedCount}</strong>
+          <span>Solved</span>
+        </div>
+
+        <div class="stat open-stat">
+          <strong>{openCount}</strong>
+          <span>Open</span>
+        </div>
+      </div>
+
+      <!-- Search -->
 
       <div class="controls">
-        <input
-          id="search-input"
-          type="search"
-          placeholder="Search by FE ID or equation..."
-        />
+        <div class="equation-search">
+          <div class="search-header">
+            <strong>
+              Find a functional equation:
+            </strong>
+          </div>
+
+          <div class="equation-builder">
+
+            <!-- f( -->
+
+            <span
+              class="math-symbol"
+              set:html={renderInlineMath("f(")}
+            />
+
+            <!-- First term -->
+
+            <select
+              id="left-1"
+              aria-label="First term inside f"
+            >
+              <option value="">
+                Any
+              </option>
+
+              {
+                termOptions.map((term) => (
+                  <option value={term}>
+                    {termLabel(term)}
+                  </option>
+                ))
+              }
+            </select>
+
+            <!-- + -->
+
+            <span
+              class="math-symbol"
+              set:html={renderInlineMath("+")}
+            />
+
+            <!-- Second term -->
+
+            <select
+              id="left-2"
+              aria-label="Second term inside f"
+            >
+              <option value="">
+                Any
+              </option>
+
+              {
+                termOptions.map((term) => (
+                  <option value={term}>
+                    {termLabel(term)}
+                  </option>
+                ))
+              }
+            </select>
+
+            <!-- ) = -->
+
+            <span
+              class="math-symbol"
+              set:html={renderInlineMath(")")}
+            />
+
+            <span
+              class="math-symbol equals"
+              set:html={renderInlineMath("=")}
+            />
+
+            <!-- Third term -->
+
+            <select
+              id="right-1"
+              aria-label="First term on right side"
+            >
+              <option value="">
+                Any
+              </option>
+
+              {
+                termOptions.map((term) => (
+                  <option value={term}>
+                    {termLabel(term)}
+                  </option>
+                ))
+              }
+            </select>
+
+            <!-- + -->
+
+            <span
+              class="math-symbol"
+              set:html={renderInlineMath("+")}
+            />
+
+            <!-- Fourth term -->
+
+            <select
+              id="right-2"
+              aria-label="Second term on right side"
+            >
+              <option value="">
+                Any
+              </option>
+
+              {
+                termOptions.map((term) => (
+                  <option value={term}>
+                    {termLabel(term)}
+                  </option>
+                ))
+              }
+            </select>
+
+            <button
+              id="clear-search"
+              type="button"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <!-- Status filter -->
 
         <div class="filters">
-          <button class="filter active" data-status="all">All</button>
-          <button class="filter" data-status="open">Open</button>
-          <button class="filter" data-status="solved">Solved</button>
-          <button class="filter" data-status="pathological">Pathological</button>
+          <button
+            class="filter active"
+            data-status="all"
+          >
+            All
+          </button>
+
+          <button
+            class="filter"
+            data-status="open"
+          >
+            Open
+          </button>
+
+          <button
+            class="filter"
+            data-status="solved"
+          >
+            Solved
+          </button>
         </div>
+		<div class="source-filters">
+		<button
+			class="source-filter active"
+			data-source="all"
+		>
+			All sources
+		</button>
+
+		<button
+			class="source-filter"
+			data-source="aops"
+		>
+			AoPS
+		</button>
+
+		<button
+			class="source-filter"
+			data-source="contest"
+		>
+			Contest
+		</button>
+		</div>
 
         <p id="result-count"></p>
       </div>
 
+      <!-- FE cards -->
+
       <div class="fe-list">
         {
           fes.map((fe) => {
-            const status = getStatus(fe.id);
+            const status =
+              getStatus(fe.id);
+
+            const feReferences =
+              references[
+                fe.id as keyof typeof references
+              ] ?? [];
 
             return (
-              <a
-                href={`${base}/fe/${fe.id}`}
-                class={`fe-card ${status}`}
-                data-status={status}
-                data-search={`${fe.id} ${fe.equations
-                  .map((equation) => equation.display)
-                  .join(" ")}`.toLowerCase()}
-              >
+			<a
+			href={`${base}/fe/${fe.id.replace(
+				"FE-",
+				""
+			)}`}
+			class={`fe-card ${status}`}
+			data-status={status}
+			data-equations={JSON.stringify(
+				fe.equations
+			)}
+			data-reference-types={feReferences
+				.map((ref) => ref.type)
+				.join(",")}
+			>
                 <div class="card-header">
-                  <h2>{fe.id}</h2>
+                  <h2>
+                    #
+                    {Number(
+                      fe.id.replace(
+                        "FE-",
+                        ""
+                      )
+                    )}
+                  </h2>
 
                   <span class="status">
                     {status}
                   </span>
                 </div>
 
+                <div
+                  class="equation"
+                  set:html={renderEquation(
+                    fe.equations[0]
+                  )}
+                />
+
                 {
-                  fe.equations.map((equation) => (
-                    <div
-                      class="equation"
-                      set:html={renderEquation(equation)}
-                    />
-                  ))
+                  feReferences.length > 0 && (
+                    <div class="reference-badges">
+                      {
+                        feReferences.map(
+                          (ref) => (
+                            <span
+                              class={`reference-badge ${ref.type}`}
+                            >
+                              {ref.label}
+                            </span>
+                          )
+                        )
+                      }
+                    </div>
+                  )
                 }
               </a>
             );
@@ -96,8 +410,12 @@ function getStatus(feId) {
 
     <style>
       body {
-        font-family: system-ui, sans-serif;
+        font-family:
+          system-ui,
+          sans-serif;
+
         margin: 0;
+
         background: #f5f5f5;
         color: #111;
       }
@@ -108,62 +426,266 @@ function getStatus(feId) {
         padding: 40px 20px;
       }
 
+      h1 {
+        margin-bottom: 24px;
+      }
+
+      /* -------------------------
+         Statistics
+         ------------------------- */
+
+      .stats {
+        display: grid;
+        grid-template-columns:
+          repeat(3, 1fr);
+
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+
+      .stat {
+        background: white;
+
+        border-radius: 10px;
+        border-top: 4px solid #222;
+
+        padding: 16px;
+        text-align: center;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.6rem;
+      }
+
+      .stat span {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .solved-stat {
+        border-top-color: #2e7d32;
+      }
+
+      .open-stat {
+        border-top-color: #c62828;
+      }
+
+      /* -------------------------
+         Controls
+         ------------------------- */
+
       .controls {
         margin: 24px 0;
       }
 
-      #search-input {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 12px 14px;
-        font-size: 1rem;
-        border: 1px solid #bbb;
-        border-radius: 8px;
-        margin-bottom: 12px;
+      .equation-search {
+        background: white;
+
+        border:
+          1px solid #e2e2e2;
+
+        border-radius: 12px;
+
+        padding: 20px;
+        margin-bottom: 16px;
       }
+
+      .search-header {
+        margin-bottom: 14px;
+        font-size: 0.95rem;
+      }
+
+      .equation-builder {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: 9px;
+      }
+
+      .math-symbol {
+        display: inline-flex;
+        align-items: center;
+
+        font-size: 1.25rem;
+        line-height: 1;
+      }
+
+      .equals {
+        margin: 0 5px;
+      }
+
+      /* -------------------------
+         Dropdowns
+         ------------------------- */
+
+      .equation-builder select {
+        min-width: 135px;
+
+        padding:
+          10px
+          32px
+          10px
+          11px;
+
+        border:
+          1px solid #c8c8c8;
+
+        border-radius: 8px;
+
+        background: white;
+        color: #111;
+
+        font-size: 0.95rem;
+
+        cursor: pointer;
+      }
+
+      .equation-builder select:hover {
+        border-color: #999;
+      }
+
+      .equation-builder select:focus {
+        outline:
+          2px solid #aaa;
+
+        outline-offset: 1px;
+      }
+
+      #clear-search {
+        margin-left: auto;
+
+        padding:
+          10px
+          14px;
+
+        border:
+          1px solid #ccc;
+
+        border-radius: 8px;
+
+        background: #f7f7f7;
+        color: #333;
+
+        cursor: pointer;
+        font-weight: 500;
+      }
+
+      #clear-search:hover {
+        background: #ededed;
+      }
+
+      /* -------------------------
+         Status filters
+         ------------------------- */
 
       .filters {
         display: flex;
-        gap: 8px;
         flex-wrap: wrap;
+
+        gap: 8px;
       }
 
       .filter {
-        padding: 8px 14px;
-        border: 1px solid #bbb;
+        padding:
+          8px
+          14px;
+
+        border:
+          1px solid #bbb;
+
         border-radius: 8px;
+
         background: white;
+
         cursor: pointer;
+      }
+
+      .filter:hover {
+        background: #f1f1f1;
       }
 
       .filter.active {
         background: #222;
         color: white;
+        border-color: #222;
       }
+		.source-filters {
+		display: flex;
+		gap: 8px;
+		flex-wrap: wrap;
+		margin-top: 10px;
+		}
+
+		.source-filter {
+		padding: 8px 14px;
+		border: 1px solid #bbb;
+		border-radius: 8px;
+		background: white;
+		cursor: pointer;
+		}
+
+		.source-filter:hover {
+		background: #f1f1f1;
+		}
+
+		.source-filter.active {
+		background: #222;
+		color: white;
+		border-color: #222;
+		}
 
       #result-count {
         color: #666;
         margin-top: 12px;
       }
 
+      /* -------------------------
+         FE cards
+         ------------------------- */
+
       .fe-list {
         display: grid;
+
+        grid-template-columns:
+          repeat(
+            auto-fit,
+            minmax(450px, 1fr)
+          );
+
         gap: 16px;
       }
 
-      .fe-card {
-        display: block;
-        padding: 20px;
-        border-radius: 10px;
-        border-left: 6px solid;
-        background: white;
-        text-decoration: none;
-        color: inherit;
-      }
+		.fe-card {
+		display: block;
+		padding: 20px;
+		border-radius: 10px;
+		border-left: 6px solid;
+		text-decoration: none;
+		color: inherit;
+		transition:
+			background 0.15s ease,
+			border-color 0.15s ease;
+		}
 
-      .fe-card:hover {
-        background: #fafafa;
-      }
+		.fe-card.open {
+		background: #fff1f1;
+		border-left-color: #c62828;
+		}
+
+		.fe-card.open:hover {
+		background: #ffe8e8;
+		}
+
+		.fe-card.solved {
+		background: #f0f9f1;
+		border-left-color: #2e7d32;
+		}
+
+		.fe-card.solved:hover {
+		background: #e6f5e8;
+		}
 
       .fe-card[hidden] {
         display: none;
@@ -171,7 +693,10 @@ function getStatus(feId) {
 
       .card-header {
         display: flex;
-        justify-content: space-between;
+
+        justify-content:
+          space-between;
+
         align-items: center;
       }
 
@@ -185,7 +710,8 @@ function getStatus(feId) {
       }
 
       .equation {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        overflow-x: auto;
       }
 
       .open {
@@ -204,47 +730,328 @@ function getStatus(feId) {
         color: #2e7d32;
       }
 
-      .pathological {
-        border-left-color: #757575;
+      /* -------------------------
+         References
+         ------------------------- */
+
+      .reference-badges {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 6px;
+        margin-top: 12px;
       }
 
-      .pathological .status {
-        color: #616161;
+      .reference-badge {
+        display: inline-flex;
+        align-items: center;
+
+        padding:
+          4px
+          8px;
+
+        border-radius: 999px;
+
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .reference-badge.contest {
+        background: #eef3ff;
+        color: #3451a3;
+
+        border:
+          1px solid #ccd8f5;
+      }
+
+      .reference-badge.aops {
+        background: #fff4e5;
+        color: #9a5b00;
+
+        border:
+          1px solid #f1d3a5;
+      }
+
+      /* -------------------------
+         Responsive
+         ------------------------- */
+
+      @media (max-width: 950px) {
+        .fe-list {
+          grid-template-columns:
+            1fr;
+        }
+      }
+
+      @media (max-width: 750px) {
+        .equation-builder {
+          gap: 7px;
+        }
+
+        .equation-builder select {
+          min-width: 110px;
+          flex: 1;
+        }
+
+        #clear-search {
+          margin-left: 0;
+        }
+      }
+
+      @media (max-width: 600px) {
+        main {
+          padding:
+            24px
+            14px;
+        }
+
+        .stats {
+          grid-template-columns:
+            repeat(3, 1fr);
+        }
+
+        .stat {
+          padding:
+            12px
+            8px;
+        }
+
+        .stat strong {
+          font-size: 1.35rem;
+        }
+
+        .equation-search {
+          padding: 16px;
+        }
+
+        .math-symbol {
+          font-size: 1.15rem;
+        }
       }
     </style>
 
     <script>
-      const searchInput = document.querySelector("#search-input");
-      const filterButtons = document.querySelectorAll(".filter");
-      const cards = document.querySelectorAll(".fe-card");
-      const resultCount = document.querySelector("#result-count");
+      const left1 =
+        document.querySelector(
+          "#left-1"
+        );
+
+      const left2 =
+        document.querySelector(
+          "#left-2"
+        );
+
+      const right1 =
+        document.querySelector(
+          "#right-1"
+        );
+
+      const right2 =
+        document.querySelector(
+          "#right-2"
+        );
+
+      const clearSearchButton =
+        document.querySelector(
+          "#clear-search"
+        );
+
+      const filterButtons =
+        document.querySelectorAll(
+          ".filter"
+        );
+
+		const sourceFilterButtons =
+			document.querySelectorAll(
+				".source-filter"
+		);
+
+      const cards =
+        document.querySelectorAll(
+          ".fe-card"
+        );
+
+      const resultCount =
+        document.querySelector(
+          "#result-count"
+        );
 
       let selectedStatus = "all";
+	  let selectedSource = "all";
+
+      function getSelectValue(
+        element
+      ) {
+        return (
+          element instanceof
+            HTMLSelectElement
+            ? element.value
+            : ""
+        );
+      }
+
+      /*
+       * Match one unordered pair.
+       *
+       * Hence:
+       * x + f(y)
+       * and
+       * f(y) + x
+       *
+       * are treated identically.
+       */
+      function pairMatches(
+        selected1,
+        selected2,
+        actualPair
+      ) {
+        if (
+          !selected1 &&
+          !selected2
+        ) {
+          return true;
+        }
+
+        if (
+          selected1 &&
+          !selected2
+        ) {
+          return actualPair.includes(
+            selected1
+          );
+        }
+
+        if (
+          !selected1 &&
+          selected2
+        ) {
+          return actualPair.includes(
+            selected2
+          );
+        }
+
+        return (
+          (
+            actualPair[0] ===
+              selected1 &&
+            actualPair[1] ===
+              selected2
+          )
+          ||
+          (
+            actualPair[0] ===
+              selected2 &&
+            actualPair[1] ===
+              selected1
+          )
+        );
+      }
+
+      function equationMatchesSearch(
+        equation,
+        selectedLeft1,
+        selectedLeft2,
+        selectedRight1,
+        selectedRight2
+      ) {
+        return (
+          pairMatches(
+            selectedLeft1,
+            selectedLeft2,
+            equation.left
+          )
+          &&
+          pairMatches(
+            selectedRight1,
+            selectedRight2,
+            equation.right
+          )
+        );
+      }
 
       function updateResults() {
-        const search =
-          searchInput instanceof HTMLInputElement
-            ? searchInput.value.toLowerCase().trim()
-            : "";
+        const selectedLeft1 =
+          getSelectValue(left1);
+
+        const selectedLeft2 =
+          getSelectValue(left2);
+
+        const selectedRight1 =
+          getSelectValue(right1);
+
+        const selectedRight2 =
+          getSelectValue(right2);
 
         let visible = 0;
 
         cards.forEach((card) => {
-          if (!(card instanceof HTMLElement)) return;
+          if (
+            !(
+              card instanceof
+              HTMLElement
+            )
+          ) {
+            return;
+          }
 
-          const cardStatus = card.dataset.status ?? "";
-          const cardSearch = card.dataset.search ?? "";
+          const cardStatus =
+            card.dataset.status ?? "";
 
-          const matchesSearch = cardSearch.includes(search);
+		const referenceTypes =
+		(card.dataset.referenceTypes ?? "")
+			.split(",")
+			.filter(Boolean);
+
+          let equations = [];
+
+          try {
+            equations =
+              JSON.parse(
+                card.dataset
+                  .equations ??
+                "[]"
+              );
+          }
+          catch {
+            equations = [];
+          }
+
+          /*
+           * Every FE stores the x <-> y
+           * representative as well when
+           * distinct, so searching all
+           * stored equations automatically
+           * handles global x/y symmetry.
+           */
+          const matchesEquation =
+            equations.some(
+              (equation) =>
+                equationMatchesSearch(
+                  equation,
+                  selectedLeft1,
+                  selectedLeft2,
+                  selectedRight1,
+                  selectedRight2
+                )
+            );
 
           const matchesStatus =
-            selectedStatus === "all" ||
-            cardStatus === selectedStatus;
+			selectedStatus === "all" ||
+			cardStatus === selectedStatus;
 
-          const shouldShow =
-            matchesSearch && matchesStatus;
+			const matchesSource =
+			selectedSource === "all" ||
+			referenceTypes.includes(
+				selectedSource
+			);
 
-          card.hidden = !shouldShow;
+			const shouldShow =
+			matchesEquation &&
+			matchesStatus &&
+			matchesSource;
+
+          card.hidden =
+            !shouldShow;
 
           if (shouldShow) {
             visible++;
@@ -253,28 +1060,121 @@ function getStatus(feId) {
 
         if (resultCount) {
           resultCount.textContent =
-            `${visible} functional equation${visible === 1 ? "" : "s"}`;
+            `${visible} functional equation${
+              visible === 1
+                ? ""
+                : "s"
+            }`;
         }
       }
 
-      searchInput?.addEventListener("input", updateResults);
-
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          if (!(button instanceof HTMLElement)) return;
-
-          selectedStatus =
-            button.dataset.status ?? "all";
-
-          filterButtons.forEach((otherButton) => {
-            otherButton.classList.remove("active");
-          });
-
-          button.classList.add("active");
-
-          updateResults();
-        });
+      [
+        left1,
+        left2,
+        right1,
+        right2,
+      ].forEach((select) => {
+        select?.addEventListener(
+          "change",
+          updateResults
+        );
       });
+
+      clearSearchButton
+        ?.addEventListener(
+          "click",
+          () => {
+            [
+              left1,
+              left2,
+              right1,
+              right2,
+            ].forEach((select) => {
+              if (
+                select instanceof
+                HTMLSelectElement
+              ) {
+                select.value = "";
+              }
+            });
+
+            updateResults();
+          }
+        );
+
+      filterButtons.forEach(
+        (button) => {
+          button.addEventListener(
+            "click",
+            () => {
+              if (
+                !(
+                  button instanceof
+                  HTMLElement
+                )
+              ) {
+                return;
+              }
+
+              selectedStatus =
+                button.dataset
+                  .status ??
+                "all";
+
+              filterButtons.forEach(
+                (otherButton) => {
+                  otherButton
+                    .classList
+                    .remove(
+                      "active"
+                    );
+                }
+              );
+
+              button.classList.add(
+                "active"
+              );
+
+              updateResults();
+            }
+          );
+        }
+      );
+		sourceFilterButtons.forEach(
+		(button) => {
+			button.addEventListener(
+			"click",
+			() => {
+				if (
+				!(
+					button instanceof
+					HTMLElement
+				)
+				) {
+				return;
+				}
+
+				selectedSource =
+				button.dataset.source ??
+				"all";
+
+				sourceFilterButtons.forEach(
+				(otherButton) => {
+					otherButton.classList.remove(
+					"active"
+					);
+				}
+				);
+
+				button.classList.add(
+				"active"
+				);
+
+				updateResults();
+			}
+			);
+		}
+		);
 
       updateResults();
     </script>

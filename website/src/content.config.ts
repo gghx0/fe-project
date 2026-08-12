@@ -10,7 +10,7 @@ const solutions = defineCollection({
   }),
 
   schema: z.object({
-    status: z.enum(["open", "solved", "pathological"]),
+    status: z.enum(["open", "solved"]),
     authors: z.array(z.string()).default([]),
     verified_by: z.array(z.string()).default([]),
     date_resolved: z.string().nullable().optional(),

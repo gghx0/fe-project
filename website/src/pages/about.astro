@@ -1,0 +1,412 @@
+---
+import Nav from "../components/Nav.astro";
+import "katex/dist/katex.min.css";
+import katex from "katex";
+
+function renderInlineMath(math) {
+  return katex.renderToString(math, {
+    throwOnError: false,
+    displayMode: false,
+  });
+}
+
+function renderDisplayMath(math) {
+  return katex.renderToString(math, {
+    throwOnError: false,
+    displayMode: true,
+  });
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+
+    <title>
+      About | Functional Equation Database
+    </title>
+  </head>
+
+  <body>
+    <main>
+      <Nav />
+
+      <h1>About</h1>
+
+      <section class="intro-box">
+        <p>
+          (This website is created with GPT 5.6.)
+          <br>
+          <br>
+          This project is inspired by <a href={`${import.meta.env.BASE_URL}fe/0037`}>#37</a>, 
+          which was a deceptively simple-looking FE that ended up being incredibly hard to solve.
+          In fact, my GPT 5.2 could not solve it back then with much prompting, despite having solved many other "harder"
+          Maths Olympiad problems. 
+          <br>
+          <br>
+          This made me wonder - how many more such FEs are left out there?
+          This website contains a comprehensive list of a specific (but common) type of 
+          {" "}
+
+          <span
+            set:html={renderInlineMath(
+              "f:\\mathbb{R}\\to\\mathbb{R}"
+            )}
+          />
+          {" "}FEs, which will be elaborated on below. It is meant to be a collaborative project,
+          so feel free to contribute.
+        </p>
+      </section>
+
+
+      <h2>The equations</h2>
+
+      <p>
+        The 588 equations in the database have the form
+      </p>
+
+      <div
+        class="display-equation"
+        set:html={renderDisplayMath(
+          "f\\bigl(A(x,y)+B(x,y)\\bigr)=C(x,y)+D(x,y)"
+        )}
+      />
+
+      <p>
+        where
+        {" "}
+
+        <span
+          set:html={renderInlineMath("A")}
+        />,
+        {" "}
+
+        <span
+          set:html={renderInlineMath("B")}
+        />,
+        {" "}
+
+        <span
+          set:html={renderInlineMath("C")}
+        />
+        {" "}and{" "}
+
+        <span
+          set:html={renderInlineMath("D")}
+        />
+
+        {" "}are each chosen from the following
+        16 permitted expressions.
+      </p>
+
+
+      <div class="expressions-box">
+        <div
+          class="display-equation"
+          set:html={renderDisplayMath(
+            "x,\\quad f(x),\\quad y,\\quad f(y)"
+          )}
+        />
+
+        <div
+          class="display-equation"
+          set:html={renderDisplayMath(
+            "x^2,\\quad xf(x),\\quad f(x)^2,\\quad f(x^2)"
+          )}
+        />
+
+        <div
+          class="display-equation"
+          set:html={renderDisplayMath(
+            "y^2,\\quad yf(y),\\quad f(y)^2,\\quad f(y^2)"
+          )}
+        />
+
+        <div
+          class="display-equation"
+          set:html={renderDisplayMath(
+            "xf(y),\\quad yf(x),\\quad f(x)f(y),\\quad xy"
+          )}
+        />
+      </div>
+
+        <p>
+        There are two additional constraints: the functional equation must have
+        {" "}
+
+        <span
+            set:html={renderInlineMath("f(x)=x")}
+        />
+
+        {" "}as a solution, and duplicate equations obtained by replacing
+        {" "}
+
+        <span
+            set:html={renderInlineMath("P(x,y)")}
+        />
+
+        {" "}with{" "}
+
+        <span
+            set:html={renderInlineMath("P(y,x)")}
+        />
+
+        {" "}are removed.
+        </p>
+
+      <h2>Contributing</h2>
+
+      <p>
+        Use the
+        {" "}
+        <a href={`${import.meta.env.BASE_URL}discussion`}>
+            Discussion page
+        </a>. 
+        AI usage is allowed but should be declared.
+        </p>
+    </main>
+
+
+    <style>
+      body {
+        font-family:
+          system-ui,
+          sans-serif;
+
+        margin: 0;
+
+        background: #f5f5f5;
+        color: #111;
+      }
+
+
+      main {
+        max-width: 900px;
+
+        margin: 0 auto;
+
+        padding:
+          40px
+          20px
+          60px;
+      }
+
+
+      h1 {
+        margin-bottom: 24px;
+      }
+
+
+      h2 {
+        margin-top: 42px;
+        margin-bottom: 16px;
+      }
+
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+
+      p {
+        line-height: 1.7;
+        color: #333;
+      }
+
+
+      .intro-box {
+        background: white;
+
+        border:
+          1px solid #e2e2e2;
+
+        border-radius: 12px;
+
+        padding:
+          18px
+          22px;
+
+        margin-bottom: 32px;
+      }
+
+
+      .intro-box p:first-child {
+        margin-top: 0;
+      }
+
+
+      .intro-box p:last-child {
+        margin-bottom: 0;
+      }
+
+
+      .expressions-box,
+      .math-box {
+        background: white;
+
+        border:
+          1px solid #e2e2e2;
+
+        border-radius: 12px;
+
+        padding:
+          12px
+          24px;
+
+        margin:
+          20px
+          0
+          24px;
+      }
+
+
+      .display-equation {
+        overflow-x: auto;
+      }
+
+
+      .expressions-box
+      .display-equation,
+      .math-box
+      .display-equation {
+        margin:
+          6px
+          0;
+      }
+
+
+      .center-text {
+        text-align: center;
+
+        margin:
+          -4px
+          0;
+      }
+
+
+      .summary-grid {
+        display: grid;
+
+        grid-template-columns:
+          repeat(3, 1fr);
+
+        gap: 12px;
+
+        margin-top: 28px;
+      }
+
+
+      .summary-item {
+        background: white;
+
+        border:
+          1px solid #e2e2e2;
+
+        border-radius: 10px;
+
+        padding: 18px;
+
+        text-align: center;
+      }
+
+
+      .summary-item strong {
+        display: block;
+
+        font-size: 1.6rem;
+
+        margin-bottom: 4px;
+      }
+
+
+      .summary-item span {
+        color: #666;
+
+        font-size: 0.88rem;
+      }
+
+
+      .status-grid {
+        display: grid;
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap: 14px;
+      }
+
+
+      .status-card {
+        border-radius: 12px;
+
+        padding:
+          18px
+          20px;
+
+        border:
+          1px solid;
+      }
+
+
+      .status-card p {
+        margin-bottom: 0;
+      }
+
+
+      .status-card.solved {
+        background: #f0f9f1;
+        border-color: #c9e3cc;
+      }
+
+
+      .status-card.solved h3 {
+        color: #2e7d32;
+      }
+
+
+      .status-card.open {
+        background: #fff1f1;
+        border-color: #f0cccc;
+      }
+
+
+      .status-card.open h3 {
+        color: #c62828;
+      }
+
+
+      @media (max-width: 650px) {
+        main {
+          padding:
+            24px
+            14px
+            40px;
+        }
+
+
+        .summary-grid {
+          grid-template-columns: 1fr;
+        }
+
+
+        .status-grid {
+          grid-template-columns: 1fr;
+        }
+
+
+        .expressions-box,
+        .math-box {
+          padding:
+            10px
+            14px;
+        }
+      }
+    </style>
+  </body>
+</html>

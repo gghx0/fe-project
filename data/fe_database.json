@@ -240,6 +240,34 @@
         ],
         "right": [
           "x",
+          "f(y)^2"
+        ],
+        "display": "f(x + y^2) = x + f(y)^2"
+      },
+      {
+        "left": [
+          "y",
+          "x^2"
+        ],
+        "right": [
+          "y",
+          "f(x)^2"
+        ],
+        "display": "f(y + x^2) = y + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0011",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "y^2"
+        ],
+        "right": [
+          "x",
           "f(y^2)"
         ],
         "display": "f(x + y^2) = x + f(y^2)"
@@ -258,7 +286,7 @@
     ]
   },
   {
-    "id": "FE-0011",
+    "id": "FE-0012",
     "self_symmetric": false,
     "equations": [
       {
@@ -286,7 +314,7 @@
     ]
   },
   {
-    "id": "FE-0012",
+    "id": "FE-0013",
     "self_symmetric": false,
     "equations": [
       {
@@ -314,7 +342,35 @@
     ]
   },
   {
-    "id": "FE-0013",
+    "id": "FE-0014",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "y^2"
+        ],
+        "right": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "display": "f(x + y^2) = f(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "y",
+          "x^2"
+        ],
+        "right": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "display": "f(y + x^2) = f(y) + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0015",
     "self_symmetric": false,
     "equations": [
       {
@@ -342,7 +398,7 @@
     ]
   },
   {
-    "id": "FE-0014",
+    "id": "FE-0016",
     "self_symmetric": false,
     "equations": [
       {
@@ -370,7 +426,7 @@
     ]
   },
   {
-    "id": "FE-0015",
+    "id": "FE-0017",
     "self_symmetric": false,
     "equations": [
       {
@@ -398,7 +454,35 @@
     ]
   },
   {
-    "id": "FE-0016",
+    "id": "FE-0018",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "yf(y)"
+        ],
+        "right": [
+          "x",
+          "f(y)^2"
+        ],
+        "display": "f(x + yf(y)) = x + f(y)^2"
+      },
+      {
+        "left": [
+          "y",
+          "xf(x)"
+        ],
+        "right": [
+          "y",
+          "f(x)^2"
+        ],
+        "display": "f(y + xf(x)) = y + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0019",
     "self_symmetric": false,
     "equations": [
       {
@@ -426,7 +510,7 @@
     ]
   },
   {
-    "id": "FE-0017",
+    "id": "FE-0020",
     "self_symmetric": false,
     "equations": [
       {
@@ -454,7 +538,7 @@
     ]
   },
   {
-    "id": "FE-0018",
+    "id": "FE-0021",
     "self_symmetric": false,
     "equations": [
       {
@@ -482,7 +566,35 @@
     ]
   },
   {
-    "id": "FE-0019",
+    "id": "FE-0022",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "display": "f(x + yf(y)) = f(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "y",
+          "xf(x)"
+        ],
+        "right": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "display": "f(y + xf(x)) = f(y) + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0023",
     "self_symmetric": false,
     "equations": [
       {
@@ -510,7 +622,231 @@
     ]
   },
   {
-    "id": "FE-0020",
+    "id": "FE-0024",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "f(y)^2"
+        ],
+        "right": [
+          "x",
+          "y^2"
+        ],
+        "display": "f(x + f(y)^2) = x + y^2"
+      },
+      {
+        "left": [
+          "y",
+          "f(x)^2"
+        ],
+        "right": [
+          "y",
+          "x^2"
+        ],
+        "display": "f(y + f(x)^2) = y + x^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0025",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "f(y)^2"
+        ],
+        "right": [
+          "x",
+          "yf(y)"
+        ],
+        "display": "f(x + f(y)^2) = x + yf(y)"
+      },
+      {
+        "left": [
+          "y",
+          "f(x)^2"
+        ],
+        "right": [
+          "y",
+          "xf(x)"
+        ],
+        "display": "f(y + f(x)^2) = y + xf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0026",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "f(y)^2"
+        ],
+        "right": [
+          "x",
+          "f(y)^2"
+        ],
+        "display": "f(x + f(y)^2) = x + f(y)^2"
+      },
+      {
+        "left": [
+          "y",
+          "f(x)^2"
+        ],
+        "right": [
+          "y",
+          "f(x)^2"
+        ],
+        "display": "f(y + f(x)^2) = y + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0027",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "f(y)^2"
+        ],
+        "right": [
+          "x",
+          "f(y^2)"
+        ],
+        "display": "f(x + f(y)^2) = x + f(y^2)"
+      },
+      {
+        "left": [
+          "y",
+          "f(x)^2"
+        ],
+        "right": [
+          "y",
+          "f(x^2)"
+        ],
+        "display": "f(y + f(x)^2) = y + f(x^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0028",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)",
+          "y^2"
+        ],
+        "display": "f(x + f(y)^2) = f(x) + y^2"
+      },
+      {
+        "left": [
+          "y",
+          "f(x)^2"
+        ],
+        "right": [
+          "f(y)",
+          "x^2"
+        ],
+        "display": "f(y + f(x)^2) = f(y) + x^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0029",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)",
+          "yf(y)"
+        ],
+        "display": "f(x + f(y)^2) = f(x) + yf(y)"
+      },
+      {
+        "left": [
+          "y",
+          "f(x)^2"
+        ],
+        "right": [
+          "f(y)",
+          "xf(x)"
+        ],
+        "display": "f(y + f(x)^2) = f(y) + xf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0030",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "display": "f(x + f(y)^2) = f(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "y",
+          "f(x)^2"
+        ],
+        "right": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "display": "f(y + f(x)^2) = f(y) + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0031",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)",
+          "f(y^2)"
+        ],
+        "display": "f(x + f(y)^2) = f(x) + f(y^2)"
+      },
+      {
+        "left": [
+          "y",
+          "f(x)^2"
+        ],
+        "right": [
+          "f(y)",
+          "f(x^2)"
+        ],
+        "display": "f(y + f(x)^2) = f(y) + f(x^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0032",
     "self_symmetric": false,
     "equations": [
       {
@@ -538,7 +874,7 @@
     ]
   },
   {
-    "id": "FE-0021",
+    "id": "FE-0033",
     "self_symmetric": false,
     "equations": [
       {
@@ -566,7 +902,35 @@
     ]
   },
   {
-    "id": "FE-0022",
+    "id": "FE-0034",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "f(y^2)"
+        ],
+        "right": [
+          "x",
+          "f(y)^2"
+        ],
+        "display": "f(x + f(y^2)) = x + f(y)^2"
+      },
+      {
+        "left": [
+          "y",
+          "f(x^2)"
+        ],
+        "right": [
+          "y",
+          "f(x)^2"
+        ],
+        "display": "f(y + f(x^2)) = y + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0035",
     "self_symmetric": false,
     "equations": [
       {
@@ -594,7 +958,7 @@
     ]
   },
   {
-    "id": "FE-0023",
+    "id": "FE-0036",
     "self_symmetric": false,
     "equations": [
       {
@@ -622,7 +986,7 @@
     ]
   },
   {
-    "id": "FE-0024",
+    "id": "FE-0037",
     "self_symmetric": false,
     "equations": [
       {
@@ -650,7 +1014,35 @@
     ]
   },
   {
-    "id": "FE-0025",
+    "id": "FE-0038",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "display": "f(x + f(y^2)) = f(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "y",
+          "f(x^2)"
+        ],
+        "right": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "display": "f(y + f(x^2)) = f(y) + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0039",
     "self_symmetric": false,
     "equations": [
       {
@@ -678,7 +1070,7 @@
     ]
   },
   {
-    "id": "FE-0026",
+    "id": "FE-0040",
     "self_symmetric": false,
     "equations": [
       {
@@ -706,7 +1098,7 @@
     ]
   },
   {
-    "id": "FE-0027",
+    "id": "FE-0041",
     "self_symmetric": false,
     "equations": [
       {
@@ -734,7 +1126,7 @@
     ]
   },
   {
-    "id": "FE-0028",
+    "id": "FE-0042",
     "self_symmetric": false,
     "equations": [
       {
@@ -762,7 +1154,7 @@
     ]
   },
   {
-    "id": "FE-0029",
+    "id": "FE-0043",
     "self_symmetric": false,
     "equations": [
       {
@@ -790,7 +1182,7 @@
     ]
   },
   {
-    "id": "FE-0030",
+    "id": "FE-0044",
     "self_symmetric": false,
     "equations": [
       {
@@ -818,7 +1210,7 @@
     ]
   },
   {
-    "id": "FE-0031",
+    "id": "FE-0045",
     "self_symmetric": false,
     "equations": [
       {
@@ -846,7 +1238,7 @@
     ]
   },
   {
-    "id": "FE-0032",
+    "id": "FE-0046",
     "self_symmetric": false,
     "equations": [
       {
@@ -874,7 +1266,7 @@
     ]
   },
   {
-    "id": "FE-0033",
+    "id": "FE-0047",
     "self_symmetric": false,
     "equations": [
       {
@@ -902,7 +1294,7 @@
     ]
   },
   {
-    "id": "FE-0034",
+    "id": "FE-0048",
     "self_symmetric": false,
     "equations": [
       {
@@ -930,7 +1322,7 @@
     ]
   },
   {
-    "id": "FE-0035",
+    "id": "FE-0049",
     "self_symmetric": false,
     "equations": [
       {
@@ -958,7 +1350,7 @@
     ]
   },
   {
-    "id": "FE-0036",
+    "id": "FE-0050",
     "self_symmetric": false,
     "equations": [
       {
@@ -986,7 +1378,7 @@
     ]
   },
   {
-    "id": "FE-0037",
+    "id": "FE-0051",
     "self_symmetric": false,
     "equations": [
       {
@@ -1014,7 +1406,7 @@
     ]
   },
   {
-    "id": "FE-0038",
+    "id": "FE-0052",
     "self_symmetric": false,
     "equations": [
       {
@@ -1042,7 +1434,7 @@
     ]
   },
   {
-    "id": "FE-0039",
+    "id": "FE-0053",
     "self_symmetric": false,
     "equations": [
       {
@@ -1070,7 +1462,7 @@
     ]
   },
   {
-    "id": "FE-0040",
+    "id": "FE-0054",
     "self_symmetric": false,
     "equations": [
       {
@@ -1098,7 +1490,7 @@
     ]
   },
   {
-    "id": "FE-0041",
+    "id": "FE-0055",
     "self_symmetric": false,
     "equations": [
       {
@@ -1126,7 +1518,7 @@
     ]
   },
   {
-    "id": "FE-0042",
+    "id": "FE-0056",
     "self_symmetric": false,
     "equations": [
       {
@@ -1154,7 +1546,7 @@
     ]
   },
   {
-    "id": "FE-0043",
+    "id": "FE-0057",
     "self_symmetric": false,
     "equations": [
       {
@@ -1182,7 +1574,7 @@
     ]
   },
   {
-    "id": "FE-0044",
+    "id": "FE-0058",
     "self_symmetric": false,
     "equations": [
       {
@@ -1210,7 +1602,7 @@
     ]
   },
   {
-    "id": "FE-0045",
+    "id": "FE-0059",
     "self_symmetric": false,
     "equations": [
       {
@@ -1238,7 +1630,7 @@
     ]
   },
   {
-    "id": "FE-0046",
+    "id": "FE-0060",
     "self_symmetric": false,
     "equations": [
       {
@@ -1266,7 +1658,7 @@
     ]
   },
   {
-    "id": "FE-0047",
+    "id": "FE-0061",
     "self_symmetric": false,
     "equations": [
       {
@@ -1294,7 +1686,7 @@
     ]
   },
   {
-    "id": "FE-0048",
+    "id": "FE-0062",
     "self_symmetric": false,
     "equations": [
       {
@@ -1322,7 +1714,7 @@
     ]
   },
   {
-    "id": "FE-0049",
+    "id": "FE-0063",
     "self_symmetric": false,
     "equations": [
       {
@@ -1350,7 +1742,7 @@
     ]
   },
   {
-    "id": "FE-0050",
+    "id": "FE-0064",
     "self_symmetric": false,
     "equations": [
       {
@@ -1378,7 +1770,7 @@
     ]
   },
   {
-    "id": "FE-0051",
+    "id": "FE-0065",
     "self_symmetric": false,
     "equations": [
       {
@@ -1406,7 +1798,7 @@
     ]
   },
   {
-    "id": "FE-0052",
+    "id": "FE-0066",
     "self_symmetric": false,
     "equations": [
       {
@@ -1434,7 +1826,7 @@
     ]
   },
   {
-    "id": "FE-0053",
+    "id": "FE-0067",
     "self_symmetric": false,
     "equations": [
       {
@@ -1462,7 +1854,7 @@
     ]
   },
   {
-    "id": "FE-0054",
+    "id": "FE-0068",
     "self_symmetric": false,
     "equations": [
       {
@@ -1490,7 +1882,7 @@
     ]
   },
   {
-    "id": "FE-0055",
+    "id": "FE-0069",
     "self_symmetric": false,
     "equations": [
       {
@@ -1518,7 +1910,7 @@
     ]
   },
   {
-    "id": "FE-0056",
+    "id": "FE-0070",
     "self_symmetric": false,
     "equations": [
       {
@@ -1546,7 +1938,7 @@
     ]
   },
   {
-    "id": "FE-0057",
+    "id": "FE-0071",
     "self_symmetric": false,
     "equations": [
       {
@@ -1574,7 +1966,7 @@
     ]
   },
   {
-    "id": "FE-0058",
+    "id": "FE-0072",
     "self_symmetric": true,
     "equations": [
       {
@@ -1591,7 +1983,7 @@
     ]
   },
   {
-    "id": "FE-0059",
+    "id": "FE-0073",
     "self_symmetric": false,
     "equations": [
       {
@@ -1619,7 +2011,7 @@
     ]
   },
   {
-    "id": "FE-0060",
+    "id": "FE-0074",
     "self_symmetric": true,
     "equations": [
       {
@@ -1636,7 +2028,7 @@
     ]
   },
   {
-    "id": "FE-0061",
+    "id": "FE-0075",
     "self_symmetric": false,
     "equations": [
       {
@@ -1664,7 +2056,7 @@
     ]
   },
   {
-    "id": "FE-0062",
+    "id": "FE-0076",
     "self_symmetric": false,
     "equations": [
       {
@@ -1692,7 +2084,35 @@
     ]
   },
   {
-    "id": "FE-0063",
+    "id": "FE-0077",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "y^2"
+        ],
+        "right": [
+          "x",
+          "f(y)^2"
+        ],
+        "display": "f(f(x) + y^2) = x + f(y)^2"
+      },
+      {
+        "left": [
+          "f(y)",
+          "x^2"
+        ],
+        "right": [
+          "y",
+          "f(x)^2"
+        ],
+        "display": "f(f(y) + x^2) = y + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0078",
     "self_symmetric": false,
     "equations": [
       {
@@ -1720,7 +2140,7 @@
     ]
   },
   {
-    "id": "FE-0064",
+    "id": "FE-0079",
     "self_symmetric": false,
     "equations": [
       {
@@ -1748,7 +2168,7 @@
     ]
   },
   {
-    "id": "FE-0065",
+    "id": "FE-0080",
     "self_symmetric": false,
     "equations": [
       {
@@ -1776,7 +2196,35 @@
     ]
   },
   {
-    "id": "FE-0066",
+    "id": "FE-0081",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "y^2"
+        ],
+        "right": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x) + y^2) = f(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(y)",
+          "x^2"
+        ],
+        "right": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "display": "f(f(y) + x^2) = f(y) + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0082",
     "self_symmetric": false,
     "equations": [
       {
@@ -1804,7 +2252,7 @@
     ]
   },
   {
-    "id": "FE-0067",
+    "id": "FE-0083",
     "self_symmetric": false,
     "equations": [
       {
@@ -1832,7 +2280,7 @@
     ]
   },
   {
-    "id": "FE-0068",
+    "id": "FE-0084",
     "self_symmetric": false,
     "equations": [
       {
@@ -1860,7 +2308,35 @@
     ]
   },
   {
-    "id": "FE-0069",
+    "id": "FE-0085",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "yf(y)"
+        ],
+        "right": [
+          "x",
+          "f(y)^2"
+        ],
+        "display": "f(f(x) + yf(y)) = x + f(y)^2"
+      },
+      {
+        "left": [
+          "f(y)",
+          "xf(x)"
+        ],
+        "right": [
+          "y",
+          "f(x)^2"
+        ],
+        "display": "f(f(y) + xf(x)) = y + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0086",
     "self_symmetric": false,
     "equations": [
       {
@@ -1888,7 +2364,7 @@
     ]
   },
   {
-    "id": "FE-0070",
+    "id": "FE-0087",
     "self_symmetric": false,
     "equations": [
       {
@@ -1916,7 +2392,7 @@
     ]
   },
   {
-    "id": "FE-0071",
+    "id": "FE-0088",
     "self_symmetric": false,
     "equations": [
       {
@@ -1944,7 +2420,35 @@
     ]
   },
   {
-    "id": "FE-0072",
+    "id": "FE-0089",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x) + yf(y)) = f(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(y)",
+          "xf(x)"
+        ],
+        "right": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "display": "f(f(y) + xf(x)) = f(y) + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0090",
     "self_symmetric": false,
     "equations": [
       {
@@ -1972,7 +2476,231 @@
     ]
   },
   {
-    "id": "FE-0073",
+    "id": "FE-0091",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x",
+          "y^2"
+        ],
+        "display": "f(f(x) + f(y)^2) = x + y^2"
+      },
+      {
+        "left": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "right": [
+          "y",
+          "x^2"
+        ],
+        "display": "f(f(y) + f(x)^2) = y + x^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0092",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x",
+          "yf(y)"
+        ],
+        "display": "f(f(x) + f(y)^2) = x + yf(y)"
+      },
+      {
+        "left": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "right": [
+          "y",
+          "xf(x)"
+        ],
+        "display": "f(f(y) + f(x)^2) = y + xf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0093",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x",
+          "f(y)^2"
+        ],
+        "display": "f(f(x) + f(y)^2) = x + f(y)^2"
+      },
+      {
+        "left": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "right": [
+          "y",
+          "f(x)^2"
+        ],
+        "display": "f(f(y) + f(x)^2) = y + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0094",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x",
+          "f(y^2)"
+        ],
+        "display": "f(f(x) + f(y)^2) = x + f(y^2)"
+      },
+      {
+        "left": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "right": [
+          "y",
+          "f(x^2)"
+        ],
+        "display": "f(f(y) + f(x)^2) = y + f(x^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0095",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)",
+          "y^2"
+        ],
+        "display": "f(f(x) + f(y)^2) = f(x) + y^2"
+      },
+      {
+        "left": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "right": [
+          "f(y)",
+          "x^2"
+        ],
+        "display": "f(f(y) + f(x)^2) = f(y) + x^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0096",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)",
+          "yf(y)"
+        ],
+        "display": "f(f(x) + f(y)^2) = f(x) + yf(y)"
+      },
+      {
+        "left": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "right": [
+          "f(y)",
+          "xf(x)"
+        ],
+        "display": "f(f(y) + f(x)^2) = f(y) + xf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0097",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x) + f(y)^2) = f(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "right": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "display": "f(f(y) + f(x)^2) = f(y) + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0098",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x) + f(y)^2) = f(x) + f(y^2)"
+      },
+      {
+        "left": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "right": [
+          "f(y)",
+          "f(x^2)"
+        ],
+        "display": "f(f(y) + f(x)^2) = f(y) + f(x^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0099",
     "self_symmetric": false,
     "equations": [
       {
@@ -2000,7 +2728,7 @@
     ]
   },
   {
-    "id": "FE-0074",
+    "id": "FE-0100",
     "self_symmetric": false,
     "equations": [
       {
@@ -2028,7 +2756,35 @@
     ]
   },
   {
-    "id": "FE-0075",
+    "id": "FE-0101",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "f(y^2)"
+        ],
+        "right": [
+          "x",
+          "f(y)^2"
+        ],
+        "display": "f(f(x) + f(y^2)) = x + f(y)^2"
+      },
+      {
+        "left": [
+          "f(y)",
+          "f(x^2)"
+        ],
+        "right": [
+          "y",
+          "f(x)^2"
+        ],
+        "display": "f(f(y) + f(x^2)) = y + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0102",
     "self_symmetric": false,
     "equations": [
       {
@@ -2056,7 +2812,7 @@
     ]
   },
   {
-    "id": "FE-0076",
+    "id": "FE-0103",
     "self_symmetric": false,
     "equations": [
       {
@@ -2084,7 +2840,7 @@
     ]
   },
   {
-    "id": "FE-0077",
+    "id": "FE-0104",
     "self_symmetric": false,
     "equations": [
       {
@@ -2112,7 +2868,35 @@
     ]
   },
   {
-    "id": "FE-0078",
+    "id": "FE-0105",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x) + f(y^2)) = f(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(y)",
+          "f(x^2)"
+        ],
+        "right": [
+          "f(y)",
+          "f(x)^2"
+        ],
+        "display": "f(f(y) + f(x^2)) = f(y) + f(x)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0106",
     "self_symmetric": false,
     "equations": [
       {
@@ -2140,7 +2924,7 @@
     ]
   },
   {
-    "id": "FE-0079",
+    "id": "FE-0107",
     "self_symmetric": false,
     "equations": [
       {
@@ -2168,7 +2952,7 @@
     ]
   },
   {
-    "id": "FE-0080",
+    "id": "FE-0108",
     "self_symmetric": false,
     "equations": [
       {
@@ -2196,7 +2980,7 @@
     ]
   },
   {
-    "id": "FE-0081",
+    "id": "FE-0109",
     "self_symmetric": false,
     "equations": [
       {
@@ -2224,7 +3008,7 @@
     ]
   },
   {
-    "id": "FE-0082",
+    "id": "FE-0110",
     "self_symmetric": false,
     "equations": [
       {
@@ -2252,7 +3036,7 @@
     ]
   },
   {
-    "id": "FE-0083",
+    "id": "FE-0111",
     "self_symmetric": false,
     "equations": [
       {
@@ -2280,7 +3064,7 @@
     ]
   },
   {
-    "id": "FE-0084",
+    "id": "FE-0112",
     "self_symmetric": false,
     "equations": [
       {
@@ -2308,7 +3092,7 @@
     ]
   },
   {
-    "id": "FE-0085",
+    "id": "FE-0113",
     "self_symmetric": false,
     "equations": [
       {
@@ -2336,7 +3120,7 @@
     ]
   },
   {
-    "id": "FE-0086",
+    "id": "FE-0114",
     "self_symmetric": false,
     "equations": [
       {
@@ -2364,7 +3148,7 @@
     ]
   },
   {
-    "id": "FE-0087",
+    "id": "FE-0115",
     "self_symmetric": false,
     "equations": [
       {
@@ -2392,7 +3176,7 @@
     ]
   },
   {
-    "id": "FE-0088",
+    "id": "FE-0116",
     "self_symmetric": false,
     "equations": [
       {
@@ -2420,7 +3204,7 @@
     ]
   },
   {
-    "id": "FE-0089",
+    "id": "FE-0117",
     "self_symmetric": false,
     "equations": [
       {
@@ -2448,7 +3232,7 @@
     ]
   },
   {
-    "id": "FE-0090",
+    "id": "FE-0118",
     "self_symmetric": false,
     "equations": [
       {
@@ -2476,7 +3260,7 @@
     ]
   },
   {
-    "id": "FE-0091",
+    "id": "FE-0119",
     "self_symmetric": false,
     "equations": [
       {
@@ -2504,7 +3288,7 @@
     ]
   },
   {
-    "id": "FE-0092",
+    "id": "FE-0120",
     "self_symmetric": false,
     "equations": [
       {
@@ -2532,7 +3316,7 @@
     ]
   },
   {
-    "id": "FE-0093",
+    "id": "FE-0121",
     "self_symmetric": false,
     "equations": [
       {
@@ -2560,7 +3344,7 @@
     ]
   },
   {
-    "id": "FE-0094",
+    "id": "FE-0122",
     "self_symmetric": false,
     "equations": [
       {
@@ -2588,7 +3372,7 @@
     ]
   },
   {
-    "id": "FE-0095",
+    "id": "FE-0123",
     "self_symmetric": false,
     "equations": [
       {
@@ -2616,7 +3400,7 @@
     ]
   },
   {
-    "id": "FE-0096",
+    "id": "FE-0124",
     "self_symmetric": false,
     "equations": [
       {
@@ -2644,7 +3428,7 @@
     ]
   },
   {
-    "id": "FE-0097",
+    "id": "FE-0125",
     "self_symmetric": false,
     "equations": [
       {
@@ -2672,7 +3456,7 @@
     ]
   },
   {
-    "id": "FE-0098",
+    "id": "FE-0126",
     "self_symmetric": false,
     "equations": [
       {
@@ -2700,7 +3484,7 @@
     ]
   },
   {
-    "id": "FE-0099",
+    "id": "FE-0127",
     "self_symmetric": false,
     "equations": [
       {
@@ -2728,7 +3512,7 @@
     ]
   },
   {
-    "id": "FE-0100",
+    "id": "FE-0128",
     "self_symmetric": false,
     "equations": [
       {
@@ -2756,7 +3540,7 @@
     ]
   },
   {
-    "id": "FE-0101",
+    "id": "FE-0129",
     "self_symmetric": false,
     "equations": [
       {
@@ -2784,7 +3568,7 @@
     ]
   },
   {
-    "id": "FE-0102",
+    "id": "FE-0130",
     "self_symmetric": false,
     "equations": [
       {
@@ -2812,7 +3596,7 @@
     ]
   },
   {
-    "id": "FE-0103",
+    "id": "FE-0131",
     "self_symmetric": false,
     "equations": [
       {
@@ -2840,7 +3624,7 @@
     ]
   },
   {
-    "id": "FE-0104",
+    "id": "FE-0132",
     "self_symmetric": false,
     "equations": [
       {
@@ -2868,7 +3652,7 @@
     ]
   },
   {
-    "id": "FE-0105",
+    "id": "FE-0133",
     "self_symmetric": false,
     "equations": [
       {
@@ -2896,7 +3680,7 @@
     ]
   },
   {
-    "id": "FE-0106",
+    "id": "FE-0134",
     "self_symmetric": false,
     "equations": [
       {
@@ -2924,7 +3708,7 @@
     ]
   },
   {
-    "id": "FE-0107",
+    "id": "FE-0135",
     "self_symmetric": false,
     "equations": [
       {
@@ -2952,7 +3736,7 @@
     ]
   },
   {
-    "id": "FE-0108",
+    "id": "FE-0136",
     "self_symmetric": false,
     "equations": [
       {
@@ -2980,7 +3764,7 @@
     ]
   },
   {
-    "id": "FE-0109",
+    "id": "FE-0137",
     "self_symmetric": false,
     "equations": [
       {
@@ -3008,7 +3792,7 @@
     ]
   },
   {
-    "id": "FE-0110",
+    "id": "FE-0138",
     "self_symmetric": false,
     "equations": [
       {
@@ -3036,7 +3820,7 @@
     ]
   },
   {
-    "id": "FE-0111",
+    "id": "FE-0139",
     "self_symmetric": true,
     "equations": [
       {
@@ -3053,7 +3837,7 @@
     ]
   },
   {
-    "id": "FE-0112",
+    "id": "FE-0140",
     "self_symmetric": false,
     "equations": [
       {
@@ -3081,7 +3865,35 @@
     ]
   },
   {
-    "id": "FE-0113",
+    "id": "FE-0141",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "y^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + y^2) = x^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "x^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(x^2 + y^2) = f(x)^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0142",
     "self_symmetric": false,
     "equations": [
       {
@@ -3109,7 +3921,7 @@
     ]
   },
   {
-    "id": "FE-0114",
+    "id": "FE-0143",
     "self_symmetric": true,
     "equations": [
       {
@@ -3126,7 +3938,35 @@
     ]
   },
   {
-    "id": "FE-0115",
+    "id": "FE-0144",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "y^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + y^2) = xf(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "x^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(x^2 + y^2) = f(x)^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0145",
     "self_symmetric": false,
     "equations": [
       {
@@ -3154,7 +3994,52 @@
     ]
   },
   {
-    "id": "FE-0116",
+    "id": "FE-0146",
+    "self_symmetric": true,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + y^2) = f(x)^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0147",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(x^2 + y^2) = f(x)^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "x^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + y^2) = f(x^2) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0148",
     "self_symmetric": true,
     "equations": [
       {
@@ -3171,7 +4056,7 @@
     ]
   },
   {
-    "id": "FE-0117",
+    "id": "FE-0149",
     "self_symmetric": false,
     "equations": [
       {
@@ -3199,7 +4084,7 @@
     ]
   },
   {
-    "id": "FE-0118",
+    "id": "FE-0150",
     "self_symmetric": false,
     "equations": [
       {
@@ -3227,7 +4112,35 @@
     ]
   },
   {
-    "id": "FE-0119",
+    "id": "FE-0151",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(y)"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + yf(y)) = x^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "xf(x)",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(xf(x) + y^2) = f(x)^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0152",
     "self_symmetric": false,
     "equations": [
       {
@@ -3255,7 +4168,7 @@
     ]
   },
   {
-    "id": "FE-0120",
+    "id": "FE-0153",
     "self_symmetric": false,
     "equations": [
       {
@@ -3283,7 +4196,7 @@
     ]
   },
   {
-    "id": "FE-0121",
+    "id": "FE-0154",
     "self_symmetric": false,
     "equations": [
       {
@@ -3311,7 +4224,35 @@
     ]
   },
   {
-    "id": "FE-0122",
+    "id": "FE-0155",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + yf(y)) = xf(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "xf(x)",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(xf(x) + y^2) = f(x)^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0156",
     "self_symmetric": false,
     "equations": [
       {
@@ -3339,7 +4280,119 @@
     ]
   },
   {
-    "id": "FE-0123",
+    "id": "FE-0157",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(x^2 + yf(y)) = f(x)^2 + y^2"
+      },
+      {
+        "left": [
+          "xf(x)",
+          "y^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + y^2) = x^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0158",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(x^2 + yf(y)) = f(x)^2 + yf(y)"
+      },
+      {
+        "left": [
+          "xf(x)",
+          "y^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + y^2) = xf(x) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0159",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + yf(y)) = f(x)^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "xf(x)",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + y^2) = f(x)^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0160",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(x^2 + yf(y)) = f(x)^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "xf(x)",
+          "y^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + y^2) = f(x^2) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0161",
     "self_symmetric": false,
     "equations": [
       {
@@ -3367,7 +4420,7 @@
     ]
   },
   {
-    "id": "FE-0124",
+    "id": "FE-0162",
     "self_symmetric": false,
     "equations": [
       {
@@ -3395,7 +4448,35 @@
     ]
   },
   {
-    "id": "FE-0125",
+    "id": "FE-0163",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + yf(y)) = f(x^2) + f(y)^2"
+      },
+      {
+        "left": [
+          "xf(x)",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(xf(x) + y^2) = f(x)^2 + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0164",
     "self_symmetric": false,
     "equations": [
       {
@@ -3423,7 +4504,455 @@
     ]
   },
   {
-    "id": "FE-0126",
+    "id": "FE-0165",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "y^2"
+        ],
+        "display": "f(x^2 + f(y)^2) = x^2 + y^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "x^2",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + y^2) = x^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0166",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "yf(y)"
+        ],
+        "display": "f(x^2 + f(y)^2) = x^2 + yf(y)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "xf(x)",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + y^2) = xf(x) + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0167",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + f(y)^2) = x^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + y^2) = f(x)^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0168",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "display": "f(x^2 + f(y)^2) = x^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + y^2) = f(x^2) + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0169",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "y^2"
+        ],
+        "display": "f(x^2 + f(y)^2) = xf(x) + y^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "x^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + y^2) = x^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0170",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "display": "f(x^2 + f(y)^2) = xf(x) + yf(y)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + y^2) = xf(x) + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0171",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + f(y)^2) = xf(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + y^2) = f(x)^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0172",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "display": "f(x^2 + f(y)^2) = xf(x) + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + y^2) = f(x^2) + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0173",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(x^2 + f(y)^2) = f(x)^2 + y^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + y^2) = x^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0174",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(x^2 + f(y)^2) = f(x)^2 + yf(y)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + y^2) = xf(x) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0175",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + f(y)^2) = f(x)^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + y^2) = f(x)^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0176",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(x^2 + f(y)^2) = f(x)^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + y^2) = f(x^2) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0177",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "display": "f(x^2 + f(y)^2) = f(x^2) + y^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + y^2) = x^2 + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0178",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "display": "f(x^2 + f(y)^2) = f(x^2) + yf(y)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + y^2) = xf(x) + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0179",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + f(y)^2) = f(x^2) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + y^2) = f(x)^2 + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0180",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "display": "f(x^2 + f(y)^2) = f(x^2) + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + y^2) = f(x^2) + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0181",
     "self_symmetric": false,
     "equations": [
       {
@@ -3451,7 +4980,7 @@
     ]
   },
   {
-    "id": "FE-0127",
+    "id": "FE-0182",
     "self_symmetric": false,
     "equations": [
       {
@@ -3479,7 +5008,35 @@
     ]
   },
   {
-    "id": "FE-0128",
+    "id": "FE-0183",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + f(y^2)) = x^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(f(x^2) + y^2) = f(x)^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0184",
     "self_symmetric": false,
     "equations": [
       {
@@ -3507,7 +5064,7 @@
     ]
   },
   {
-    "id": "FE-0129",
+    "id": "FE-0185",
     "self_symmetric": false,
     "equations": [
       {
@@ -3535,7 +5092,7 @@
     ]
   },
   {
-    "id": "FE-0130",
+    "id": "FE-0186",
     "self_symmetric": false,
     "equations": [
       {
@@ -3563,7 +5120,35 @@
     ]
   },
   {
-    "id": "FE-0131",
+    "id": "FE-0187",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + f(y^2)) = xf(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x^2) + y^2) = f(x)^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0188",
     "self_symmetric": false,
     "equations": [
       {
@@ -3591,7 +5176,119 @@
     ]
   },
   {
-    "id": "FE-0132",
+    "id": "FE-0189",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(x^2 + f(y^2)) = f(x)^2 + y^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + y^2) = x^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0190",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(x^2 + f(y^2)) = f(x)^2 + yf(y)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + y^2) = xf(x) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0191",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + f(y^2)) = f(x)^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + y^2) = f(x)^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0192",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(x^2 + f(y^2)) = f(x)^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + y^2) = f(x^2) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0193",
     "self_symmetric": false,
     "equations": [
       {
@@ -3619,7 +5316,7 @@
     ]
   },
   {
-    "id": "FE-0133",
+    "id": "FE-0194",
     "self_symmetric": false,
     "equations": [
       {
@@ -3647,7 +5344,35 @@
     ]
   },
   {
-    "id": "FE-0134",
+    "id": "FE-0195",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(x^2 + f(y^2)) = f(x^2) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x^2) + y^2) = f(x)^2 + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0196",
     "self_symmetric": false,
     "equations": [
       {
@@ -3675,7 +5400,7 @@
     ]
   },
   {
-    "id": "FE-0135",
+    "id": "FE-0197",
     "self_symmetric": false,
     "equations": [
       {
@@ -3703,7 +5428,7 @@
     ]
   },
   {
-    "id": "FE-0136",
+    "id": "FE-0198",
     "self_symmetric": false,
     "equations": [
       {
@@ -3731,7 +5456,7 @@
     ]
   },
   {
-    "id": "FE-0137",
+    "id": "FE-0199",
     "self_symmetric": false,
     "equations": [
       {
@@ -3759,7 +5484,7 @@
     ]
   },
   {
-    "id": "FE-0138",
+    "id": "FE-0200",
     "self_symmetric": false,
     "equations": [
       {
@@ -3787,7 +5512,7 @@
     ]
   },
   {
-    "id": "FE-0139",
+    "id": "FE-0201",
     "self_symmetric": false,
     "equations": [
       {
@@ -3815,7 +5540,7 @@
     ]
   },
   {
-    "id": "FE-0140",
+    "id": "FE-0202",
     "self_symmetric": false,
     "equations": [
       {
@@ -3843,7 +5568,7 @@
     ]
   },
   {
-    "id": "FE-0141",
+    "id": "FE-0203",
     "self_symmetric": false,
     "equations": [
       {
@@ -3871,7 +5596,7 @@
     ]
   },
   {
-    "id": "FE-0142",
+    "id": "FE-0204",
     "self_symmetric": false,
     "equations": [
       {
@@ -3899,7 +5624,119 @@
     ]
   },
   {
-    "id": "FE-0143",
+    "id": "FE-0205",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(x^2 + xf(y)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "y^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(y^2 + yf(x)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0206",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(x^2 + xf(y)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "y^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(y^2 + yf(x)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0207",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(x^2 + xf(y)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "y^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(y^2 + yf(x)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0208",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(x^2 + xf(y)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "y^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(y^2 + yf(x)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0209",
     "self_symmetric": false,
     "equations": [
       {
@@ -3927,7 +5764,7 @@
     ]
   },
   {
-    "id": "FE-0144",
+    "id": "FE-0210",
     "self_symmetric": false,
     "equations": [
       {
@@ -3955,7 +5792,7 @@
     ]
   },
   {
-    "id": "FE-0145",
+    "id": "FE-0211",
     "self_symmetric": false,
     "equations": [
       {
@@ -3983,7 +5820,7 @@
     ]
   },
   {
-    "id": "FE-0146",
+    "id": "FE-0212",
     "self_symmetric": false,
     "equations": [
       {
@@ -4011,7 +5848,7 @@
     ]
   },
   {
-    "id": "FE-0147",
+    "id": "FE-0213",
     "self_symmetric": false,
     "equations": [
       {
@@ -4039,7 +5876,7 @@
     ]
   },
   {
-    "id": "FE-0148",
+    "id": "FE-0214",
     "self_symmetric": false,
     "equations": [
       {
@@ -4067,7 +5904,7 @@
     ]
   },
   {
-    "id": "FE-0149",
+    "id": "FE-0215",
     "self_symmetric": false,
     "equations": [
       {
@@ -4095,7 +5932,7 @@
     ]
   },
   {
-    "id": "FE-0150",
+    "id": "FE-0216",
     "self_symmetric": false,
     "equations": [
       {
@@ -4123,7 +5960,7 @@
     ]
   },
   {
-    "id": "FE-0151",
+    "id": "FE-0217",
     "self_symmetric": false,
     "equations": [
       {
@@ -4151,7 +5988,7 @@
     ]
   },
   {
-    "id": "FE-0152",
+    "id": "FE-0218",
     "self_symmetric": false,
     "equations": [
       {
@@ -4179,7 +6016,7 @@
     ]
   },
   {
-    "id": "FE-0153",
+    "id": "FE-0219",
     "self_symmetric": false,
     "equations": [
       {
@@ -4207,7 +6044,7 @@
     ]
   },
   {
-    "id": "FE-0154",
+    "id": "FE-0220",
     "self_symmetric": false,
     "equations": [
       {
@@ -4235,7 +6072,119 @@
     ]
   },
   {
-    "id": "FE-0155",
+    "id": "FE-0221",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(x^2 + yf(x)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "y^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(y^2 + xf(y)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0222",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(x^2 + yf(x)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "y^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(y^2 + xf(y)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0223",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(x^2 + yf(x)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "y^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(y^2 + xf(y)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0224",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(x^2 + yf(x)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "y^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(y^2 + xf(y)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0225",
     "self_symmetric": false,
     "equations": [
       {
@@ -4263,7 +6212,7 @@
     ]
   },
   {
-    "id": "FE-0156",
+    "id": "FE-0226",
     "self_symmetric": false,
     "equations": [
       {
@@ -4291,7 +6240,7 @@
     ]
   },
   {
-    "id": "FE-0157",
+    "id": "FE-0227",
     "self_symmetric": false,
     "equations": [
       {
@@ -4319,7 +6268,7 @@
     ]
   },
   {
-    "id": "FE-0158",
+    "id": "FE-0228",
     "self_symmetric": false,
     "equations": [
       {
@@ -4347,7 +6296,7 @@
     ]
   },
   {
-    "id": "FE-0159",
+    "id": "FE-0229",
     "self_symmetric": false,
     "equations": [
       {
@@ -4375,7 +6324,7 @@
     ]
   },
   {
-    "id": "FE-0160",
+    "id": "FE-0230",
     "self_symmetric": false,
     "equations": [
       {
@@ -4403,7 +6352,7 @@
     ]
   },
   {
-    "id": "FE-0161",
+    "id": "FE-0231",
     "self_symmetric": false,
     "equations": [
       {
@@ -4431,7 +6380,7 @@
     ]
   },
   {
-    "id": "FE-0162",
+    "id": "FE-0232",
     "self_symmetric": false,
     "equations": [
       {
@@ -4459,7 +6408,7 @@
     ]
   },
   {
-    "id": "FE-0163",
+    "id": "FE-0233",
     "self_symmetric": false,
     "equations": [
       {
@@ -4487,7 +6436,7 @@
     ]
   },
   {
-    "id": "FE-0164",
+    "id": "FE-0234",
     "self_symmetric": false,
     "equations": [
       {
@@ -4515,7 +6464,7 @@
     ]
   },
   {
-    "id": "FE-0165",
+    "id": "FE-0235",
     "self_symmetric": false,
     "equations": [
       {
@@ -4543,7 +6492,7 @@
     ]
   },
   {
-    "id": "FE-0166",
+    "id": "FE-0236",
     "self_symmetric": false,
     "equations": [
       {
@@ -4571,7 +6520,119 @@
     ]
   },
   {
-    "id": "FE-0167",
+    "id": "FE-0237",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(x^2 + f(x)f(y)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "y^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(y^2 + f(x)f(y)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0238",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(x^2 + f(x)f(y)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "y^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(y^2 + f(x)f(y)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0239",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(x^2 + f(x)f(y)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "y^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(y^2 + f(x)f(y)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0240",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(x^2 + f(x)f(y)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "y^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(y^2 + f(x)f(y)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0241",
     "self_symmetric": false,
     "equations": [
       {
@@ -4599,7 +6660,7 @@
     ]
   },
   {
-    "id": "FE-0168",
+    "id": "FE-0242",
     "self_symmetric": false,
     "equations": [
       {
@@ -4627,7 +6688,7 @@
     ]
   },
   {
-    "id": "FE-0169",
+    "id": "FE-0243",
     "self_symmetric": false,
     "equations": [
       {
@@ -4655,7 +6716,7 @@
     ]
   },
   {
-    "id": "FE-0170",
+    "id": "FE-0244",
     "self_symmetric": false,
     "equations": [
       {
@@ -4683,7 +6744,7 @@
     ]
   },
   {
-    "id": "FE-0171",
+    "id": "FE-0245",
     "self_symmetric": false,
     "equations": [
       {
@@ -4711,7 +6772,7 @@
     ]
   },
   {
-    "id": "FE-0172",
+    "id": "FE-0246",
     "self_symmetric": false,
     "equations": [
       {
@@ -4739,7 +6800,7 @@
     ]
   },
   {
-    "id": "FE-0173",
+    "id": "FE-0247",
     "self_symmetric": false,
     "equations": [
       {
@@ -4767,7 +6828,7 @@
     ]
   },
   {
-    "id": "FE-0174",
+    "id": "FE-0248",
     "self_symmetric": false,
     "equations": [
       {
@@ -4795,7 +6856,7 @@
     ]
   },
   {
-    "id": "FE-0175",
+    "id": "FE-0249",
     "self_symmetric": false,
     "equations": [
       {
@@ -4823,7 +6884,7 @@
     ]
   },
   {
-    "id": "FE-0176",
+    "id": "FE-0250",
     "self_symmetric": false,
     "equations": [
       {
@@ -4851,7 +6912,7 @@
     ]
   },
   {
-    "id": "FE-0177",
+    "id": "FE-0251",
     "self_symmetric": false,
     "equations": [
       {
@@ -4879,7 +6940,7 @@
     ]
   },
   {
-    "id": "FE-0178",
+    "id": "FE-0252",
     "self_symmetric": false,
     "equations": [
       {
@@ -4907,7 +6968,119 @@
     ]
   },
   {
-    "id": "FE-0179",
+    "id": "FE-0253",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(x^2 + xy) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "y^2",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(y^2 + xy) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0254",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(x^2 + xy) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "y^2",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(y^2 + xy) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0255",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(x^2 + xy) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "y^2",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(y^2 + xy) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0256",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "x^2",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(x^2 + xy) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "y^2",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(y^2 + xy) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0257",
     "self_symmetric": false,
     "equations": [
       {
@@ -4935,7 +7108,7 @@
     ]
   },
   {
-    "id": "FE-0180",
+    "id": "FE-0258",
     "self_symmetric": false,
     "equations": [
       {
@@ -4963,7 +7136,7 @@
     ]
   },
   {
-    "id": "FE-0181",
+    "id": "FE-0259",
     "self_symmetric": false,
     "equations": [
       {
@@ -4991,7 +7164,7 @@
     ]
   },
   {
-    "id": "FE-0182",
+    "id": "FE-0260",
     "self_symmetric": false,
     "equations": [
       {
@@ -5019,7 +7192,7 @@
     ]
   },
   {
-    "id": "FE-0183",
+    "id": "FE-0261",
     "self_symmetric": true,
     "equations": [
       {
@@ -5036,7 +7209,7 @@
     ]
   },
   {
-    "id": "FE-0184",
+    "id": "FE-0262",
     "self_symmetric": false,
     "equations": [
       {
@@ -5064,7 +7237,35 @@
     ]
   },
   {
-    "id": "FE-0185",
+    "id": "FE-0263",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + yf(y)) = x^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(xf(x) + yf(y)) = f(x)^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0264",
     "self_symmetric": false,
     "equations": [
       {
@@ -5092,7 +7293,7 @@
     ]
   },
   {
-    "id": "FE-0186",
+    "id": "FE-0265",
     "self_symmetric": true,
     "equations": [
       {
@@ -5109,7 +7310,35 @@
     ]
   },
   {
-    "id": "FE-0187",
+    "id": "FE-0266",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + yf(y)) = xf(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(xf(x) + yf(y)) = f(x)^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0267",
     "self_symmetric": false,
     "equations": [
       {
@@ -5137,7 +7366,52 @@
     ]
   },
   {
-    "id": "FE-0188",
+    "id": "FE-0268",
+    "self_symmetric": true,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + yf(y)) = f(x)^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0269",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(xf(x) + yf(y)) = f(x)^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + yf(y)) = f(x^2) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0270",
     "self_symmetric": true,
     "equations": [
       {
@@ -5154,7 +7428,455 @@
     ]
   },
   {
-    "id": "FE-0189",
+    "id": "FE-0271",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "y^2"
+        ],
+        "display": "f(xf(x) + f(y)^2) = x^2 + y^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "x^2",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = x^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0272",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "yf(y)"
+        ],
+        "display": "f(xf(x) + f(y)^2) = x^2 + yf(y)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = xf(x) + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0273",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + f(y)^2) = x^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = f(x)^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0274",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "display": "f(xf(x) + f(y)^2) = x^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = f(x^2) + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0275",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "y^2"
+        ],
+        "display": "f(xf(x) + f(y)^2) = xf(x) + y^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "x^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = x^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0276",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "display": "f(xf(x) + f(y)^2) = xf(x) + yf(y)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = xf(x) + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0277",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + f(y)^2) = xf(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = f(x)^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0278",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "display": "f(xf(x) + f(y)^2) = xf(x) + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = f(x^2) + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0279",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(xf(x) + f(y)^2) = f(x)^2 + y^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = x^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0280",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(xf(x) + f(y)^2) = f(x)^2 + yf(y)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = xf(x) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0281",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + f(y)^2) = f(x)^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = f(x)^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0282",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(xf(x) + f(y)^2) = f(x)^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = f(x^2) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0283",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "display": "f(xf(x) + f(y)^2) = f(x^2) + y^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = x^2 + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0284",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "display": "f(xf(x) + f(y)^2) = f(x^2) + yf(y)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = xf(x) + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0285",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + f(y)^2) = f(x^2) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = f(x)^2 + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0286",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "display": "f(xf(x) + f(y)^2) = f(x^2) + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + yf(y)) = f(x^2) + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0287",
     "self_symmetric": false,
     "equations": [
       {
@@ -5182,7 +7904,7 @@
     ]
   },
   {
-    "id": "FE-0190",
+    "id": "FE-0288",
     "self_symmetric": false,
     "equations": [
       {
@@ -5210,7 +7932,35 @@
     ]
   },
   {
-    "id": "FE-0191",
+    "id": "FE-0289",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + f(y^2)) = x^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(f(x^2) + yf(y)) = f(x)^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0290",
     "self_symmetric": false,
     "equations": [
       {
@@ -5238,7 +7988,7 @@
     ]
   },
   {
-    "id": "FE-0192",
+    "id": "FE-0291",
     "self_symmetric": false,
     "equations": [
       {
@@ -5266,7 +8016,7 @@
     ]
   },
   {
-    "id": "FE-0193",
+    "id": "FE-0292",
     "self_symmetric": false,
     "equations": [
       {
@@ -5294,7 +8044,35 @@
     ]
   },
   {
-    "id": "FE-0194",
+    "id": "FE-0293",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + f(y^2)) = xf(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x^2) + yf(y)) = f(x)^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0294",
     "self_symmetric": false,
     "equations": [
       {
@@ -5322,7 +8100,119 @@
     ]
   },
   {
-    "id": "FE-0195",
+    "id": "FE-0295",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(xf(x) + f(y^2)) = f(x)^2 + y^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + yf(y)) = x^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0296",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(xf(x) + f(y^2)) = f(x)^2 + yf(y)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + yf(y)) = xf(x) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0297",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + f(y^2)) = f(x)^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + yf(y)) = f(x)^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0298",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(xf(x) + f(y^2)) = f(x)^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + yf(y)) = f(x^2) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0299",
     "self_symmetric": false,
     "equations": [
       {
@@ -5350,7 +8240,7 @@
     ]
   },
   {
-    "id": "FE-0196",
+    "id": "FE-0300",
     "self_symmetric": false,
     "equations": [
       {
@@ -5378,7 +8268,35 @@
     ]
   },
   {
-    "id": "FE-0197",
+    "id": "FE-0301",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(xf(x) + f(y^2)) = f(x^2) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x^2) + yf(y)) = f(x)^2 + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0302",
     "self_symmetric": false,
     "equations": [
       {
@@ -5406,7 +8324,7 @@
     ]
   },
   {
-    "id": "FE-0198",
+    "id": "FE-0303",
     "self_symmetric": false,
     "equations": [
       {
@@ -5434,7 +8352,7 @@
     ]
   },
   {
-    "id": "FE-0199",
+    "id": "FE-0304",
     "self_symmetric": false,
     "equations": [
       {
@@ -5462,7 +8380,7 @@
     ]
   },
   {
-    "id": "FE-0200",
+    "id": "FE-0305",
     "self_symmetric": false,
     "equations": [
       {
@@ -5490,7 +8408,7 @@
     ]
   },
   {
-    "id": "FE-0201",
+    "id": "FE-0306",
     "self_symmetric": false,
     "equations": [
       {
@@ -5518,7 +8436,7 @@
     ]
   },
   {
-    "id": "FE-0202",
+    "id": "FE-0307",
     "self_symmetric": false,
     "equations": [
       {
@@ -5546,7 +8464,7 @@
     ]
   },
   {
-    "id": "FE-0203",
+    "id": "FE-0308",
     "self_symmetric": false,
     "equations": [
       {
@@ -5574,7 +8492,7 @@
     ]
   },
   {
-    "id": "FE-0204",
+    "id": "FE-0309",
     "self_symmetric": false,
     "equations": [
       {
@@ -5602,7 +8520,7 @@
     ]
   },
   {
-    "id": "FE-0205",
+    "id": "FE-0310",
     "self_symmetric": false,
     "equations": [
       {
@@ -5630,7 +8548,119 @@
     ]
   },
   {
-    "id": "FE-0206",
+    "id": "FE-0311",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(xf(x) + xf(y)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(yf(y) + yf(x)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0312",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(xf(x) + xf(y)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(yf(y) + yf(x)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0313",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(xf(x) + xf(y)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(yf(y) + yf(x)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0314",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(xf(x) + xf(y)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(yf(y) + yf(x)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0315",
     "self_symmetric": false,
     "equations": [
       {
@@ -5658,7 +8688,7 @@
     ]
   },
   {
-    "id": "FE-0207",
+    "id": "FE-0316",
     "self_symmetric": false,
     "equations": [
       {
@@ -5686,7 +8716,7 @@
     ]
   },
   {
-    "id": "FE-0208",
+    "id": "FE-0317",
     "self_symmetric": false,
     "equations": [
       {
@@ -5714,7 +8744,7 @@
     ]
   },
   {
-    "id": "FE-0209",
+    "id": "FE-0318",
     "self_symmetric": false,
     "equations": [
       {
@@ -5742,7 +8772,7 @@
     ]
   },
   {
-    "id": "FE-0210",
+    "id": "FE-0319",
     "self_symmetric": false,
     "equations": [
       {
@@ -5770,7 +8800,7 @@
     ]
   },
   {
-    "id": "FE-0211",
+    "id": "FE-0320",
     "self_symmetric": false,
     "equations": [
       {
@@ -5798,7 +8828,7 @@
     ]
   },
   {
-    "id": "FE-0212",
+    "id": "FE-0321",
     "self_symmetric": false,
     "equations": [
       {
@@ -5826,7 +8856,7 @@
     ]
   },
   {
-    "id": "FE-0213",
+    "id": "FE-0322",
     "self_symmetric": false,
     "equations": [
       {
@@ -5854,7 +8884,7 @@
     ]
   },
   {
-    "id": "FE-0214",
+    "id": "FE-0323",
     "self_symmetric": false,
     "equations": [
       {
@@ -5882,7 +8912,7 @@
     ]
   },
   {
-    "id": "FE-0215",
+    "id": "FE-0324",
     "self_symmetric": false,
     "equations": [
       {
@@ -5910,7 +8940,7 @@
     ]
   },
   {
-    "id": "FE-0216",
+    "id": "FE-0325",
     "self_symmetric": false,
     "equations": [
       {
@@ -5938,7 +8968,7 @@
     ]
   },
   {
-    "id": "FE-0217",
+    "id": "FE-0326",
     "self_symmetric": false,
     "equations": [
       {
@@ -5966,7 +8996,119 @@
     ]
   },
   {
-    "id": "FE-0218",
+    "id": "FE-0327",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(xf(x) + yf(x)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(yf(y) + xf(y)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0328",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(xf(x) + yf(x)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(yf(y) + xf(y)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0329",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(xf(x) + yf(x)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(yf(y) + xf(y)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0330",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(xf(x) + yf(x)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(yf(y) + xf(y)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0331",
     "self_symmetric": false,
     "equations": [
       {
@@ -5994,7 +9136,7 @@
     ]
   },
   {
-    "id": "FE-0219",
+    "id": "FE-0332",
     "self_symmetric": false,
     "equations": [
       {
@@ -6022,7 +9164,7 @@
     ]
   },
   {
-    "id": "FE-0220",
+    "id": "FE-0333",
     "self_symmetric": false,
     "equations": [
       {
@@ -6050,7 +9192,7 @@
     ]
   },
   {
-    "id": "FE-0221",
+    "id": "FE-0334",
     "self_symmetric": false,
     "equations": [
       {
@@ -6078,7 +9220,7 @@
     ]
   },
   {
-    "id": "FE-0222",
+    "id": "FE-0335",
     "self_symmetric": false,
     "equations": [
       {
@@ -6106,7 +9248,7 @@
     ]
   },
   {
-    "id": "FE-0223",
+    "id": "FE-0336",
     "self_symmetric": false,
     "equations": [
       {
@@ -6134,7 +9276,7 @@
     ]
   },
   {
-    "id": "FE-0224",
+    "id": "FE-0337",
     "self_symmetric": false,
     "equations": [
       {
@@ -6162,7 +9304,7 @@
     ]
   },
   {
-    "id": "FE-0225",
+    "id": "FE-0338",
     "self_symmetric": false,
     "equations": [
       {
@@ -6190,7 +9332,7 @@
     ]
   },
   {
-    "id": "FE-0226",
+    "id": "FE-0339",
     "self_symmetric": false,
     "equations": [
       {
@@ -6218,7 +9360,7 @@
     ]
   },
   {
-    "id": "FE-0227",
+    "id": "FE-0340",
     "self_symmetric": false,
     "equations": [
       {
@@ -6246,7 +9388,7 @@
     ]
   },
   {
-    "id": "FE-0228",
+    "id": "FE-0341",
     "self_symmetric": false,
     "equations": [
       {
@@ -6274,7 +9416,7 @@
     ]
   },
   {
-    "id": "FE-0229",
+    "id": "FE-0342",
     "self_symmetric": false,
     "equations": [
       {
@@ -6302,7 +9444,119 @@
     ]
   },
   {
-    "id": "FE-0230",
+    "id": "FE-0343",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(xf(x) + f(x)f(y)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(yf(y) + f(x)f(y)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0344",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(xf(x) + f(x)f(y)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(yf(y) + f(x)f(y)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0345",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(xf(x) + f(x)f(y)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(yf(y) + f(x)f(y)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0346",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(xf(x) + f(x)f(y)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(yf(y) + f(x)f(y)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0347",
     "self_symmetric": false,
     "equations": [
       {
@@ -6330,7 +9584,7 @@
     ]
   },
   {
-    "id": "FE-0231",
+    "id": "FE-0348",
     "self_symmetric": false,
     "equations": [
       {
@@ -6358,7 +9612,7 @@
     ]
   },
   {
-    "id": "FE-0232",
+    "id": "FE-0349",
     "self_symmetric": false,
     "equations": [
       {
@@ -6386,7 +9640,7 @@
     ]
   },
   {
-    "id": "FE-0233",
+    "id": "FE-0350",
     "self_symmetric": false,
     "equations": [
       {
@@ -6414,7 +9668,7 @@
     ]
   },
   {
-    "id": "FE-0234",
+    "id": "FE-0351",
     "self_symmetric": false,
     "equations": [
       {
@@ -6442,7 +9696,7 @@
     ]
   },
   {
-    "id": "FE-0235",
+    "id": "FE-0352",
     "self_symmetric": false,
     "equations": [
       {
@@ -6470,7 +9724,7 @@
     ]
   },
   {
-    "id": "FE-0236",
+    "id": "FE-0353",
     "self_symmetric": false,
     "equations": [
       {
@@ -6498,7 +9752,7 @@
     ]
   },
   {
-    "id": "FE-0237",
+    "id": "FE-0354",
     "self_symmetric": false,
     "equations": [
       {
@@ -6526,7 +9780,7 @@
     ]
   },
   {
-    "id": "FE-0238",
+    "id": "FE-0355",
     "self_symmetric": false,
     "equations": [
       {
@@ -6554,7 +9808,7 @@
     ]
   },
   {
-    "id": "FE-0239",
+    "id": "FE-0356",
     "self_symmetric": false,
     "equations": [
       {
@@ -6582,7 +9836,7 @@
     ]
   },
   {
-    "id": "FE-0240",
+    "id": "FE-0357",
     "self_symmetric": false,
     "equations": [
       {
@@ -6610,7 +9864,7 @@
     ]
   },
   {
-    "id": "FE-0241",
+    "id": "FE-0358",
     "self_symmetric": false,
     "equations": [
       {
@@ -6638,7 +9892,119 @@
     ]
   },
   {
-    "id": "FE-0242",
+    "id": "FE-0359",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(xf(x) + xy) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(yf(y) + xy) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0360",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(xf(x) + xy) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(yf(y) + xy) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0361",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(xf(x) + xy) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(yf(y) + xy) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0362",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "xf(x)",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(xf(x) + xy) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "yf(y)",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(yf(y) + xy) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0363",
     "self_symmetric": false,
     "equations": [
       {
@@ -6666,7 +10032,7 @@
     ]
   },
   {
-    "id": "FE-0243",
+    "id": "FE-0364",
     "self_symmetric": false,
     "equations": [
       {
@@ -6694,7 +10060,7 @@
     ]
   },
   {
-    "id": "FE-0244",
+    "id": "FE-0365",
     "self_symmetric": false,
     "equations": [
       {
@@ -6722,7 +10088,7 @@
     ]
   },
   {
-    "id": "FE-0245",
+    "id": "FE-0366",
     "self_symmetric": false,
     "equations": [
       {
@@ -6750,7 +10116,2483 @@
     ]
   },
   {
-    "id": "FE-0246",
+    "id": "FE-0367",
+    "self_symmetric": true,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = x^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0368",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = x^2 + yf(y)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = xf(x) + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0369",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = x^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = f(x)^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0370",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = x^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = f(x^2) + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0371",
+    "self_symmetric": true,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = xf(x) + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0372",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = xf(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = f(x)^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0373",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = xf(x) + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = f(x^2) + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0374",
+    "self_symmetric": true,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = f(x)^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0375",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = f(x)^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = f(x^2) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0376",
+    "self_symmetric": true,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + f(y)^2) = f(x^2) + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0377",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "x^2",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = x^2 + y^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "y^2"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = x^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0378",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "x^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = x^2 + yf(y)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "y^2"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = xf(x) + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0379",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = x^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = f(x)^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0380",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = x^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = f(x^2) + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0381",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "xf(x)",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = xf(x) + y^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = x^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0382",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = xf(x) + yf(y)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(y)"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = xf(x) + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0383",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = xf(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = f(x)^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0384",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = xf(x) + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = f(x^2) + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0385",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = f(x)^2 + y^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = x^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0386",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = f(x)^2 + yf(y)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = xf(x) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0387",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = f(x)^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = f(x)^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0388",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = f(x)^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = f(x^2) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0389",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x^2)",
+          "y^2"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = f(x^2) + y^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "x^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = x^2 + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0390",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(y)"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = f(x^2) + yf(y)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = xf(x) + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0391",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = f(x^2) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = f(x)^2 + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0392",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x)^2 + f(y^2)) = f(x^2) + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "display": "f(f(x^2) + f(y)^2) = f(x^2) + f(y^2)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0393",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "x^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = x^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "y^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = y^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0394",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "x^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = x^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "y^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = y^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0395",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "x^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = x^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "y^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = y^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0396",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "x^2",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = x^2 + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "y^2",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = y^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0397",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = xf(x) + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "yf(y)",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = yf(y) + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0398",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = xf(x) + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "yf(y)",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = yf(y) + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0399",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = xf(x) + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "yf(y)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = yf(y) + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0400",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = xf(x) + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "yf(y)",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = yf(y) + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0401",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0402",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0403",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0404",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0405",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = f(x^2) + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y^2)",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = f(y^2) + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0406",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = f(x^2) + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y^2)",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = f(y^2) + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0407",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = f(x^2) + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y^2)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = f(y^2) + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0408",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + xf(y)) = f(x^2) + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y^2)",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + yf(x)) = f(y^2) + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0409",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "x^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = x^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "y^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = y^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0410",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "x^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = x^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "y^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = y^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0411",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "x^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = x^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "y^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = y^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0412",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "x^2",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = x^2 + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "y^2",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = y^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0413",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "xf(x)",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = xf(x) + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "yf(y)",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = yf(y) + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0414",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = xf(x) + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "yf(y)",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = yf(y) + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0415",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = xf(x) + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "yf(y)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = yf(y) + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0416",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "xf(x)",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = xf(x) + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "yf(y)",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = yf(y) + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0417",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0418",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0419",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0420",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0421",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x^2)",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = f(x^2) + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y^2)",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = f(y^2) + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0422",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = f(x^2) + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y^2)",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = f(y^2) + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0423",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = f(x^2) + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y^2)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = f(y^2) + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0424",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x^2)",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + yf(x)) = f(x^2) + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y^2)",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + xf(y)) = f(y^2) + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0425",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "x^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = x^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "y^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = y^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0426",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "x^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = x^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "y^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = y^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0427",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "x^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = x^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "y^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = y^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0428",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "x^2",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = x^2 + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "y^2",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = y^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0429",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = xf(x) + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "yf(y)",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = yf(y) + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0430",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = xf(x) + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "yf(y)",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = yf(y) + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0431",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = xf(x) + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "yf(y)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = yf(y) + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0432",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "xf(x)",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = xf(x) + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "yf(y)",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = yf(y) + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0433",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0434",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0435",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0436",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0437",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = f(x^2) + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y^2)",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = f(y^2) + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0438",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = f(x^2) + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y^2)",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = f(y^2) + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0439",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = f(x^2) + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y^2)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = f(y^2) + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0440",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x^2)",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + f(x)f(y)) = f(x^2) + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y^2)",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + f(x)f(y)) = f(y^2) + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0441",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "x^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + xy) = x^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "y^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + xy) = y^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0442",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "x^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + xy) = x^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "y^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + xy) = y^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0443",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "x^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + xy) = x^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "y^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + xy) = y^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0444",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "x^2",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + xy) = x^2 + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "y^2",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + xy) = y^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0445",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "xf(x)",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + xy) = xf(x) + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "yf(y)",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + xy) = yf(y) + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0446",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "xf(x)",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + xy) = xf(x) + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "yf(y)",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + xy) = yf(y) + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0447",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "xf(x)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + xy) = xf(x) + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "yf(y)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + xy) = yf(y) + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0448",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "xf(x)",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + xy) = xf(x) + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "yf(y)",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + xy) = yf(y) + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0449",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + xy) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + xy) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0450",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + xy) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + xy) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0451",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + xy) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + xy) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0452",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + xy) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + xy) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0453",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "f(x^2)",
+          "xf(y)"
+        ],
+        "display": "f(f(x)^2 + xy) = f(x^2) + xf(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "f(y^2)",
+          "yf(x)"
+        ],
+        "display": "f(f(y)^2 + xy) = f(y^2) + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0454",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "f(x^2)",
+          "yf(x)"
+        ],
+        "display": "f(f(x)^2 + xy) = f(x^2) + yf(x)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "f(y^2)",
+          "xf(y)"
+        ],
+        "display": "f(f(y)^2 + xy) = f(y^2) + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0455",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x)^2 + xy) = f(x^2) + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "f(y^2)",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y)^2 + xy) = f(y^2) + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0456",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x)^2",
+          "xy"
+        ],
+        "right": [
+          "f(x^2)",
+          "xy"
+        ],
+        "display": "f(f(x)^2 + xy) = f(x^2) + xy"
+      },
+      {
+        "left": [
+          "f(y)^2",
+          "xy"
+        ],
+        "right": [
+          "f(y^2)",
+          "xy"
+        ],
+        "display": "f(f(y)^2 + xy) = f(y^2) + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0457",
     "self_symmetric": true,
     "equations": [
       {
@@ -6767,7 +12609,7 @@
     ]
   },
   {
-    "id": "FE-0247",
+    "id": "FE-0458",
     "self_symmetric": false,
     "equations": [
       {
@@ -6795,7 +12637,35 @@
     ]
   },
   {
-    "id": "FE-0248",
+    "id": "FE-0459",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "right": [
+          "x^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + f(y^2)) = x^2 + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "y^2"
+        ],
+        "display": "f(f(x^2) + f(y^2)) = f(x)^2 + y^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0460",
     "self_symmetric": false,
     "equations": [
       {
@@ -6823,7 +12693,7 @@
     ]
   },
   {
-    "id": "FE-0249",
+    "id": "FE-0461",
     "self_symmetric": true,
     "equations": [
       {
@@ -6840,7 +12710,35 @@
     ]
   },
   {
-    "id": "FE-0250",
+    "id": "FE-0462",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "right": [
+          "xf(x)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + f(y^2)) = xf(x) + f(y)^2"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(y)"
+        ],
+        "display": "f(f(x^2) + f(y^2)) = f(x)^2 + yf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0463",
     "self_symmetric": false,
     "equations": [
       {
@@ -6868,7 +12766,52 @@
     ]
   },
   {
-    "id": "FE-0251",
+    "id": "FE-0464",
+    "self_symmetric": true,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + f(y^2)) = f(x)^2 + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0465",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(y^2)"
+        ],
+        "display": "f(f(x^2) + f(y^2)) = f(x)^2 + f(y^2)"
+      },
+      {
+        "left": [
+          "f(x^2)",
+          "f(y^2)"
+        ],
+        "right": [
+          "f(x^2)",
+          "f(y)^2"
+        ],
+        "display": "f(f(x^2) + f(y^2)) = f(x^2) + f(y)^2"
+      }
+    ]
+  },
+  {
+    "id": "FE-0466",
     "self_symmetric": true,
     "equations": [
       {
@@ -6885,7 +12828,7 @@
     ]
   },
   {
-    "id": "FE-0252",
+    "id": "FE-0467",
     "self_symmetric": false,
     "equations": [
       {
@@ -6913,7 +12856,7 @@
     ]
   },
   {
-    "id": "FE-0253",
+    "id": "FE-0468",
     "self_symmetric": false,
     "equations": [
       {
@@ -6941,7 +12884,7 @@
     ]
   },
   {
-    "id": "FE-0254",
+    "id": "FE-0469",
     "self_symmetric": false,
     "equations": [
       {
@@ -6969,7 +12912,7 @@
     ]
   },
   {
-    "id": "FE-0255",
+    "id": "FE-0470",
     "self_symmetric": false,
     "equations": [
       {
@@ -6997,7 +12940,7 @@
     ]
   },
   {
-    "id": "FE-0256",
+    "id": "FE-0471",
     "self_symmetric": false,
     "equations": [
       {
@@ -7025,7 +12968,7 @@
     ]
   },
   {
-    "id": "FE-0257",
+    "id": "FE-0472",
     "self_symmetric": false,
     "equations": [
       {
@@ -7053,7 +12996,7 @@
     ]
   },
   {
-    "id": "FE-0258",
+    "id": "FE-0473",
     "self_symmetric": false,
     "equations": [
       {
@@ -7081,7 +13024,7 @@
     ]
   },
   {
-    "id": "FE-0259",
+    "id": "FE-0474",
     "self_symmetric": false,
     "equations": [
       {
@@ -7109,7 +13052,119 @@
     ]
   },
   {
-    "id": "FE-0260",
+    "id": "FE-0475",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x^2) + xf(y)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y^2) + yf(x)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0476",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x^2) + xf(y)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y^2) + yf(x)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0477",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x^2) + xf(y)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y^2) + yf(x)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0478",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(f(x^2) + xf(y)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(f(y^2) + yf(x)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0479",
     "self_symmetric": false,
     "equations": [
       {
@@ -7137,7 +13192,7 @@
     ]
   },
   {
-    "id": "FE-0261",
+    "id": "FE-0480",
     "self_symmetric": false,
     "equations": [
       {
@@ -7165,7 +13220,7 @@
     ]
   },
   {
-    "id": "FE-0262",
+    "id": "FE-0481",
     "self_symmetric": false,
     "equations": [
       {
@@ -7193,7 +13248,7 @@
     ]
   },
   {
-    "id": "FE-0263",
+    "id": "FE-0482",
     "self_symmetric": false,
     "equations": [
       {
@@ -7221,7 +13276,7 @@
     ]
   },
   {
-    "id": "FE-0264",
+    "id": "FE-0483",
     "self_symmetric": false,
     "equations": [
       {
@@ -7249,7 +13304,7 @@
     ]
   },
   {
-    "id": "FE-0265",
+    "id": "FE-0484",
     "self_symmetric": false,
     "equations": [
       {
@@ -7277,7 +13332,7 @@
     ]
   },
   {
-    "id": "FE-0266",
+    "id": "FE-0485",
     "self_symmetric": false,
     "equations": [
       {
@@ -7305,7 +13360,7 @@
     ]
   },
   {
-    "id": "FE-0267",
+    "id": "FE-0486",
     "self_symmetric": false,
     "equations": [
       {
@@ -7333,7 +13388,7 @@
     ]
   },
   {
-    "id": "FE-0268",
+    "id": "FE-0487",
     "self_symmetric": false,
     "equations": [
       {
@@ -7361,7 +13416,7 @@
     ]
   },
   {
-    "id": "FE-0269",
+    "id": "FE-0488",
     "self_symmetric": false,
     "equations": [
       {
@@ -7389,7 +13444,7 @@
     ]
   },
   {
-    "id": "FE-0270",
+    "id": "FE-0489",
     "self_symmetric": false,
     "equations": [
       {
@@ -7417,7 +13472,7 @@
     ]
   },
   {
-    "id": "FE-0271",
+    "id": "FE-0490",
     "self_symmetric": false,
     "equations": [
       {
@@ -7445,7 +13500,119 @@
     ]
   },
   {
-    "id": "FE-0272",
+    "id": "FE-0491",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x^2) + yf(x)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y^2) + xf(y)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0492",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x^2) + yf(x)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y^2) + xf(y)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0493",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x^2) + yf(x)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y^2) + xf(y)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0494",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "yf(x)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(f(x^2) + yf(x)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "xf(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(f(y^2) + xf(y)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0495",
     "self_symmetric": false,
     "equations": [
       {
@@ -7473,7 +13640,7 @@
     ]
   },
   {
-    "id": "FE-0273",
+    "id": "FE-0496",
     "self_symmetric": false,
     "equations": [
       {
@@ -7501,7 +13668,7 @@
     ]
   },
   {
-    "id": "FE-0274",
+    "id": "FE-0497",
     "self_symmetric": false,
     "equations": [
       {
@@ -7529,7 +13696,7 @@
     ]
   },
   {
-    "id": "FE-0275",
+    "id": "FE-0498",
     "self_symmetric": false,
     "equations": [
       {
@@ -7557,7 +13724,7 @@
     ]
   },
   {
-    "id": "FE-0276",
+    "id": "FE-0499",
     "self_symmetric": false,
     "equations": [
       {
@@ -7585,7 +13752,7 @@
     ]
   },
   {
-    "id": "FE-0277",
+    "id": "FE-0500",
     "self_symmetric": false,
     "equations": [
       {
@@ -7613,7 +13780,7 @@
     ]
   },
   {
-    "id": "FE-0278",
+    "id": "FE-0501",
     "self_symmetric": false,
     "equations": [
       {
@@ -7641,7 +13808,7 @@
     ]
   },
   {
-    "id": "FE-0279",
+    "id": "FE-0502",
     "self_symmetric": false,
     "equations": [
       {
@@ -7669,7 +13836,7 @@
     ]
   },
   {
-    "id": "FE-0280",
+    "id": "FE-0503",
     "self_symmetric": false,
     "equations": [
       {
@@ -7697,7 +13864,7 @@
     ]
   },
   {
-    "id": "FE-0281",
+    "id": "FE-0504",
     "self_symmetric": false,
     "equations": [
       {
@@ -7725,7 +13892,7 @@
     ]
   },
   {
-    "id": "FE-0282",
+    "id": "FE-0505",
     "self_symmetric": false,
     "equations": [
       {
@@ -7753,7 +13920,7 @@
     ]
   },
   {
-    "id": "FE-0283",
+    "id": "FE-0506",
     "self_symmetric": false,
     "equations": [
       {
@@ -7781,7 +13948,119 @@
     ]
   },
   {
-    "id": "FE-0284",
+    "id": "FE-0507",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x^2) + f(x)f(y)) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y^2) + f(x)f(y)) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0508",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x^2) + f(x)f(y)) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y^2) + f(x)f(y)) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0509",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x^2) + f(x)f(y)) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y^2) + f(x)f(y)) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0510",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(f(x^2) + f(x)f(y)) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "f(x)f(y)"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(f(y^2) + f(x)f(y)) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0511",
     "self_symmetric": false,
     "equations": [
       {
@@ -7809,7 +14088,7 @@
     ]
   },
   {
-    "id": "FE-0285",
+    "id": "FE-0512",
     "self_symmetric": false,
     "equations": [
       {
@@ -7837,7 +14116,7 @@
     ]
   },
   {
-    "id": "FE-0286",
+    "id": "FE-0513",
     "self_symmetric": false,
     "equations": [
       {
@@ -7865,7 +14144,7 @@
     ]
   },
   {
-    "id": "FE-0287",
+    "id": "FE-0514",
     "self_symmetric": false,
     "equations": [
       {
@@ -7893,7 +14172,7 @@
     ]
   },
   {
-    "id": "FE-0288",
+    "id": "FE-0515",
     "self_symmetric": false,
     "equations": [
       {
@@ -7921,7 +14200,7 @@
     ]
   },
   {
-    "id": "FE-0289",
+    "id": "FE-0516",
     "self_symmetric": false,
     "equations": [
       {
@@ -7949,7 +14228,7 @@
     ]
   },
   {
-    "id": "FE-0290",
+    "id": "FE-0517",
     "self_symmetric": false,
     "equations": [
       {
@@ -7977,7 +14256,7 @@
     ]
   },
   {
-    "id": "FE-0291",
+    "id": "FE-0518",
     "self_symmetric": false,
     "equations": [
       {
@@ -8005,7 +14284,7 @@
     ]
   },
   {
-    "id": "FE-0292",
+    "id": "FE-0519",
     "self_symmetric": false,
     "equations": [
       {
@@ -8033,7 +14312,7 @@
     ]
   },
   {
-    "id": "FE-0293",
+    "id": "FE-0520",
     "self_symmetric": false,
     "equations": [
       {
@@ -8061,7 +14340,7 @@
     ]
   },
   {
-    "id": "FE-0294",
+    "id": "FE-0521",
     "self_symmetric": false,
     "equations": [
       {
@@ -8089,7 +14368,7 @@
     ]
   },
   {
-    "id": "FE-0295",
+    "id": "FE-0522",
     "self_symmetric": false,
     "equations": [
       {
@@ -8117,7 +14396,119 @@
     ]
   },
   {
-    "id": "FE-0296",
+    "id": "FE-0523",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(x^2) + xy) = f(x)^2 + xf(y)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(y^2) + xy) = f(y)^2 + yf(x)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0524",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "yf(x)"
+        ],
+        "display": "f(f(x^2) + xy) = f(x)^2 + yf(x)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "xf(y)"
+        ],
+        "display": "f(f(y^2) + xy) = f(y)^2 + xf(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0525",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(x^2) + xy) = f(x)^2 + f(x)f(y)"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "f(x)f(y)"
+        ],
+        "display": "f(f(y^2) + xy) = f(y)^2 + f(x)f(y)"
+      }
+    ]
+  },
+  {
+    "id": "FE-0526",
+    "self_symmetric": false,
+    "equations": [
+      {
+        "left": [
+          "f(x^2)",
+          "xy"
+        ],
+        "right": [
+          "f(x)^2",
+          "xy"
+        ],
+        "display": "f(f(x^2) + xy) = f(x)^2 + xy"
+      },
+      {
+        "left": [
+          "f(y^2)",
+          "xy"
+        ],
+        "right": [
+          "f(y)^2",
+          "xy"
+        ],
+        "display": "f(f(y^2) + xy) = f(y)^2 + xy"
+      }
+    ]
+  },
+  {
+    "id": "FE-0527",
     "self_symmetric": false,
     "equations": [
       {
@@ -8145,7 +14536,7 @@
     ]
   },
   {
-    "id": "FE-0297",
+    "id": "FE-0528",
     "self_symmetric": false,
     "equations": [
       {
@@ -8173,7 +14564,7 @@
     ]
   },
   {
-    "id": "FE-0298",
+    "id": "FE-0529",
     "self_symmetric": false,
     "equations": [
       {
@@ -8201,7 +14592,7 @@
     ]
   },
   {
-    "id": "FE-0299",
+    "id": "FE-0530",
     "self_symmetric": false,
     "equations": [
       {
@@ -8229,7 +14620,7 @@
     ]
   },
   {
-    "id": "FE-0300",
+    "id": "FE-0531",
     "self_symmetric": false,
     "equations": [
       {
@@ -8257,7 +14648,7 @@
     ]
   },
   {
-    "id": "FE-0301",
+    "id": "FE-0532",
     "self_symmetric": false,
     "equations": [
       {
@@ -8285,7 +14676,7 @@
     ]
   },
   {
-    "id": "FE-0302",
+    "id": "FE-0533",
     "self_symmetric": false,
     "equations": [
       {
@@ -8313,7 +14704,7 @@
     ]
   },
   {
-    "id": "FE-0303",
+    "id": "FE-0534",
     "self_symmetric": false,
     "equations": [
       {
@@ -8341,7 +14732,7 @@
     ]
   },
   {
-    "id": "FE-0304",
+    "id": "FE-0535",
     "self_symmetric": false,
     "equations": [
       {
@@ -8369,7 +14760,7 @@
     ]
   },
   {
-    "id": "FE-0305",
+    "id": "FE-0536",
     "self_symmetric": false,
     "equations": [
       {
@@ -8397,7 +14788,7 @@
     ]
   },
   {
-    "id": "FE-0306",
+    "id": "FE-0537",
     "self_symmetric": false,
     "equations": [
       {
@@ -8425,7 +14816,7 @@
     ]
   },
   {
-    "id": "FE-0307",
+    "id": "FE-0538",
     "self_symmetric": false,
     "equations": [
       {
@@ -8453,7 +14844,7 @@
     ]
   },
   {
-    "id": "FE-0308",
+    "id": "FE-0539",
     "self_symmetric": false,
     "equations": [
       {
@@ -8481,7 +14872,7 @@
     ]
   },
   {
-    "id": "FE-0309",
+    "id": "FE-0540",
     "self_symmetric": false,
     "equations": [
       {
@@ -8509,7 +14900,7 @@
     ]
   },
   {
-    "id": "FE-0310",
+    "id": "FE-0541",
     "self_symmetric": false,
     "equations": [
       {
@@ -8537,7 +14928,7 @@
     ]
   },
   {
-    "id": "FE-0311",
+    "id": "FE-0542",
     "self_symmetric": true,
     "equations": [
       {
@@ -8554,7 +14945,7 @@
     ]
   },
   {
-    "id": "FE-0312",
+    "id": "FE-0543",
     "self_symmetric": false,
     "equations": [
       {
@@ -8582,7 +14973,7 @@
     ]
   },
   {
-    "id": "FE-0313",
+    "id": "FE-0544",
     "self_symmetric": false,
     "equations": [
       {
@@ -8610,7 +15001,7 @@
     ]
   },
   {
-    "id": "FE-0314",
+    "id": "FE-0545",
     "self_symmetric": true,
     "equations": [
       {
@@ -8627,7 +15018,7 @@
     ]
   },
   {
-    "id": "FE-0315",
+    "id": "FE-0546",
     "self_symmetric": true,
     "equations": [
       {
@@ -8644,7 +15035,7 @@
     ]
   },
   {
-    "id": "FE-0316",
+    "id": "FE-0547",
     "self_symmetric": true,
     "equations": [
       {
@@ -8661,7 +15052,7 @@
     ]
   },
   {
-    "id": "FE-0317",
+    "id": "FE-0548",
     "self_symmetric": false,
     "equations": [
       {
@@ -8689,7 +15080,7 @@
     ]
   },
   {
-    "id": "FE-0318",
+    "id": "FE-0549",
     "self_symmetric": false,
     "equations": [
       {
@@ -8717,7 +15108,7 @@
     ]
   },
   {
-    "id": "FE-0319",
+    "id": "FE-0550",
     "self_symmetric": false,
     "equations": [
       {
@@ -8745,7 +15136,7 @@
     ]
   },
   {
-    "id": "FE-0320",
+    "id": "FE-0551",
     "self_symmetric": false,
     "equations": [
       {
@@ -8773,7 +15164,7 @@
     ]
   },
   {
-    "id": "FE-0321",
+    "id": "FE-0552",
     "self_symmetric": false,
     "equations": [
       {
@@ -8801,7 +15192,7 @@
     ]
   },
   {
-    "id": "FE-0322",
+    "id": "FE-0553",
     "self_symmetric": false,
     "equations": [
       {
@@ -8829,7 +15220,7 @@
     ]
   },
   {
-    "id": "FE-0323",
+    "id": "FE-0554",
     "self_symmetric": false,
     "equations": [
       {
@@ -8857,7 +15248,7 @@
     ]
   },
   {
-    "id": "FE-0324",
+    "id": "FE-0555",
     "self_symmetric": false,
     "equations": [
       {
@@ -8885,7 +15276,7 @@
     ]
   },
   {
-    "id": "FE-0325",
+    "id": "FE-0556",
     "self_symmetric": false,
     "equations": [
       {
@@ -8913,7 +15304,7 @@
     ]
   },
   {
-    "id": "FE-0326",
+    "id": "FE-0557",
     "self_symmetric": false,
     "equations": [
       {
@@ -8941,7 +15332,7 @@
     ]
   },
   {
-    "id": "FE-0327",
+    "id": "FE-0558",
     "self_symmetric": false,
     "equations": [
       {
@@ -8969,7 +15360,7 @@
     ]
   },
   {
-    "id": "FE-0328",
+    "id": "FE-0559",
     "self_symmetric": false,
     "equations": [
       {
@@ -8997,7 +15388,7 @@
     ]
   },
   {
-    "id": "FE-0329",
+    "id": "FE-0560",
     "self_symmetric": false,
     "equations": [
       {
@@ -9025,7 +15416,7 @@
     ]
   },
   {
-    "id": "FE-0330",
+    "id": "FE-0561",
     "self_symmetric": false,
     "equations": [
       {
@@ -9053,7 +15444,7 @@
     ]
   },
   {
-    "id": "FE-0331",
+    "id": "FE-0562",
     "self_symmetric": false,
     "equations": [
       {
@@ -9081,7 +15472,7 @@
     ]
   },
   {
-    "id": "FE-0332",
+    "id": "FE-0563",
     "self_symmetric": false,
     "equations": [
       {
@@ -9109,7 +15500,7 @@
     ]
   },
   {
-    "id": "FE-0333",
+    "id": "FE-0564",
     "self_symmetric": false,
     "equations": [
       {
@@ -9137,7 +15528,7 @@
     ]
   },
   {
-    "id": "FE-0334",
+    "id": "FE-0565",
     "self_symmetric": false,
     "equations": [
       {
@@ -9165,7 +15556,7 @@
     ]
   },
   {
-    "id": "FE-0335",
+    "id": "FE-0566",
     "self_symmetric": false,
     "equations": [
       {
@@ -9193,7 +15584,7 @@
     ]
   },
   {
-    "id": "FE-0336",
+    "id": "FE-0567",
     "self_symmetric": false,
     "equations": [
       {
@@ -9221,7 +15612,7 @@
     ]
   },
   {
-    "id": "FE-0337",
+    "id": "FE-0568",
     "self_symmetric": false,
     "equations": [
       {
@@ -9249,7 +15640,7 @@
     ]
   },
   {
-    "id": "FE-0338",
+    "id": "FE-0569",
     "self_symmetric": true,
     "equations": [
       {
@@ -9266,7 +15657,7 @@
     ]
   },
   {
-    "id": "FE-0339",
+    "id": "FE-0570",
     "self_symmetric": false,
     "equations": [
       {
@@ -9294,7 +15685,7 @@
     ]
   },
   {
-    "id": "FE-0340",
+    "id": "FE-0571",
     "self_symmetric": false,
     "equations": [
       {
@@ -9322,7 +15713,7 @@
     ]
   },
   {
-    "id": "FE-0341",
+    "id": "FE-0572",
     "self_symmetric": true,
     "equations": [
       {
@@ -9339,7 +15730,7 @@
     ]
   },
   {
-    "id": "FE-0342",
+    "id": "FE-0573",
     "self_symmetric": true,
     "equations": [
       {
@@ -9356,7 +15747,7 @@
     ]
   },
   {
-    "id": "FE-0343",
+    "id": "FE-0574",
     "self_symmetric": true,
     "equations": [
       {
@@ -9373,7 +15764,7 @@
     ]
   },
   {
-    "id": "FE-0344",
+    "id": "FE-0575",
     "self_symmetric": false,
     "equations": [
       {
@@ -9401,7 +15792,7 @@
     ]
   },
   {
-    "id": "FE-0345",
+    "id": "FE-0576",
     "self_symmetric": true,
     "equations": [
       {
@@ -9418,7 +15809,7 @@
     ]
   },
   {
-    "id": "FE-0346",
+    "id": "FE-0577",
     "self_symmetric": false,
     "equations": [
       {
@@ -9446,7 +15837,7 @@
     ]
   },
   {
-    "id": "FE-0347",
+    "id": "FE-0578",
     "self_symmetric": false,
     "equations": [
       {
@@ -9474,7 +15865,7 @@
     ]
   },
   {
-    "id": "FE-0348",
+    "id": "FE-0579",
     "self_symmetric": true,
     "equations": [
       {
@@ -9491,7 +15882,7 @@
     ]
   },
   {
-    "id": "FE-0349",
+    "id": "FE-0580",
     "self_symmetric": true,
     "equations": [
       {
@@ -9508,7 +15899,7 @@
     ]
   },
   {
-    "id": "FE-0350",
+    "id": "FE-0581",
     "self_symmetric": true,
     "equations": [
       {
@@ -9525,7 +15916,7 @@
     ]
   },
   {
-    "id": "FE-0351",
+    "id": "FE-0582",
     "self_symmetric": false,
     "equations": [
       {
@@ -9553,7 +15944,7 @@
     ]
   },
   {
-    "id": "FE-0352",
+    "id": "FE-0583",
     "self_symmetric": true,
     "equations": [
       {
@@ -9570,7 +15961,7 @@
     ]
   },
   {
-    "id": "FE-0353",
+    "id": "FE-0584",
     "self_symmetric": false,
     "equations": [
       {
@@ -9598,7 +15989,7 @@
     ]
   },
   {
-    "id": "FE-0354",
+    "id": "FE-0585",
     "self_symmetric": false,
     "equations": [
       {
@@ -9626,7 +16017,7 @@
     ]
   },
   {
-    "id": "FE-0355",
+    "id": "FE-0586",
     "self_symmetric": true,
     "equations": [
       {
@@ -9643,7 +16034,7 @@
     ]
   },
   {
-    "id": "FE-0356",
+    "id": "FE-0587",
     "self_symmetric": true,
     "equations": [
       {
@@ -9660,7 +16051,7 @@
     ]
   },
   {
-    "id": "FE-0357",
+    "id": "FE-0588",
     "self_symmetric": true,
     "equations": [
       {

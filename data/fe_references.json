@@ -1,0 +1,17 @@
+{
+  "FE-0037": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h3777004p37275559"
+    }
+  ],
+
+  "FE-0085": [
+    {
+      "type": "contest",
+      "label": "Balkan MO 1997 Q4",
+      "url": "https://artofproblemsolving.com/community/c6h56415p348686"
+    }
+  ]
+}

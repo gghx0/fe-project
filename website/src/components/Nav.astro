@@ -1,0 +1,171 @@
+---
+import { getCollection } from "astro:content";
+import fes from "../../../data/fe_database.json";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const solutionEntries = await getCollection("solutions");
+
+const statusById = new Map(
+  solutionEntries.map((entry) => [
+    entry.id,
+    entry.data.status,
+  ])
+);
+
+function getStatus(feId) {
+  return statusById.get(feId) ?? "open";
+}
+
+const openIds = fes
+  .filter((fe) => getStatus(fe.id) === "open")
+  .map((fe) => fe.id.replace("FE-", ""));
+---
+
+<nav class="site-nav">
+  <div class="nav-links">
+    <a href={`${base}/`}>Home</a>
+    <a href={`${base}/about`}>About</a>
+    <a href={`${base}/discussion`}>Discussion</a>
+  </div>
+
+  <button
+    id="random-open"
+    class="random-button"
+    data-open-ids={JSON.stringify(openIds)}
+    data-base={base}
+  >
+    Random Open
+    <span class="arrow">→</span>
+  </button>
+</nav>
+
+<script>
+  const randomOpenButton = document.querySelector("#random-open");
+
+  randomOpenButton?.addEventListener("click", () => {
+    if (!(randomOpenButton instanceof HTMLElement)) return;
+
+    const openIds = JSON.parse(
+      randomOpenButton.dataset.openIds ?? "[]"
+    );
+
+    if (openIds.length === 0) return;
+
+    const randomId =
+      openIds[Math.floor(Math.random() * openIds.length)];
+
+    const base =
+      (randomOpenButton.dataset.base ?? "").replace(/\/$/, "");
+
+    window.location.href = `${base}/fe/${randomId}`;
+  });
+</script>
+
+<style>
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-bottom: 36px;
+    padding: 10px 12px;
+
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .nav-links a {
+    padding: 9px 13px;
+
+    color: #444;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 550;
+
+    border-radius: 8px;
+
+    transition:
+      background 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .nav-links a:hover {
+    background: #f3f3f3;
+    color: #111;
+  }
+
+  .random-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 9px 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #c62828;
+    color: white;
+
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+      background 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .random-button:hover {
+    background: #c62828;
+    transform: translateY(-1px);
+  }
+
+  .random-button:active {
+    transform: translateY(0);
+  }
+
+  .arrow {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  @media (max-width: 600px) {
+    .site-nav {
+      align-items: stretch;
+      gap: 8px;
+      padding: 8px;
+    }
+
+    .nav-links {
+      gap: 0;
+    }
+
+    .nav-links a {
+      padding: 8px 9px;
+      font-size: 0.85rem;
+    }
+
+    .random-button {
+      padding: 8px 10px;
+      font-size: 0.82rem;
+    }
+
+    .arrow {
+      display: none;
+    }
+  }
+</style>
