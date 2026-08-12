@@ -11,9 +11,9 @@ import Nav from "../components/Nav.astro";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 /*
- * All 16 permitted expressions.
+ * All 17 permitted expressions.
  *
- * Every search dropdown is generated from THIS list.
+ * Every search dropdown is generated from this list.
  */
 const termOptions = [
   "x",
@@ -35,6 +35,7 @@ const termOptions = [
   "yf(x)",
   "f(x)f(y)",
   "xy",
+  "f(xy)",
 ];
 
 function renderEquation(equation) {
@@ -58,10 +59,9 @@ function renderInlineMath(math) {
 }
 
 /*
- * Human-readable labels for the native dropdowns.
+ * Human-readable labels for native dropdowns.
  *
- * The VALUE stays exactly equal to the strings used by
- * generator.py, while the label is made easier to read.
+ * The values remain exactly the strings used by generator.py.
  */
 function termLabel(term) {
   const labels = {
@@ -84,6 +84,7 @@ function termLabel(term) {
     "yf(x)": "yf(x)",
     "f(x)f(y)": "f(x)f(y)",
     "xy": "xy",
+    "f(xy)": "f(xy)",
   };
 
   return labels[term] ?? term;
@@ -110,6 +111,11 @@ const solvedCount = fes.filter(
 const openCount = fes.filter(
   (fe) => getStatus(fe.id) === "open"
 ).length;
+
+const solvedPercentage =
+  fes.length === 0
+    ? "0.0"
+    : ((solvedCount / fes.length) * 100).toFixed(1);
 ---
 
 <html lang="en">
@@ -136,22 +142,27 @@ const openCount = fes.filter(
 
       <!-- Statistics -->
 
-      <div class="stats">
-        <div class="stat">
-          <strong>{fes.length}</strong>
-          <span>Total</span>
-        </div>
+		<div class="stats">
+		<div class="stat">
+			<strong>{fes.length}</strong>
+			<span>Total</span>
+		</div>
 
-        <div class="stat solved-stat">
-          <strong>{solvedCount}</strong>
-          <span>Solved</span>
-        </div>
+		<div class="stat solved-stat">
+			<strong>{solvedCount}</strong>
+			<span>Solved</span>
+		</div>
 
-        <div class="stat open-stat">
-          <strong>{openCount}</strong>
-          <span>Open</span>
-        </div>
-      </div>
+		<div class="stat open-stat">
+			<strong>{openCount}</strong>
+			<span>Open</span>
+		</div>
+
+		<div class="stat percentage-stat">
+			<strong>{solvedPercentage}%</strong>
+			<span>Solved</span>
+		</div>
+		</div>
 
       <!-- Search -->
 
@@ -283,7 +294,7 @@ const openCount = fes.filter(
           </div>
         </div>
 
-        <!-- Status filter -->
+        <!-- Status filters -->
 
         <div class="filters">
           <button
@@ -307,28 +318,31 @@ const openCount = fes.filter(
             Solved
           </button>
         </div>
-		<div class="source-filters">
-		<button
-			class="source-filter active"
-			data-source="all"
-		>
-			All sources
-		</button>
 
-		<button
-			class="source-filter"
-			data-source="aops"
-		>
-			AoPS
-		</button>
+        <!-- Source filters -->
 
-		<button
-			class="source-filter"
-			data-source="contest"
-		>
-			Contest
-		</button>
-		</div>
+        <div class="source-filters">
+          <button
+            class="source-filter active"
+            data-source="all"
+          >
+            All sources
+          </button>
+
+          <button
+            class="source-filter"
+            data-source="aops"
+          >
+            AoPS
+          </button>
+
+          <button
+            class="source-filter"
+            data-source="contest"
+          >
+            Contest
+          </button>
+        </div>
 
         <p id="result-count"></p>
       </div>
@@ -347,20 +361,20 @@ const openCount = fes.filter(
               ] ?? [];
 
             return (
-			<a
-			href={`${base}/fe/${fe.id.replace(
-				"FE-",
-				""
-			)}`}
-			class={`fe-card ${status}`}
-			data-status={status}
-			data-equations={JSON.stringify(
-				fe.equations
-			)}
-			data-reference-types={feReferences
-				.map((ref) => ref.type)
-				.join(",")}
-			>
+              <a
+                href={`${base}/fe/${fe.id.replace(
+                  "FE-",
+                  ""
+                )}`}
+                class={`fe-card ${status}`}
+                data-status={status}
+                data-equations={JSON.stringify(
+                  fe.equations
+                )}
+                data-reference-types={feReferences
+                  .map((ref) => ref.type)
+                  .join(",")}
+              >
                 <div class="card-header">
                   <h2>
                     #
@@ -430,14 +444,12 @@ const openCount = fes.filter(
         margin-bottom: 24px;
       }
 
-      /* -------------------------
-         Statistics
-         ------------------------- */
+      /* Statistics */
 
       .stats {
         display: grid;
         grid-template-columns:
-          repeat(3, 1fr);
+          repeat(4, 1fr);
 
         gap: 12px;
         margin-bottom: 28px;
@@ -471,9 +483,11 @@ const openCount = fes.filter(
         border-top-color: #c62828;
       }
 
-      /* -------------------------
-         Controls
-         ------------------------- */
+	  .percentage-stat {
+  		border-top-color: #3451a3;
+	  }
+
+      /* Controls */
 
       .controls {
         margin: 24px 0;
@@ -516,9 +530,7 @@ const openCount = fes.filter(
         margin: 0 5px;
       }
 
-      /* -------------------------
-         Dropdowns
-         ------------------------- */
+      /* Dropdowns */
 
       .equation-builder select {
         min-width: 135px;
@@ -576,9 +588,7 @@ const openCount = fes.filter(
         background: #ededed;
       }
 
-      /* -------------------------
-         Status filters
-         ------------------------- */
+      /* Status filters */
 
       .filters {
         display: flex;
@@ -611,39 +621,40 @@ const openCount = fes.filter(
         color: white;
         border-color: #222;
       }
-		.source-filters {
-		display: flex;
-		gap: 8px;
-		flex-wrap: wrap;
-		margin-top: 10px;
-		}
 
-		.source-filter {
-		padding: 8px 14px;
-		border: 1px solid #bbb;
-		border-radius: 8px;
-		background: white;
-		cursor: pointer;
-		}
+      /* Source filters */
 
-		.source-filter:hover {
-		background: #f1f1f1;
-		}
+      .source-filters {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
 
-		.source-filter.active {
-		background: #222;
-		color: white;
-		border-color: #222;
-		}
+      .source-filter {
+        padding: 8px 14px;
+        border: 1px solid #bbb;
+        border-radius: 8px;
+        background: white;
+        cursor: pointer;
+      }
+
+      .source-filter:hover {
+        background: #f1f1f1;
+      }
+
+      .source-filter.active {
+        background: #222;
+        color: white;
+        border-color: #222;
+      }
 
       #result-count {
         color: #666;
         margin-top: 12px;
       }
 
-      /* -------------------------
-         FE cards
-         ------------------------- */
+      /* FE cards */
 
       .fe-list {
         display: grid;
@@ -657,35 +668,36 @@ const openCount = fes.filter(
         gap: 16px;
       }
 
-		.fe-card {
-		display: block;
-		padding: 20px;
-		border-radius: 10px;
-		border-left: 6px solid;
-		text-decoration: none;
-		color: inherit;
-		transition:
-			background 0.15s ease,
-			border-color 0.15s ease;
-		}
+      .fe-card {
+        display: block;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 6px solid;
+        text-decoration: none;
+        color: inherit;
 
-		.fe-card.open {
-		background: #fff1f1;
-		border-left-color: #c62828;
-		}
+        transition:
+          background 0.15s ease,
+          border-color 0.15s ease;
+      }
 
-		.fe-card.open:hover {
-		background: #ffe8e8;
-		}
+      .fe-card.open {
+        background: #fff1f1;
+        border-left-color: #c62828;
+      }
 
-		.fe-card.solved {
-		background: #f0f9f1;
-		border-left-color: #2e7d32;
-		}
+      .fe-card.open:hover {
+        background: #ffe8e8;
+      }
 
-		.fe-card.solved:hover {
-		background: #e6f5e8;
-		}
+      .fe-card.solved {
+        background: #f0f9f1;
+        border-left-color: #2e7d32;
+      }
+
+      .fe-card.solved:hover {
+        background: #e6f5e8;
+      }
 
       .fe-card[hidden] {
         display: none;
@@ -714,25 +726,15 @@ const openCount = fes.filter(
         overflow-x: auto;
       }
 
-      .open {
-        border-left-color: #c62828;
-      }
-
       .open .status {
         color: #c62828;
-      }
-
-      .solved {
-        border-left-color: #2e7d32;
       }
 
       .solved .status {
         color: #2e7d32;
       }
 
-      /* -------------------------
-         References
-         ------------------------- */
+      /* References */
 
       .reference-badges {
         display: flex;
@@ -772,9 +774,7 @@ const openCount = fes.filter(
           1px solid #f1d3a5;
       }
 
-      /* -------------------------
-         Responsive
-         ------------------------- */
+      /* Responsive */
 
       @media (max-width: 950px) {
         .fe-list {
@@ -807,7 +807,7 @@ const openCount = fes.filter(
 
         .stats {
           grid-template-columns:
-            repeat(3, 1fr);
+            repeat(2, 1fr);
         }
 
         .stat {
@@ -861,10 +861,10 @@ const openCount = fes.filter(
           ".filter"
         );
 
-		const sourceFilterButtons =
-			document.querySelectorAll(
-				".source-filter"
-		);
+      const sourceFilterButtons =
+        document.querySelectorAll(
+          ".source-filter"
+        );
 
       const cards =
         document.querySelectorAll(
@@ -877,7 +877,7 @@ const openCount = fes.filter(
         );
 
       let selectedStatus = "all";
-	  let selectedSource = "all";
+      let selectedSource = "all";
 
       function getSelectValue(
         element
@@ -893,12 +893,7 @@ const openCount = fes.filter(
       /*
        * Match one unordered pair.
        *
-       * Hence:
-       * x + f(y)
-       * and
-       * f(y) + x
-       *
-       * are treated identically.
+       * Thus A+B and B+A are treated as identical.
        */
       function pairMatches(
         selected1,
@@ -997,10 +992,13 @@ const openCount = fes.filter(
           const cardStatus =
             card.dataset.status ?? "";
 
-		const referenceTypes =
-		(card.dataset.referenceTypes ?? "")
-			.split(",")
-			.filter(Boolean);
+          const referenceTypes =
+            (
+              card.dataset.referenceTypes ??
+              ""
+            )
+              .split(",")
+              .filter(Boolean);
 
           let equations = [];
 
@@ -1017,11 +1015,9 @@ const openCount = fes.filter(
           }
 
           /*
-           * Every FE stores the x <-> y
-           * representative as well when
-           * distinct, so searching all
-           * stored equations automatically
-           * handles global x/y symmetry.
+           * Each FE stores both x <-> y representatives
+           * whenever they are distinct, so searching all
+           * stored equations handles the global symmetry.
            */
           const matchesEquation =
             equations.some(
@@ -1036,19 +1032,19 @@ const openCount = fes.filter(
             );
 
           const matchesStatus =
-			selectedStatus === "all" ||
-			cardStatus === selectedStatus;
+            selectedStatus === "all" ||
+            cardStatus === selectedStatus;
 
-			const matchesSource =
-			selectedSource === "all" ||
-			referenceTypes.includes(
-				selectedSource
-			);
+          const matchesSource =
+            selectedSource === "all" ||
+            referenceTypes.includes(
+              selectedSource
+            );
 
-			const shouldShow =
-			matchesEquation &&
-			matchesStatus &&
-			matchesSource;
+          const shouldShow =
+            matchesEquation &&
+            matchesStatus &&
+            matchesSource;
 
           card.hidden =
             !shouldShow;
@@ -1140,41 +1136,44 @@ const openCount = fes.filter(
           );
         }
       );
-		sourceFilterButtons.forEach(
-		(button) => {
-			button.addEventListener(
-			"click",
-			() => {
-				if (
-				!(
-					button instanceof
-					HTMLElement
-				)
-				) {
-				return;
-				}
 
-				selectedSource =
-				button.dataset.source ??
-				"all";
+      sourceFilterButtons.forEach(
+        (button) => {
+          button.addEventListener(
+            "click",
+            () => {
+              if (
+                !(
+                  button instanceof
+                  HTMLElement
+                )
+              ) {
+                return;
+              }
 
-				sourceFilterButtons.forEach(
-				(otherButton) => {
-					otherButton.classList.remove(
-					"active"
-					);
-				}
-				);
+              selectedSource =
+                button.dataset.source ??
+                "all";
 
-				button.classList.add(
-				"active"
-				);
+              sourceFilterButtons.forEach(
+                (otherButton) => {
+                  otherButton
+                    .classList
+                    .remove(
+                      "active"
+                    );
+                }
+              );
 
-				updateResults();
-			}
-			);
-		}
-		);
+              button.classList.add(
+                "active"
+              );
+
+              updateResults();
+            }
+          );
+        }
+      );
 
       updateResults();
     </script>

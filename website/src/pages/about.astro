@@ -16,6 +16,8 @@ function renderDisplayMath(math) {
     displayMode: true,
   });
 }
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <html lang="en">
@@ -40,17 +42,31 @@ function renderDisplayMath(math) {
 
       <section class="intro-box">
         <p>
-          (This website is created with GPT 5.6.)
-          <br>
-          <br>
-          This project is inspired by <a href="https://gghx0.github.io/fe-project/fe/0037/">#37</a>, 
-          which was a deceptively simple-looking FE that ended up being incredibly hard to solve.
-          In fact, my GPT 5.2 could not solve it back then with much prompting, despite having solved many other "harder"
-          Maths Olympiad problems. 
-          <br>
-          <br>
-          This made me wonder - how many more such FEs are left out there?
-          This website contains a comprehensive list of a specific (but common) type of 
+          (This website is created with GPT-5.6.)
+          <br />
+          <br />
+
+          This project is inspired by
+          {" "}
+
+          <a href={`${base}/fe/0037`}>
+            #37
+          </a>,
+
+          {" "}which was a deceptively simple-looking FE that
+          ended up being incredibly hard to solve. In fact, my
+          GPT-5.2 could not solve it back then with much prompting,
+          despite having solved many other "harder" Maths Olympiad
+          problems.
+
+          <br />
+          <br />
+
+          This made me wonder — how many more such FEs are left
+          out there?
+
+          This website contains a comprehensive list of a specific,
+          but common, type of
           {" "}
 
           <span
@@ -58,8 +74,9 @@ function renderDisplayMath(math) {
               "f:\\mathbb{R}\\to\\mathbb{R}"
             )}
           />
-          {" "}FEs, which will be elaborated on below. It is meant to be a collaborative project,
-          so feel free to contribute.
+
+          {" "}functional equation, described below. It is meant
+          to be a collaborative project, so feel free to contribute.
         </p>
       </section>
 
@@ -67,7 +84,7 @@ function renderDisplayMath(math) {
       <h2>The FEs</h2>
 
       <p>
-        The 588 FEs in the database have the form
+        The <strong>847</strong> FEs in the database have the form
       </p>
 
       <div
@@ -94,6 +111,7 @@ function renderDisplayMath(math) {
         <span
           set:html={renderInlineMath("C")}
         />
+
         {" "}and{" "}
 
         <span
@@ -101,11 +119,12 @@ function renderDisplayMath(math) {
         />
 
         {" "}are each chosen from the following
-        16 permitted expressions.
+        <strong> 17 permitted expressions</strong>.
       </p>
 
 
       <div class="expressions-box">
+
         <div
           class="display-equation"
           set:html={renderDisplayMath(
@@ -130,47 +149,62 @@ function renderDisplayMath(math) {
         <div
           class="display-equation"
           set:html={renderDisplayMath(
-            "xf(y),\\quad yf(x),\\quad f(x)f(y),\\quad xy"
+            "xf(y),\\quad yf(x),\\quad f(x)f(y),\\quad xy,\\quad f(xy)"
           )}
         />
+
       </div>
 
-        <p>
-        There are two additional constraints: the functional equation must have
+
+      <p>
+        There are two additional constraints: the functional
+        equation must have
         {" "}
 
         <span
-            set:html={renderInlineMath("f(x)=x")}
+          set:html={renderInlineMath(
+            "f(x)=x"
+          )}
         />
 
-        {" "}as a solution, and duplicate equations obtained by replacing
+        {" "}as a solution, and duplicate equations obtained by
+        replacing
         {" "}
 
         <span
-            set:html={renderInlineMath("P(x,y)")}
+          set:html={renderInlineMath(
+            "P(x,y)"
+          )}
         />
 
         {" "}with{" "}
 
         <span
-            set:html={renderInlineMath("P(y,x)")}
+          set:html={renderInlineMath(
+            "P(y,x)"
+          )}
         />
 
         {" "}are removed.
-        </p>
+      </p>
+
 
       <h2>Contributing</h2>
 
       <p>
         Use the
         {" "}
-        <a href={`${import.meta.env.BASE_URL}discussion`}>
-            Discussion page
-        </a>. 
-        <br>
-        <br>
-        If an FE has appeared on AoPS, the solution will be credited to the first solver on the thread.
-        </p>
+
+        <a href={`${base}/discussion`}>
+          Discussion page
+        </a>.
+
+        <br />
+        <br />
+
+        If an FE has appeared on AoPS, the solution will be
+        credited to the first solver on the thread.
+      </p>
     </main>
 
 
@@ -219,6 +253,18 @@ function renderDisplayMath(math) {
       p {
         line-height: 1.7;
         color: #333;
+      }
+
+
+      a {
+        color: #2457a6;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+
+      a:hover {
+        text-decoration: underline;
       }
 
 

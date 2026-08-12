@@ -3,6 +3,7 @@ from collections import defaultdict
 import json
 import os
 
+
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(ROOT_DIR, "data")
 
@@ -31,6 +32,7 @@ TERMS = [
     {"name": "yf(x)",      "identity": "XY", "swap": "xf(y)"},
     {"name": "f(x)f(y)",   "identity": "XY", "swap": "f(x)f(y)"},
     {"name": "xy",         "identity": "XY", "swap": "xy"},
+    {"name": "f(xy)",      "identity": "XY", "swap": "f(xy)"},
 ]
 
 
@@ -39,14 +41,15 @@ TERM_ORDER = [
     for term in TERMS
 ]
 
+
 TERM_BY_NAME = {
     term["name"]: term
     for term in TERMS
 }
 
 
-assert len(TERMS) == 16
-assert len(set(TERM_ORDER)) == 16
+assert len(TERMS) == 17
+assert len(set(TERM_ORDER)) == 17
 
 
 # Check that x <-> y swapping is an involution.
@@ -162,11 +165,11 @@ LITERAL_EQUATIONS = [
 ]
 
 
-# New counts after adding f(x)^2 and f(y)^2.
-assert len(SUMS) == 136
+# Counts after adding f(xy).
+assert len(SUMS) == 153
 assert len(SUMS_BY_SIGNATURE) == 15
-assert len(ALL_LITERAL_EQUATIONS) == 1486
-assert len(LITERAL_EQUATIONS) == 1140
+assert len(ALL_LITERAL_EQUATIONS) == 1971
+assert len(LITERAL_EQUATIONS) == 1625
 
 assert (
     len(ALL_LITERAL_EQUATIONS)
@@ -193,12 +196,14 @@ EQUATION_KEYS = [
     for equation in LITERAL_EQUATIONS
 ]
 
+
 UNIQUE_EQUATION_KEYS = set(
     EQUATION_KEYS
 )
 
-assert len(EQUATION_KEYS) == 1140
-assert len(UNIQUE_EQUATION_KEYS) == 1140
+
+assert len(EQUATION_KEYS) == 1625
+assert len(UNIQUE_EQUATION_KEYS) == 1625
 
 
 # ============================================================
@@ -353,11 +358,13 @@ number_of_groups = len(
     FE_GROUPS
 )
 
+
 single_groups = sum(
     1
     for group in FE_GROUPS.values()
     if len(group) == 1
 )
+
 
 double_groups = sum(
     1
@@ -366,14 +373,14 @@ double_groups = sum(
 )
 
 
-assert number_of_groups == 588
-assert single_groups == 36
-assert double_groups == 552
+assert number_of_groups == 847
+assert single_groups == 69
+assert double_groups == 778
 
 assert (
     single_groups
     + 2 * double_groups
-    == 1140
+    == 1625
 )
 
 
@@ -424,9 +431,11 @@ for index, (
             "left": list(
                 equation["left"]
             ),
+
             "right": list(
                 equation["right"]
             ),
+
             "display": display_equation(
                 equation
             ),
@@ -434,15 +443,20 @@ for index, (
 
     FE_RECORDS.append({
         "id": fe_id,
+
         "self_symmetric":
             len(equations) == 1,
-        "equations": equations,
+
+        "equations":
+            equations,
     })
 
 
-assert len(FE_RECORDS) == 588
+assert len(FE_RECORDS) == 847
+
 assert FE_RECORDS[0]["id"] == "FE-0001"
-assert FE_RECORDS[-1]["id"] == "FE-0588"
+
+assert FE_RECORDS[-1]["id"] == "FE-0847"
 
 
 # ============================================================
@@ -454,8 +468,12 @@ os.makedirs(
     exist_ok=True,
 )
 
+
 with open(
-    os.path.join(DATA_DIR, "fe_database.json"),
+    os.path.join(
+        DATA_DIR,
+        "fe_database.json",
+    ),
     "w",
     encoding="utf-8",
 ) as file:
@@ -482,7 +500,7 @@ assert len(
         fe["id"]
         for fe in FE_RECORDS
     }
-) == 588
+) == 847
 
 
 literal_count = sum(
@@ -490,10 +508,12 @@ literal_count = sum(
     for fe in FE_RECORDS
 )
 
+
 self_symmetric_count = sum(
     fe["self_symmetric"]
     for fe in FE_RECORDS
 )
+
 
 paired_count = sum(
     not fe["self_symmetric"]
@@ -501,9 +521,9 @@ paired_count = sum(
 )
 
 
-assert literal_count == 1140
-assert self_symmetric_count == 36
-assert paired_count == 552
+assert literal_count == 1625
+assert self_symmetric_count == 69
+assert paired_count == 778
 
 
 # ============================================================
@@ -511,10 +531,14 @@ assert paired_count == 552
 # ============================================================
 
 with open(
-    os.path.join(DATA_DIR, "fe_index.txt"),
+    os.path.join(
+        DATA_DIR,
+        "fe_index.txt",
+    ),
     "w",
     encoding="utf-8",
 ) as file:
+
     for fe in FE_RECORDS:
         file.write(
             fe["id"] + "\n"
@@ -538,10 +562,12 @@ for fe in FE_RECORDS:
     equations = fe["equations"]
 
     if len(equations) == 1:
+
         equation = {
             "left": tuple(
                 equations[0]["left"]
             ),
+
             "right": tuple(
                 equations[0]["right"]
             ),
@@ -549,16 +575,23 @@ for fe in FE_RECORDS:
 
         assert (
             equation_key(
-                swap_equation(equation)
+                swap_equation(
+                    equation
+                )
             )
-            == equation_key(equation)
+            ==
+            equation_key(
+                equation
+            )
         )
 
     elif len(equations) == 2:
+
         first = {
             "left": tuple(
                 equations[0]["left"]
             ),
+
             "right": tuple(
                 equations[0]["right"]
             ),
@@ -568,6 +601,7 @@ for fe in FE_RECORDS:
             "left": tuple(
                 equations[1]["left"]
             ),
+
             "right": tuple(
                 equations[1]["right"]
             ),
@@ -575,16 +609,26 @@ for fe in FE_RECORDS:
 
         assert (
             equation_key(
-                swap_equation(first)
+                swap_equation(
+                    first
+                )
             )
-            == equation_key(second)
+            ==
+            equation_key(
+                second
+            )
         )
 
         assert (
             equation_key(
-                swap_equation(second)
+                swap_equation(
+                    second
+                )
             )
-            == equation_key(first)
+            ==
+            equation_key(
+                first
+            )
         )
 
     else:
@@ -603,31 +647,44 @@ all_keys_in_groups = []
 
 for fe in FE_RECORDS:
     for item in fe["equations"]:
+
         equation = {
             "left": tuple(
                 item["left"]
             ),
+
             "right": tuple(
                 item["right"]
             ),
         }
 
         all_keys_in_groups.append(
-            equation_key(equation)
+            equation_key(
+                equation
+            )
         )
 
 
 assert len(
     all_keys_in_groups
-) == 1140
+) == 1625
+
 
 assert len(
-    set(all_keys_in_groups)
-) == 1140
+    set(
+        all_keys_in_groups
+    )
+) == 1625
+
 
 assert (
-    set(all_keys_in_groups)
-    == set(EQUATION_KEYS)
+    set(
+        all_keys_in_groups
+    )
+    ==
+    set(
+        EQUATION_KEYS
+    )
 )
 
 
@@ -636,24 +693,37 @@ assert (
 # ============================================================
 
 print("\nDatabase summary:")
-print("Allowed terms:", len(TERMS))
-print("Canonical sums:", len(SUMS))
+
+print(
+    "Allowed terms:",
+    len(TERMS),
+)
+
+print(
+    "Canonical sums:",
+    len(SUMS),
+)
+
 print(
     "All literal equations:",
     len(ALL_LITERAL_EQUATIONS),
 )
+
 print(
     "Both-variable literal equations:",
     len(LITERAL_EQUATIONS),
 )
+
 print(
     "FE classes:",
     len(FE_RECORDS),
 )
+
 print(
     "Self-symmetric FE classes:",
     self_symmetric_count,
 )
+
 print(
     "Paired FE classes:",
     paired_count,
