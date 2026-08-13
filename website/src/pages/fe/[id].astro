@@ -40,6 +40,23 @@ export function getStaticPaths() {
 
 const { fe } = Astro.props;
 
+const currentIndex = fes.findIndex(
+  (item) => item.id === fe.id
+);
+
+const previousFe =
+  currentIndex > 0
+    ? fes[currentIndex - 1]
+    : null;
+
+const nextFe =
+  currentIndex < fes.length - 1
+    ? fes[currentIndex + 1]
+    : null;
+
+const base =
+  import.meta.env.BASE_URL.replace(/\/$/, "");
+
 
 const solutionEntries =
   await getCollection("solutions");
@@ -189,10 +206,123 @@ if (solutionEntry) {
           }
         </div>
       </section>
+      <nav class="problem-navigation">
+      <div class="nav-side">
+        {
+          previousFe ? (
+            <a
+              class="problem-nav-button"
+              href={`${base}/fe/${previousFe.id.replace(
+                "FE-",
+                ""
+              )}`}
+            >
+              ← Previous
+              <span>
+                #{Number(
+                  previousFe.id.replace(
+                    "FE-",
+                    ""
+                  )
+                )}
+              </span>
+            </a>
+          ) : (
+            <span class="problem-nav-button disabled">
+              ← Previous
+            </span>
+          )
+        }
+      </div>
+
+      <div class="nav-side right">
+        {
+          nextFe ? (
+            <a
+              class="problem-nav-button"
+              href={`${base}/fe/${nextFe.id.replace(
+                "FE-",
+                ""
+              )}`}
+            >
+              <span>
+                #{Number(
+                  nextFe.id.replace(
+                    "FE-",
+                    ""
+                  )
+                )}
+              </span>
+              Next →
+            </a>
+          ) : (
+            <span class="problem-nav-button disabled">
+              Next →
+            </span>
+          )
+        }
+      </div>
+    </nav>
     </main>
 
 
     <style>
+        /* -------------------------
+      Previous / Next
+      ------------------------- */
+
+    .problem-navigation {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .nav-side {
+      display: flex;
+    }
+
+    .nav-side.right {
+      justify-content: flex-end;
+    }
+
+    .problem-nav-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 11px 15px;
+
+      background: white;
+
+      border: 1px solid #d5d5d5;
+      border-radius: 9px;
+
+      text-decoration: none;
+
+      font-weight: 600;
+      color: #222;
+
+      transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+    .problem-nav-button:hover {
+      background: #f2f2f2;
+      border-color: #aaa;
+    }
+
+    .problem-nav-button span {
+      color: #777;
+      font-weight: 500;
+    }
+
+    .problem-nav-button.disabled {
+      color: #aaa;
+      cursor: default;
+      background: #f3f3f3;
+    }
       body {
         font-family:
           system-ui,
@@ -470,10 +600,19 @@ if (solutionEntry) {
       }
 
 
+
       /* -------------------------
          Mobile
          ------------------------- */
+      .problem-navigation {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
 
+      .problem-nav-button {
+        padding: 9px 11px;
+        font-size: 0.9rem;
+      }
       @media (max-width: 600px) {
 
         main {
@@ -544,5 +683,6 @@ if (solutionEntry) {
         }
       }
     </style>
+    
   </body>
 </html>
