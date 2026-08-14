@@ -188,6 +188,20 @@
       "url": "https://artofproblemsolving.com/community/c6h596517p3539617"
     }
   ],
+  "FE-0055": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h326890p1751781"
+    }
+  ],
+  "FE-0065": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h132331p749029"
+    }
+  ],
   "FE-0095": [
     {
       "type": "contest",
@@ -195,7 +209,13 @@
       "url": "https://artofproblemsolving.com/community/c6h60715p366399"
     }
   ],
-
+  "FE-0101": [
+    {
+      "type": "contest",
+      "label": "Kazakhstan Regional Olympiad 2018 10/5",
+      "url": "https://artofproblemsolving.com/community/c6h3834394p38166257"
+    }
+  ],
   "FE-0103": [
     {
       "type": "contest",
@@ -203,11 +223,25 @@
       "url": "https://artofproblemsolving.com/community/c6h56415p348686"
     }
   ],
+  "FE-0110": [
+    {
+      "type": "contest",
+      "label": "Kyrgyzstan MO 2012 Q4",
+      "url": "https://artofproblemsolving.com/community/c6h532524p3045224"
+    }
+  ],
   "FE-0239": [
     {
       "type": "contest",
       "label": "BMOSL 2022 A1",
       "url": "https://artofproblemsolving.com/community/c6h3071445p27726683"
+    }
+  ],
+  "FE-0258": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h2471680p20691255"
     }
   ],
   "FE-0279": [
