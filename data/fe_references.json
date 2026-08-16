@@ -305,6 +305,18 @@
       "type": "contest",
       "label": "Brazil MO U-Level 2015 Q1",
       "url": "https://artofproblemsolving.com/community/c6h3680804p35985739"
+    },
+    {
+      "type": "contest",
+      "label": "Estonia TST 2001 Q3",
+      "url": "https://artofproblemsolving.com/community/c1068820h2042805p14460921"
+    }
+  ],
+  "FE-0028": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h3378196p31470037"
     }
   ],
   "FE-0037": [
@@ -333,6 +345,13 @@
       "type": "aops",
       "label": "AoPS",
       "url": "https://artofproblemsolving.com/community/c6h132331p749029"
+    }
+  ],
+  "FE-0077": [
+    {
+      "type": "contest",
+      "label": "India TST 2013 Q2.1",
+      "url": "https://artofproblemsolving.com/community/c6h546366p3162056"
     }
   ],
   "FE-0095": [
