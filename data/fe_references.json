@@ -354,6 +354,13 @@
       "url": "https://artofproblemsolving.com/community/c6h546366p3162056"
     }
   ],
+  "FE-0094": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h453196p2547758"
+    }
+  ],
   "FE-0095": [
     {
       "type": "contest",
@@ -380,6 +387,11 @@
       "type": "contest",
       "label": "Kyrgyzstan MO 2012 Q4",
       "url": "https://artofproblemsolving.com/community/c6h532524p3045224"
+    },
+    {
+      "type": "contest",
+      "label": "Mongolia MO 2011 Q4",
+      "url": "https://artofproblemsolving.com/community/c6h3747205p36881577"
     }
   ],
   "FE-0239": [
