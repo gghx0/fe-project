@@ -1,0 +1,1378 @@
+---
+import { getCollection } from "astro:content";
+
+import fes from "../../../data/fe_database.json";
+import Nav from "../components/Nav.astro";
+
+const solutionEntries =
+  await getCollection("solutions");
+
+const solvedIds = new Set(
+  solutionEntries
+    .filter((entry) => entry.data.status === "solved")
+    .map((entry) => entry.id)
+);
+
+const openIds = fes
+  .filter((fe) => !solvedIds.has(fe.id))
+  .map((fe) => fe.id);
+
+const submissionConfig = {
+  supabaseUrl:
+    import.meta.env.PUBLIC_SUPABASE_URL ?? "",
+
+  supabaseAnonKey:
+    import.meta.env.PUBLIC_SUPABASE_ANON_KEY ?? "",
+
+  tableName: "solution_submissions",
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+
+    <title>
+      Submit a Solution | Functional Equation Database
+    </title>
+  </head>
+
+  <body>
+    <main>
+      <Nav />
+
+      <h1>Submit a Solution</h1>
+
+      <div class="submit-grid">
+        <section class="submit-panel">
+          <form
+            id="submission-form"
+            data-open-ids={JSON.stringify(openIds)}
+            data-total-count={fes.length}
+            data-supabase-url={submissionConfig.supabaseUrl}
+            data-supabase-key={submissionConfig.supabaseAnonKey}
+            data-table-name={submissionConfig.tableName}
+            novalidate
+          >
+            <div
+              id="config-notice"
+              class="config-notice"
+              hidden
+            >
+              Submission storage is not configured yet.
+            </div>
+
+            <label for="problem-number">
+              Problem number
+            </label>
+
+            <input
+              id="problem-number"
+              name="problem-number"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="37"
+              required
+            />
+
+            <p
+              id="problem-help"
+              class="field-help"
+            >
+              Enter an open problem number.
+            </p>
+
+            <label for="username">
+              Username
+            </label>
+
+            <input
+              id="username"
+              name="username"
+              type="text"
+              autocomplete="nickname"
+              maxlength="80"
+              required
+            />
+
+            <label for="solution-text">
+              Solution
+            </label>
+
+            <textarea
+              id="solution-text"
+              name="solution-text"
+              rows="16"
+              maxlength="20000"
+              required
+            ></textarea>
+
+            <button
+              id="submit-button"
+              type="submit"
+            >
+              Submit solution
+            </button>
+
+            <p
+              id="form-message"
+              class="form-message"
+              role="status"
+            ></p>
+          </form>
+        </section>
+
+        <section class="pending-panel">
+          <div class="pending-header">
+            <h2>Pending submissions</h2>
+
+            <button
+              id="refresh-pending"
+              type="button"
+            >
+              Refresh
+            </button>
+          </div>
+
+          <p
+            id="pending-status"
+            class="pending-status"
+          >
+            Loading pending submissions...
+          </p>
+
+          <div
+            id="pending-list"
+            class="pending-list"
+          ></div>
+        </section>
+      </div>
+    </main>
+
+    <style>
+      body {
+        font-family:
+          system-ui,
+          sans-serif;
+
+        margin: 0;
+
+        background: #f5f5f5;
+        color: #111;
+      }
+
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      h1 {
+        margin: 0 0 24px;
+      }
+
+      .submit-grid {
+        display: grid;
+        grid-template-columns:
+          minmax(0, 1.1fr)
+          minmax(320px, 0.9fr);
+        gap: 18px;
+        align-items: start;
+      }
+
+      .submit-panel,
+      .pending-panel {
+        background: white;
+        border: 1px solid #e2e2e2;
+        border-radius: 8px;
+        padding: 22px;
+      }
+
+      form {
+        display: grid;
+        gap: 10px;
+      }
+
+      label {
+        font-weight: 650;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+
+        border: 1px solid #c8c8c8;
+        border-radius: 8px;
+
+        padding: 11px 12px;
+
+        color: #111;
+        background: white;
+        font: inherit;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 320px;
+        line-height: 1.55;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: 2px solid #aaa;
+        outline-offset: 1px;
+      }
+
+      .field-help {
+        min-height: 1.2em;
+        margin: -3px 0 8px;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .field-help.ok {
+        color: #2e7d32;
+      }
+
+      .field-help.error {
+        color: #c62828;
+      }
+
+      .config-notice {
+        padding: 12px 13px;
+
+        border: 1px solid #efd39a;
+        border-radius: 8px;
+
+        background: #fff9e9;
+        color: #6d4a00;
+      }
+
+      #submit-button,
+      #refresh-pending {
+        border: none;
+        border-radius: 8px;
+
+        font: inherit;
+        font-weight: 650;
+
+        cursor: pointer;
+      }
+
+      #submit-button {
+        justify-self: start;
+
+        margin-top: 6px;
+        padding: 11px 16px;
+
+        background: #222;
+        color: white;
+      }
+
+      #submit-button:hover {
+        background: #111;
+      }
+
+      #submit-button:disabled {
+        background: #aaa;
+        cursor: not-allowed;
+      }
+
+      .form-message {
+        min-height: 1.35em;
+        margin: 2px 0 0;
+        color: #555;
+      }
+
+      .form-message.success {
+        color: #2e7d32;
+      }
+
+      .form-message.error {
+        color: #c62828;
+      }
+
+      .pending-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      #refresh-pending {
+        padding: 8px 12px;
+        background: #f1f1f1;
+        color: #222;
+      }
+
+      #refresh-pending:hover {
+        background: #e8e8e8;
+      }
+
+      .pending-status {
+        margin: 0 0 14px;
+        color: #666;
+      }
+
+      .pending-list {
+        display: grid;
+        gap: 9px;
+      }
+
+      .pending-list details {
+        border: 1px solid #e4e4e4;
+        border-radius: 8px;
+        background: #fafafa;
+      }
+
+      .pending-list summary {
+        padding: 12px 14px;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .pending-meta {
+        margin: 0;
+        padding: 0 14px 10px;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .pending-solution {
+        margin: 0;
+        padding: 14px;
+
+        border-top: 1px solid #e4e4e4;
+
+        white-space: pre-wrap;
+        overflow-x: auto;
+
+        color: #222;
+        font:
+          0.95rem/1.55
+          ui-monospace,
+          SFMono-Regular,
+          Menlo,
+          Monaco,
+          Consolas,
+          "Liberation Mono",
+          monospace;
+      }
+
+      .pending-actions {
+        display: flex;
+        justify-content: flex-end;
+
+        padding: 12px 14px 14px;
+
+        border-top: 1px solid #ededed;
+      }
+
+      .delete-submission {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 36px;
+        padding: 8px 13px;
+
+        border: 1px solid #c62828;
+        border-radius: 8px;
+
+        background: #c62828;
+        color: white;
+
+        font: inherit;
+        font-size: 0.9rem;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        transition:
+          background 0.15s ease,
+          border-color 0.15s ease,
+          transform 0.15s ease;
+      }
+
+      .delete-submission:hover {
+        background: #a82020;
+        border-color: #a82020;
+        transform: translateY(-1px);
+      }
+
+      .delete-submission:active {
+        transform: translateY(0);
+      }
+
+      .delete-submission:disabled {
+        color: #777;
+        border-color: #d8d8d8;
+        background: #eeeeee;
+        transform: none;
+        cursor: not-allowed;
+      }
+
+      @media (max-width: 850px) {
+        .submit-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        main {
+          padding: 24px 14px;
+        }
+
+        .submit-panel,
+        .pending-panel {
+          padding: 16px;
+        }
+
+        textarea {
+          min-height: 260px;
+        }
+      }
+    </style>
+
+    <script>
+      const form =
+        document.querySelector(
+          "#submission-form"
+        );
+
+      const problemInput =
+        document.querySelector(
+          "#problem-number"
+        );
+
+      const usernameInput =
+        document.querySelector(
+          "#username"
+        );
+
+      const solutionInput =
+        document.querySelector(
+          "#solution-text"
+        );
+
+      const submitButton =
+        document.querySelector(
+          "#submit-button"
+        );
+
+      const formMessage =
+        document.querySelector(
+          "#form-message"
+        );
+
+      const problemHelp =
+        document.querySelector(
+          "#problem-help"
+        );
+
+      const configNotice =
+        document.querySelector(
+          "#config-notice"
+        );
+
+      const pendingStatus =
+        document.querySelector(
+          "#pending-status"
+        );
+
+      const pendingList =
+        document.querySelector(
+          "#pending-list"
+        );
+
+      const refreshPendingButton =
+        document.querySelector(
+          "#refresh-pending"
+        );
+
+      const openIds = new Set(
+        JSON.parse(
+          form instanceof HTMLElement
+            ? form.dataset.openIds ?? "[]"
+            : "[]"
+        )
+      );
+
+      const totalCount = Number(
+        form instanceof HTMLElement
+          ? form.dataset.totalCount ?? "0"
+          : "0"
+      );
+
+      const supabaseUrl =
+        form instanceof HTMLElement
+          ? (
+              form.dataset.supabaseUrl ??
+              ""
+            ).replace(/\/$/, "")
+          : "";
+
+      const supabaseKey =
+        form instanceof HTMLElement
+          ? form.dataset.supabaseKey ?? ""
+          : "";
+
+      const tableName =
+        form instanceof HTMLElement
+          ? form.dataset.tableName ??
+            "solution_submissions"
+          : "solution_submissions";
+
+      const hasBackend =
+        Boolean(supabaseUrl && supabaseKey);
+
+      const usesLocalBacklog =
+        !hasBackend &&
+        [
+          "localhost",
+          "127.0.0.1",
+          "::1",
+        ].includes(window.location.hostname);
+
+      const localBacklogKey =
+        "fe-project-local-solution-submissions";
+
+      const ownedDeleteTokensKey =
+        "fe-project-owned-submission-delete-tokens";
+
+      function normalizeProblemNumber(value) {
+        const cleaned = value
+          .trim()
+          .toUpperCase()
+          .replace(/^#/, "")
+          .replace(/^FE-?/, "");
+
+        if (!/^\d{1,4}$/.test(cleaned)) {
+          return null;
+        }
+
+        const number = Number(cleaned);
+
+        if (
+          !Number.isInteger(number) ||
+          number < 1 ||
+          number > totalCount
+        ) {
+          return null;
+        }
+
+        return {
+          number,
+          feId:
+            "FE-" +
+            String(number).padStart(
+              4,
+              "0"
+            ),
+        };
+      }
+
+      function setMessage(text, state) {
+        if (!formMessage) return;
+
+        formMessage.textContent = text;
+        formMessage.className =
+          `form-message ${state ?? ""}`;
+      }
+
+      function setProblemHelp(text, state) {
+        if (!problemHelp) return;
+
+        problemHelp.textContent = text;
+        problemHelp.className =
+          `field-help ${state ?? ""}`;
+      }
+
+      function submissionEndpoint() {
+        return (
+          `${supabaseUrl}/rest/v1/` +
+          encodeURIComponent(tableName)
+        );
+      }
+
+      function authHeaders() {
+        return {
+          apikey: supabaseKey,
+          Authorization:
+            `Bearer ${supabaseKey}`,
+        };
+      }
+
+      function loadLocalSubmissions() {
+        try {
+          return JSON.parse(
+            localStorage.getItem(
+              localBacklogKey
+            ) ?? "[]"
+          );
+        }
+        catch {
+          return [];
+        }
+      }
+
+      function saveLocalSubmission(submission) {
+        const submissions = [
+          submission,
+          ...loadLocalSubmissions(),
+        ];
+
+        localStorage.setItem(
+          localBacklogKey,
+          JSON.stringify(submissions)
+        );
+      }
+
+      function deleteLocalSubmission(submissionId) {
+        const submissions =
+          loadLocalSubmissions().filter(
+            (submission) =>
+              submission.id !== submissionId
+          );
+
+        localStorage.setItem(
+          localBacklogKey,
+          JSON.stringify(submissions)
+        );
+      }
+
+      function loadOwnedDeleteTokens() {
+        try {
+          const tokens = JSON.parse(
+            localStorage.getItem(
+              ownedDeleteTokensKey
+            ) ?? "{}"
+          );
+
+          if (
+            tokens &&
+            typeof tokens === "object" &&
+            !Array.isArray(tokens)
+          ) {
+            return tokens;
+          }
+        }
+        catch {}
+
+        return {};
+      }
+
+      function saveOwnedDeleteToken(
+        submissionId,
+        deleteToken
+      ) {
+        if (!submissionId) return;
+
+        const tokens =
+          loadOwnedDeleteTokens();
+
+        tokens[submissionId] =
+          deleteToken;
+
+        localStorage.setItem(
+          ownedDeleteTokensKey,
+          JSON.stringify(tokens)
+        );
+      }
+
+      function removeOwnedDeleteToken(
+        submissionId
+      ) {
+        const tokens =
+          loadOwnedDeleteTokens();
+
+        delete tokens[submissionId];
+
+        localStorage.setItem(
+          ownedDeleteTokensKey,
+          JSON.stringify(tokens)
+        );
+      }
+
+      function createDeleteToken() {
+        const bytes = new Uint8Array(32);
+
+        crypto.getRandomValues(bytes);
+
+        return Array.from(
+          bytes,
+          (byte) =>
+            byte
+              .toString(16)
+              .padStart(2, "0")
+        ).join("");
+      }
+
+      async function sha256Hex(value) {
+        const encoded =
+          new TextEncoder().encode(value);
+
+        const digest =
+          await crypto.subtle.digest(
+            "SHA-256",
+            encoded
+          );
+
+        return Array.from(
+          new Uint8Array(digest),
+          (byte) =>
+            byte
+              .toString(16)
+              .padStart(2, "0")
+        ).join("");
+      }
+
+      async function deleteSubmission(
+        submission,
+        deleteButton
+      ) {
+        const submissionId =
+          submission.id ?? "";
+
+        if (!submissionId) return;
+
+        if (
+          !window.confirm(
+            "Delete this pending submission?"
+          )
+        ) {
+          return;
+        }
+
+        if (
+          deleteButton instanceof
+          HTMLButtonElement
+        ) {
+          deleteButton.disabled = true;
+          deleteButton.textContent =
+            "Deleting...";
+        }
+
+        if (usesLocalBacklog) {
+          deleteLocalSubmission(
+            submissionId
+          );
+
+          removeOwnedDeleteToken(
+            submissionId
+          );
+
+          setMessage(
+            "Deleted the local pending submission.",
+            "success"
+          );
+
+          await loadPendingSubmissions();
+          return;
+        }
+
+        const deleteToken =
+          loadOwnedDeleteTokens()[
+            submissionId
+          ];
+
+        if (!deleteToken) {
+          setMessage(
+            "This browser cannot delete that submission.",
+            "error"
+          );
+
+          if (
+            deleteButton instanceof
+            HTMLButtonElement
+          ) {
+            deleteButton.disabled = false;
+            deleteButton.textContent =
+              "Delete submission";
+          }
+
+          return;
+        }
+
+        try {
+          const response = await fetch(
+            `${supabaseUrl}/rest/v1/rpc/delete_solution_submission`,
+            {
+              method: "POST",
+              headers: {
+                ...authHeaders(),
+                "Content-Type":
+                  "application/json",
+              },
+              body: JSON.stringify({
+                _submission_id:
+                  submissionId,
+                _delete_token:
+                  deleteToken,
+              }),
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(
+              await response.text()
+            );
+          }
+
+          const deleted =
+            await response.json();
+
+          if (!deleted) {
+            throw new Error(
+              "Delete token rejected."
+            );
+          }
+
+          removeOwnedDeleteToken(
+            submissionId
+          );
+
+          setMessage(
+            "Deleted the pending submission.",
+            "success"
+          );
+
+          await loadPendingSubmissions();
+        }
+        catch {
+          setMessage(
+            "Could not delete the submission.",
+            "error"
+          );
+        }
+        finally {
+          if (
+            deleteButton instanceof
+            HTMLButtonElement
+          ) {
+            deleteButton.disabled = false;
+            deleteButton.textContent =
+              "Delete submission";
+          }
+        }
+      }
+
+      function formatSubmittedAt(value) {
+        if (!value) return "";
+
+        const date = new Date(value);
+
+        if (Number.isNaN(date.getTime())) {
+          return "";
+        }
+
+        return date.toLocaleString(
+          undefined,
+          {
+            dateStyle: "medium",
+            timeStyle: "short",
+          }
+        );
+      }
+
+      function renderPendingSubmissions(
+        submissions
+      ) {
+        if (!pendingList || !pendingStatus) {
+          return;
+        }
+
+        pendingList.replaceChildren();
+
+        const openSubmissions =
+          submissions.filter((submission) =>
+            openIds.has(submission.fe_id)
+          );
+
+        if (openSubmissions.length === 0) {
+          pendingStatus.textContent =
+            "No pending submissions.";
+          return;
+        }
+
+        pendingStatus.textContent =
+          `${openSubmissions.length} pending submission${
+            openSubmissions.length === 1
+              ? ""
+              : "s"
+          }.`;
+
+        openSubmissions.forEach(
+          (submission) => {
+            const submissionId =
+              submission.id ?? "";
+
+            const canDelete =
+              usesLocalBacklog ||
+              Boolean(
+                loadOwnedDeleteTokens()[
+                  submissionId
+                ]
+              );
+
+            const details =
+              document.createElement(
+                "details"
+              );
+
+            const summary =
+              document.createElement(
+                "summary"
+              );
+
+            const problemNumber =
+              Number(
+                submission.problem_number ??
+                  String(
+                    submission.fe_id ?? ""
+                  ).replace("FE-", "")
+              );
+
+            summary.textContent =
+              Number.isFinite(problemNumber)
+                ? `#${problemNumber}`
+                : submission.fe_id ?? "#";
+
+            const meta =
+              document.createElement("p");
+
+            meta.className = "pending-meta";
+
+            const submittedAt =
+              formatSubmittedAt(
+                submission.submitted_at
+              );
+
+            meta.textContent = submittedAt
+              ? `Submitted by ${submission.username} on ${submittedAt}`
+              : `Submitted by ${submission.username}`;
+
+            const solution =
+              document.createElement("pre");
+
+            solution.className =
+              "pending-solution";
+
+            solution.textContent =
+              submission.solution ?? "";
+
+            details.append(
+              summary,
+              meta,
+              solution
+            );
+
+            if (canDelete) {
+              const actions =
+                document.createElement(
+                  "div"
+                );
+
+              actions.className =
+                "pending-actions";
+
+              const deleteButton =
+                document.createElement(
+                  "button"
+                );
+
+              deleteButton.type = "button";
+              deleteButton.className =
+                "delete-submission";
+              deleteButton.textContent =
+                "Delete submission";
+
+              deleteButton.addEventListener(
+                "click",
+                () => {
+                  deleteSubmission(
+                    submission,
+                    deleteButton
+                  );
+                }
+              );
+
+              actions.append(
+                deleteButton
+              );
+
+              details.append(actions);
+            }
+
+            pendingList.append(details);
+          }
+        );
+      }
+
+      async function loadPendingSubmissions() {
+        if (!pendingStatus) return;
+
+        if (!hasBackend) {
+          if (usesLocalBacklog) {
+            renderPendingSubmissions(
+              loadLocalSubmissions()
+            );
+
+            return;
+          }
+
+          pendingStatus.textContent =
+            "Submission storage is not configured yet.";
+          return;
+        }
+
+        pendingStatus.textContent =
+          "Loading pending submissions...";
+
+        const url = new URL(
+          submissionEndpoint()
+        );
+
+        url.searchParams.set(
+          "select",
+          "id,fe_id,problem_number,username,solution,submitted_at"
+        );
+
+        url.searchParams.set(
+          "status",
+          "eq.pending"
+        );
+
+        url.searchParams.set(
+          "order",
+          "submitted_at.desc"
+        );
+
+        try {
+          const response = await fetch(
+            url.toString(),
+            {
+              headers: authHeaders(),
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(
+              await response.text()
+            );
+          }
+
+          const submissions =
+            await response.json();
+
+          renderPendingSubmissions(
+            submissions
+          );
+        }
+        catch {
+          pendingStatus.textContent =
+            "Could not load pending submissions.";
+        }
+      }
+
+      function updateProblemValidation() {
+        if (
+          !(
+            problemInput instanceof
+            HTMLInputElement
+          )
+        ) {
+          return null;
+        }
+
+        const normalized =
+          normalizeProblemNumber(
+            problemInput.value
+          );
+
+        if (!problemInput.value.trim()) {
+          setProblemHelp(
+            "Enter an open problem number."
+          );
+
+          return null;
+        }
+
+        if (!normalized) {
+          setProblemHelp(
+            `Use a number from 1 to ${totalCount}.`,
+            "error"
+          );
+
+          return null;
+        }
+
+        if (!openIds.has(normalized.feId)) {
+          setProblemHelp(
+            "This problem is already solved.",
+            "error"
+          );
+
+          return null;
+        }
+
+        setProblemHelp(
+          `Problem #${normalized.number} is open.`,
+          "ok"
+        );
+
+        return normalized;
+      }
+
+      if (!hasBackend) {
+        if (configNotice instanceof HTMLElement) {
+          configNotice.hidden = false;
+
+          if (usesLocalBacklog) {
+            configNotice.textContent =
+              "Local preview mode: submissions are saved only in this browser.";
+          }
+        }
+
+        if (
+          !usesLocalBacklog &&
+          submitButton instanceof
+            HTMLButtonElement
+        ) {
+          submitButton.disabled = true;
+        }
+      }
+
+      problemInput?.addEventListener(
+        "input",
+        updateProblemValidation
+      );
+
+      refreshPendingButton
+        ?.addEventListener(
+          "click",
+          loadPendingSubmissions
+        );
+
+      form?.addEventListener(
+        "submit",
+        async (event) => {
+          event.preventDefault();
+
+          const normalized =
+            updateProblemValidation();
+
+          if (!normalized) {
+            setMessage(
+              "Choose an open problem first.",
+              "error"
+            );
+
+            return;
+          }
+
+          const username =
+            usernameInput instanceof
+            HTMLInputElement
+              ? usernameInput.value.trim()
+              : "";
+
+          const solution =
+            solutionInput instanceof
+            HTMLTextAreaElement
+              ? solutionInput.value.trim()
+              : "";
+
+          if (!username) {
+            setMessage(
+              "Add a username.",
+              "error"
+            );
+
+            return;
+          }
+
+          if (solution.length < 20) {
+            setMessage(
+              "Add a little more detail to the solution.",
+              "error"
+            );
+
+            return;
+          }
+
+          if (solution.length > 20000) {
+            setMessage(
+              "Keep the solution under 20,000 characters.",
+              "error"
+            );
+
+            return;
+          }
+
+          if (!hasBackend && !usesLocalBacklog) {
+            setMessage(
+              "Submission storage is not configured yet.",
+              "error"
+            );
+
+            return;
+          }
+
+          if (usesLocalBacklog) {
+            saveLocalSubmission({
+              id: `local-${Date.now()}`,
+              fe_id: normalized.feId,
+              problem_number:
+                normalized.number,
+              username,
+              solution,
+              status: "pending",
+              submitted_at:
+                new Date().toISOString(),
+            });
+
+            if (
+              solutionInput instanceof
+              HTMLTextAreaElement
+            ) {
+              solutionInput.value = "";
+            }
+
+            setMessage(
+              "Saved to the local preview backlog.",
+              "success"
+            );
+
+            await loadPendingSubmissions();
+            return;
+          }
+
+          if (
+            submitButton instanceof
+            HTMLButtonElement
+          ) {
+            submitButton.disabled = true;
+            submitButton.textContent =
+              "Submitting...";
+          }
+
+          setMessage(
+            "Submitting solution..."
+          );
+
+          try {
+            const deleteToken =
+              createDeleteToken();
+
+            const deleteTokenHash =
+              await sha256Hex(
+                deleteToken
+              );
+
+            const insertUrl =
+              new URL(
+                submissionEndpoint()
+              );
+
+            insertUrl.searchParams.set(
+              "select",
+              "id"
+            );
+
+            const response = await fetch(
+              insertUrl.toString(),
+              {
+                method: "POST",
+                headers: {
+                  ...authHeaders(),
+                  "Content-Type":
+                    "application/json",
+                  Prefer:
+                    "return=representation",
+                },
+                body: JSON.stringify({
+                  fe_id: normalized.feId,
+                  problem_number:
+                    normalized.number,
+                  username,
+                  solution,
+                  status: "pending",
+                  delete_token_hash:
+                    deleteTokenHash,
+                }),
+              }
+            );
+
+            if (!response.ok) {
+              throw new Error(
+                await response.text()
+              );
+            }
+
+            const insertedRows =
+              await response.json();
+
+            const insertedSubmission =
+              Array.isArray(insertedRows)
+                ? insertedRows[0]
+                : null;
+
+            if (insertedSubmission?.id) {
+              saveOwnedDeleteToken(
+                insertedSubmission.id,
+                deleteToken
+              );
+            }
+
+            if (
+              solutionInput instanceof
+              HTMLTextAreaElement
+            ) {
+              solutionInput.value = "";
+            }
+
+            setMessage(
+              "Submitted to the pending backlog.",
+              "success"
+            );
+
+            await loadPendingSubmissions();
+          }
+          catch {
+            setMessage(
+              "Could not submit the solution.",
+              "error"
+            );
+          }
+          finally {
+            if (
+              submitButton instanceof
+              HTMLButtonElement
+            ) {
+              submitButton.disabled = false;
+              submitButton.textContent =
+                "Submit solution";
+            }
+          }
+        }
+      );
+
+      updateProblemValidation();
+      loadPendingSubmissions();
+    </script>
+  </body>
+</html>

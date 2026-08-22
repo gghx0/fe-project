@@ -27,7 +27,12 @@ const openIds = fes
   <div class="nav-links">
     <a href={`${base}/`}>Home</a>
     <a href={`${base}/about`}>About</a>
-    <a href={`${base}/discussion`}>Discussion</a>
+    <a
+      class="submit-link"
+      href={`${base}/submit`}
+    >
+      Submit a Solution
+    </a>
   </div>
 
   <button
@@ -66,6 +71,7 @@ const openIds = fes
 <style>
   .site-nav {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
@@ -82,6 +88,7 @@ const openIds = fes
 
   .nav-links {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 4px;
   }
@@ -104,6 +111,17 @@ const openIds = fes
   .nav-links a:hover {
     background: #f3f3f3;
     color: #111;
+  }
+
+  .nav-links a.submit-link {
+    background: #2e7d32;
+    color: white;
+    font-weight: 700;
+  }
+
+  .nav-links a.submit-link:hover {
+    background: #256c2a;
+    color: white;
   }
 
   .random-button {
@@ -158,6 +176,10 @@ const openIds = fes
     .nav-links a {
       padding: 8px 9px;
       font-size: 0.85rem;
+    }
+
+    .nav-links a.submit-link {
+      padding: 8px 10px;
     }
 
     .random-button {
