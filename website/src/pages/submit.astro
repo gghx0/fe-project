@@ -1,31 +1,16 @@
 ---
-import { getCollection } from "astro:content";
-
-import fes from "../../../data/fe_database.json";
 import Nav from "../components/Nav.astro";
 
-const solutionEntries =
-  await getCollection("solutions");
+const googleFormStandaloneUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLSedEmZ6djphOrY95IXZCJ0bRgn6OCFELjSm2sfgyVYxd2rKMA/viewform";
 
-const solvedIds = new Set(
-  solutionEntries
-    .filter((entry) => entry.data.status === "solved")
-    .map((entry) => entry.id)
-);
+const googleFormUrl =
+  `${googleFormStandaloneUrl}?embedded=true`;
 
-const openIds = fes
-  .filter((fe) => !solvedIds.has(fe.id))
-  .map((fe) => fe.id);
+const pendingSubmissionsEndpoint =
+  "https://script.google.com/macros/s/AKfycbxcT6D7p1p3-pwJRxM9qdg-u0_J9Y1Eaaz0RUs57-_IKbualveIDwGmslmbyEJ7tT3F/exec";
 
-const submissionConfig = {
-  supabaseUrl:
-    import.meta.env.PUBLIC_SUPABASE_URL ?? "",
-
-  supabaseAnonKey:
-    import.meta.env.PUBLIC_SUPABASE_ANON_KEY ?? "",
-
-  tableName: "solution_submissions",
-};
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <html lang="en">
@@ -48,112 +33,597 @@ const submissionConfig = {
 
       <h1>Submit a Solution</h1>
 
-      <div class="submit-grid">
-        <section class="submit-panel">
-          <form
-            id="submission-form"
-            data-open-ids={JSON.stringify(openIds)}
-            data-total-count={fes.length}
-            data-supabase-url={submissionConfig.supabaseUrl}
-            data-supabase-key={submissionConfig.supabaseAnonKey}
-            data-table-name={submissionConfig.tableName}
-            novalidate
-          >
-            <div
-              id="config-notice"
-              class="config-notice"
-              hidden
-            >
-              Submission storage is not configured yet.
-            </div>
+      <section
+        class="pending-panel"
+        data-endpoint={pendingSubmissionsEndpoint}
+        data-base={base}
+        aria-labelledby="pending-submissions-heading"
+      >
+        <div class="pending-header">
+          <div>
+            <h2 id="pending-submissions-heading">
+              Pending Submissions
+            </h2>
 
-            <label for="problem-number">
-              Problem number
-            </label>
-
-            <input
-              id="problem-number"
-              name="problem-number"
-              type="text"
-              inputmode="numeric"
-              autocomplete="off"
-              placeholder="37"
-              required
-            />
-
-            <p
-              id="problem-help"
-              class="field-help"
-            >
-              Enter an open problem number.
+            <p data-pending-count>
+              Loading...
             </p>
+          </div>
 
-            <label for="username">
-              Username
-            </label>
-
-            <input
-              id="username"
-              name="username"
-              type="text"
-              autocomplete="nickname"
-              maxlength="80"
-              required
-            />
-
-            <label for="solution-text">
-              Solution
-            </label>
-
-            <textarea
-              id="solution-text"
-              name="solution-text"
-              rows="16"
-              maxlength="20000"
-              required
-            ></textarea>
-
+          <div class="pending-actions">
             <button
-              id="submit-button"
-              type="submit"
+              class="toggle-pending-button"
+              type="button"
+              data-toggle-pending
+              aria-expanded="true"
+              aria-controls="pending-submissions-content"
             >
-              Submit solution
+              Hide pending submissions
             </button>
 
-            <p
-              id="form-message"
-              class="form-message"
-              role="status"
-            ></p>
-          </form>
-        </section>
-
-        <section class="pending-panel">
-          <div class="pending-header">
-            <h2>Pending submissions</h2>
-
             <button
-              id="refresh-pending"
+              class="refresh-button"
               type="button"
+              data-refresh-submissions
             >
               Refresh
             </button>
           </div>
+        </div>
 
+        <div
+          id="pending-submissions-content"
+          class="pending-content"
+          data-pending-content
+        >
           <p
-            id="pending-status"
             class="pending-status"
+            data-pending-status
+            role="status"
           >
             Loading pending submissions...
           </p>
 
           <div
-            id="pending-list"
             class="pending-list"
-          ></div>
-        </section>
-      </div>
+            data-pending-list
+            hidden
+          >
+          </div>
+        </div>
+      </section>
+
+      <section class="form-panel">
+        <iframe
+          src={googleFormUrl}
+          title="Submit a Solution Google Form"
+          width="640"
+          height="689"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >
+          Loading...
+        </iframe>
+      </section>
+
+      <p class="fallback-link">
+        <a
+          href={googleFormStandaloneUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open the form in a new tab
+        </a>
+      </p>
     </main>
+
+    <script>
+      const pendingPanel =
+        document.querySelector(".pending-panel");
+
+      if (pendingPanel instanceof HTMLElement) {
+        const endpoint =
+          pendingPanel.dataset.endpoint ?? "";
+
+        const base =
+          (pendingPanel.dataset.base ?? "").replace(/\/$/, "");
+
+        const statusElement =
+          pendingPanel.querySelector("[data-pending-status]");
+
+        const countElement =
+          pendingPanel.querySelector("[data-pending-count]");
+
+        const pendingContent =
+          pendingPanel.querySelector("[data-pending-content]");
+
+        const listElement =
+          pendingPanel.querySelector("[data-pending-list]");
+
+        const togglePendingButton =
+          pendingPanel.querySelector("[data-toggle-pending]");
+
+        const refreshButton =
+          pendingPanel.querySelector("[data-refresh-submissions]");
+
+        const statusLabelsToHide = new Set([
+          "accepted",
+          "approved",
+          "closed",
+          "complete",
+          "completed",
+          "deleted",
+          "done",
+          "published",
+          "rejected",
+          "solved",
+          "verified",
+        ]);
+
+        function setStatus(message) {
+          if (statusElement) {
+            statusElement.textContent = message;
+          }
+        }
+
+        function setPendingVisibility(isVisible) {
+          if (pendingContent instanceof HTMLElement) {
+            pendingContent.hidden =
+              !isVisible;
+          }
+
+          if (togglePendingButton instanceof HTMLElement) {
+            togglePendingButton.textContent =
+              isVisible
+                ? "Hide pending submissions"
+                : "Show pending submissions";
+
+            togglePendingButton.setAttribute(
+              "aria-expanded",
+              String(isVisible)
+            );
+          }
+        }
+
+        function normalizeRows(rows) {
+          if (
+            rows.length === 0 ||
+            !rows.every(Array.isArray)
+          ) {
+            return rows;
+          }
+
+          const [headers, ...bodyRows] =
+            rows;
+
+          return bodyRows.map((row) =>
+            Object.fromEntries(
+              headers.map((header, index) => [
+                String(header),
+                row[index] ?? "",
+              ])
+            )
+          );
+        }
+
+        function getRows(payload) {
+          if (Array.isArray(payload)) {
+            return normalizeRows(payload);
+          }
+
+          if (!payload || typeof payload !== "object") {
+            return [];
+          }
+
+          const record = payload;
+
+          for (const key of [
+            "submissions",
+            "data",
+            "rows",
+            "items",
+            "values",
+          ]) {
+            if (Array.isArray(record[key])) {
+              return normalizeRows(record[key]);
+            }
+          }
+
+          return [];
+        }
+
+        function getField(row, names) {
+          if (!row || typeof row !== "object") {
+            return "";
+          }
+
+          const entries =
+            Object.entries(row);
+
+          for (const name of names) {
+            const exactValue = row[name];
+
+            if (
+              exactValue !== undefined &&
+              exactValue !== null &&
+              String(exactValue).trim()
+            ) {
+              return String(exactValue).trim();
+            }
+
+            const normalizedName =
+              name.toLowerCase().replace(/\s+/g, "");
+
+            const looseEntry =
+              entries.find(([key]) =>
+                key
+                  .toLowerCase()
+                  .replace(/\s+/g, "") === normalizedName
+              );
+
+            if (
+              looseEntry &&
+              looseEntry[1] !== undefined &&
+              looseEntry[1] !== null &&
+              String(looseEntry[1]).trim()
+            ) {
+              return String(looseEntry[1]).trim();
+            }
+          }
+
+          return "";
+        }
+
+        function getProblemMeta(value) {
+          const digits =
+            String(value).match(/\d+/)?.[0] ?? "";
+
+          if (!digits) {
+            return {
+              display: String(value || "Unknown FE"),
+              href: "",
+            };
+          }
+
+          const id =
+            digits.padStart(4, "0");
+
+          return {
+            display: `#${Number(digits)}`,
+            href: `${base}/fe/${id}`,
+          };
+        }
+
+        function shouldShowSubmission(row) {
+          const status =
+            getField(row, ["Status", "status"])
+              .toLowerCase()
+              .trim();
+
+          return !statusLabelsToHide.has(status);
+        }
+
+        function getProblemNumberValue(row) {
+          const problemNumber =
+            getField(row, [
+              "FE Number",
+              "FE",
+              "Problem",
+              "Problem Number",
+              "Number",
+            ]);
+
+          const digits =
+            problemNumber.match(/\d+/)?.[0];
+
+          return digits
+            ? Number(digits)
+            : Number.POSITIVE_INFINITY;
+        }
+
+        function createSubmissionElement(row, index) {
+          const problemNumber =
+            getField(row, [
+              "FE Number",
+              "FE",
+              "Problem",
+              "Problem Number",
+              "Number",
+            ]);
+
+          const username =
+            getField(row, [
+              "Username",
+              "Name",
+              "User",
+              "Submitter",
+            ]);
+
+          const solution =
+            getField(row, [
+              "Solution",
+              "Submission",
+              "Text",
+              "Answer",
+            ]);
+
+          const problem =
+            getProblemMeta(problemNumber);
+
+          const item =
+            document.createElement("details");
+
+          item.className =
+            "pending-card";
+
+          item.dataset.submissionIndex =
+            String(index);
+
+          const summary =
+            document.createElement("summary");
+
+          summary.className =
+            "pending-card-summary";
+
+          summary.dataset.submissionSummary =
+            String(index);
+
+          const cardHeader =
+            document.createElement("div");
+
+          cardHeader.className =
+            "pending-card-header";
+
+          const problemHeading =
+            document.createElement("h2");
+
+          problemHeading.textContent =
+            problem.display;
+
+          const statusLabel =
+            document.createElement("span");
+
+          statusLabel.className =
+            "pending-card-status";
+
+          statusLabel.textContent =
+            "pending";
+
+          const summaryCopy =
+            document.createElement("div");
+
+          summaryCopy.className =
+            "pending-card-copy";
+
+          const summaryMeta =
+            document.createElement("p");
+
+          summaryMeta.className =
+            "summary-meta";
+
+          summaryMeta.textContent =
+            username
+              ? `Submitted by ${username}`
+              : "Submitted solution";
+
+          summaryCopy.append(summaryMeta);
+
+          const chevron =
+            document.createElement("span");
+
+          chevron.className =
+            "summary-chevron";
+
+          chevron.setAttribute(
+            "aria-hidden",
+            "true"
+          );
+
+          const cardHeaderMeta =
+            document.createElement("span");
+
+          cardHeaderMeta.className =
+            "pending-card-header-meta";
+
+          if (problem.href) {
+            const problemLink =
+              document.createElement("a");
+
+            problemLink.className =
+              "problem-reference-link";
+
+            problemLink.href =
+              problem.href;
+
+            problemLink.textContent =
+              "View this problem";
+
+            problemLink.addEventListener(
+              "click",
+              (event) => {
+                event.stopPropagation();
+              }
+            );
+
+            cardHeaderMeta.append(problemLink);
+          }
+
+          cardHeaderMeta.append(
+            statusLabel,
+            chevron
+          );
+
+          cardHeader.append(
+            problemHeading,
+            cardHeaderMeta
+          );
+
+          summary.append(
+            cardHeader,
+            summaryCopy
+          );
+
+          item.append(summary);
+
+          const body =
+            document.createElement("div");
+
+          body.className =
+            "pending-card-body";
+
+          const expandedBox =
+            document.createElement("div");
+
+          expandedBox.className =
+            "pending-card-details";
+
+          const solutionElement =
+            document.createElement("div");
+
+          solutionElement.className =
+            "submission-text";
+
+          solutionElement.textContent =
+            solution || "No solution text was provided.";
+
+          expandedBox.append(solutionElement);
+
+          body.append(expandedBox);
+          item.append(body);
+
+          function updateOpenState() {
+            item.classList.toggle(
+              "is-open",
+              item.open
+            );
+
+            chevron.style.borderColor =
+              item.open ? "#2e7d32" : "#617066";
+
+            chevron.style.transform =
+              item.open ? "rotate(225deg)" : "rotate(45deg)";
+          }
+
+          item.addEventListener(
+            "toggle",
+            updateOpenState
+          );
+
+          updateOpenState();
+
+          return item;
+        }
+
+        async function loadPendingSubmissions() {
+          if (!endpoint) {
+            setStatus(
+              "Pending submissions are not configured yet."
+            );
+
+            return;
+          }
+
+          refreshButton?.setAttribute("disabled", "");
+
+          setStatus("Loading pending submissions...");
+
+          try {
+            const separator =
+              endpoint.includes("?") ? "&" : "?";
+
+            const response =
+              await fetch(
+                `${endpoint}${separator}cacheBust=${Date.now()}`,
+                {
+                  cache: "no-store",
+                }
+              );
+
+            const text =
+              await response.text();
+
+            const trimmed =
+              text.trim();
+
+            if (
+              !response.ok ||
+              trimmed.startsWith("<!DOCTYPE") ||
+              trimmed.startsWith("<html")
+            ) {
+              throw new Error("Endpoint is not public JSON.");
+            }
+
+            const payload =
+              JSON.parse(trimmed);
+
+            const rows =
+              getRows(payload)
+                .filter(shouldShowSubmission)
+                .sort(
+                  (firstRow, secondRow) =>
+                    getProblemNumberValue(firstRow) -
+                    getProblemNumberValue(secondRow)
+                );
+
+            if (countElement) {
+              countElement.textContent =
+                `${rows.length} awaiting review`;
+            }
+
+            if (!listElement) {
+              return;
+            }
+
+            listElement.replaceChildren(
+              ...rows.map(createSubmissionElement)
+            );
+
+            listElement.hidden =
+              rows.length === 0;
+
+            setStatus(
+              rows.length
+                ? "Open a submission card to view the solution."
+                : "No pending submissions yet."
+            );
+          } catch {
+            if (countElement) {
+              countElement.textContent =
+                "Unavailable";
+            }
+
+            if (listElement) {
+              listElement.hidden =
+                true;
+            }
+
+            setStatus(
+              "Pending submissions could not be loaded. Check that the Apps Script web app access is set to Anyone."
+            );
+          } finally {
+            refreshButton?.removeAttribute("disabled");
+          }
+        }
+
+        refreshButton?.addEventListener(
+          "click",
+          loadPendingSubmissions
+        );
+
+        togglePendingButton?.addEventListener(
+          "click",
+          () => {
+            const isVisible =
+              !pendingContent?.hasAttribute("hidden");
+
+            setPendingVisibility(!isVisible);
+          }
+        );
+
+        loadPendingSubmissions();
+      }
+    </script>
 
     <style>
       body {
@@ -168,1211 +638,331 @@ const submissionConfig = {
       }
 
       main {
-        max-width: 1100px;
+        max-width: 1000px;
         margin: 0 auto;
-        padding: 40px 20px;
+        padding: 40px 20px 56px;
       }
 
       h1 {
-        margin: 0 0 24px;
+        margin: 0 0 22px;
       }
 
-      .submit-grid {
-        display: grid;
-        grid-template-columns:
-          minmax(0, 1.1fr)
-          minmax(320px, 0.9fr);
-        gap: 18px;
-        align-items: start;
-      }
+      .form-panel {
+        overflow: hidden;
 
-      .submit-panel,
-      .pending-panel {
+        margin-top: 30px;
+
         background: white;
         border: 1px solid #e2e2e2;
         border-radius: 8px;
-        padding: 22px;
+
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
       }
 
-      form {
-        display: grid;
-        gap: 10px;
-      }
-
-      label {
-        font-weight: 650;
-      }
-
-      input,
-      textarea {
+      iframe {
+        display: block;
         width: 100%;
-        box-sizing: border-box;
+        min-height: 720px;
 
-        border: 1px solid #c8c8c8;
-        border-radius: 8px;
-
-        padding: 11px 12px;
-
-        color: #111;
-        background: white;
-        font: inherit;
+        border: 0;
       }
 
-      textarea {
-        resize: vertical;
-        min-height: 320px;
-        line-height: 1.55;
+      .fallback-link {
+        margin: 16px 0 0;
       }
 
-      input:focus,
-      textarea:focus {
-        outline: 2px solid #aaa;
-        outline-offset: 1px;
-      }
-
-      .field-help {
-        min-height: 1.2em;
-        margin: -3px 0 8px;
-        color: #666;
-        font-size: 0.9rem;
-      }
-
-      .field-help.ok {
+      .fallback-link a {
         color: #2e7d32;
-      }
-
-      .field-help.error {
-        color: #c62828;
-      }
-
-      .config-notice {
-        padding: 12px 13px;
-
-        border: 1px solid #efd39a;
-        border-radius: 8px;
-
-        background: #fff9e9;
-        color: #6d4a00;
-      }
-
-      #submit-button,
-      #refresh-pending {
-        border: none;
-        border-radius: 8px;
-
-        font: inherit;
         font-weight: 650;
-
-        cursor: pointer;
       }
 
-      #submit-button {
-        justify-self: start;
-
-        margin-top: 6px;
-        padding: 11px 16px;
-
-        background: #222;
-        color: white;
-      }
-
-      #submit-button:hover {
-        background: #111;
-      }
-
-      #submit-button:disabled {
-        background: #aaa;
-        cursor: not-allowed;
-      }
-
-      .form-message {
-        min-height: 1.35em;
-        margin: 2px 0 0;
-        color: #555;
-      }
-
-      .form-message.success {
-        color: #2e7d32;
-      }
-
-      .form-message.error {
-        color: #c62828;
+      .pending-panel {
+        margin: 0 0 30px;
       }
 
       .pending-header {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
-        gap: 14px;
-        margin-bottom: 12px;
+        gap: 16px;
+
+        margin-bottom: 18px;
       }
 
       h2 {
+        margin: 0 0 5px;
+        font-size: 1.35rem;
+      }
+
+      .pending-header p {
         margin: 0;
-        font-size: 1.2rem;
-      }
 
-      #refresh-pending {
-        padding: 8px 12px;
-        background: #f1f1f1;
-        color: #222;
-      }
-
-      #refresh-pending:hover {
-        background: #e8e8e8;
-      }
-
-      .pending-status {
-        margin: 0 0 14px;
         color: #666;
-      }
-
-      .pending-list {
-        display: grid;
-        gap: 9px;
-      }
-
-      .pending-list details {
-        border: 1px solid #e4e4e4;
-        border-radius: 8px;
-        background: #fafafa;
-      }
-
-      .pending-list summary {
-        padding: 12px 14px;
-        cursor: pointer;
-        font-weight: 700;
-      }
-
-      .pending-meta {
-        margin: 0;
-        padding: 0 14px 10px;
-        color: #666;
-        font-size: 0.9rem;
-      }
-
-      .pending-solution {
-        margin: 0;
-        padding: 14px;
-
-        border-top: 1px solid #e4e4e4;
-
-        white-space: pre-wrap;
-        overflow-x: auto;
-
-        color: #222;
-        font:
-          0.95rem/1.55
-          ui-monospace,
-          SFMono-Regular,
-          Menlo,
-          Monaco,
-          Consolas,
-          "Liberation Mono",
-          monospace;
+        font-size: 0.95rem;
       }
 
       .pending-actions {
         display: flex;
-        justify-content: flex-end;
-
-        padding: 12px 14px 14px;
-
-        border-top: 1px solid #ededed;
+        align-items: center;
+        flex: 0 0 auto;
+        gap: 10px;
       }
 
-      .delete-submission {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+      .toggle-pending-button,
+      .refresh-button {
+        flex: 0 0 auto;
 
-        min-height: 36px;
-        padding: 8px 13px;
+        min-height: 38px;
+        padding: 8px 14px;
 
-        border: 1px solid #c62828;
+        border: 1px solid #cfd8cf;
         border-radius: 8px;
 
-        background: #c62828;
-        color: white;
+        background: #f8fbf8;
+        color: #2e7d32;
 
         font: inherit;
         font-size: 0.9rem;
         font-weight: 700;
 
         cursor: pointer;
+      }
+
+      .refresh-button:hover {
+        background: #ecf6ec;
+      }
+
+      .toggle-pending-button {
+        background: #2e7d32;
+        border-color: #2e7d32;
+        color: white;
+      }
+
+      .toggle-pending-button:hover {
+        background: #246c28;
+      }
+
+      .refresh-button:disabled {
+        opacity: 0.6;
+        cursor: wait;
+      }
+
+      .pending-content[hidden] {
+        display: none;
+      }
+
+      .pending-status {
+        margin: 0;
+
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .pending-list {
+        display: grid;
+        grid-template-columns:
+          repeat(
+            auto-fit,
+            minmax(450px, 1fr)
+          );
+        align-items: start;
+        gap: 16px;
+
+        margin-top: 18px;
+      }
+
+      .pending-list[hidden] {
+        display: none;
+      }
+
+      :global(.pending-card) {
+        overflow: hidden;
+
+        border-left: 6px solid #2e7d32;
+        border-radius: 10px;
+
+        background: #f0f9f1;
+        color: inherit;
 
         transition:
           background 0.15s ease,
+          border-color 0.15s ease;
+      }
+
+      :global(.pending-card:hover) {
+        background: #e6f5e8;
+      }
+
+      :global(.pending-card.is-open) {
+        background: #e6f5e8;
+      }
+
+      :global(.pending-card-summary) {
+        display: grid;
+        gap: 13px;
+
+        padding: 20px;
+
+        color: #111;
+
+        cursor: pointer;
+        list-style: none;
+      }
+
+      :global(.pending-card-summary::-webkit-details-marker) {
+        display: none;
+      }
+
+      :global(.pending-card-summary:focus-visible) {
+        outline: 3px solid rgba(46, 125, 50, 0.24);
+        outline-offset: -3px;
+      }
+
+      :global(.pending-card-header) {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      :global(.pending-card-header h2) {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+
+      :global(.pending-card-header-meta) {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: flex-end;
+      }
+
+      :global(.pending-card-status) {
+        color: #2e7d32;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+
+      :global(.pending-card-copy) {
+        min-width: 0;
+      }
+
+      :global(.summary-meta) {
+        overflow: hidden;
+
+        margin: 0;
+
+        color: #667066;
+        font-size: 0.95rem;
+        font-weight: 560;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      :global(.summary-chevron) {
+        width: 9px;
+        height: 9px;
+
+        border-right: 2px solid #617066;
+        border-bottom: 2px solid #617066;
+
+        transform: rotate(45deg);
+        transition:
           border-color 0.15s ease,
           transform 0.15s ease;
       }
 
-      .delete-submission:hover {
-        background: #a82020;
-        border-color: #a82020;
-        transform: translateY(-1px);
+      :global(.pending-card[open] .summary-chevron),
+      :global(.pending-card.is-open .summary-chevron) {
+        border-color: #2e7d32;
+        transform: rotate(225deg);
       }
 
-      .delete-submission:active {
-        transform: translateY(0);
+      :global(.pending-card-body) {
+        padding: 0 20px 20px;
       }
 
-      .delete-submission:disabled {
-        color: #777;
-        border-color: #d8d8d8;
-        background: #eeeeee;
-        transform: none;
-        cursor: not-allowed;
+      :global(.pending-card-details) {
+        margin: 0;
+        padding-top: 16px;
+
+        border-top: 1px solid rgba(46, 125, 50, 0.18);
       }
 
-      @media (max-width: 850px) {
-        .submit-grid {
-          grid-template-columns: 1fr;
-        }
+      :global(.submission-text) {
+        margin: 0;
+
+        color: #222;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+      }
+
+      :global(.problem-reference-link) {
+        color: #2e7d32;
+
+        font-size: 0.92rem;
+        font-weight: 800;
+        text-decoration-color: rgba(46, 125, 50, 0.35);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+
+        transition:
+          color 0.15s ease;
+      }
+
+      :global(.problem-reference-link:hover) {
+        color: #1d5f22;
       }
 
       @media (max-width: 600px) {
         main {
-          padding: 24px 14px;
+          padding: 24px 14px 44px;
         }
 
-        .submit-panel,
+        iframe {
+          min-height: 760px;
+        }
+
         .pending-panel {
+          margin-bottom: 22px;
+        }
+
+        .pending-header {
+          align-items: stretch;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .pending-actions {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .toggle-pending-button,
+        .refresh-button {
+          width: 100%;
+        }
+
+        .pending-list {
+          grid-template-columns: 1fr;
+        }
+
+        :global(.pending-card-summary) {
           padding: 16px;
         }
 
-        textarea {
-          min-height: 260px;
+        :global(.pending-card-copy) {
+          width: 100%;
+        }
+
+        :global(.pending-card-body) {
+          padding: 0 16px 16px;
         }
       }
     </style>
-
-    <script>
-      const form =
-        document.querySelector(
-          "#submission-form"
-        );
-
-      const problemInput =
-        document.querySelector(
-          "#problem-number"
-        );
-
-      const usernameInput =
-        document.querySelector(
-          "#username"
-        );
-
-      const solutionInput =
-        document.querySelector(
-          "#solution-text"
-        );
-
-      const submitButton =
-        document.querySelector(
-          "#submit-button"
-        );
-
-      const formMessage =
-        document.querySelector(
-          "#form-message"
-        );
-
-      const problemHelp =
-        document.querySelector(
-          "#problem-help"
-        );
-
-      const configNotice =
-        document.querySelector(
-          "#config-notice"
-        );
-
-      const pendingStatus =
-        document.querySelector(
-          "#pending-status"
-        );
-
-      const pendingList =
-        document.querySelector(
-          "#pending-list"
-        );
-
-      const refreshPendingButton =
-        document.querySelector(
-          "#refresh-pending"
-        );
-
-      const openIds = new Set(
-        JSON.parse(
-          form instanceof HTMLElement
-            ? form.dataset.openIds ?? "[]"
-            : "[]"
-        )
-      );
-
-      const totalCount = Number(
-        form instanceof HTMLElement
-          ? form.dataset.totalCount ?? "0"
-          : "0"
-      );
-
-      const supabaseUrl =
-        form instanceof HTMLElement
-          ? (
-              form.dataset.supabaseUrl ??
-              ""
-            ).replace(/\/$/, "")
-          : "";
-
-      const supabaseKey =
-        form instanceof HTMLElement
-          ? form.dataset.supabaseKey ?? ""
-          : "";
-
-      const tableName =
-        form instanceof HTMLElement
-          ? form.dataset.tableName ??
-            "solution_submissions"
-          : "solution_submissions";
-
-      const hasBackend =
-        Boolean(supabaseUrl && supabaseKey);
-
-      const usesLocalBacklog =
-        !hasBackend &&
-        [
-          "localhost",
-          "127.0.0.1",
-          "::1",
-        ].includes(window.location.hostname);
-
-      const localBacklogKey =
-        "fe-project-local-solution-submissions";
-
-      const ownedDeleteTokensKey =
-        "fe-project-owned-submission-delete-tokens";
-
-      function normalizeProblemNumber(value) {
-        const cleaned = value
-          .trim()
-          .toUpperCase()
-          .replace(/^#/, "")
-          .replace(/^FE-?/, "");
-
-        if (!/^\d{1,4}$/.test(cleaned)) {
-          return null;
-        }
-
-        const number = Number(cleaned);
-
-        if (
-          !Number.isInteger(number) ||
-          number < 1 ||
-          number > totalCount
-        ) {
-          return null;
-        }
-
-        return {
-          number,
-          feId:
-            "FE-" +
-            String(number).padStart(
-              4,
-              "0"
-            ),
-        };
-      }
-
-      function setMessage(text, state) {
-        if (!formMessage) return;
-
-        formMessage.textContent = text;
-        formMessage.className =
-          `form-message ${state ?? ""}`;
-      }
-
-      function setProblemHelp(text, state) {
-        if (!problemHelp) return;
-
-        problemHelp.textContent = text;
-        problemHelp.className =
-          `field-help ${state ?? ""}`;
-      }
-
-      function submissionEndpoint() {
-        return (
-          `${supabaseUrl}/rest/v1/` +
-          encodeURIComponent(tableName)
-        );
-      }
-
-      function authHeaders() {
-        return {
-          apikey: supabaseKey,
-          Authorization:
-            `Bearer ${supabaseKey}`,
-        };
-      }
-
-      function loadLocalSubmissions() {
-        try {
-          return JSON.parse(
-            localStorage.getItem(
-              localBacklogKey
-            ) ?? "[]"
-          );
-        }
-        catch {
-          return [];
-        }
-      }
-
-      function saveLocalSubmission(submission) {
-        const submissions = [
-          submission,
-          ...loadLocalSubmissions(),
-        ];
-
-        localStorage.setItem(
-          localBacklogKey,
-          JSON.stringify(submissions)
-        );
-      }
-
-      function deleteLocalSubmission(submissionId) {
-        const submissions =
-          loadLocalSubmissions().filter(
-            (submission) =>
-              submission.id !== submissionId
-          );
-
-        localStorage.setItem(
-          localBacklogKey,
-          JSON.stringify(submissions)
-        );
-      }
-
-      function loadOwnedDeleteTokens() {
-        try {
-          const tokens = JSON.parse(
-            localStorage.getItem(
-              ownedDeleteTokensKey
-            ) ?? "{}"
-          );
-
-          if (
-            tokens &&
-            typeof tokens === "object" &&
-            !Array.isArray(tokens)
-          ) {
-            return tokens;
-          }
-        }
-        catch {}
-
-        return {};
-      }
-
-      function saveOwnedDeleteToken(
-        submissionId,
-        deleteToken
-      ) {
-        if (!submissionId) return;
-
-        const tokens =
-          loadOwnedDeleteTokens();
-
-        tokens[submissionId] =
-          deleteToken;
-
-        localStorage.setItem(
-          ownedDeleteTokensKey,
-          JSON.stringify(tokens)
-        );
-      }
-
-      function removeOwnedDeleteToken(
-        submissionId
-      ) {
-        const tokens =
-          loadOwnedDeleteTokens();
-
-        delete tokens[submissionId];
-
-        localStorage.setItem(
-          ownedDeleteTokensKey,
-          JSON.stringify(tokens)
-        );
-      }
-
-      function createDeleteToken() {
-        const bytes = new Uint8Array(32);
-
-        crypto.getRandomValues(bytes);
-
-        return Array.from(
-          bytes,
-          (byte) =>
-            byte
-              .toString(16)
-              .padStart(2, "0")
-        ).join("");
-      }
-
-      async function sha256Hex(value) {
-        const encoded =
-          new TextEncoder().encode(value);
-
-        const digest =
-          await crypto.subtle.digest(
-            "SHA-256",
-            encoded
-          );
-
-        return Array.from(
-          new Uint8Array(digest),
-          (byte) =>
-            byte
-              .toString(16)
-              .padStart(2, "0")
-        ).join("");
-      }
-
-      async function deleteSubmission(
-        submission,
-        deleteButton
-      ) {
-        const submissionId =
-          submission.id ?? "";
-
-        if (!submissionId) return;
-
-        if (
-          !window.confirm(
-            "Delete this pending submission?"
-          )
-        ) {
-          return;
-        }
-
-        if (
-          deleteButton instanceof
-          HTMLButtonElement
-        ) {
-          deleteButton.disabled = true;
-          deleteButton.textContent =
-            "Deleting...";
-        }
-
-        if (usesLocalBacklog) {
-          deleteLocalSubmission(
-            submissionId
-          );
-
-          removeOwnedDeleteToken(
-            submissionId
-          );
-
-          setMessage(
-            "Deleted the local pending submission.",
-            "success"
-          );
-
-          await loadPendingSubmissions();
-          return;
-        }
-
-        const deleteToken =
-          loadOwnedDeleteTokens()[
-            submissionId
-          ];
-
-        if (!deleteToken) {
-          setMessage(
-            "This browser cannot delete that submission.",
-            "error"
-          );
-
-          if (
-            deleteButton instanceof
-            HTMLButtonElement
-          ) {
-            deleteButton.disabled = false;
-            deleteButton.textContent =
-              "Delete submission";
-          }
-
-          return;
-        }
-
-        try {
-          const response = await fetch(
-            `${supabaseUrl}/rest/v1/rpc/delete_solution_submission`,
-            {
-              method: "POST",
-              headers: {
-                ...authHeaders(),
-                "Content-Type":
-                  "application/json",
-              },
-              body: JSON.stringify({
-                _submission_id:
-                  submissionId,
-                _delete_token:
-                  deleteToken,
-              }),
-            }
-          );
-
-          if (!response.ok) {
-            throw new Error(
-              await response.text()
-            );
-          }
-
-          const deleted =
-            await response.json();
-
-          if (!deleted) {
-            throw new Error(
-              "Delete token rejected."
-            );
-          }
-
-          removeOwnedDeleteToken(
-            submissionId
-          );
-
-          setMessage(
-            "Deleted the pending submission.",
-            "success"
-          );
-
-          await loadPendingSubmissions();
-        }
-        catch {
-          setMessage(
-            "Could not delete the submission.",
-            "error"
-          );
-        }
-        finally {
-          if (
-            deleteButton instanceof
-            HTMLButtonElement
-          ) {
-            deleteButton.disabled = false;
-            deleteButton.textContent =
-              "Delete submission";
-          }
-        }
-      }
-
-      function formatSubmittedAt(value) {
-        if (!value) return "";
-
-        const date = new Date(value);
-
-        if (Number.isNaN(date.getTime())) {
-          return "";
-        }
-
-        return date.toLocaleString(
-          undefined,
-          {
-            dateStyle: "medium",
-            timeStyle: "short",
-          }
-        );
-      }
-
-      function renderPendingSubmissions(
-        submissions
-      ) {
-        if (!pendingList || !pendingStatus) {
-          return;
-        }
-
-        pendingList.replaceChildren();
-
-        const openSubmissions =
-          submissions.filter((submission) =>
-            openIds.has(submission.fe_id)
-          );
-
-        if (openSubmissions.length === 0) {
-          pendingStatus.textContent =
-            "No pending submissions.";
-          return;
-        }
-
-        pendingStatus.textContent =
-          `${openSubmissions.length} pending submission${
-            openSubmissions.length === 1
-              ? ""
-              : "s"
-          }.`;
-
-        openSubmissions.forEach(
-          (submission) => {
-            const submissionId =
-              submission.id ?? "";
-
-            const canDelete =
-              usesLocalBacklog ||
-              Boolean(
-                loadOwnedDeleteTokens()[
-                  submissionId
-                ]
-              );
-
-            const details =
-              document.createElement(
-                "details"
-              );
-
-            const summary =
-              document.createElement(
-                "summary"
-              );
-
-            const problemNumber =
-              Number(
-                submission.problem_number ??
-                  String(
-                    submission.fe_id ?? ""
-                  ).replace("FE-", "")
-              );
-
-            summary.textContent =
-              Number.isFinite(problemNumber)
-                ? `#${problemNumber}`
-                : submission.fe_id ?? "#";
-
-            const meta =
-              document.createElement("p");
-
-            meta.className = "pending-meta";
-
-            const submittedAt =
-              formatSubmittedAt(
-                submission.submitted_at
-              );
-
-            meta.textContent = submittedAt
-              ? `Submitted by ${submission.username} on ${submittedAt}`
-              : `Submitted by ${submission.username}`;
-
-            const solution =
-              document.createElement("pre");
-
-            solution.className =
-              "pending-solution";
-
-            solution.textContent =
-              submission.solution ?? "";
-
-            details.append(
-              summary,
-              meta,
-              solution
-            );
-
-            if (canDelete) {
-              const actions =
-                document.createElement(
-                  "div"
-                );
-
-              actions.className =
-                "pending-actions";
-
-              const deleteButton =
-                document.createElement(
-                  "button"
-                );
-
-              deleteButton.type = "button";
-              deleteButton.className =
-                "delete-submission";
-              deleteButton.textContent =
-                "Delete submission";
-
-              deleteButton.addEventListener(
-                "click",
-                () => {
-                  deleteSubmission(
-                    submission,
-                    deleteButton
-                  );
-                }
-              );
-
-              actions.append(
-                deleteButton
-              );
-
-              details.append(actions);
-            }
-
-            pendingList.append(details);
-          }
-        );
-      }
-
-      async function loadPendingSubmissions() {
-        if (!pendingStatus) return;
-
-        if (!hasBackend) {
-          if (usesLocalBacklog) {
-            renderPendingSubmissions(
-              loadLocalSubmissions()
-            );
-
-            return;
-          }
-
-          pendingStatus.textContent =
-            "Submission storage is not configured yet.";
-          return;
-        }
-
-        pendingStatus.textContent =
-          "Loading pending submissions...";
-
-        const url = new URL(
-          submissionEndpoint()
-        );
-
-        url.searchParams.set(
-          "select",
-          "id,fe_id,problem_number,username,solution,submitted_at"
-        );
-
-        url.searchParams.set(
-          "status",
-          "eq.pending"
-        );
-
-        url.searchParams.set(
-          "order",
-          "submitted_at.desc"
-        );
-
-        try {
-          const response = await fetch(
-            url.toString(),
-            {
-              headers: authHeaders(),
-            }
-          );
-
-          if (!response.ok) {
-            throw new Error(
-              await response.text()
-            );
-          }
-
-          const submissions =
-            await response.json();
-
-          renderPendingSubmissions(
-            submissions
-          );
-        }
-        catch {
-          pendingStatus.textContent =
-            "Could not load pending submissions.";
-        }
-      }
-
-      function updateProblemValidation() {
-        if (
-          !(
-            problemInput instanceof
-            HTMLInputElement
-          )
-        ) {
-          return null;
-        }
-
-        const normalized =
-          normalizeProblemNumber(
-            problemInput.value
-          );
-
-        if (!problemInput.value.trim()) {
-          setProblemHelp(
-            "Enter an open problem number."
-          );
-
-          return null;
-        }
-
-        if (!normalized) {
-          setProblemHelp(
-            `Use a number from 1 to ${totalCount}.`,
-            "error"
-          );
-
-          return null;
-        }
-
-        if (!openIds.has(normalized.feId)) {
-          setProblemHelp(
-            "This problem is already solved.",
-            "error"
-          );
-
-          return null;
-        }
-
-        setProblemHelp(
-          `Problem #${normalized.number} is open.`,
-          "ok"
-        );
-
-        return normalized;
-      }
-
-      if (!hasBackend) {
-        if (configNotice instanceof HTMLElement) {
-          configNotice.hidden = false;
-
-          if (usesLocalBacklog) {
-            configNotice.textContent =
-              "Local preview mode: submissions are saved only in this browser.";
-          }
-        }
-
-        if (
-          !usesLocalBacklog &&
-          submitButton instanceof
-            HTMLButtonElement
-        ) {
-          submitButton.disabled = true;
-        }
-      }
-
-      problemInput?.addEventListener(
-        "input",
-        updateProblemValidation
-      );
-
-      refreshPendingButton
-        ?.addEventListener(
-          "click",
-          loadPendingSubmissions
-        );
-
-      form?.addEventListener(
-        "submit",
-        async (event) => {
-          event.preventDefault();
-
-          const normalized =
-            updateProblemValidation();
-
-          if (!normalized) {
-            setMessage(
-              "Choose an open problem first.",
-              "error"
-            );
-
-            return;
-          }
-
-          const username =
-            usernameInput instanceof
-            HTMLInputElement
-              ? usernameInput.value.trim()
-              : "";
-
-          const solution =
-            solutionInput instanceof
-            HTMLTextAreaElement
-              ? solutionInput.value.trim()
-              : "";
-
-          if (!username) {
-            setMessage(
-              "Add a username.",
-              "error"
-            );
-
-            return;
-          }
-
-          if (solution.length < 20) {
-            setMessage(
-              "Add a little more detail to the solution.",
-              "error"
-            );
-
-            return;
-          }
-
-          if (solution.length > 20000) {
-            setMessage(
-              "Keep the solution under 20,000 characters.",
-              "error"
-            );
-
-            return;
-          }
-
-          if (!hasBackend && !usesLocalBacklog) {
-            setMessage(
-              "Submission storage is not configured yet.",
-              "error"
-            );
-
-            return;
-          }
-
-          if (usesLocalBacklog) {
-            saveLocalSubmission({
-              id: `local-${Date.now()}`,
-              fe_id: normalized.feId,
-              problem_number:
-                normalized.number,
-              username,
-              solution,
-              status: "pending",
-              submitted_at:
-                new Date().toISOString(),
-            });
-
-            if (
-              solutionInput instanceof
-              HTMLTextAreaElement
-            ) {
-              solutionInput.value = "";
-            }
-
-            setMessage(
-              "Saved to the local preview backlog.",
-              "success"
-            );
-
-            await loadPendingSubmissions();
-            return;
-          }
-
-          if (
-            submitButton instanceof
-            HTMLButtonElement
-          ) {
-            submitButton.disabled = true;
-            submitButton.textContent =
-              "Submitting...";
-          }
-
-          setMessage(
-            "Submitting solution..."
-          );
-
-          try {
-            const deleteToken =
-              createDeleteToken();
-
-            const deleteTokenHash =
-              await sha256Hex(
-                deleteToken
-              );
-
-            const insertUrl =
-              new URL(
-                submissionEndpoint()
-              );
-
-            insertUrl.searchParams.set(
-              "select",
-              "id"
-            );
-
-            const response = await fetch(
-              insertUrl.toString(),
-              {
-                method: "POST",
-                headers: {
-                  ...authHeaders(),
-                  "Content-Type":
-                    "application/json",
-                  Prefer:
-                    "return=representation",
-                },
-                body: JSON.stringify({
-                  fe_id: normalized.feId,
-                  problem_number:
-                    normalized.number,
-                  username,
-                  solution,
-                  status: "pending",
-                  delete_token_hash:
-                    deleteTokenHash,
-                }),
-              }
-            );
-
-            if (!response.ok) {
-              throw new Error(
-                await response.text()
-              );
-            }
-
-            const insertedRows =
-              await response.json();
-
-            const insertedSubmission =
-              Array.isArray(insertedRows)
-                ? insertedRows[0]
-                : null;
-
-            if (insertedSubmission?.id) {
-              saveOwnedDeleteToken(
-                insertedSubmission.id,
-                deleteToken
-              );
-            }
-
-            if (
-              solutionInput instanceof
-              HTMLTextAreaElement
-            ) {
-              solutionInput.value = "";
-            }
-
-            setMessage(
-              "Submitted to the pending backlog.",
-              "success"
-            );
-
-            await loadPendingSubmissions();
-          }
-          catch {
-            setMessage(
-              "Could not submit the solution.",
-              "error"
-            );
-          }
-          finally {
-            if (
-              submitButton instanceof
-              HTMLButtonElement
-            ) {
-              submitButton.disabled = false;
-              submitButton.textContent =
-                "Submit solution";
-            }
-          }
-        }
-      );
-
-      updateProblemValidation();
-      loadPendingSubmissions();
-    </script>
   </body>
 </html>
