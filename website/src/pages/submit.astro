@@ -1,4 +1,7 @@
 ---
+import { getCollection } from "astro:content";
+
+import fes from "../../../data/fe_database.json";
 import Nav from "../components/Nav.astro";
 
 const googleFormStandaloneUrl =
@@ -11,6 +14,26 @@ const pendingSubmissionsEndpoint =
   "https://script.google.com/macros/s/AKfycbxcT6D7p1p3-pwJRxM9qdg-u0_J9Y1Eaaz0RUs57-_IKbualveIDwGmslmbyEJ7tT3F/exec";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const solutionEntries =
+  await getCollection("solutions");
+
+const statusById = new Map(
+  solutionEntries.map((entry) => [
+    entry.id,
+    entry.data.status,
+  ])
+);
+
+function getStatus(feId) {
+  return statusById.get(feId) ?? "open";
+}
+
+const openProblemNumbers = fes
+  .filter((fe) => getStatus(fe.id) === "open")
+  .map((fe) =>
+    Number(fe.id.replace("FE-", ""))
+  );
 ---
 
 <html lang="en">
@@ -37,6 +60,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         class="pending-panel"
         data-endpoint={pendingSubmissionsEndpoint}
         data-base={base}
+        data-open-problem-numbers={JSON.stringify(
+          openProblemNumbers
+        )}
         aria-labelledby="pending-submissions-heading"
       >
         <div class="pending-header">
@@ -128,6 +154,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
         const base =
           (pendingPanel.dataset.base ?? "").replace(/\/$/, "");
+
+        const openProblemNumbers =
+          new Set(
+            JSON.parse(
+              pendingPanel.dataset
+                .openProblemNumbers ?? "[]"
+            ).map(String)
+          );
 
         const statusElement =
           pendingPanel.querySelector("[data-pending-status]");
@@ -295,16 +329,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           };
         }
 
-        function shouldShowSubmission(row) {
-          const status =
-            getField(row, ["Status", "status"])
-              .toLowerCase()
-              .trim();
-
-          return !statusLabelsToHide.has(status);
-        }
-
-        function getProblemNumberValue(row) {
+        function getProblemNumberKey(row) {
           const problemNumber =
             getField(row, [
               "FE Number",
@@ -318,7 +343,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             problemNumber.match(/\d+/)?.[0];
 
           return digits
-            ? Number(digits)
+            ? String(Number(digits))
+            : "";
+        }
+
+        function shouldShowSubmission(row) {
+          const status =
+            getField(row, ["Status", "status"])
+              .toLowerCase()
+              .trim();
+
+          return (
+            !statusLabelsToHide.has(status) &&
+            openProblemNumbers.has(
+              getProblemNumberKey(row)
+            )
+          );
+        }
+
+        function getProblemNumberValue(row) {
+          const problemNumber =
+            getProblemNumberKey(row);
+
+          return problemNumber
+            ? Number(problemNumber)
             : Number.POSITIVE_INFINITY;
         }
 

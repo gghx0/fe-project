@@ -10,6 +10,9 @@ import Nav from "../components/Nav.astro";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
+const pendingSubmissionsEndpoint =
+  "https://script.google.com/macros/s/AKfycbxcT6D7p1p3-pwJRxM9qdg-u0_J9Y1Eaaz0RUs57-_IKbualveIDwGmslmbyEJ7tT3F/exec";
+
 /*
  * All 17 permitted expressions.
  *
@@ -349,7 +352,10 @@ const solvedPercentage =
 
       <!-- FE cards -->
 
-      <div class="fe-list">
+      <div
+        class="fe-list"
+        data-pending-submissions-endpoint={pendingSubmissionsEndpoint}
+      >
         {
           fes.map((fe) => {
             const status =
@@ -368,6 +374,12 @@ const solvedPercentage =
                 )}`}
                 class={`fe-card ${status}`}
                 data-status={status}
+                data-problem-number={Number(
+                  fe.id.replace(
+                    "FE-",
+                    ""
+                  )
+                )}
                 data-equations={JSON.stringify(
                   fe.equations
                 )}
@@ -690,6 +702,15 @@ const solvedPercentage =
         background: #ffe8e8;
       }
 
+      .fe-card.pending-review {
+        background: #fff8df;
+        border-left-color: #d99a00;
+      }
+
+      .fe-card.pending-review:hover {
+        background: #fff1bd;
+      }
+
       .fe-card.solved {
         background: #f0f9f1;
         border-left-color: #2e7d32;
@@ -732,6 +753,10 @@ const solvedPercentage =
 
       .solved .status {
         color: #2e7d32;
+      }
+
+      .pending-review .status {
+        color: #9a5b00;
       }
 
       /* References */
@@ -871,6 +896,11 @@ const solvedPercentage =
           ".fe-card"
         );
 
+      const feList =
+        document.querySelector(
+          ".fe-list"
+        );
+
       const resultCount =
         document.querySelector(
           "#result-count"
@@ -878,6 +908,21 @@ const solvedPercentage =
 
       let selectedStatus = "all";
       let selectedSource = "all";
+
+      const hiddenPendingStatuses =
+        new Set([
+          "accepted",
+          "approved",
+          "closed",
+          "complete",
+          "completed",
+          "deleted",
+          "done",
+          "published",
+          "rejected",
+          "solved",
+          "verified",
+        ]);
 
       function getSelectValue(
         element
@@ -962,6 +1007,206 @@ const solvedPercentage =
             equation.right
           )
         );
+      }
+
+      function normalizeRows(rows) {
+        if (
+          rows.length === 0 ||
+          !rows.every(Array.isArray)
+        ) {
+          return rows;
+        }
+
+        const [headers, ...bodyRows] =
+          rows;
+
+        return bodyRows.map((row) =>
+          Object.fromEntries(
+            headers.map((header, index) => [
+              String(header),
+              row[index] ?? "",
+            ])
+          )
+        );
+      }
+
+      function getRows(payload) {
+        if (Array.isArray(payload)) {
+          return normalizeRows(payload);
+        }
+
+        if (!payload || typeof payload !== "object") {
+          return [];
+        }
+
+        for (const key of [
+          "submissions",
+          "data",
+          "rows",
+          "items",
+          "values",
+        ]) {
+          if (Array.isArray(payload[key])) {
+            return normalizeRows(payload[key]);
+          }
+        }
+
+        return [];
+      }
+
+      function getField(row, names) {
+        if (!row || typeof row !== "object") {
+          return "";
+        }
+
+        const entries =
+          Object.entries(row);
+
+        for (const name of names) {
+          const exactValue = row[name];
+
+          if (
+            exactValue !== undefined &&
+            exactValue !== null &&
+            String(exactValue).trim()
+          ) {
+            return String(exactValue).trim();
+          }
+
+          const normalizedName =
+            name.toLowerCase().replace(/\s+/g, "");
+
+          const looseEntry =
+            entries.find(([key]) =>
+              key
+                .toLowerCase()
+                .replace(/\s+/g, "") === normalizedName
+            );
+
+          if (
+            looseEntry &&
+            looseEntry[1] !== undefined &&
+            looseEntry[1] !== null &&
+            String(looseEntry[1]).trim()
+          ) {
+            return String(looseEntry[1]).trim();
+          }
+        }
+
+        return "";
+      }
+
+      function getPendingProblemNumber(row) {
+        const problemNumber =
+          getField(row, [
+            "FE Number",
+            "FE",
+            "Problem",
+            "Problem Number",
+            "Number",
+          ]);
+
+        const digits =
+          problemNumber.match(/\d+/)?.[0];
+
+        return digits ? String(Number(digits)) : "";
+      }
+
+      function shouldShowPending(row) {
+        const status =
+          getField(row, ["Status", "status"])
+            .toLowerCase()
+            .trim();
+
+        return !hiddenPendingStatuses.has(status);
+      }
+
+      function markPendingCards(problemNumbers) {
+        cards.forEach((card) => {
+          if (!(card instanceof HTMLElement)) {
+            return;
+          }
+
+          if (card.dataset.status !== "open") {
+            return;
+          }
+
+          const hasPendingSubmission =
+            problemNumbers.has(
+              card.dataset.problemNumber ?? ""
+            );
+
+          card.classList.toggle(
+            "pending-review",
+            hasPendingSubmission
+          );
+
+          const statusLabel =
+            card.querySelector(".status");
+
+          if (statusLabel) {
+            statusLabel.textContent =
+              hasPendingSubmission
+                ? "pending"
+                : card.dataset.status ?? "open";
+          }
+        });
+      }
+
+      async function loadPendingCardStates() {
+        if (!(feList instanceof HTMLElement)) {
+          return;
+        }
+
+        const endpoint =
+          feList.dataset
+            .pendingSubmissionsEndpoint ?? "";
+
+        if (!endpoint) {
+          return;
+        }
+
+        try {
+          const separator =
+            endpoint.includes("?") ? "&" : "?";
+
+          const response =
+            await fetch(
+              `${endpoint}${separator}cacheBust=${Date.now()}`,
+              {
+                cache: "no-store",
+              }
+            );
+
+          const text =
+            await response.text();
+
+          const trimmed =
+            text.trim();
+
+          if (
+            !response.ok ||
+            trimmed.startsWith("<!DOCTYPE") ||
+            trimmed.startsWith("<html")
+          ) {
+            throw new Error("Endpoint is not public JSON.");
+          }
+
+          const rows =
+            getRows(JSON.parse(trimmed))
+              .filter(shouldShowPending);
+
+          markPendingCards(
+            new Set(
+              rows
+                .map(getPendingProblemNumber)
+                .filter(Boolean)
+            )
+          );
+        }
+        catch {
+          markPendingCards(new Set());
+        }
       }
 
       function updateResults() {
@@ -1176,6 +1421,7 @@ const solvedPercentage =
       );
 
       updateResults();
+      loadPendingCardStates();
     </script>
   </body>
 </html>
