@@ -5,6 +5,9 @@ import "../styles/global.css";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
+const pendingSubmissionsEndpoint =
+  "https://script.google.com/macros/s/AKfycbxcT6D7p1p3-pwJRxM9qdg-u0_J9Y1Eaaz0RUs57-_IKbualveIDwGmslmbyEJ7tT3F/exec";
+
 const solutionEntries = await getCollection("solutions");
 
 const statusById = new Map(
@@ -39,6 +42,7 @@ const openIds = fes
     id="random-open"
     class="random-button"
     data-open-ids={JSON.stringify(openIds)}
+    data-pending-submissions-endpoint={pendingSubmissionsEndpoint}
     data-base={base}
   >
     Random Open
@@ -49,23 +53,282 @@ const openIds = fes
 <script>
   const randomOpenButton = document.querySelector("#random-open");
 
-  randomOpenButton?.addEventListener("click", () => {
+  const hiddenPendingStatuses =
+    new Set([
+      "accepted",
+      "approved",
+      "closed",
+      "complete",
+      "completed",
+      "deleted",
+      "done",
+      "published",
+      "rejected",
+      "solved",
+      "verified",
+    ]);
+
+  function normalizeRows(rows) {
+    if (
+      rows.length === 0 ||
+      !rows.every(Array.isArray)
+    ) {
+      return rows;
+    }
+
+    const [headers, ...bodyRows] = rows;
+
+    return bodyRows.map((row) =>
+      Object.fromEntries(
+        headers.map((header, index) => [
+          String(header),
+          row[index] ?? "",
+        ])
+      )
+    );
+  }
+
+  function getRows(payload) {
+    if (Array.isArray(payload)) {
+      return normalizeRows(payload);
+    }
+
+    if (!payload || typeof payload !== "object") {
+      return [];
+    }
+
+    for (const key of [
+      "submissions",
+      "data",
+      "rows",
+      "items",
+      "values",
+    ]) {
+      if (Array.isArray(payload[key])) {
+        return normalizeRows(payload[key]);
+      }
+    }
+
+    return [];
+  }
+
+  function getField(row, names) {
+    if (!row || typeof row !== "object") {
+      return "";
+    }
+
+    const entries = Object.entries(row);
+
+    for (const name of names) {
+      const exactValue = row[name];
+
+      if (
+        exactValue !== undefined &&
+        exactValue !== null &&
+        String(exactValue).trim()
+      ) {
+        return String(exactValue).trim();
+      }
+
+      const normalizedName =
+        name.toLowerCase().replace(/\s+/g, "");
+
+      const looseEntry =
+        entries.find(([key]) =>
+          key
+            .toLowerCase()
+            .replace(/\s+/g, "") === normalizedName
+        );
+
+      if (
+        looseEntry &&
+        looseEntry[1] !== undefined &&
+        looseEntry[1] !== null &&
+        String(looseEntry[1]).trim()
+      ) {
+        return String(looseEntry[1]).trim();
+      }
+    }
+
+    return "";
+  }
+
+  function getPendingProblemId(row) {
+    const problemNumber =
+      getField(row, [
+        "FE Number",
+        "FE",
+        "Problem",
+        "Problem Number",
+        "Number",
+      ]);
+
+    const digits =
+      problemNumber.match(/\d+/)?.[0];
+
+    return digits
+      ? digits.padStart(4, "0")
+      : "";
+  }
+
+  function shouldShowPending(row) {
+    const status =
+      getField(row, ["Status", "status"])
+        .toLowerCase()
+        .trim();
+
+    return !hiddenPendingStatuses.has(status);
+  }
+
+  function getOpenIds() {
     if (!(randomOpenButton instanceof HTMLElement)) return;
 
-    const openIds = JSON.parse(
+    return JSON.parse(
       randomOpenButton.dataset.openIds ?? "[]"
     );
+  }
 
-    if (openIds.length === 0) return;
+  async function getPendingProblemIds() {
+    if (!(randomOpenButton instanceof HTMLElement)) {
+      return new Set();
+    }
+
+    const endpoint =
+      randomOpenButton.dataset
+        .pendingSubmissionsEndpoint ?? "";
+
+    if (!endpoint) {
+      return new Set();
+    }
+
+    const separator =
+      endpoint.includes("?") ? "&" : "?";
+
+    const response =
+      await fetch(
+        `${endpoint}${separator}cacheBust=${Date.now()}`,
+        {
+          cache: "no-store",
+        }
+      );
+
+    const text =
+      await response.text();
+
+    const trimmed =
+      text.trim();
+
+    if (
+      !response.ok ||
+      trimmed.startsWith("<!DOCTYPE") ||
+      trimmed.startsWith("<html")
+    ) {
+      throw new Error("Endpoint is not public JSON.");
+    }
+
+    return new Set(
+      getRows(JSON.parse(trimmed))
+        .filter(shouldShowPending)
+        .map(getPendingProblemId)
+        .filter(Boolean)
+    );
+  }
+
+  async function refreshAvailableOpenIds() {
+    if (
+      !(
+        randomOpenButton instanceof
+        HTMLButtonElement
+      )
+    ) {
+      return [];
+    }
+
+    randomOpenButton.disabled = true;
+    randomOpenButton.title =
+      "Loading pending submissions...";
+
+    const openIds = getOpenIds() ?? [];
+    const pendingIds =
+      await getPendingProblemIds();
+
+    const availableOpenIds =
+      openIds.filter(
+        (id) => !pendingIds.has(id)
+      );
+
+    randomOpenButton.dataset.availableOpenIds =
+      JSON.stringify(availableOpenIds);
+
+    randomOpenButton.disabled =
+      availableOpenIds.length === 0;
+
+    randomOpenButton.title =
+      availableOpenIds.length === 0
+        ? "No open problems are available."
+        : "";
+
+    return availableOpenIds;
+  }
+
+  randomOpenButton?.addEventListener("click", async () => {
+    if (
+      !(
+        randomOpenButton instanceof
+        HTMLButtonElement
+      )
+    ) {
+      return;
+    }
+
+    let availableOpenIds = [];
+
+    try {
+      availableOpenIds =
+        randomOpenButton.dataset
+          .availableOpenIds
+          ? JSON.parse(
+              randomOpenButton.dataset
+                .availableOpenIds
+            )
+          : await refreshAvailableOpenIds();
+    }
+    catch {
+      randomOpenButton.disabled = false;
+      randomOpenButton.title =
+        "Could not load pending submissions. Try again.";
+      return;
+    }
+
+    if (availableOpenIds.length === 0) {
+      return;
+    }
 
     const randomId =
-      openIds[Math.floor(Math.random() * openIds.length)];
+      availableOpenIds[
+        Math.floor(
+          Math.random() *
+          availableOpenIds.length
+        )
+      ];
 
     const base =
       (randomOpenButton.dataset.base ?? "").replace(/\/$/, "");
 
     window.location.href = `${base}/fe/${randomId}`;
   });
+
+  refreshAvailableOpenIds()
+    .catch(() => {
+      if (
+        randomOpenButton instanceof
+        HTMLButtonElement
+      ) {
+        randomOpenButton.disabled = false;
+        randomOpenButton.title =
+          "Could not load pending submissions. Try again.";
+      }
+    });
 </script>
 
 <style>
@@ -155,6 +418,12 @@ const openIds = fes
 
   .random-button:active {
     transform: translateY(0);
+  }
+
+  .random-button:disabled {
+    opacity: 0.62;
+    cursor: wait;
+    transform: none;
   }
 
   .arrow {
