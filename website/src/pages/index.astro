@@ -316,6 +316,13 @@ const solvedPercentage =
 
           <button
             class="filter"
+            data-status="pending-review"
+          >
+            Pending
+          </button>
+
+          <button
+            class="filter"
             data-status="solved"
           >
             Solved
@@ -1136,6 +1143,9 @@ const solvedPercentage =
               card.dataset.problemNumber ?? ""
             );
 
+          card.dataset.pendingReview =
+            hasPendingSubmission ? "true" : "false";
+
           card.classList.toggle(
             "pending-review",
             hasPendingSubmission
@@ -1207,6 +1217,22 @@ const solvedPercentage =
         catch {
           markPendingCards(new Set());
         }
+
+        updateResults();
+      }
+
+      function getCardStatus(card) {
+        const baseStatus =
+          card.dataset.status ?? "";
+
+        if (
+          baseStatus === "open" &&
+          card.dataset.pendingReview === "true"
+        ) {
+          return "pending-review";
+        }
+
+        return baseStatus;
       }
 
       function updateResults() {
@@ -1235,7 +1261,7 @@ const solvedPercentage =
           }
 
           const cardStatus =
-            card.dataset.status ?? "";
+            getCardStatus(card);
 
           const referenceTypes =
             (
