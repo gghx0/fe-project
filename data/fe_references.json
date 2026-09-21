@@ -442,5 +442,61 @@
       "label": "AoPS",
       "url": "https://artofproblemsolving.com/community/c6h2385810p19565875"
     }
+  ],
+  "FE-0765": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h2560850p21939944"
+    }
+  ],
+  "FE-0773": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h3518642p34163857"
+    }
+  ],
+  "FE-0009": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h1874284p12726149"
+    }
+  ],
+  "FE-0741": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h3584473p35014600"
+    }
+  ],
+  "FE-0447": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h3324886p30762379"
+    }
+  ],
+  "FE-0262": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h3686270p36050256"
+    }
+  ],
+  "FE-0246": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h3651147p35887781"
+    }
+  ],
+  "FE-0179": [
+    {
+      "type": "aops",
+      "label": "AoPS",
+      "url": "https://artofproblemsolving.com/community/c6h3112909p28159862"
+    }
   ]
 }
